@@ -1,0 +1,103 @@
+It's pretty simple really:
+
+a[start:stop]  # items start through stop-1
+a[start:]      # items start through the rest of the array
+a[:stop]       # items from the beginning through stop-1
+a[:]           # a copy of the whole array
+
+There is also the step value, which can be used with any of the above:
+
+a[start:stop:step] # start through not past stop, by step
+
+The key point to remember is that the :stop value represents the first value that is not in the selected slice. So, the difference between stop and start is the number of elements selected (if step is 1, the default).
+
+The other feature is that start or stop may be a negative number, which means it counts from the end of the array instead of the beginning. So:
+
+a[-1]    # last item in the array
+a[-2:]   # last two items in the array
+a[:-2]   # everything except the last two items
+
+Similarly, step may be a negative number:
+
+a[::-1]    # all items in the array, reversed
+a[1::-1]   # the first two items, reversed
+a[:-3:-1]  # the last two items, reversed
+a[-3::-1]  # everything except the last two items, reversed
+
+Python is kind to the programmer if there are fewer items than you ask for. For example, if you ask for a[:-2] and a only contains one element, you get an empty list instead of an error. Sometimes you would prefer the error, so you have to be aware that this may happen.
+Relation to slice() object
+
+The slicing operator [] is actually being used in the above code with a slice() object using the : notation (which is only valid within []), i.e.:
+
+a[start:stop:step]
+
+is equivalent to:
+
+a[slice(start, stop, step)]
+
+Slice objects also behave slightly differently depending on the number of arguments, similarly to range(), i.e. both slice(stop) and slice(start, stop[, step]) are supported. To skip specifying a given argument, one might use None, so that e.g. a[start:] is equivalent to a[slice(start, None)] or a[::-1] is equivalent to a[slice(None, None, -1)].
+
+While the :-based notation is very helpful for simple slicing, the explicit use of slice() objects simplifies the programmatic generation of slicing.
+
+
+a = list(range(10))
+print(f'a = {a}\na[:-1] = {a[:-1]}\n + \
+      a[::-1] = {a[::-1]}\n + \
+      a[:-1:-1] = {a[:-1:-1]}')
+
+
+The first -1 in a[:-1:-1] doesn't mean what you think it does.
+
+In slicing, negative start/end indices are not interpreted literally. Instead, they are used to conveniently refer to the end of the list (i.e. they are relative to len(a)). This happens irrespectively of the direction of the slicing.
+
+This means that
+
+a[:-1:-1]
+
+is equivalent to
+
+a[:len(a)-1:-1]
+
+When omitted during reverse slicing, the start index defaults to len(a)-1, making the above equivalent to
+
+a[len(a)-1:len(a)-1:-1]
+
+This always gives an empty list, since the start and end indices are the same and the end index is exclusive.
+
+To slice in reverse up to, and including, the zeroth element you can use any of the following notations:
+
+>>> a[::-1]
+[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+>>> a[:None:-1]
+[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+>>> a[:-len(a)-1:-1]
+[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+
+When you type [1, 2, 3, ...][1:4:1] it is the same as [1, 2, 3, ...][slice(1, 4, 1)]. So 1:4:1 is the shorthand for slice object. slice signature is slice(stop) or slice(start, stop[, step]) and you can also use None for arguments.
+
+:: -> slice(None, None, None)
+:4 -> slice(4)
+# and so on
+
+Suppose we have got [a: b: c]. Rules for indices will be as follows:
+
+    First c is checked. Default is +1, sign of c indicates forward or backward direction of the step. Absolute value of c indicates the step size.
+    Than a is checked. When c is positive or None, default for a is 0. When c is negative, default for a is -1.
+    Finally b is checked. When c is positive or None, default for b is len. When c is negative default for b is -(len+1).
+
+Note 1: Degenerated slices in Python are handled gracefully:
+
+    the index that is too large or too small is replaced with len or 0.
+    an upper bound smaller than the lower bound returns an empty list or string or whatever else (for positive c).
+
+Note 2: Roughly speaking, Python picks up elements while this condition (a  <  b) if (c > 0) else (a > b) is True (updating a += c on every step). Also, all negative indices are replaced with len - index.
+
+If you combine this rules and notes it will make sense why you got an empty list. In your case:
+
+In[1]: [1, 2, 3, 4, 5, 6][:-1:-1]        # `c` is negative so `a` is -1 and `b` is -1
+Out[1]: [] 
+
+# it is the same as:
+
+In[2]: [1, 2, 3, 4, 5, 6][-1: -1: -1]    # which will produce you an empty list 
+Out[2]: [] 

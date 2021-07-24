@@ -1,0 +1,16 @@
+"renameMe": Make a bootstrapped springboot app for reddit
+    controller
+        get, post, delete, update
+    service
+        save, update, delete, findall
+    dao
+        one simple query
+    model
+        person
+    exceptions
+    spring security? probably not
+    one database
+    integration/unit tests generic names
+    documents and comments
+    all they have to do is insert database
+    gradle build

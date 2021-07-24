@@ -1,0 +1,18 @@
+To serialize an object means to convert its state to a bute stream so that the byte stream can be reverted back into a copy of the object. Stated differently, serialization is the conversion of a Java object into a static stream (sequence) of bytes which can then be saved to a database or transferred over a network.
+
+A java object is serializable if its class or any of its superclasses implements either the java.io.Serializable interface or its subinterface, java.io.Externalizable.
+
+Deserialization is the process of converting the serialized form of an object back into a copy of the object
+
+The serialization process is instance-independent, i.e. objects can be serialized on one platform and deserialized on another. Both ObjectInputStream and ObjectOutputStream are high level classes that extend java.io.InputStream and java,io.OutputStream respectively. ObjectOutputStream can write primitive types and graphs of objects to an OutputStream as a stream of bytes. These streams can subsequently be read using ObjectInputStream
+
+Important method in ObjectOutputStream:
+public final void writeObject(Object o) throws IOException;
+
+Important method in ObjectInputStream:
+public final Object readObject() throws IOException, ClassNotFoundException;
+
+Usages:
+    - Storing data in an object-oriented way to files on disk, e.g. storing a list of Student objects
+    - Saving program's states on disk, e.g. saving state of a game
+    - Sending data over the network in form objects, e.g. sending messages as objects in chat application

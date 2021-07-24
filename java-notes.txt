@@ -1,0 +1,174 @@
+Interface: Implementing an interface allows a class to become more formal about the behavior it promises to provide. Interfaces form a contract between the class and the outside world, and this contract is enforced at build time by the compiler. If your class claims to implement an interface, all methods defined by that interface must appear in its source code before the class will successfully compile.
+	- Interfaces are used to achieve abstraction
+	- Designed to support dynamic method resolution at run time
+	- It helps you to acheieve loose coupling
+	- Allows you to separate the definition of a method from the inheritance hierarchy
+	
+interface Pet {
+    public void test();
+}
+class Dog implements Pet {
+    public void test() {
+        System.out.println("Interface Method Implemented");
+    }
+    public static void main(String args[]) {
+        Pet p = new Dog();
+        p.test();
+    }
+}
+
+Inheritance: Allows classes to inherit commonly used state and behaviour from other classes. This gives MountainBike all the same fields and methods as Bicycle, yet allows its code to focus exclusively on the features that make it unique.
+	- Abstract classes offer default functionality for the subclasses
+	- Provides a template for future specific classes
+	- Helps you to define a common interface for its subclasses
+	- Abstract class allows code reusability
+
+abstract class Shape {
+    int b = 20;
+    abstract public void calculateArea();
+}
+
+public class Rectangle extends Shape {
+    public static void main(String args[]) {
+        Rectangle obj = new Rectangle();
+        obj.b = 200;
+        obj.calculateArea();
+    }
+    public void calculateArea() {
+        System.out.println("Area is " + (obj.b * obj.b));
+    }
+}
+
+What is Java?
+Java is a computer programming language that is concurrent, class-based and object-oriented. The advantages of object-oriented software development are shown below:
+	- Modular development of code, which leads to easy maintenance and modification
+	- Reusability of code
+	- Improved reliability and flexibility of code
+	- Increased understanding of code
+
+Conceptps of Object-Oriented Programming
+	- Abstraction
+	- Encapsulation
+	- Polymorephosm
+	- Inheritance
+	- Predefined types must be objects
+	- User defined types must be objects
+	- Operation must be performed by sending messages to objects
+	
+Important Java Features
+	- Object-Oriented
+		- Follows the object-oriented paradigm which allows us to maintain our code as the combination of different tyhpe of objects that incorporates both data and behaviour
+	- Platform independent
+		- Comes with its platform on which its code is executed, doesn't depend upon the operating system to be executed
+	- High Performance
+		- 
+	- Miltithreaded
+	- Portable
+	- Secure
+	- Robust
+	- Architecture Neutral
+	- Interpreted
+	- Distributed
+	- Dynamic
+	
+Java isn't 100% object-oriented because of its primitive data types: Boolean, byte, char, int, float, double, long, short
+
+Abstraction is the process of separating ideas from specific instances and thus, develop classes in terms of their own functionality, instead of their implementation details. Java supports the creation and existence of abstract classes that expose interfaces, without including the actual implementation of all methods. The abstraction technique aims to separate the implementation details of a class from its behavior
+
+AbstractClassPerson.java
+-----
+public abstract class Person 
+{	
+	// Must be implemented by class
+	public abstract String getName();
+}
+-----
+
+EmployeeClass.java
+-----
+public class Employee extends Person
+{
+	private String name;
+	
+	public Employee(String name)
+	{
+		this.name = name;
+	}
+	
+	public String getName()
+	{
+		return this.name;
+	}
+	
+	public static void main(String args[])
+	{
+		 Employee employee = new Employee("John Wilson");
+         
+        System.out.println("Employee's Name "+ employee.getName()); 
+         
+        Person person = new Employee("Thomas Smith");
+         
+        System.out.println("Employee-Person's Name "+ person.getName());
+	}
+}
+
+What is Encapsulation?
+Encapsulation provides objects with the ability to hide their internal characteristics and behaviour. Each object provides a number of methods, which can be accessed by other objects and change its internal data. In java, there are three access modifiers: public, private, and protected. Each modifier imposes different access rights to other classes, either in the same or in external packages. Some of the advantages of using encapsulation are listed below:
+	- Internal state of every object is protected by hiding its attributes
+	- It increases usability and maintenance of code, because the behaviour of an object can be independently changed or extended
+	- It improves modularity by preventing objects to interact with each other, in an undesired way
+
+What are the differences between Abstraction and Encapsulation?
+Abstraction and encapsulation are complementary concepts. On the one hand, abstraction focuses on the behaviour of an object. On the other hand, encapsulation focuses on the implementation of an object's behaviour. Encapsulation is usually achieved by hiding information about the internal state of an object and thus, can be seen as a strategy used in order to prodive abstraction
+
+What is Polymorphism?
+There are two types of Polymorphism in Java:
+	- Compile-time polymorphism (Static binding) - Method overloading
+		- Methods of a class have the same name. Each method has a different number of parameters. It can have parameters with different types and order
+		- Method Overloading is to add to the method behaviour. It can be extending to the method's behaviour
+		- Overloaded methods will not have the same signature
+		- Inheritance is not needed in this case
+	- Runtime polymorphism (Dynamic binding) - Method overriding
+		- The subclass has method with the name as of a superclass method. it has the number of parameters, type of parameters and the return type as a of a superclass method
+		- Method Overriding is to modify the method's behaviour
+		- Overridden methods will have exactly the same signature
+		- Inheritance is required
+		
+Inheritance
+Inheritance provides an object with the ability to acquire the fields and methods of another class, called base class. Inheritance provides reusability of code and can be used to add additional features to an existing class, without modifying it.
+
+Composition
+Holding the reference of a class within some other class is known as composition. When an object contains the other object, if the contained object cannot exist without the existence of container object, then it is called composition in other words, we can say that composition is the particular case of aggregation which represents a stronger relationship between two objects. Example: a class contains students. A student cannot exist without a class. There exists composition between class and students
+
+Associations
+Represents the ability of one instance to send a message to another instance. This is typically implemented with a pointer or reference instance variable, although it might also be implemented as a method argument or the create of a local variable
+
+Aggregation
+Can be defined as the relationship between two classes where the aggregate class contains a reference to the class it owns. Bested described as a has-a relationship. For example, the aggregate class Employee having various fields such as age, name, and salary also contains an object of Address class habing various fields such as Address-Line 1, City, State, and pin-code. In other words, we can say that Employee (class) has an object of Address class.
+
+Collection
+The root interface in the collection hierarchy. A collection represents a group of objects, known as its elements. Some collections allow duplicate elements and others do not.
+
+List[Ordered] (ArrayList, LinkedList, Vector)
+An ordered collection (also known as a sequence). The user of this interface has precise control over where in the list each element is inserted. The user can access elements by their integer index (position in the list), and search for elements in the list.
+
+Set (HashSet, LinkedHashSet, TreeSet)
+A collection that contains no duplicate elements. More formally, sets contain no pair of elements and at most one null element. This interface models the mathemeatical set abstraction.
+
+Map (HasMap, LinkedHashMap, Hastable, Tree Map)
+An object that maps keys to values. A map cannot contain duplicate keys; each key can map to at most one value.
+
+Java Virtual Machine (JVM)
+Is a virtual machine that enables the computer to run the Java program. Acts like a run-time engine which calls the main method present in the java code.
+
+
+
+
+
+
+
+
+
+
+
+

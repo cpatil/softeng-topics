@@ -1,0 +1,28 @@
+Java Server Page
+
+Java Server Page is a technology for controlling the content or appearance of web pages through the use of servlets, small programs that are specified in the web page and run on the web server to modify the web page before it is sent to the user who requested it.
+
+Sun Microsystems, the developer of java also refers to the JSP technology as the servlet application program infterface (API). JSP is comparable to Microsoft's active server page (ASP) technology.
+
+Whereas a java server page calls a java program that is executed by the web server, an active server page contains a script that is interpreted by a script interpreter (such as vscripts or J script) before the page is sent to the user.
+
+** Common Gateway Interface (CGI): Is an interface specification that enables web servers to execute an external program, typically to process user requests.
+
+JSP is Java Server Pages is a dynamic web pages technology that is used to generate dynamic web content. JSP technology is based on different content formats such as XML or HTML or any other type of document contents. Sun Microsystems released JSP in 1999. It is similar to that of PHP and ASP (Microsoft Active Server Pages technology). It completely uses Java Programming Language. It was developed and released based on the JSR (Java Specification Request) 245 specification. The latest release version of Java Server Pages is 2.3. The Java Server Pages are compatible with a servlet container, which is of Java EE specification standard and requires application or web servers such as Tomcat or Jetty. Java Server Pages will be converted into Servlets during the runtime of an application. HTML content inside Java is called Servlet, whereas Java content in between HTML is called Java Server Pages technology.
+
+Key Differences between JSP and JavaScript
+
+Both are popular choices in the market; let us discuss some of the major difference :
+
+    Java Server Pages is a dynamic web page technology, whereas JavaScript is a scripting language to make the static HTML content as dynamic.
+    Java Server Pages has scriptlets to add Java code in between HTML, whereas JavaScript has many inbuilt functions that can be used to modify the data using the JavaScript objects that are based on the inheritance based on prototype pattern in the object-oriented programming model.
+    Java Server Pages has JSTL support to handle a few complex features, whereas JavaScript has different data types such as Boolean, Number, String, Date, Math, HTML DOM, and RegExp etc.,
+    Java Server Pages supports almost all web browsers, whereas JavaScript does not support the cross-browser functionality that results in the failure of executing few functionalities during the changes in a browser that results in a disadvantage.
+    Java Server Pages will be rendered and served from the back-end through web server. In contrast, JavaScript is a scripting language that can be used both at client-side and server-side either that comes at browser end or client end where the code will be compiled internally by the JavaScript inbuilt compiler called JIT compiler. It will be interpreted in the browser, and the modules’ execution happens later at the client-side environment, i.e. on the browser.
+    Java Server Pages has JSR specification, which is a standard from Oracle, whereas JavaScript has the latest standard called ES 9 (ECMAScript standard) that supports high-level functional aspects in its programming model and several higher-order functions.
+    Java Server Pages has limitations in developing complex features, whereas JavaScript has a standard specification that can be used to manipulate the complex modules using the powerful functional programming aspects of JS.
+    Java Server Pages has JSP implicit objects feature in web container whereas JavaScript has a hoisting feature which can be used in ES 6 standard by using let keyword.
+    Java Server Pages support Expression Language (EL) that provides access to functions and the data in Java objects, whereas JavaScript has implicit prototype reference to refer to the data in JS objects.
+    Java Server Pages has a JSP compiler, which translates JSP into Servlet to interpret the web page content and display, whereas JavaScript has a Javascript interpreter to parse the code, which is called the Javascript engine.
+
+

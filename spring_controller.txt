@@ -1,0 +1,23 @@
+For each request, a controller usually does the following steps:
+
+1. Listen to HTTP requests:
+    The controller should respond to certain URLs, HTTP methods and content types
+
+2. Deserialize Input:
+    The controller should parse the incoming HTTP request and create Java objects from variables in the URL, HTTP request parameters and the request body so that we can work with them in the code.
+
+3. Validate Input:
+    The controller is the first line of defense against bad input, so it's a place where we can validate the input
+
+4. Call the Business Logic: 
+    Having parsed the input, the controller must transform the input into the model expected by the business logic and pass it on to the business logic
+
+5. Serialize the Output:
+    The controller takes the output of the business logic and serializes it into an HTTP response
+
+6. Translate Exceptions:
+    If an exception occurs somewhere on the way, the controller should translate it into a meaningful error message and HTTP status for the user
+
+A simple unit test will not cover the HTTP layer. So we need to introduce Spring to our test to do the HTTP magic for us. Thus, we're building an integration test that tests the integration between our controller code and the componenets Spring provides for HTTP support
+
+An integration test with Spring fires up a Spring appication conext that contains all the beans we need. This includes framework beans that are responsible for listening to certain URLs, serializing and deserializing to and from JSON and translating exceptinos to HTTP. These beans will evaluate the annotations that would be ignored by a simple unit test

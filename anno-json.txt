@@ -1,0 +1,105 @@
+
+82
+
+Short answer:
+
+    @JsonIgnoreProperties(ignoreUnknown=true) is applicable at deserialization of JSON to Java object (POJO) only. If your POJO does not contain certain properties that JSON does contain, they are ignored and no error is thrown.
+
+    On the other hand @JsonInclude(Include.NON_EMPTY) is used at serialization of POJO to JSON and it says, skip POJO properties that are:
+
+        null or what is considered empty are not to be included. Definition of emptiness is data type-specific.
+
+Long answer:
+
+@JsonInclude
+
+It is used at serialization time only. It says that if the value of a property (or all properties) in question is equal to a certain value (null, empty - whatever that means, or a default value) this property is not serialized.
+
+Without this annotation, the property value is always serialized. The annotation helps to reduce the number of transferred properties (Property default value must be specified when it is not present on the receiving side).
+
+Example:
+
+public class Person {
+    public String firstName = "Mark";
+    public String middleName;
+    public String lastName = "Watney";
+}
+
+ObjectMapper mapper = new ObjectMapper();
+Person p = new Person();
+System.out.println(mapper.writeValueAsString(p));
+
+Produces following output:
+
+{"firstName":"Mark", "middleName":null, "lastName":"Watney"}
+
+But if Person is annotated with @JsonInclude(Include.NON_EMPTY), middleName is omitted from the output because its value is "empty" (null in this case):
+
+@JsonInclude(Include.NON_EMPTY)
+public static class Person {
+    [....]
+}
+
+Console output is: {"firstName":"Mark", "lastName":"Watney"}
+
+@JsonIgnoreProperties
+
+Is used to ignore certain properties in serialization and deserialization regardless of its values:
+
+    to prevent specified fields from being serialized or deserialized (i.e. not include in JSON output; or being set even if they were included): @JsonIgnoreProperties({ "internalId", "secretKey" })
+
+    To ignore any unknown properties in JSON input without exception: @JsonIgnoreProperties(ignoreUnknown=true)
+
+If JSON input is:
+
+{
+    "firstName": "Homer",
+    "middleName": "Jay",
+    "lastName": "Simpson"
+}
+
+And the class is:
+
+public class Person {
+    public String firstName;
+    public String lastName;
+}
+
+Deserialization mapper.readValue(json, Person.class) will produce UnrecognizedPropertyException exception:
+
+    Exception in thread "main" com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field "middleName" .....
+
+Because property middleName is not part of the Person class.
+
+But if class Person was annotated with @JsonIgnoreProperties(ignoreUnknown=true), unknown properties ( like middleName) would be ignored at deserialization into POJO.
+
+@JsonIgnoreProperties(ignoreUnknown=true)
+public class person {
+    [...]
+}
+
+Another common use case is to suppress serialization of sensitive properties, like for example password:
+
+@JsonIgnoreProperties("password")
+public static class User {
+    public String login = "simpsonh";
+    public String password = "D00nut";
+    public String firstName = "Homer";
+    public String middleName = "Jay";
+    public String lastName = "Simpson";
+}
+
+Now if you serialize User class , password will be omitted from the output:
+
+User u = new User();
+System.out.println(mapper.writeValueAsString(u));
+
+Console output:
+
+{
+    "login":"simpsonh",
+    "firstName":"Homer",
+    "middleName":"Jay",
+    "lastName":"Simpson"
+}
+
