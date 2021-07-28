@@ -23,7 +23,7 @@ Database Generator [code]
     add 10 items
 
 Networking:
-TCP/UDP HTTP IPv4/IPv6 Web Sockets
+HTTP IPv4/IPv6 Web Sockets
 
 Web Servers
 
