@@ -1,0 +1,42 @@
+Network Layers:
+Application (Layer 7)
+Presentation (Layer 6)
+Session (Layer 5)
+Transport (Layer 4)
+Network (Layer 3)
+Data Link (Layer 2)
+Physical (Layer 1)
+
+Network Protocol
+    - Set of rules that define how a message is structured for transmission
+    - Receiver can decode the message by following the same rules
+
+Protocol Design
+    - A network protocol connects one layer on one device to the same layer on another device
+        - Each layer adds control information to the message
+    - Physical layer ultimately carries a stream of bits containing the message
+    - Example: Connecting from app layer on one device to another app layer on a different device. Started by descending down the layer through the physical link then back up the layers to the app layer
+
+Protocol Stack
+    - Each network device has an implementation of each protocol at each layer
+    - Messages are wrapped in, then extracted from, these protocols
+
+Example Sending (L5 & L6 aren't used in practice)
+| Application (Layer 7) <------HTTP/HTTPS-------->  ^ Application (Layer 7)
+| Transport (Layer 4)   <-------TCP/UDP---------->  | Transport (Layer 4)
+| Network (Layer 3)     <----------IP------------>  | Network (Layer 3)
+| Data Link (Layer 2)   <-------Ethernet--------->  | Data Link (Layer 2)
+| Physical (Layer 1)    <--1000BASE-T Copper----->  | Physical (Layer 1)
+V---------------------------------------------------^
+
+Example Sending a Message
+    A message is sent to the app layer to be packed into transport protocol structures
+    Transport protocol structures are packed into network protocol datagrams
+    Network protocol datagrams are packed into data link protocol frames
+    Data link protocol frames are converted to a bit stream and set
+
+Example Receiving a Message:
+    Data link protocol frames are extracted from the physical layer bit stream
+    Network protocol datagrams are extracted from data link protocol frames
+    Transport protocol structures are extracted from network protocol datagrams
+    Original message is extracted from transport protocol structures

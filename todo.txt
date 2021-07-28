@@ -1,24 +1,38 @@
-postgresql documentation [code+notes]
+SQL Language [code+notes]
 
-backend api [code+notes]
-	migrate to flyway
-	spring security documentation
+Spring Security 
 
-java design patterns [code+notes]
+Ecommerce API [code+notes]
+	implement spring security
 
-java notes [notes]
-
-roadmap.sh [notes]
-
-springboot bootstrap project [code+documentation]
-
-data and algos [code+notes]
-	algos
-	data
+Springboot Bootstrap Project [code+documentation]
 
 Later:
-complex queries (using aggregate functions) practice questions
+Java design patterns [code+notes]
+
+Java notes [notes]
+
+Roadmap.sh [notes]
+
+Complex Queries (using aggregate functions) Practice Questions
+
 Elastisearch
-database generator [code]
+
+Database Generator [code]
     only 5 of same name
     add 10 items
+
+Networking:
+TCP/UDP HTTP IPv4/IPv6 Web Sockets
+
+Web Servers
+
+Proxies
+
+Caching
+
+Web Framework Runtimes
+
+Web Security
+
+Data and Algos [code+notes]
