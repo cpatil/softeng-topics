@@ -1,0 +1,56 @@
+EJB = Enterprise Java Beans
+	- Essential part of a J2EE platform
+	- Provides an architecture to develop and deploy component based enterprise applications considering robustness, high scalability, and high performance
+	- Can be deployed on any of the application server compliant with the J2EE standard specification
+
+Inversion of Control (IoC)
+	- Programming principle which inverts the flow of control as compared to traditional control flow
+	- Hollywood principle: "don't call us, we'll call you"
+	
+Dependency Injection (IoC)
+	- Binds together the classes of your application with the help of the instructions
+		- Annotations
+		- Explicitly binding the configuration code
+		- XML configuration
+	- Solves tight coupling between classes (decoupling)
+	- Spring DI controller will instantiate the helper, utility, and application classes (spring beans)
+	- Enables to test the application alone
+
+reference: https://medium.com/analytics-vidhya/dependency-injection-concept-of-spring-framework-d9c3688005f8
+
+Injection types
+
+There are three options for how dependencies can be injected into a bean:
+
+    Through a constructor
+    Through setters or other methods
+    Through reflection, directly into fields
+
+You are using option 3. That is what is happening when you use @Autowired directly on your field.
+
+Injection guidelines
+
+A general guideline, which is recommended by Spring (see the sections on Constructor-based DI or Setter-based DI) is the following:
+
+    For mandatory dependencies or when aiming for immutability, use constructor injection
+    For optional or changeable dependencies, use setter injection
+    Avoid field injection in most cases
+
+Field injection drawbacks
+
+The reasons why field injection is frowned upon are as follows:
+
+    You cannot create immutable objects, as you can with constructor injection
+    Your classes have tight coupling with your DI container and cannot be used outside of it
+    Your classes cannot be instantiated (for example in unit tests) without reflection. You need the DI container to instantiate them, which makes your tests more like integration tests
+    Your real dependencies are hidden from the outside and are not reflected in your interface (either constructors or methods)
+    It is really easy to have like ten dependencies. If you were using constructor injection, you would have a constructor with ten arguments, which would signal that something is fishy. But you can add injected fields using field injection indefinitely. Having too many dependencies is a red flag that the class usually does more than one thing, and that it may violate the Single Responsibility Principle.
+
+Conclusion
+
+Depending on your needs, you should primarily use constructor injection or some mix of constructor and setter injection. Field injection has many drawbacks and should be avoided. The only advantage of field injection is that it is more convenient to write, which does not outweigh all the cons.
+
+*** Don't use @Autowired (field injections)
+    - hides dependencies instead of making them explicit
+
+
