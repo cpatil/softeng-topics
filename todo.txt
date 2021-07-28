@@ -1,0 +1,24 @@
+postgresql documentation [code+notes]
+
+backend api [code+notes]
+	migrate to flyway
+	spring security documentation
+
+java design patterns [code+notes]
+
+java notes [notes]
+
+roadmap.sh [notes]
+
+springboot bootstrap project [code+documentation]
+
+data and algos [code+notes]
+	algos
+	data
+
+Later:
+complex queries (using aggregate functions) practice questions
+Elastisearch
+database generator [code]
+    only 5 of same name
+    add 10 items

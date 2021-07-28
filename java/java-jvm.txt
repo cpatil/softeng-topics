@@ -1,0 +1,35 @@
+Java Bytecode
+The instruction set of the java virtual machine.
+
+Each bytecode is composed of one byte that represents the opcode, along with zero or more bytes for operands. Of the 256 possible byte-long opcodes, as of 2015, 202 are in use, 51 are reserved for future use, and 3 instructions are permanently reserved for JVM implementations to use. Two of these (impdep1 and impdep2) are to provide traps for implementation-specific software and hardware, respectively. The third is used for debuggers to implement breakpoints.
+
+Instructions fall into a number of broad groups:
+    - Load and store (e.g. aload_0, istore)
+    - Arithmetic and logic (e.g. ladd, fcmpl)
+    - Type conversion (e.g. i2b, d2i)
+    - Object creation and manipulation(new, putfield)
+    - Operand stack management (e.g. swap, dup2)
+    - Control transfer (e.g. ifeq, goto)
+    - Method incovation and return (e.g. invokespecial, areturn)
+
+There are also a few instructions for a number of more specialized tasks such as exception throwing, synchronization, etc.
+
+Many instructions have prefixes and/or suffixes referring to the typs of operands they operate on.
+
+Prefix/Suffix   Operand Type
+i               integer
+l               long
+s               short
+b               byte
+c               character
+f               float
+d               double
+a               reference
+
+For example, 'iadd' will add two integers, while 'dadd' will add two doubles. The const, load, and store instructions may also take a suffix of the form _n, where n is a number from 0-3 for load and store. The maximum n for const differes by type.
+
+The const instructions push a value of the specified type onto the stack. For example, iconst_5 will push an integer (32 bit value) with the value 5 onto the stack, while dconst_1 will push a double (64 bit floating point value) with the value 1 onto the stack. There is also an aconst_null, which pushes a null reference. ###
+
+Java Virtual Machine (JVM)
+
+An abstract machine. It is a specification that provides runtime environment in which java bytecode can be executed. Available for many hardware and software platforms, JVM is platform dependent.

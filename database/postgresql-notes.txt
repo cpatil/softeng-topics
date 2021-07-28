@@ -1,0 +1,644 @@
+Data Types
+-----------
+Name                                Aliases             Description
+-----------------------------------------------------------------------------------------------------------
+bigint                              int8                signed eight-byte integer
+bigserial                           serial8             autoincrementing eight-byte integer
+bit[(n)]                                                fixed-length bit string
+bit varying [(n)]                   varbit[(n)]         variable-length bit string
+boolean                             bool                logical Boolean (true/false)
+box                                                     rectangular box on a plane
+bytea                                                   binary data ("byte array")
+character [(n)]                     char[(n)]           fixed-length character string
+character varying [(n)]             varchar[(n)]            variable-length character string
+cidr                                                    IPv4 or IPv6 network address
+circle                                                  circle on a plane
+date                                                    calendar date(year, month, day)
+double precision                    float8              double precision floating-point number (8 bytes)
+inet                                                    IPv4 or IPv6 host address
+integer                             int, int4           signed four-byte integer
+interval [fields][(p)]                                  time span
+json                                                    textual JSON data
+jsonb                                                   binary JSON data, decomposed
+line                                                    infinite line on a plane
+lseg                                                    line segment on a plane
+macaddr                                                 MAC (Media Access Control) address
+macaddr8                                                MAC address (EUI-64 format)
+money                                                   currency amount
+numeric [(p, s)]                    decimal[(p,s)]      exact numeric of selectable precision (173226.62: p=8, s=2)
+path                                                    geometricpath on a plane
+pg_lsn                                                  PostgreSQL log sequence number
+pg_snapshot                                             user-level transaction ID pg_snapshot
+point                                                   geometric point on a plane
+polygon                                                 closed geometric path on a plane
+real                                float4              single precision floating-point number (4 bytes)
+smallint                            int                 signed two-byte integer
+smallserial                         serial2             autoincrementing two-byte integer
+serial                              serial4             autoincrementing four-byte integer
+text                                                    variable-length character string
+time [(p)][without time zone]                           time of day (no time zone)
+time [(p)] with time zone           timetz              time of day, including time zone
+timestamp [(p)][without time zone]                      date and time (no time zone)
+timestamp [ (p) ] with time zone    timestamptz         date and time, including time zone
+tsquery                                                 text search query
+tsvector                                                text search document
+txid_snapshot                                           user-level transaction ID snapshot (deprecated; see pg_snapshot)
+uuid                                                    universally unique identifier
+xml                                                     XML data
+
+An aggregate function is a mathematical computation involving a range of values that results in just a single value expressing the significance of the accumlated data it is derived from.Aggregate functions compute a single result from a set of input values.
+General-Purpose Aggregate Functions
+--------------------------------------
+Function 								Argument Type(s) 					Return Type 						Description
+-------------------------------------------------------------------------------------------------------------------------------------------
+array_agg(expression) 					any non-array type 					array of the argument type 			input values, including nulls, concatenated into an array
+array_agg(expression) 					any array type 						same as argument data type 			input arrays concatenated into array of one higher dimension (inputs must all have same dimensionality, and cannot be empty or null)
+avg(expression) 						smallint, int, bigint, 
+										real, double precision, 
+										numeric, or interval 				numeric for any integer-type 
+																			argument, double precision 
+																			for a floating-point argument, 
+																			otherwise the same as the 
+																			argument data type 					the average (arithmetic mean) of all non-null input values
+bit_and(expression) 					smallint, int, bigint, or bit 		same as argument data type 			the bitwise AND of all non-null input values, or null if none
+bit_or(expression) 						smallint, int, bigint, or bit 		same as argument data type 			the bitwise OR of all non-null input values, or null if none
+bool_and(expression) 					bool 								bool 								true if all input values are true, otherwise false
+bool_or(expression) 					bool 								bool 								true if at least one input value is true, otherwise false
+count(*) 	  																bigint 								number of input rows
+count(expression) 						any 								bigint 								number of input rows for which the value of expression is not null
+every(expression) 						bool 								bool 								equivalent to bool_and
+json_agg(expression) 					any 								json 								aggregates values, including nulls, as a JSON array
+jsonb_agg(expression) 					any 								jsonb 								aggregates values, including nulls, as a JSON array
+json_object_agg(name, value) 			(any, any) 							json 								aggregates name/value pairs as a JSON object; values can be null, but not names
+jsonb_object_agg(name, value) 			(any, any) 							jsonb 								aggregates name/value pairs as a JSON object; values can be null, but not names
+max(expression) 						any numeric, string, 
+										date/time, network, 
+										or enum type, or arrays 
+										of these types 						same as argument type 				maximum value of expression across all non-null input values
+min(expression) 						any numeric, string, 
+										date/time, network, 
+										or enum type, or arrays
+										 of these types 					same as argument type 				minimum value of expression across all non-null input values
+string_agg(expression, delimiter) 		(text, text) or (bytea, bytea) 		same as argument types 				non-null input values concatenated into a string, separated by delimiter
+sum(expression) 						smallint, int, bigint,
+										real, double precision, 
+										numeric, interval, or money 		bigint for smallint or 
+																			int arguments, numeric 
+																			for bigint arguments, 
+																			otherwise the same as 
+																			the argument data type 				sum of expression across all non-null input values
+xmlagg(expression) 						xml 								xml 								concatenation of non-null XML values (see also Section 9.14.1.7)
+
+CREATE TABLE table_name (
+	Column name + data type + constraints if any
+)
+
+CREATE TABLE person (
+	id int,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  gender VARCHAR(6),
+  date_of_birth DATE,
+)
+
+// With contraints
+CREATE TABLE person (
+	id BIGSERIAL NOT NULL PRIMARY KEY,
+	first_name VARCHAR(50) NOT NULL,
+	last_name VARCHAR(50) NOT NULL,
+	gender VARCHAR(15) NOT NULL,
+	date_of_birth DATE NOT NULL,
+	email VARCHAR(150)
+);
+
+INSERT INTO person (
+	first_name,
+	last_name,
+	gender,
+	date_of_birth,
+	email)
+VALUES ('Joshua', 'Henriques', 'MALE', DATE '1995-03-03');
+Output: INSERT 0 1
+
+INSERT INTO person (
+	first_name,
+	last_name,
+	gender,
+	date_of_birth,
+	email)
+VALUES ('Nica', 'Obillo', 'FEMALE', DATE '1998-01-05', 'nica_obillo@gmail.com');
+Output: INSERT 0 1
+
+
+SELECT * FROM person;
+Output:
+ id | first_name | last_name | gender | date_of_birth |         email
+----+------------+-----------+--------+---------------+-----------------------
+   1 | Joshua     | Henriques | MALE   | 1995-03-03    |
+   2 | Nica       | Obillo    | FEMALE | 1998-01-05    | nica_obillo@gmail.com
+
+
+SELECT first_name FROM person;
+Output:
+ first_name
+------------
+ Nica
+ Joshua
+(2 rows)
+
+
+SELECT first_name, last_name FROM person;
+Output:
+ first_name | last_name 
+------------+-----------
+ Nica       | Obillo    
+ Joshua     | Henriques 
+(2 rows)
+
+
+SELECT first_name, email FROM person;
+Output:
+ first_name |         email
+------------+-----------------------
+ Nica       | nica_obillo@gmail.com 
+ Joshua     |
+(2 rows)
+
+
+ASC = Ascending order
+DESC = Descending order
+SELECT * FROM person ORDER BY country_of_birth ASC;
+Output:
+  id  |  first_name  |   last_name   |                 email                 |   gender    | date_of_birth | country_of_birth
+------+--------------+---------------+---------------------------------------+-------------+---------------+------------------
+  321 | Stanislaus   | Haseldine     | shaseldine8w@simplemachines.org       | Genderqueer | 2021-02-09    | AF
+  105 | Tamara       | Haensel       | thaensel2w@ucoz.com                   | Male        | 2021-02-08    | AF
+  441 | Fanechka     | Abbitt        | fabbittc8@theatlantic.com             | Non-binary  | 2020-10-20    | AF
+  784 | Hildegaard   | Aitkin        | haitkinlr@comcast.net                 | Female      | 2020-08-25    | AF
+  543 | Feodora      | Raitt         | fraittf2@google.com.au                | Non-binary  | 2020-12-04    | AF
+  300 | Ignatius     | Millgate      |                                       | Genderfluid | 2020-12-09    | AL
+   31 | Thorsten     | Dulieu        | tdulieuu@sun.com                      | Polygender  | 2020-11-27    | AL
+
+
+SELECT * FROM person ORDER BY id, last_name; (With two args, use at most one column)
+Output:
+  id  |  first_name  |   last_name   |                 email                 |   gender    | date_of_birth | country_of_birth
+------+--------------+---------------+---------------------------------------+-------------+---------------+------------------
+    1 | Janaya       | Lindenstrauss | jlindenstrauss0@w3.org                | Bigender    | 2021-05-27    | ID
+    2 | Lauralee     | Janovsky      | ljanovsky1@vistaprint.com             | Bigender    | 2021-03-01    | CN
+    3 | Ximenes      | Syrad         | xsyrad2@list-manage.com               | Female      | 2020-09-18    | PH
+    4 | Suzi         | McTrustam     |                                       | Agender     | 2020-12-07    | SY
+
+
+DISTINCT = Unique column data
+SELECT DISTINCT country_of_birth FROM person ORDER BY country_of_birth DESC;
+Output:
+ country_of_birth
+------------------
+ ZW
+ ZM
+ ZA
+ YE
+ VN
+
+
+WHERE = filter data on conditions
+SELECT * FROM person WHERE gender = 'FEMALE' AND (country_of_birth = 'CA' OR country_of_birth = 'US');
+Output:
+ id  | first_name | last_name |             email             | gender | date_of_birth | country_of_birth 
+-----+------------+-----------+-------------------------------+--------+---------------+------------------
+ 142 | Tito       | Maghull   | tmaghull3x@taobao.com         | Female | 2020-10-10    | CA
+ 693 | Lorri      | Moston    | lmostonj8@linkedin.com        | Female | 2021-01-29    | CA
+ 695 | Loria      | Garlette  | lgarletteja@businessweek.com  | Female | 2021-07-11    | US
+ 779 | Blair      | Pratte    | bprattelm@people.com.cn       | Female | 2020-11-05    | CA
+ 879 | Cody       | Nowell    | cnowelloe@smugmug.com         | Female | 2020-10-18    | US
+ 887 | Riva       | Rapsey    | rrapseyom@businessinsider.com | Female | 2020-09-10    | US
+(6 rows)
+
+
+Comparison Operators
+SELECT 1 >= 2;
+Output:
+ ?column?
+----------
+ f
+(1 row)
+
+SELECT 1 <> 2; <> = not equal
+Output:
+ ?column? 
+----------
+ t
+(1 row)
+
+
+LIMIT (not standard SQL), OFFSET, FETCH(SQL native LIMIT)
+SELECT * FROM person LIMIT 5;
+Output:
+ id | first_name |   last_name   |           email           |   gender    | date_of_birth | country_of_birth 
+----+------------+---------------+---------------------------+-------------+---------------+------------------
+  1 | Janaya     | Lindenstrauss | jlindenstrauss0@w3.org    | Bigender    | 2021-05-27    | ID
+  2 | Lauralee   | Janovsky      | ljanovsky1@vistaprint.com | Bigender    | 2021-03-01    | CN
+  3 | Ximenes    | Syrad         | xsyrad2@list-manage.com   | Female      | 2020-09-18    | PH
+  4 | Suzi       | McTrustam     |                           | Agender     | 2020-12-07    | SY
+  5 | Garnet     | Sheldrake     | gsheldrake4@nsw.gov.au    | Genderqueer | 2020-08-29    | ID
+(5 rows)
+
+SELECT * FROM person OFFSET 5 LIMIT 5;
+Output:
+ id | first_name | last_name |         email          |   gender    | date_of_birth | country_of_birth
+----+------------+-----------+------------------------+-------------+---------------+------------------
+  6 | Hendrick   | Turland   | hturland5@flickr.com   | Agender     | 2021-04-20    | TH
+  7 | Edik       | Poyzer    | epoyzer6@blinklist.com | Genderfluid | 2021-03-24    | DE
+  8 | Broderic   | Chapier   | bchapier7@hp.com       | Non-binary  | 2021-06-23    | TH
+  9 | Iorgos     | Holah     | iholah8@nbcnews.com    | Male        | 2021-03-06    | TH
+ 10 | Tonia      | Krahl     |                        | Polygender  | 2021-02-07    | DE
+(5 rows)
+
+SELECT * FROM person OFFSET 5 FETCH FIRST 5 ROW ONLY;
+Output:
+ id | first_name | last_name |         email          |   gender    | date_of_birth | country_of_birth 
+----+------------+-----------+------------------------+-------------+---------------+------------------
+  6 | Hendrick   | Turland   | hturland5@flickr.com   | Agender     | 2021-04-20    | TH
+  7 | Edik       | Poyzer    | epoyzer6@blinklist.com | Genderfluid | 2021-03-24    | DE
+  8 | Broderic   | Chapier   | bchapier7@hp.com       | Non-binary  | 2021-06-23    | TH
+  9 | Iorgos     | Holah     | iholah8@nbcnews.com    | Male        | 2021-03-06    | TH
+ 10 | Tonia      | Krahl     |                        | Polygender  | 2021-02-07    | DE
+(5 rows)
+
+
+IN = Takes an array of values and then returns a query matching those values
+SELECT * FROM person WHERE country_of_birth = 'CA' OR country_of_birth = 'TH' OR country_of_birth = 'DE' ORDER BY country_of_birth;
+^^^ Equivalent to:
+SELECT * FROM person WHERE country_of_birth IN ('CA', 'TH', 'DE') ORDER BY country_of_birth;
+
+
+BETWEEN = specify range (is this inclusive or exclusive)
+SELECT * FROM person WHERE date_of_birth BETWEEN DATE '2000-01-01' AND '2018-01-01';
+
+
+LIKE and iLIKE = pattern matching, '%' match any character, '_' has to match single characters, iLIKE ignores case
+SELECT * FROM person WHERE email LIKE '%@google.%';
+Output:
+ id  | first_name |  last_name  |            email            |   gender    | date_of_birth | country_of_birth
+-----+------------+-------------+-----------------------------+-------------+---------------+------------------
+  58 | Madella    | Lambertazzi | mlambertazzi1l@google.co.uk | Bigender    | 2020-11-04    | CN
+  62 | Glyn       | Ratazzi     | gratazzi1p@google.pl        | Female      | 2021-06-27    | CN
+ 133 | Torrin     | Fisby       | tfisby3o@google.ca          | Genderqueer | 2021-03-01    | CN
+ 170 | Arthur     | Caghy       | acaghy4p@google.com.br      | Agender     | 2021-01-04    | GN
+
+SELECT * FROM person WHERE email LIKE '_____@google%';
+Output:
+ id  | first_name | last_name |         email          |   gender    | date_of_birth | country_of_birth 
+-----+------------+-----------+------------------------+-------------+---------------+------------------
+ 297 | Marie      | Mynard    | mmynard88@google.co.uk | Female      | 2020-12-04    | ID
+ 342 | Udall      | Fevier    | ufevier9h@google.es    | Non-binary  | 2021-07-23    | PT
+ 464 | Gawen      | Ducker    | gduckercv@google.com   | Genderfluid | 2020-12-24    | ID
+ 471 | Brigitte   | Kevlin    | bkevlind2@google.nl    | Genderfluid | 2020-10-20    | PL
+
+
+GROUP BY = Allows to group data based a column
+SELECT country_of_birth, COUNT(*) FROM person GROUP BY country_of_birth ORDER BY count DESC;
+Output:
+ country_of_birth | count
+------------------+-------
+ CN               |   178
+ ID               |   109
+ RU               |    62
+ PH               |    48
+ BR               |    37
+
+
+GROUP BY ... HAVING = extra filter
+SELECT country_of_birth, COUNT(*) FROM person GROUP BY country_of_birth HAVING COUNT(*) > 30 ORDER BY count DESC;
+Output:
+ country_of_birth | count 
+------------------+-------
+ CN               |   178
+ ID               |   109
+ RU               |    62
+ PH               |    48
+ BR               |    37
+ PT               |    33
+ US               |    32
+ PL               |    32
+(8 rows)
+
+MIN(), MAX(), ROUND(AVG())
+SELECT make, MIN(price) FROM car GROUP BY make ORDER BY MIN(price) ASC;
+Output:
+     make      |    min
+---------------+-----------
+ Toyota        |  10016.40
+ Chrysler      |  10030.06
+ Ford          |  10050.10
+ BMW           |  10244.33
+ Lincoln       |  10507.69
+
+SELECT make, MAX(price) FROM car GROUP BY make ORDER BY MAX(price) DESC;
+Output:
+     make      |    max
+---------------+-----------
+ Mercury       |  99987.18
+ Ford          |  99832.06
+ Toyota        |  99483.82
+ Nissan        |  99409.90
+ Buick         |  99345.76
+
+SELECT make, ROUND(AVG(price)) FROM car GROUP BY make ORDER BY ROUND(AVG(price)) DESC;
+Output:
+     make      | round
+---------------+-------
+ Eagle         | 81864
+ Maserati      | 77675
+ Corbin        | 74943
+ Ferrari       | 72005
+ Subaru        | 66756
+
+SUM()
+test=# SELECT SUM(price) FROM car;
+Output:
+     sum     
+-------------
+ 55978801.65
+
+SELECT make, SUM(price) FROM car GROUP BY make ORDER BY SUM(price) DESC;
+Output:
+      make      |    sum
+---------------+------------
+ Chevrolet     | 4820080.06
+ Ford          | 4191972.56
+ Dodge         | 2982678.48
+ GMC           | 2911178.77
+
+# Discounted 10% from price, AS = alias
+SELECT make, model, price AS original_price, ROUND(price*0.10, 2) AS ten_percent, ROUND(price - (price*0.10), 2) AS total FROM car;
+Output:
+     make      |          model          | original_price | ten_percent |  total     
+---------------+-------------------------+----------------+-------------+----------  
+ Mercedes-Benz | SL-Class                |       89195.76 |     8919.58 | 80276.18   
+ Dodge         | Journey                 |       64207.52 |     6420.75 | 57786.77   
+ Volkswagen    | Fox                     |       92010.83 |     9201.08 | 82809.75   
+ Volkswagen    | rio                     |       95256.67 |     9525.67 | 85731.00   
+ Volkswagen    | Cabriolet               |       66873.10 |     6687.31 | 60185.79
+
+COALESCE()/ISNULL() Allows us to have a default value if null
+SELECT COALESCE(10) AS number;
+Output:
+ number
+--------
+     10
+(1 row)
+
+SELECT COALESCE(null, null, 10) AS number;
+Output:
+ number
+--------
+     10
+(1 row)
+
+SELECT COALESCE(null, 1, 10) AS number;
+Output:
+ number
+--------
+      1
+(1 row)
+
+SELECT COALESCE(email, 'Email Not Provided') FROM person;
+Output:
+               coalesce
+---------------------------------------
+ jlindenstrauss0@w3.org
+ ljanovsky1@vistaprint.com
+ xsyrad2@list-manage.com
+ Email Not Provided
+ gsheldrake4@nsw.gov.au
+ hturland5@flickr.com
+
+NULLIF: returns first arugement if the second arg isn't equal to the first and returns null 
+if the two values are the same. Used to prevent divid-by-zero exceptions
+SELECT (45 / 0) AS value;
+Output:
+ERROR:  division by zero
+
+SELECT COALESCE((45 / NULLIF(0,0)), 0) AS value;
+Output:
+ value 
+-------
+       
+(1 row)
+
+TIMESTAMPS & DATE
+SELECT NOW()::DATE;
+SELECT NOW()::TIME;
+
+Date/Time Types
+-----------------
+Name 	                                   Storage Size 	Description 	                    Low Value 	     High Value 	     Resolution
+timestamp [ (p) ] [ without time zone ] 	8 bytes 	     both date and time (no time zone) 	4713 BC 	          294276 AD 	     1 microsecond / 14 digits
+timestamp [ (p) ] with time zone 	          8 bytes 	     both date and time, with time zone 4713 BC 	          294276 AD 	     1 microsecond / 14 digits
+date 	                                   4 bytes 	     date (no time of day) 	          4713 BC 	          5874897 AD 	     1 day
+time [ (p) ] [ without time zone ] 	     8 bytes 	     time of day (no date) 	          00:00:00 	          24:00:00 	          1 microsecond / 14 digits
+time [ (p) ] with time zone             	12 bytes 	     times of day only, with time zone 	00:00:00+1459 	     24:00:00-1459 	     1 microsecond / 14 digits
+interval [ fields ] [ (p) ] 	               16 bytes 	     time interval 	                    -178000000 years 	178000000 years 	1 microsecond / 14 digits
+
+Adding and subtracting date
+SELECT (NOW() - INTERVAL '1 YEAR')::DATE;
+Output:
+2031-07-27
+
+SELECT (NOW() + INTERVAL '10 YEARS')::DATE;
+Output: 
+2031-07-27
+
+SELECT (NOW() + INTERVAL '10 MONTHS')::DATE;
+Output:
+2031-07-27
+
+SELECT (NOW() - INTERVAL '10 DAYS')::DATE;
+Output:
+2031-07-27
+
+EXTRACTing fields from TIMESTAMP
+
+SELECT EXTRACT(YEAR FROM NOW());
+Output:
+2021
+
+SELECT EXTRACT(MONTH FROM NOW());
+Output:
+7
+
+SELECT EXTRACT(DAY FROM NOW());
+Output:
+27
+
+SELECT EXTRACT(DOW FROM NOW());
+Output:
+2
+
+AGE function
+SELECT first_name, last_name, gender, country_of_birth, date_of_birth, EXTRACT(YEAR FROM (AGE(NOW()::DATE, date_of_birth))) AS age FROM person;
+
+Primary Keys (PK)
+Uniquely identify a record in tables
+
+Removes primary key from table
+ALTER TABLE person DROP CONSTRAINT person_pkey;
+
+Add a primary key
+ALTER TABLE person ADD CONSTRAINT PRIMARY KEY (id);
+
+Delete record from table
+DELETE FROM person WHERE id = 1;
+
+UNIQUE constraint
+ALTER TABLE person ADD CONSTRAINT unique_email UNIQUE (email);
+ALTER TABLE person ADD UNIQUE (email); // Named by postgres
+
+CHECK Constraints add a constraint on a bool condition
+ALTER TABLE person ADD CONSTRAINT gender_constraint CHECK (gender = 'Female' OR gener = 'Male');
+
+DELETE
+DELETE FROM person WHERE id = 10;
+DELETE FROM person WHERE gender = 'Female' AND country_of_birth = 'Nigeria';
+
+UPDATE
+UPDATE person SET email = 'testMe@gmail.com' WHERE id = '142';
+UPDATE pesron SET first_name = 'Omar', last_name = 'Montana', email = 'montana.omar@gmail.com' WHERE id = 11;
+
+ON CONFLICT (column) DO NOTHING
+Output:
+ERROR:  duplicate key value violates unique constraint "unique_email"
+DETAIL:  Key (email)=(jlindenstrauss0@w3.org) already exists.
+
+INSERT INTO person (first_name, last_name, email, gender, date_of_birth, country_of_birth) 
+VALUES ('Janaya', 'Lindenstrauss', 'jlindenstrauss0@w3.org', 'Bigender', '2021/05/27', 'ID')
+ON CONFLICT DO NOTHING; // ON CONFLICT (id) DO NOTHING
+Output:
+INSERT 0 0
+
+UPSERT: update and insert
+INSERT INTO person (first_name, last_name, email, gender, date_of_birth, country_of_birth) 
+VALUES ('Janaya', 'Lindenstrauss', 'jlindenstrauss0@w3.org', 'Bigender', '2021/05/27', 'ID')
+ON CONFLICT DO UPDATE SET email = EXCLUDED.email;
+INSERT 0 1
+-------------------------------------------------------------------------------------------------------
+                                         Table "public.person"
+      Column      |          Type          | Collation | Nullable |              Default
+------------------+------------------------+-----------+----------+------------------------------------
+ id               | bigint                 |           | not null | nextval('person_id_seq'::regclass)
+ first_name       | character varying(50)  |           | not null |
+ last_name        | character varying(50)  |           | not null |
+ gender           | character varying(7)   |           | not null |
+ email            | character varying(100) |           |          |
+ date_of_birth    | date                   |           | not null |
+ country_of_birth | character varying(50)  |           | not null |
+ car_id           | bigint                 |           |          |
+Indexes:
+    "person_pkey" PRIMARY KEY, btree (id)
+    "person_car_id_key" UNIQUE CONSTRAINT, btree (car_id)
+Foreign-key constraints:
+    "person_car_id_fkey" FOREIGN KEY (car_id) REFERENCES car(id)
+------------------------------------------------------------------------------------------------------------
+                                    Table "public.car"
+ Column |          Type          | Collation | Nullable |             Default
+--------+------------------------+-----------+----------+---------------------------------
+ id     | bigint                 |           | not null | nextval('car_id_seq'::regclass)
+ make   | character varying(100) |           | not null |
+ model  | character varying(100) |           | not null |
+ price  | numeric(19,2)          |           | not null |
+Indexes:
+    "car_pkey" PRIMARY KEY, btree (id)
+Referenced by:
+    TABLE "person" CONSTRAINT "person_car_id_fkey" FOREIGN KEY (car_id) REFERENCES car(id)
+
+Assign a person a car
+UPDATE person SET car_id = 3 WHERE id = 1;
+
+UPDATE person SET car_id = 3 WHERE id = 2;
+Output:
+ERROR:  duplicate key value violates unique constraint "person_car_id_key"
+DETAIL:  Key (car_id)=(3) already exists.
+
+Inner Join takes two tables A and B, if there is a foreign key in both then we have a new table C
+SELECT * FROM person JOIN car ON person.car_id = car.id;
+Output:
+ id | first_name | last_name | gender |           email            | date_of_birth | country_of_birth | car_id | id | make  | model |  price   
+----+------------+-----------+--------+----------------------------+---------------+------------------+--------+----+-------+-------+----------
+  2 | Nica       | Henriques | Female | henriques.nica@gmail.com   | 1998-01-05    | US               |      2 |  2 | Audi  | A7    | 27762.38
+  1 | Joshua     | Henriques | Male   | henriques.joshua@gmail.com | 1995-03-03    | CA               |      3 |  3 | Honda | Civic | 57263.38
+(2 rows)
+
+SELECT person.first_name, car.make, car.model, car.price FROM person JOIN car ON person.car_id = car.id;
+Output:
+ first_name | make  | model |  price   
+------------+-------+-------+----------
+ Nica       | Audi  | A7    | 27762.38
+ Joshua     | Honda | Civic | 57263.38
+(2 rows)
+
+Left joins takes two tables A and B and creates table C with all rows from A and B
+SELECT person.first_name, car.make, car.model, car.price FROM person LEFT JOIN car ON person.car_id = car.id;
+Output:
+ first_name | make  | model |  price   
+------------+-------+-------+----------
+ Nica       | Audi  | A7    | 27762.38
+ Joshua     | Honda | Civic | 57263.38
+ Adam       |       |       |
+(3 rows)
+
+SELECT person.first_name, car.make, car.model, car.price FROM person LEFT JOIN car ON person.car_id = car.id WHERE car.id IS NULL;
+Output:
+ first_name | make | model | price 
+------------+------+-------+-------
+ Adam       |      |       |
+(1 row)
+
+Remove foreign key before deleting car
+UPDATE person SET car_id = NULL WHERE id = 1;
+Output:
+UPDATE 1
+
+Exporting to CSV;
+\copy (SELECT * FROM person LEFT JOIN car ON car.id = person.car_id) TO './person-car.csv' DELIMITER ',' CSV HEADER;
+
+Serial and Sequences
+
+SELECT * FROM person_id_seq;
+nextval('person_id_seq'::regclass)
+Output:
+ last_value | log_cnt | is_called 
+------------+---------+-----------
+          3 |      30 | t
+(1 row)
+
+SELECT * FROM car_id_seq;
+nextval('car_id_seq'::regclass)
+Output:
+ last_value | log_cnt | is_called 
+------------+---------+-----------
+          3 |      30 | t
+(1 row)
+
+Set a seqence
+ALTER SEQUENCE person_id_seq RESTART WITH 444;
+SELECT * FROM nextval('person_id_seq'::regclass);
+Output:
+ nextval 
+---------
+     444
+
+Extensions
+SELECT * FROM pg_available_extensions;
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+\df = available functions
+
+SELECT uuid_generate_v4();
+Output:
+           uuid_generate_v4
+--------------------------------------
+ 3aebd43e-5713-4f90-8d2f-8f5f2e7df8e5
+(1 row)
+

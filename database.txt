@@ -1,2 +1,0 @@
-Composite Key
-Is a candidate key that consists of two or more attributes (table columns) that together uniquely identify an entity occurrence (table row)
