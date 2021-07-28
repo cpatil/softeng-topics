@@ -1,0 +1,176 @@
+Lexical Structure
+--------------------------------------------------------------------------
+A command is composed of a sequence of tokens
+
+A token can be a key word, an identifier, a quoted identifier, a literal (or constant), 
+or a special character symbol
+
+Implicitly-typed constants: strings, bit strings, and numbers
+A string is bounded by single quotes, e.g. 'This is a string with Dianne''s horse'
+
+Escape characters by doubling them
+
+Backslash Escape Sequence       Interpretation
+------------------------------------------------
+\b                              backspace
+\f                              formfeed
+\n                              newline
+\r                              carriage return
+\t                              tab
+\o, \oo, \ooo (o=(0-7))         octal byte value
+\xh, \xhh (h=(0-9,A-F))         hexadecimal byte value
+\uxxx, \Uxxxx (x=(0-9,A-F))     16 or 32-bit hexadecimal Unicode character value
+
+Dollar-Quoted String Constants (for escaping): 
+$$Dianne's horse$$
+$SomeTag$Dianne's horse$SomeTag$
+
+Bit-String Constants
+Dolar quoting cannot be used in a bit-string conastant
+Binary: B'1001'
+Hexadecimal: X'1FF'
+
+Numeric Constants
+Constants that contain decimal points and/or exponents are always initially type Numeric
+otherwise persumed integer (32 bit) or bigint(64bit) if it fits
+
+Cast to specific data type:
+    To be treated as type real (float4)
+    REAL '1.23' -- string style
+    1.23::REAL  -- PostgreSQL style
+
+Constants of Other Types
+Arbitrary type notations:
+    type 'string':
+        Only used to specify the type of a simple literal constant
+        Does not work for array types (PostgreSQL allows it for all types)
+    'string'::type
+    CAST ('string' as type)
+
+Comments: -- (single) and /* (multi-line)
+
+Special Characters
+A dollar sign ($) followed by digits is used to represent a positional parameter in the body of a function definition or a prepared statement. In other contexts the dollar sign can be part of an identifier or a dollar-quoted string constant
+
+Parentheses (()) have their usual meaning to group expressions and enforce precedence. In some cases parentheses are required as part of the fixed syntax of a particular SQL command
+
+Brackets ([]) are used in some syntactical constructs to separate the elements of a list
+
+Commas (,) are used in some syntactical constructs to separate the elements of a list
+
+The semicolon (;) terminates an SQL command. It cannot appear anywhere within a command, except within a string constant or quoted identifier
+
+The colon (:) is used to select "slices" from arrays. In certain SQL dialects (such as Embedded SQL), the colon is used to prefix variable names
+
+The asterisk (*) is used in some contexts to denote all the fields of a table row or composite value. 
+
+The period (.) is used in numeric constants, and to separate schema, table, and column names
+
+Operator Precedence (highest to lowest)
+--------------------------------------------------------
+Operator/Elements                   Description
+--------------------------------------------------------
+.                                   table/column name separator                       
+::                                  PostgreSQL-style typecast
+[]									array element selection
++ -									unary plus, unary minus
+^									exponentiation
+* / %								multiplication, division, modulo
++ -									addition, subtraction
+(any other operator)				all other native and user-defined operators
+BETWEEN IN LIKE ILIKE SIMILAR		range containment, set membership, string matching
+< > = <= >= <>						comparison operators
+IS ISNULL NOTNULL					IS TRUE, IS FALSE, IS NULL, IS DISTINCT FROM, etc
+NOT									logical negation
+AND									logical conjunction
+OR									logical disjunction
+
+-------------------------------------
+Value Expressions/Scalar Expressions
+-------------------------------------
+Used in a variety of contexts, such as in the target list of the SELECT command, as new column values in INSERT or UPDATE, or in search conditions in a number of commands
+
+The result of an expression is sometimes called a scalar, to distringuish it from the result of a table expression (which is a table)
+
+The expression syntax allowd the calculation of values from primitive parts using arithmetic, logical, set, and other operations
+
+A value expression is one of the following:
+    - A constant or literal value
+    - A column reference
+    - A positional parameter reference, in the body of a function definition or prepared statement
+    - A subscripted expression
+    - A field selection expression
+    - An operator invocation
+    - A function call
+    - An aggregate expression
+    - A window function call
+    - A type cast
+    - A collation expression
+    - A scalar subquery
+    - An array constructor
+    - A row constructor
+    - Another value expression in parentheses (used to group subexpressions and override precedence)
+
+Columns can be referenced in the form: 'table.columnname'
+
+Positional Parameters: '$number'
+Example:
+CREATE FUNCTION dept(text) RETURNS dept
+    AS $$ SELECT * FROM dept WHERE name = $1 $$
+    LANGUAGE SQL;
+'$1' references the value of the first argument
+
+Subscripts:
+If an expression yields a value of an array type:
+
+expression[subscript]  
+
+Multiple adjacent elements (an "array slice"):
+
+expression[lower_subcript:upper_subscript]
+
+Each subscript is itself an expression, which will be rounded to the nearest integer value
+
+in general the array expression must be parenthesized, but the parentheses can be omitted when the expression to be subscripted is just a column reference or positional parameter. Also, multiple subscripts can be concatenated when the original array is multidimensional. 
+
+Example:
+mytable.arraycolumn[4]
+mytable.two_d_column[17][34]
+$1[10:42]
+(arrayfunction(a,b))[42]
+
+Field Selection:
+If an expression yields a value of composite type (row type)
+expression.fieldname
+
+In general the row expression much be parenthesized, but ommitted when the expression to be selected from is just a table reference or positional parameter
+
+Example:
+mytable.mycolumn
+$1.somecolumn
+(rowfunction(a,b)).col3
+
+(Thus, a qualified column reference is actually just a special case of the field selection syntax.) An important special case is extracting a field from a table column that is of a composite type:
+
+(compositecol).somefield
+(mytable.compositecol).somefield
+
+The parentheses are required here to show that compositecol is a column name not a table name, or that mytable is a table name not a schema name in the second case.
+
+You can ask for all fields of a composite value by writing .*:
+
+(compositecol).*
+
+Operator Invocations:
+Three possible syntaxes for an operator invocation:
+
+expression operator expression(binary infix operator)
+operator expression (unary prefix operator)
+expression operator (unary postfix operator)
+
+where the operator token follows the syntax: + - * / < > = ~ ! @ # % ^ & | ` ?, or is one of the key words AND, OR, and NOT, or is a qualified operator name in the form:
+
+OPERATOR(schema.operatorname)
+
+Function Calls:
+function_name ([expresion [, expression ... ]])
