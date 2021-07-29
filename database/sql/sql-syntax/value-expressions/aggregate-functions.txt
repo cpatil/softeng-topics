@@ -1,0 +1,80 @@
+An aggregate function is a mathematical computation involving a range of values that results in just a single value expressing the significance of the accumlated data it is derived from.Aggregate functions compute a single result from a set of input values.
+General-Purpose Aggregate Functions
+--------------------------------------
+Function 								Argument Type(s) 					Return Type 						Description
+-------------------------------------------------------------------------------------------------------------------------------------------
+array_agg(expression) 					any non-array type 					array of the argument type 			input values, including nulls, concatenated into an array
+array_agg(expression) 					any array type 						same as argument data type 			input arrays concatenated into array of one higher dimension (inputs must all have same dimensionality, and cannot be empty or null)
+avg(expression) 						smallint, int, bigint, 
+										real, double precision, 
+										numeric, or interval 				numeric for any integer-type 
+																			argument, double precision 
+																			for a floating-point argument, 
+																			otherwise the same as the 
+																			argument data type 					the average (arithmetic mean) of all non-null input values
+bit_and(expression) 					smallint, int, bigint, or bit 		same as argument data type 			the bitwise AND of all non-null input values, or null if none
+bit_or(expression) 						smallint, int, bigint, or bit 		same as argument data type 			the bitwise OR of all non-null input values, or null if none
+bool_and(expression) 					bool 								bool 								true if all input values are true, otherwise false
+bool_or(expression) 					bool 								bool 								true if at least one input value is true, otherwise false
+count(*) 	  																bigint 								number of input rows
+count(expression) 						any 								bigint 								number of input rows for which the value of expression is not null
+every(expression) 						bool 								bool 								equivalent to bool_and
+json_agg(expression) 					any 								json 								aggregates values, including nulls, as a JSON array
+jsonb_agg(expression) 					any 								jsonb 								aggregates values, including nulls, as a JSON array
+json_object_agg(name, value) 			(any, any) 							json 								aggregates name/value pairs as a JSON object; values can be null, but not names
+jsonb_object_agg(name, value) 			(any, any) 							jsonb 								aggregates name/value pairs as a JSON object; values can be null, but not names
+max(expression) 						any numeric, string, 
+										date/time, network, 
+										or enum type, or arrays 
+										of these types 						same as argument type 				maximum value of expression across all non-null input values
+min(expression) 						any numeric, string, 
+										date/time, network, 
+										or enum type, or arrays
+										 of these types 					same as argument type 				minimum value of expression across all non-null input values
+string_agg(expression, delimiter) 		(text, text) or (bytea, bytea) 		same as argument types 				non-null input values concatenated into a string, separated by delimiter
+sum(expression) 						smallint, int, bigint,
+										real, double precision, 
+										numeric, interval, or money 		bigint for smallint or 
+																			int arguments, numeric 
+																			for bigint arguments, 
+																			otherwise the same as 
+																			the argument data type 				sum of expression across all non-null input values
+xmlagg(expression) 						xml 								xml 								concatenation of non-null XML values (see also Section 9.14.1.7)
+
+Aggregate Expressions
+An aggregate function reduces multiple inputs to a single output value, such as the sum or average of the inputs.
+
+Example:
+*Where aggregate_name is a previously defined aggregate and expression is any value expression that does not itself contain an aggregate expression or a window function call.
+
+aggregate_name (expression [ , ... ] [ order_by_clause ] ) [ FILTER ( WHERE filter_clause ) ]
+    Invokes the aggregate once for each input row
+
+aggregate_name (ALL expression [ , ... ] [ order_by_clause ] ) [ FILTER ( WHERE filter_clause ) ]
+    The same as the first, since ALL is the default
+
+aggregate_name (DISTINCT expression [ , ... ] [ order_by_clause ] ) [ FILTER ( WHERE filter_clause ) ]
+    Invokes the aggregate once for each distinct value of the expression (or distinct set of values, for multiple expressions) found in the input rows
+
+aggregate_name ( * ) [ FILTER ( WHERE filter_clause ) ]
+    Invokes the aggregate once for each input row; since no particular input value is specified, it is generally only useful for the count(*) function
+
+aggregate_name ( [ expression [ , ... ] ] ) WITHIN GROUP ( order_by_clause ) [ FILTER ( WHERE filter_clause ) ]
+    Used with ordered-set aggregate functions
+
+Most agg functions ignore null inputs, so that rows in which one or more of the expressions yield null are discarded. For example, count(*) yields the total number of input rows; count(f1) yields the number of input rows in which f1 is non-null, since count ignores nulls; and count(distinct f1) yields the number of distinct non-null values of f1
+
+order_by_clause can be used to specify the desired ordering, has the same syntax as for a query-level ORDER BY clause
+
+Example: 
+SELECT array_agg(a ORDER BY b DESC) FROM table;
+
+When dealing with multiple-argument aggregate functions, note that the ORDER BY clause goes after all the aggregate arguments. For example, write this:
+SELECT string_agg(a, ',' ORDER BY a) FROM table;
+
+An example of an ordered-set aggregate call is:
+
+SELECT percentile_cont(0.5) WITHIN GROUP (ORDER BY income) FROM households;
+ percentile_cont
+-----------------
+           50489

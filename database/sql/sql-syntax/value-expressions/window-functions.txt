@@ -1,0 +1,93 @@
+Window Functions
+	Description
+
+row_number () → bigint
+	Returns the number of the current row within its partition, counting from 1.
+rank () → bigint
+	Returns the rank of the current row, with gaps; that is, the row_number of the first row in its peer group.
+dense_rank () → bigint
+	Returns the rank of the current row, without gaps; this function effectively counts peer groups.
+percent_rank () → double precision
+	Returns the relative rank of the current row, that is (rank - 1) / (total partition rows - 1). The value thus ranges from 0 to 1 inclusive.
+cume_dist () → double precision
+	Returns the cumulative distribution, that is (number of partition rows preceding or peers with current row) / (total partition rows). The value thus ranges from 1/N to 1.
+ntile ( num_buckets integer ) → integer
+	Returns an integer ranging from 1 to the argument value, dividing the partition as equally as possible.
+lag ( value anyelement [, offset integer [, default anyelement ]] ) → anyelement
+	Returns value evaluated at the row that is offset rows before the current row within the partition; if there is no such row, instead returns default (which must be of the same type as value). Both offset and default are evaluated with respect to the current row. If omitted, offset defaults to 1 and default to NULL.
+lead ( value anyelement [, offset integer [, default anyelement ]] ) → anyelement
+	Returns value evaluated at the row that is offset rows after the current row within the partition; if there is no such row, instead returns default (which must be of the same type as value). Both offset and default are evaluated with respect to the current row. If omitted, offset defaults to 1 and default to NULL.
+first_value ( value anyelement ) → anyelement
+	Returns value evaluated at the row that is the first row of the window frame.
+last_value ( value anyelement ) → anyelement
+	Returns value evaluated at the row that is the last row of the window frame.
+nth_value ( value anyelement, n integer ) → anyelement
+	Returns value evaluated at the row that is the n'th row of the window frame (counting from 1); returns NULL if there is no such row.
+
+Window Function Calls 
+A window function call represents the application of an aggregate-like function over some portion of the rows selected by a query. Unlike non-window aggregate calls, this is not tied to grouping of the selected rows into a single output row - each row remains separate in the query output. However the window function has accesss to all the rows that would be part of the current row's group.
+
+Example:
+SELECT duration_seconds,
+			 SUM(duration_seconds) OVER (ORDER BY start_time) AS running_total
+	FROM tutorial.dc_bikeshare_q1_2012
+
+Example:
+function_name ([expression [, expression ... ]]) [ FILTER ( WHERE filter_clause ) ] OVER window_name
+function_name ([expression [, expression ... ]]) [ FILTER ( WHERE filter_clause ) ] OVER ( window_definition )
+function_name ( * ) [ FILTER ( WHERE filter_clause ) ] OVER window_name
+function_name ( * ) [ FILTER ( WHERE filter_clause ) ] OVER ( window_definition )
+
+OVER window_name is not exactly equivalent to OVER (window_name ...); the latter implies copying and modifying the window definition, and will be rejected if the referenced window specification includes a frame clause
+
+where window_definition has the syntax
+
+[ existing_window_name ]
+[ PARTITION BY expression [, ...] ]
+[ ORDER BY expression [ ASC | DESC | USING operator ] [ NULLS { FIRST | LAST } ] [, ...] ]
+[ frame_clause ]
+
+The PARTITION BY clause groups the rows of the query into partitions, which are processed separately by the window function. PARTITION BY works similary to a query-level GROUP BY clause, except that its expressions are always just expressions and cannot be output-column names or numbers.
+
+The ORDER BY clause determines the order in which the rows of a partition are processed by the window function.
+
+The optional frame_clause can be one of:
+
+{ RANGE | ROWS | GROUPS } frame_start [ frame_exclusion ]
+{ RANGE | ROWS | GROUPS } BETWEEN frame_start AND frame_end [ frame_exclusion ]
+
+The frame_clause specifies the set of rows constituting the window frame, which is a subset of the current partition, for those window functions that act on the frame instead of the whole partition. The set of rows in the frame can vary depending on which row is the current row. The frame can be specified in RANGE, ROWS or GROUPs mode; in each case, it runs from the frame_start to the frame_end. If frame_end is omitted, the end defaults to CURRENT ROW
+
+where frame_start and frame_end can be one of:
+
+UNBOUNDED PRECEDING
+offset PRECEDING
+CURRENT ROW
+offset FOLLOWING
+UNBOUNDED FOLLOWING
+
+A frame_start of UNBOUNDED PRECEDING means that the frame starts with the first row of the partition, and similarly a frame_end of UNBOUNDED FOLLOWING means that the frame ends with the last row of the partition
+
+In RANGE or GROUPS mode, a frame_start of CURRENT ROW means the frame starts with the current row's first peer (a row that the window's ORDER BY clause sorts as equivalent to the current row), while a frame_end of CURRENT ROW means the frame ends with the current row's last peer row. In ROWS mode, CURRENT ROW simply means the current row
+
+In the offset PRECEDING and offset FOLLOWING frame options, the offset must be an expression not containing any variables, aggregate functions, or window functions. The meaning of the offset depends on the frame mode:
+	- In ROWS mode, the offset must yield a non-null, non-negative integer, and the option means that the frame starts or ends the specified number of rows before or after the current row.
+	- In GROUPS mode, the offset again must yield a non-null, non-negative integer, and the option means that the frame starts or ends the specified number of peer groups before or after the current row's peer group, where a peer group is a set of rows that are equivalent in the ORDER BY ordering. (There must be an ORDER BY clause in the window definition to use GROUPS mode.)
+	- In RANGE mode, these options require that the ORDER BY clause specify exactly one column. The offset specifies the maximum difference between the value of that column in the current row and its value in preceding or following rows of the frame. The data type of the offset expression varies depending on the data type of the ordering column. For numeric ordering columns it is typically of the same type as the ordering column, but for datetime ordering columns it is an interval. For example, if the ordering column is of type date or timestamp, one could write RANGE BETWEEN '1 day' PRECEDING AND '10 days' FOLLOWING. The offset is still required to be non-null and non-negative, though the meaning of “non-negative” depends on its data type.
+
+and frame_exclusion can be one of:
+
+EXCLUDE CURRENT ROW
+EXCLUDE GROUP
+EXCLUDE TIES
+EXCLUDE NO OTHERS
+
+The frame_exclusion option allows rows around the current row to be excluded from the frame, even if they would be included according to the frame start and frame end options. EXCLUDE CURRENT ROW excludes the current row from the frame. EXCLUDE GROUP excludes the current row and its ordering peers from the frame. EXCLUDE TIES excludes any peers of the current row from the frame, but not the current row itself. EXCLUDE NO OTHERS simply specifies explicitly the default behavior of not excluding the current row or its peers.
+
+The default framing option is RANGE UNBOUNDED PRECEDING, which is the same as RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW. With ORDER BY, this sets the frame to be all rows from the partition start up through the current row's last ORDER BY peer. Without ORDER BY, this means all rows of the partition are included in the window frame, since all rows become peers of the current row.
+
+Restrictions are that frame_start cannot be UNBOUNDED FOLLOWING, frame_end cannot be UNBOUNDED PRECEDING, and the frame_end choice cannot appear earlier in the above list of frame_start and frame_end options than the frame_start choice does — for example RANGE BETWEEN CURRENT ROW AND offset PRECEDING is not allowed. But, for example, ROWS BETWEEN 7 PRECEDING AND 8 PRECEDING is allowed, even though it would never select any rows.
+
+The syntaxes using * are used for calling parameter-less aggregate functions as window functions, for example count(*) OVER (PARTITION BY x ORDER BY y). The asterisk (*) is customarily not used for window-specific functions. Window-specific functions do not allow DISTINCT or ORDER BY to be used within the function argument list.
+
+Window function calls are permitted only in the SELECT list and the ORDER BY clause of the query.

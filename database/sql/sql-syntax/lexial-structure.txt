@@ -83,94 +83,45 @@ BETWEEN IN LIKE ILIKE SIMILAR		range containment, set membership, string matchin
 IS ISNULL NOTNULL					IS TRUE, IS FALSE, IS NULL, IS DISTINCT FROM, etc
 NOT									logical negation
 AND									logical conjunction
-OR									logical disjunction
-
--------------------------------------
-Value Expressions/Scalar Expressions
--------------------------------------
-Used in a variety of contexts, such as in the target list of the SELECT command, as new column values in INSERT or UPDATE, or in search conditions in a number of commands
-
-The result of an expression is sometimes called a scalar, to distringuish it from the result of a table expression (which is a table)
-
-The expression syntax allowd the calculation of values from primitive parts using arithmetic, logical, set, and other operations
-
-A value expression is one of the following:
-    - A constant or literal value
-    - A column reference
-    - A positional parameter reference, in the body of a function definition or prepared statement
-    - A subscripted expression
-    - A field selection expression
-    - An operator invocation
-    - A function call
-    - An aggregate expression
-    - A window function call
-    - A type cast
-    - A collation expression
-    - A scalar subquery
-    - An array constructor
-    - A row constructor
-    - Another value expression in parentheses (used to group subexpressions and override precedence)
-
-Columns can be referenced in the form: 'table.columnname'
-
-Positional Parameters: '$number'
-Example:
-CREATE FUNCTION dept(text) RETURNS dept
-    AS $$ SELECT * FROM dept WHERE name = $1 $$
-    LANGUAGE SQL;
-'$1' references the value of the first argument
-
-Subscripts:
-If an expression yields a value of an array type:
-
-expression[subscript]  
-
-Multiple adjacent elements (an "array slice"):
-
-expression[lower_subcript:upper_subscript]
-
-Each subscript is itself an expression, which will be rounded to the nearest integer value
-
-in general the array expression must be parenthesized, but the parentheses can be omitted when the expression to be subscripted is just a column reference or positional parameter. Also, multiple subscripts can be concatenated when the original array is multidimensional. 
-
-Example:
-mytable.arraycolumn[4]
-mytable.two_d_column[17][34]
-$1[10:42]
-(arrayfunction(a,b))[42]
-
-Field Selection:
-If an expression yields a value of composite type (row type)
-expression.fieldname
-
-In general the row expression much be parenthesized, but ommitted when the expression to be selected from is just a table reference or positional parameter
-
-Example:
-mytable.mycolumn
-$1.somecolumn
-(rowfunction(a,b)).col3
-
-(Thus, a qualified column reference is actually just a special case of the field selection syntax.) An important special case is extracting a field from a table column that is of a composite type:
-
-(compositecol).somefield
-(mytable.compositecol).somefield
-
-The parentheses are required here to show that compositecol is a column name not a table name, or that mytable is a table name not a schema name in the second case.
-
-You can ask for all fields of a composite value by writing .*:
-
-(compositecol).*
-
-Operator Invocations:
-Three possible syntaxes for an operator invocation:
-
-expression operator expression(binary infix operator)
-operator expression (unary prefix operator)
-expression operator (unary postfix operator)
-
-where the operator token follows the syntax: + - * / < > = ~ ! @ # % ^ & | ` ?, or is one of the key words AND, OR, and NOT, or is a qualified operator name in the form:
-
-OPERATOR(schema.operatorname)
-
-Function Calls:
-function_name ([expresion [, expression ... ]])
+OR									logical disjunctionAn aggregate function is a mathematical computation involving a range of values that results in just a single value expressing the significance of the accumlated data it is derived from.Aggregate functions compute a single result from a set of input values.
+General-Purpose Aggregate Functions
+--------------------------------------
+Function 								Argument Type(s) 					Return Type 						Description
+-------------------------------------------------------------------------------------------------------------------------------------------
+array_agg(expression) 					any non-array type 					array of the argument type 			input values, including nulls, concatenated into an array
+array_agg(expression) 					any array type 						same as argument data type 			input arrays concatenated into array of one higher dimension (inputs must all have same dimensionality, and cannot be empty or null)
+avg(expression) 						smallint, int, bigint, 
+										real, double precision, 
+										numeric, or interval 				numeric for any integer-type 
+																			argument, double precision 
+																			for a floating-point argument, 
+																			otherwise the same as the 
+																			argument data type 					the average (arithmetic mean) of all non-null input values
+bit_and(expression) 					smallint, int, bigint, or bit 		same as argument data type 			the bitwise AND of all non-null input values, or null if none
+bit_or(expression) 						smallint, int, bigint, or bit 		same as argument data type 			the bitwise OR of all non-null input values, or null if none
+bool_and(expression) 					bool 								bool 								true if all input values are true, otherwise false
+bool_or(expression) 					bool 								bool 								true if at least one input value is true, otherwise false
+count(*) 	  																bigint 								number of input rows
+count(expression) 						any 								bigint 								number of input rows for which the value of expression is not null
+every(expression) 						bool 								bool 								equivalent to bool_and
+json_agg(expression) 					any 								json 								aggregates values, including nulls, as a JSON array
+jsonb_agg(expression) 					any 								jsonb 								aggregates values, including nulls, as a JSON array
+json_object_agg(name, value) 			(any, any) 							json 								aggregates name/value pairs as a JSON object; values can be null, but not names
+jsonb_object_agg(name, value) 			(any, any) 							jsonb 								aggregates name/value pairs as a JSON object; values can be null, but not names
+max(expression) 						any numeric, string, 
+										date/time, network, 
+										or enum type, or arrays 
+										of these types 						same as argument type 				maximum value of expression across all non-null input values
+min(expression) 						any numeric, string, 
+										date/time, network, 
+										or enum type, or arrays
+										 of these types 					same as argument type 				minimum value of expression across all non-null input values
+string_agg(expression, delimiter) 		(text, text) or (bytea, bytea) 		same as argument types 				non-null input values concatenated into a string, separated by delimiter
+sum(expression) 						smallint, int, bigint,
+										real, double precision, 
+										numeric, interval, or money 		bigint for smallint or 
+																			int arguments, numeric 
+																			for bigint arguments, 
+																			otherwise the same as 
+																			the argument data type 				sum of expression across all non-null input values
+xmlagg(expression) 						xml 								xml 								concatenation of non-null XML values (see also Section 9.14.1.7)
