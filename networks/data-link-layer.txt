@@ -1,9 +1,0 @@
-This layer is the protocol layer that transfers data between nodes on a network segment across the physical layer
-
-Provides the functional and procedural means to transfer data between network entities and may also provide the means to detect and possibly correct errors that can occur in the physical layer
-
-Concerned with local delivery of frames between nodes on the same level of the network.
-
-Data Link:
-Defines the means of connecting one location to another for the purpose of transmitting and receiving digital information (data communication). These are governed by a link protocol enabling digital to be transferred from a data source to a data sink
-    - A data sink, sink, or event sink is a class or function designed to received incoming events from another object or function. Implemeted as callbacks in C++, other languages have built-in support for sinks by allowing events to be fired to delegate functions
