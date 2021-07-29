@@ -1,11 +1,11 @@
 Network Layers:
-Application (Layer 7)
-Presentation (Layer 6)
-Session (Layer 5)
-Transport (Layer 4)
-Network (Layer 3)
-Data Link (Layer 2)
-Physical (Layer 1)
+Application (Layer 7) Services that are used with end user applications e.g. smtp, http, dns, cdns
+Presentation (Layer 6) Formats the data so that it can be viewed by the user. Encrypt and decrypt e.g. jpg, gif, https, ssl, tls
+Session (Layer 5) Establishes/ends connections between two hosts. e.g. NetBIOS, pptp
+Transport (Layer 4) Responsible for the transport protocol and error handling e.g. TCP/UDP
+Network (Layer 3) Reads the ip address form the packet. e.g. Routers, layer3 switches
+Data Link (Layer 2) Reads the mac address from the data packet. e.g. Switches
+Physical (Layer 1) Send data on to the physical wire. e.g. Hubs, NICS, cable
 
 Network Protocol
     - Set of rules that define how a message is structured for transmission

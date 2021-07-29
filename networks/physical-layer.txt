@@ -1,0 +1,25 @@
+Physical Layer:
+Defines the means of transmitting a stream of raw bits over a physical data link connecting network nodes
+    - A node is either a redistribution point or a communication endpoint. A physical network node is an electronic device that is attached to a network, and is capable of creating, receiving, or transmitting information over a communication channel
+
+The bitstream may be grouped into code words or symbols and converted to a physical signal that is transmitted over a transmission medium.
+    - A bitstream/bytestream is a sequence of bits/bytes.
+
+Provides an electrical, mechanical, and procedural interface to the transmission medium.
+
+There are two main types of transmission media:
+Guided media: waves are guided along a solid medium such as a transmission line (twisted pair, coaxial cable, optical fiber)
+
+Unguided media: transmission and reception are achieved by means of an antenna (radio)
+
+The shapes and properties of the electrical connectors, the frequencies to broadcast on, the line code to use and similar low-level parameters, are specified by the physical layer
+    - A line code is a pattern of voltage, current, or photons used to represent digital data transmitted down a transmission line
+
+Data Link:
+Defines the means of connecting one location to another for the purpose of transmitting and receiving digital information (data communication). These are governed by a link protocol enabling digital to be transferred from a data source to a data sink
+    - A data sink, sink, or event sink is a class or function designed to received incoming events from another object or function. Implemeted as callbacks in C++, other languages have built-in support for sinks by allowing events to be fired to delegate functions
+
+There are at least three types of basic data-link configurations that can be conceived of and used:
+    - Simplex communications, most commonly meaning all communications in one direction only
+    - Half-duplex communications, meaning communications in both directions, but not both ways simultaneously
+    - Duplex communications, communications in both directions simultaneously
