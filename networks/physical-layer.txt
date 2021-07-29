@@ -15,9 +15,7 @@ Unguided media: transmission and reception are achieved by means of an antenna (
 The shapes and properties of the electrical connectors, the frequencies to broadcast on, the line code to use and similar low-level parameters, are specified by the physical layer
     - A line code is a pattern of voltage, current, or photons used to represent digital data transmitted down a transmission line
 
-Data Link:
-Defines the means of connecting one location to another for the purpose of transmitting and receiving digital information (data communication). These are governed by a link protocol enabling digital to be transferred from a data source to a data sink
-    - A data sink, sink, or event sink is a class or function designed to received incoming events from another object or function. Implemeted as callbacks in C++, other languages have built-in support for sinks by allowing events to be fired to delegate functions
+
 
 There are at least three types of basic data-link configurations that can be conceived of and used:
     - Simplex communications, most commonly meaning all communications in one direction only
