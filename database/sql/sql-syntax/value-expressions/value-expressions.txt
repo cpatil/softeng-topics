@@ -88,5 +88,7 @@ OPERATOR(schema.operatorname)
 Function Calls:
 function_name ([expresion [, expression ... ]])
 
+Type Casts
+A type cast specifies a conversion from one data type to Another
 
-
+Example:

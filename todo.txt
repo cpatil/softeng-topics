@@ -1,38 +1,35 @@
-SQL Language [code+notes]
+Learn:
+SQL Language [code+notes] 
 
-Spring Security 
+Networking: Web Sockets Web Servers Proxies Caching Web Framework Runtimes Web Security
 
+Code:
 Ecommerce API [code+notes]
-	implement spring security
+	SQL
+    GraalVM
+    New Features
 
 Springboot Bootstrap Project [code+documentation]
+    rename-me
+
 
 Later:
-Java design patterns [code+notes]
+Spring Security [code+notes]
 
-Java notes [notes]
+Java Design Patterns [code+notes]
+
+Java Notes [notes]
 
 Roadmap.sh [notes]
 
-Complex Queries (using aggregate functions) Practice Questions
+//Springboot Documentation? [notes]
 
-Elastisearch
+//Complex Queries [questions]
+
+//Elastisearch [notes]
 
 Database Generator [code]
     only 5 of same name
     add 10 items
-
-Networking:
-HTTP IPv4/IPv6 Web Sockets
-
-Web Servers
-
-Proxies
-
-Caching
-
-Web Framework Runtimes
-
-Web Security
 
 Data and Algos [code+notes]
