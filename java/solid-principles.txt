@@ -1,0 +1,143 @@
+The SOLID principles were introduced by Robert C. Martin in his 2000 paper "Design Principles and Design Patterns." These concepts were later built upon by Michael Feathers, who introduced us to the SOLID acronym. 
+	Revolutionized the world of object-oriented programming
+
+Design principles encourage us to create more maintainable, understandable, and flexible software. Consequently, as our applications grow in size, we can reduce their compolexity
+
+Single Responsibilty
+Open/Closed
+Liskov Substitution
+Interface Segregation
+Dependency Inversion
+
+Single Responsibility:
+A class should only have one responsibility, it should only have one reason to change
+
+Benefits:
+	- Testing: A clsas with one responsibility will have far few test cases
+	- Lower coupling: Less functionality in a single class will have fewer dependencies
+	- Organization: Smaller, well-organized classes are easier to search than monolithic ones
+
+Open for Extension, Closed for Modification:
+Classes should be open for extension but closed for modification. In doing so, we stop ourselves from modifying existing code and causing potential new bugs
+
+Liskov Substitution:
+If class A is a subtype of class B, we should be able to replace B with A without disrupting the behaviour of our program
+
+Example:
+
+public interface Car {
+
+	void turnOnEngine();
+	void accelerate();
+}
+
+public class MoterCar implements Car {
+
+	private Engine engine;
+
+	public void turnOnEngine() {
+
+		engine.on();
+	}
+
+	public void accelerate() {
+
+		engine.powerOn(1000);
+	}
+}
+
+public class ElectricCar implements Car {
+
+	public void turnOnEngine() {
+
+		throw new AssertionError("I don't have an engine!");
+	}
+
+	public void accelerate() {
+		engine.powerOn(5000);
+	}
+}
+
+By creating a car without an engine, we are inherently changing the behaviour, which is a violation of Liskov subsititution. Possible solution would be to rework the model into interfaces that take into account the engine-less state of Car
+
+Interface Segregation Principle:
+Clients should not be forced to depend upon interfaces that they do not use
+
+The goal of this principle is to reduce the side effects of using larger interfaces by breaking application interfaces into smaller. By doing so, we can ensure that implementing classes only need to be concerned about the methods that are of interest to them
+
+Precise application design and correct abstraction is the key behind tis principle. Though it'll take more time and effort in the design phase of an application and might increase the code complexity, in the end, we get a flexible code
+
+Example:
+public interface BearKeeper {
+	
+	void washTheBear();
+	void feedTheBear();
+	void petTheBear();
+}
+
+Split to three interfaces:
+
+public interface BearCleaner {
+    void washTheBear();
+}
+
+public interface BearFeeder {
+    void feedTheBear();
+}
+
+public interface BearPetter {
+    void petTheBear();
+}
+
+public class BearCarer implements BearCleaner, BearFeeder {
+
+    public void washTheBear() {
+        //I think we missed a spot...
+    }
+
+    public void feedTheBear() {
+        //Tuna Tuesdays...
+    }
+}
+
+Dependency Inversion:
+Refers to the decoupling of software modules. This way, instead of high-level modules depending on low-level modules, both will depend on abstractions
+
+Example:
+
+public class Windows98Machine {
+
+	private final StandardKeyboard keyboard;
+	private final Monitor monitor;
+
+	public Windows98Machine() {
+
+		monitor = new Monitor();
+		keyboard = new StandardKeyboard();
+	}
+}
+
+By declaring the StandardKeyboard and Monitor with the new keyword, we've tightly coupled these three classes together.
+
+Decoupled Example:
+
+public interface Keyboard {
+
+}
+
+public interface Monitor {
+
+}
+
+public class Windows98Machine{
+
+    private final Keyboard keyboard;
+    private final Monitor monitor;
+
+    public Windows98Machine(Keyboard keyboard, Monitor monitor) {
+        this.keyboard = keyboard;
+        this.monitor = monitor;
+    }
+}
+
+Dependency injection pattern is used to facilitate adding the Keyboard dependency into the Windows98Machine class

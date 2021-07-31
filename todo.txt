@@ -8,17 +8,17 @@ Ecommerce API [code+notes]
 	SQL
     GraalVM
     New Features
+    Spring Security
 
 Springboot Bootstrap Project [code+documentation]
     rename-me
 
 
 Later:
-Spring Security [code+notes]
-
-Java Design Patterns [code+notes]
-
 Java Notes [notes]
+    Design Patterns
+    SOLID principles
+    Java-Web-Tokens
 
 Roadmap.sh [notes]
 
@@ -29,7 +29,6 @@ Roadmap.sh [notes]
 //Elastisearch [notes]
 
 Database Generator [code]
-    only 5 of same name
-    add 10 items
+    Mockaroo
 
 Data and Algos [code+notes]

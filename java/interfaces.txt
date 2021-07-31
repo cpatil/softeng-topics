@@ -1,0 +1,167 @@
+Interfaces (geeksforgeeks)
+Like a class, an interface can have methods and variables, but the methods declared in an interface are by default abstract (only method signature, no body)
+	- Specify what what a class must do and not how. It is the blueprint of the class
+	- Is about capabilities like a Player may be an interface and any class implementing Player must be able to (or must implement) move(). So it specifies a set of methods that the class has to implement
+	- If a class implements an interface and does not provide method bodies for all functions specified in the interface, then the class must be declared abstract
+	- A Java library example is, Comparator Interface. If a class implements this interface, theen it can be used to sort a collection
+
+interface Player
+{
+    final int id = 10;
+    int move();
+}
+
+Why do we use interface?
+	- It is used to achieve total abstraction 
+	- Since java does not support multiple inheritance in case of class, but by using interface it can achieve multiple inheritance
+	- It is also used to achieve loose coupling
+	- Interfaces are used to implement abstraction
+	- Variables in interfaces are final, public, and static compared to abstract classes
+
+A class that implements an interface must implement all the methods in the interface
+
+A class can implement more than one interface
+
+An interface can extends another interface or interfaces
+
+// Java program to demonstrate working of 
+// interface.
+import java.io.*;
+  
+// A simple interface
+interface In1
+{
+    // public, static and final
+    final int a = 10;
+  
+    // public and abstract 
+    void display();
+}
+  
+// A class that implements the interface.
+class TestClass implements In1
+{
+    // Implementing the capabilities of
+    // interface.
+    public void display()
+    {
+        System.out.println("Geek");
+    }
+  
+    // Driver Code
+    public static void main (String[] args)
+    {
+        TestClass t = new TestClass();
+        t.display();
+        System.out.println(a);
+    }
+}
+
+Java and Multiple Inheritance
+Multiple inheritance is a feature of object oriented concept, where a class can inherit properties of more than one parent class. The problem occurs when there exist methods with same signature in both the super classes and subclass. On calling the method, the compiler cannot determine which class method to be called and even on calling which class method gets the priority. The Diamond problem.
+
+Multiple inheritance is not supported by Java using classes, handling the complexity that causes due to multiple inheritance is very complex. It create problem during various operations like casting, constructor chaining etc and the above all reason is that there are very few scenarios on which we actually need multiple inheritance, so better to omit it for keeping the things simple and straight forward
+
+// A simple Java program to demonstrate multiple inheritance through default methods
+
+interface PI1 {
+
+	default void show() {
+		System.out.println("Default PI1")
+	}
+}
+
+interface PI2 {
+	default void show() {
+		System.out.println("Default PI2)
+	}
+}
+
+// Implementation class
+class TestClass implements PI1, PI2 {
+
+	// Overriding default show method
+	public void show() {
+		// use super keyword to call the show method of PI1 interface
+		PI1.super.show();
+
+		// user super keyword to call the show method of PI2 interface
+		PI2.super.show();
+	}
+
+	public static void main(String args[]) {
+		TestClass d = new TestClass();
+		d.show();
+	}
+}
+
+If there is a diamond through interfaces, then there is no issue if none of the middle interfaces provide implementation of root interface. If they provide implementation, then implementation can be accessed as above using super keyword
+
+// A simple Java program to demonstrate how diamond
+// problem is handled in case of default methods
+  
+interface GPI
+{
+    // default method
+    default void show()
+    {
+        System.out.println("Default GPI");
+    }
+}
+  
+interface PI1 extends GPI { }
+  
+interface PI2 extends GPI { }
+  
+// Implementation class code
+class TestClass implements PI1, PI2
+{
+    public static void main(String args[])
+    {
+        TestClass d = new TestClass();
+        d.show();
+    }
+}
+
+Default Methods
+Before Java 8, interfaces could have only abstract methods. The implementation of these methods has to be provided in a separate class. So, if a new method is to be added in an interface, then its implementation code has to be provided in the class implementing the same interface. To overcome this issue, Java 8 has introduced the concept of default methods which allow the interface to have methods with implementation without affecting the classes that implement the interface. 
+
+// A simple program to Test Interface default methods in Java
+interface TestInterface {
+
+	// abstract method
+	public void square(int a);
+
+	// default method
+	default void show() {
+		System.out.println("Default Method Executed");
+	}
+}
+
+class TestClass implements TestInterface {
+
+	// Implementation of square abstract method
+	public void square(int a) {
+		System.out.println(a*a);
+	}
+
+	public static void main(String args[]) {
+		TestClass d = TestClass();
+		d.square(4);
+
+		// default method executed
+		d.show();
+	}
+}
+
+The default methods were introduced to provide backward compatibility so that existing interfaces can use the lambda expressions without implementing the methods in the implementation class. Default methods are also known as defender methods or virtual extension methods.
+
+The interfaces can have static methods as well which is similar to static method of classes
+
+In case both the implemented interfaces contain default methods with same method signature, the implementing class should explicitly specify which default method is to be used or it should override the default method
+
+Interfaces can have default methods with implementation
+
+Interfaces can have static methods as wel, similar to static methods in classes
+
+Default methods were introduced to provide backward compatibility for old interfaces so  that they can have new methods without affecting existing code
