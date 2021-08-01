@@ -1,0 +1,47 @@
+Java Class Loader
+Is a part of the JRE that dynamically loads Java classes into the JVM. Usually classes are only loaded on demand. 
+
+The Java run time system does not need to know about files and file systems as this is delegated to the classloader
+
+Responsible for locating libraries, reading their contents, and loading the classes contained within the libraries. This loading is typically done "on demand", in that it does not occur until the class is called by the program. A class with a given name can only be loaded once by a given classloader. 
+
+Each Java class must be loaded by a class loader. Java programs may make use of external libraries (that is, libraries written and provided by someone other than the author of the program) or they may be composed, at least in part, of a number of libraries.
+
+When the JVM is started, three class loaders are used:
+
+    Bootstrap class loader
+    Extensions class loader
+    System class loader
+
+The bootstrap class loader loads the core Java libraries located in the <JAVA_HOME>/jre/lib directory. This class loader, which is part of the core JVM, is written in native code.
+
+The extensions class loader loads the code in the extensions directories (<JAVA_HOME>/jre/lib/ext,[3] or any other directory specified by the java.ext.dirs system property).
+
+The system class loader loads code found on java.class.path, which maps to the CLASSPATH environment variable. 
+
+The Java class loader is written in Java. It is therefore possible to create your own class loader without understanding the finer details of the Java Virtual Machine. Every Java class loader has a parent class loader, defined when a new class loader is instantiated or set to the virtual machine's system default class loader.
+
+This makes it possible (for example):
+
+    to load or unload classes at runtime (for example to load libraries dynamically at runtime, even from an HTTP resource). This is an important feature for:
+        implementing scripting languages, such as Jython
+        using bean builders
+        allowing user-defined extensibility
+        allowing multiple namespaces to communicate. This is one of the foundations of CORBA / RMI protocols for example.
+    to change the way the bytecode is loaded (for example, it is possible to use encrypted Java class bytecode[5]).
+    to modify the loaded bytecode (for example, for load-time weaving of aspects when using aspect-oriented programming).
+
+One of the organizational units of JVM byte code is a class. A class loader implementation must be able to recognize and load anything that conforms to the Java class file format. Any implementation is free to recognize other binary forms besides class files, but it must recognize class files.
+
+The class loader performs three basic activities in this strict order:
+
+    Loading: finds and imports the binary data for a type
+    Linking: performs verification, preparation, and (optionally) resolution
+        Verification: ensures the correctness of the imported type
+        Preparation: allocates memory for class variables and initializing the memory to default values
+        Resolution: transforms symbolic references from the type into direct references.
+    Initialization: invokes Java code that initializes class variables to their proper starting values.
+
+In general, there are two types of class loader: bootstrap class loader and user defined class loader.
+
+Every Java virtual machine implementation must have a bootstrap class loader, capable of loading trusted classes, and an extension class loader or application class loader. The Java virtual machine specification doesn't specify how a class loader should locate classes. 

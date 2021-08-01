@@ -58,3 +58,15 @@ Martin Odersky implemented the GJ compiler and his implementation became the bas
 Accepts source code conforming to the Java language specification and produces Java bytecode conforming to the Java VirtualMachine Specification
 
 Written in Java, self-hosting compiler
+
+JVM Specification
+An abstract virtual computer defined by a specification. The garbage-collection algorithm used and any internal optimization of the JVM instrutions (their translation into machine code) are not specified. The main reason for this omission is to not unnecessarily constrain implementers. Any Java application can be run only inside some concrete implementation of the abstract specification of the JVM
+
+"We intend that this specification should sufficiently document the JVM to make possible compatible clean-room implementations. Oracle provides tests the verify the proper operation implementions of the JVM"
+
+Clean-room design (also known as the Chinese wall technique) is the method of copying a design by reverse engineering and then recreating it without infringing any of the copyrights associated with the original design
+    Useful as a defense against copyright infringement because it relies on independent creation. However, because independent invention is not a defense against patents, clean-room designs typically cannot be used to circumvent patent restrictions
+    The term implies that the design team works in an environment that is "clean" or demonstrably uncontaminated by any knowledge of the propreitary techniques used by the competitor
+    Typically, a clean-room design is done by having someone examine the system to be reimplemented and having this person write a specification. This specification is then reviewed by a lawyer to ensure that no copyrighted material is included. The specification is then implemented by a team with no connection to the original examiners.
+
+Class Loader

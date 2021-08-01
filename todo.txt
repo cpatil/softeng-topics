@@ -1,20 +1,23 @@
-Learn:
 SQL Language [code+notes] 
+    Documentation
 
-Networking: Web Sockets Web Servers Proxies Caching Web Framework Runtimes Web Security
+Networking: 
+    Web Sockets 
+    Web Servers 
+    Proxies 
+    Caching 
+    Web Framework Runtimes 
+    Web Security
 
-Code:
 Ecommerce API [code+notes]
 	SQL
     GraalVM
-    New Features
     Spring Security
+    New Features
 
 Springboot Bootstrap Project [code+documentation]
     rename-me
 
-
-Later:
 Compiler Notes:
     Adaptive Optimization
     Dynamic Recompilation
@@ -23,24 +26,21 @@ Compiler Notes:
     Interpreter
     Garbage Collection
 
-General:
-    xml-sax-dom... Notes
+General Notes:
+    XML-SAX-DOM... 
     SOAP protocol
     JAX-WS
     Common Object Request Broker Architecture
+    Aspect Oriented Programming
 
 Java Notes [notes]
     Design Patterns
     Java-Web-Tokens
     Java Remote Method Invocation
+    Applets
+    Java Beans
 
-Roadmap.sh [notes]
-
-//Springboot Documentation? [notes]
-
-//Complex Queries [questions]
-
-//Elastisearch [notes]
+Backend Roadmap.sh
 
 Database Generator [code]
     Mockaroo
