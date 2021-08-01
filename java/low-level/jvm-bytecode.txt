@@ -32,4 +32,29 @@ The const instructions push a value of the specified type onto the stack. For ex
 
 Java Virtual Machine (JVM)
 
-An abstract machine. It is a specification that provides runtime environment in which java bytecode can be executed. Available for many hardware and software platforms, JVM is platform dependent.
+An abstract machine. It is a specification that provides a runtime environment in which java bytecode can be executed. Available for many hardware and software platforms, JVM is platform dependent.
+
+Enables a computer to run Java programs as well as programs written in other languages that are also compiled to Java bytecode.
+
+Detailed by a specification that formally describes what is required in a JVM implementation.
+
+A Specification ensures interoperability of Java programs across different implementations so that program authors using the Java Development Kit (JDK) need not worry about idiosyncrasies of the underlying hardware platform
+
+The JVM reference implementation is developed by the OpenJDK project as open source code and includes a JIT compiler called HotSpot. The commercially supported Java releases availabled from Oracle Corporation are based on the OpenJDK runtime. Eclipse OpenJ9 is another open source JVM for OpenJDK
+
+OpenJDK:
+Produces a number of components: most importantly the virtual machine (HotSpot), the Java Class Library and the Java compiler(javac)
+
+The web-browser plugin and Web Start, which form part of Oracle Java, are not included in OpenJDK
+    Java Web Start was a framework developed by Sun Microsystems that allows users to start application software for the Java Platform directly from the Internet using a browser
+
+OpenJDK 9+ support AOT compilation (jaotc) using GraalVM
+
+Java Compiler(javac):
+Primary Java compiler included in the Java Development Kit from Oracle.
+
+Martin Odersky implemented the GJ compiler and his implementation became the basis for javac
+
+Accepts source code conforming to the Java language specification and produces Java bytecode conforming to the Java VirtualMachine Specification
+
+Written in Java, self-hosting compiler

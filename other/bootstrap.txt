@@ -1,0 +1,15 @@
+Bootstraping (compilers)
+The technique for producing a self-compiling compiler - that is, a compiler (or assembler) written in the source programming language that it intends to compile.
+
+An initial core version of the compiler (the bootstrap compiler) is generated in a different language (which could be assembly language); successive expanded versions of the compiler are developed using this minimal subset of the language. 
+
+The problem of compiling a self-compiling compiler has been called the chicken-or-egg problem in compiler design, and bootstrapping is a solution to this problem
+
+Process:
+
+Stage 0: preparing an environment for the bootstrap compiler to work with 
+Stage 1: te bootstrap compiler is produced
+Stage 2: a full compiler is produced by the bootstrap compiler
+Stage 3: a full compiler is produced by the stage 2 full compiler
+
+The full compiler is built twice in order to compare the outputs of the two stages. If they are different, either the bootstrap or the full compiler contains a bug

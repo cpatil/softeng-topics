@@ -1,0 +1,32 @@
+Java Class Library(JCL):
+A set of dynamically loadable libraries that JVM languages can call at run time, the Java Platform provides a comprehensive set of standard class libraries, containing the functions common to modern operating systems
+
+Serves three purposes within the JVM:
+	- Like other standard code libraries, they provide the programmer a well-known set of useful facilities, such as container classes and regular expression processing
+	- The library provides an abstract interface to tasks that would normally depend heavily on the hardware and operating system, such as network access and file access
+	- Some underlying platforms may not support all of the features a Java application expects. In these cases, the library implementation can either emulate those features or provide a consistent way to check for the presence of a specific feature
+
+Is almost entirely written in Java, except for the parts that need direct access to the hardware and operating system (I/O or bitmap graphics). The classes that give access to these functions commonly use Java Native Interface wrappers to access operating system APIs
+
+Almost all of JCL is stored in a single Java archive file called "rt.jar" which is provided with JRE and JDK distributions
+
+The Java Module System (part of the Java 9 release) broke the monolithic "rt.jar" JAR file and modularized the JCL itself in several modules with specified dependencies
+
+JCL features are access through classes provided in packages:
+	- (java.lang) Fundamental classes and interfaces closely tied to the language and runtime system
+	- (java.io, java.nio, java.net) I/O and networking access the platform file system, and more generally networks
+	- (java.math) Mathematical expressions and evaluation, as well as arbitrary-precision decimal and integer number datatypes
+	- Collections and Utilities: built-in collection data structures, and utility classes, for regular expressions, concurrency, logging and data compression
+	- (java.awt) Abstract window toolkit, basic GUI operations and binds to the underlying native system. Also contains the 2D graphics APIs
+	- (javax.swing) Built on AWT and provides a platform-independent widget toolkit, as well as a pluggable look and feel. it also deals with editable and non-editable text components
+	- Sound: interfaces and classes for reading, writing, sequencing, and synthesizing of sound data
+	- (java.text) deals with text, dates, numbers, and messages
+	- (java.awt.image, javax.imageio) APIs to write, read, and modify images
+	- XML: SAX, DOM, StAX, XSLT transforms, XPath and various APIs for web servies, as SOAP protocol and JAX-WS
+	- CORBA and RMI apits, including built-in ORB
+	- (java.security, javax.crypto) security and encryption
+	- (java.sql) access to SQL databases
+	- (javax.script) gives access to any conforming scripting language
+	- (java.applet) allows applications to be downloaded over a network and run within a guarded sandbox
+	- (java.beans) provides ways to manipulate reusable components
+	- (java.lang.class, java.lang.reflect) represents a class and the other classes such as method and constructor respectively 

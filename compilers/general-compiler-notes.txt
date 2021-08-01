@@ -20,7 +20,7 @@ The JIT compiler in Microsoft's CLR for example only compiles code once (when it
 
 JIT compilers may either compile some static unit of code in one go (one module, one class, one function, one method, ...; these are typically called method-at-a-time JIT) or they may trace the dyncamic execution of code to find dynamic traces (typically loops) that they will then compile (these are called tracing JITs)
 
-Combinging Interpreters and Compilers
+Combinding Interpreters and Compilers
 Interpreters and compilers may be combined into a single language execution engine. There are two typical scenarios where this is done.
 
 Combining an AOT compiler from X to Y with an interpreter for Y. Here, typically X is some higher-level language optimized for readability by humans, whereas Y is a compact language (often some kind of bytecode_ optimized for interpretability by machines. For example, the CPython Python execution engine has an AOT compiler that compiles Python sourcecode to CPython bytecode and an interpreter that interprets CPython bytecode. Likewise, the YARV Ruby execution engine has an AOT compiler that compiles Ruby sourcecode to YARV bytecode and an interpreter that interprets YARV bytecode. Why would you want to do that? Ruby and Python are both very high-level and somewhat complex languages, so we first compile them into a language that is easier to parse and easier to interpret, and then interpret that language.

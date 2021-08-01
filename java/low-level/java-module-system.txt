@@ -1,0 +1,13 @@
+Java Platform Module System
+
+Specifies a distribution format for collections of Java code and associated resources. It also specifies a repository for storing these colellections, or modules, and identifies how they can be discovered, loaded and checked for integrity. It includes features such as namespaces with the aim to fixing some of the shortocmings in the existing JAR format, especially the JAR Hell, which can lead to issues such as classpth and class loading problems
+
+JAR Hell:
+Similar to DLL hell used to describe all the various ways in which the classloading process can end up not working. Three ways JAR hell can occur are:
+	- Accidental presence of two different versions of a library installed on a system. This will not be considered an error by the system. Rather, the system will load classes from one or the other library. Adding the new library to the list of available libraries instead of replacing it may result in the application still behaving as though the old library is in use, which it may well be
+	- Multiple libraries or applications require different versions of library foo. If versions of library food use the same class names, there is no way to load the versions of library foo with the same classloader
+	- The most complex JAR hell problems arise in curcumstances that takes advatage of the full complexity of the classloading system. A java program is not required to use only a single "flat" classloader, but instad may be composed of several (potentially very many) nested, cooperating classloaders. Classes loaded by different classloaders may interact in complex ways not fully compreheneded by a developer, leading to errors or bugs that are difficult to analyze, explain, and reslove
+
+The OSGi Alliance specified (starting as JSR 8 in 1998) a modularity framework that aims to solve JAR hell for current and future VMs in ME, SE, and EE that is widely adopted. Using metadata in the JAR manifest, JAR files (called bundles) are wired on a per-package basis. Bundles can export packages, import packages and keep packages private, providing the basic constructs of modularity and versioned dependency management.
+
+To remedy the JAR hell problems, a Java Community Process — JSR 277 was initiated in 2005. The resolution — Java Platform Module System — intended to introduce a new distribution format, a modules versioning scheme, and a common modules repository (similar in purpose to Microsoft .NET's Global Assembly Cache). In December 2008, Sun announced that JSR 277 was put on hold.[9] The Java Module System was later rebooted as "project Jigsaw"[10] which was included in Java 9. 

@@ -15,10 +15,24 @@ Springboot Bootstrap Project [code+documentation]
 
 
 Later:
+Compiler Notes:
+    Adaptive Optimization
+    Dynamic Recompilation
+    Just-in-Time Compilation
+    Ahead-of-Time Compilation
+    Interpreter
+    Garbage Collection
+
+General:
+    xml-sax-dom... Notes
+    SOAP protocol
+    JAX-WS
+    Common Object Request Broker Architecture
+
 Java Notes [notes]
     Design Patterns
-    SOLID principles
     Java-Web-Tokens
+    Java Remote Method Invocation
 
 Roadmap.sh [notes]
 

@@ -3,11 +3,11 @@ The SOLID principles were introduced by Robert C. Martin in his 2000 paper "Desi
 
 Design principles encourage us to create more maintainable, understandable, and flexible software. Consequently, as our applications grow in size, we can reduce their compolexity
 
-Single Responsibilty
-Open/Closed
-Liskov Substitution
-Interface Segregation
-Dependency Inversion
+Single Responsibilty: "There should never be more than one reason for a class to change."
+Open/Closed: "Software entities should be open for extension, but closed for modification."
+Liskov Substitution: "Functions that use pointers or references to base classes must be able to use objects of derived classes without knowint it."
+Interface Segregation: "Many client-specific interfaces are better than one general-purpose interface"
+Dependency Inversion: "Depend upon abstractions, [not] concretions"
 
 Single Responsibility:
 A class should only have one responsibility, it should only have one reason to change
