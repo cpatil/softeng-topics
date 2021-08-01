@@ -69,4 +69,6 @@ Clean-room design (also known as the Chinese wall technique) is the method of co
     The term implies that the design team works in an environment that is "clean" or demonstrably uncontaminated by any knowledge of the propreitary techniques used by the competitor
     Typically, a clean-room design is done by having someone examine the system to be reimplemented and having this person write a specification. This specification is then reviewed by a lawyer to ensure that no copyrighted material is included. The specification is then implemented by a team with no connection to the original examiners.
 
-Class Loader
+*Class Loader Specification Separate Note
+
+Virtual Machine Architecture

@@ -5,7 +5,7 @@ Backend Roadmap.sh [notes]
         Browsers and how they work
         DNS and how it works
         What is Domain Name
-        What is hosting
+        What is hosting (web hosting, web servers)
     Basic Frontend Knowledge:
         HTML/CSS
         JavaScript
@@ -17,7 +17,7 @@ Backend Roadmap.sh [notes]
         Basic Terminal Commands:
             grep, awk, sed, lsof, curl, wget, tail, head, less, find, ssh, kill
         Memory Management
-        Interprocess COmmunication
+        Interprocess Communication
         I/O Management
         POSIX Basics:
             stdin, stdout, stderr, pipes
