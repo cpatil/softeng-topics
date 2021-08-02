@@ -219,7 +219,7 @@ Output:
 
 
 GROUP BY ... HAVING = extra filter
-SELECT country_of_birth, COUNT(*) FROM person GROUP BY country_of_birth HAVING COUNT(*) > 30 ORDER BY count DESC;
+SELECT country_of_birth, COUNT(*) FROM person GROUP BY country_of_birth HAVING q(*) > 30 ORDER BY count DESC;
 Output:
  country_of_birth | count 
 ------------------+-------

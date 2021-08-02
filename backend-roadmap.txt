@@ -2,10 +2,10 @@ Backend Roadmap.sh [notes]
     Internet:
         How does the internet work
         What is HTTP
-        Browsers and how they work
         DNS and how it works
         What is Domain Name
         What is hosting (web hosting, web servers)
+        Browsers and how they work
     Basic Frontend Knowledge:
         HTML/CSS
         JavaScript
