@@ -32,6 +32,11 @@ General Notes:
     JAX-WS
     Common Object Request Broker Architecture
     Aspect Oriented Programming
+    Continuous Integration/Development
+    Agile Development
+    Automated Testing
+    SCRUM
+    Apache Kafka
 
 Java Notes [notes]
     Design Patterns
