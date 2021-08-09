@@ -10,7 +10,7 @@ boolean                             bool                logical Boolean (true/fa
 box                                                     rectangular box on a plane
 bytea                                                   binary data ("byte array")
 character [(n)]                     char[(n)]           fixed-length character string
-character varying [(n)]             varchar[(n)]            variable-length character string
+character varying [(n)]             varchar[(n)]        variable-length character string
 cidr                                                    IPv4 or IPv6 network address
 circle                                                  circle on a plane
 date                                                    calendar date(year, month, day)
