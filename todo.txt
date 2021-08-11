@@ -1,5 +1,7 @@
-SQL Language [code+notes] 
+SQL Language
     Documentation
+
+Backend Roadmap.sh Notes
 
 Networking: 
     Web Sockets 
@@ -9,14 +11,14 @@ Networking:
     Web Framework Runtimes 
     Web Security
 
-Ecommerce API [code+notes]
-	SQL
+Cloud9 API 
+    dockerfile
     GraalVM
     Spring Security
     New Features
 
-Springboot Bootstrap Project [code+documentation]
-    rename-me
+rename-me
+    dockerfile
 
 Compiler Notes:
     Adaptive Optimization
@@ -46,9 +48,7 @@ Java Notes [notes]
     Java Beans
     Finish JVM
 
-Backend Roadmap.sh Notes
-
-Database Generator [code]
+Database Generator 
     Mockaroo
 
-Data and Algos [code+notes]
+Data and Algos
