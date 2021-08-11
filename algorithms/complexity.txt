@@ -11,6 +11,14 @@ Quadratic Time O(n^2)
 Cubic Time O(n^3)
 Factorial Time O(n!)
 
+O(1)   			constant 
+O(log(n))   	logarithmic 
+O((log(n))^c)   polylogarithmic 
+O(n)   			linear 
+O(n^2)   		quadratic 
+O(n^c)   		polynomial 
+O(c^n)   		exponential
+
 Space Complexity:
 Is generally expressed as the amount of memory required by an algorithm on an input of size n
 

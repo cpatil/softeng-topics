@@ -551,3 +551,39 @@ Output:
  3aebd43e-5713-4f90-8d2f-8f5f2e7df8e5
 (1 row)
 
+
+
+test=# select * from item;
+-[ RECORD 1 ]----+-------------------------------------
+created_at       | 2021-08-11 11:21:30.097515
+updated_at       | 2021-08-11 11:21:30.097515
+item_id          | 5d69e929-4fa2-429e-b3cb-59b209ab96e0
+item_reviews_id  | dd8d7b34-d2d5-443b-85fa-cf946737cf1e
+item_name        | iPad
+item_description | 2022 Model
+image            | 
+
+test=# select * from item_reviews;
+-[ RECORD 1 ]---+-------------------------------------
+created_at      | 2021-08-11 11:32:24.115507
+updated_at      | 2021-08-11 11:32:24.115507
+item_reviews_id | dd8d7b34-d2d5-443b-85fa-cf946737cf1e
+item_id         | 5d69e929-4fa2-429e-b3cb-59b209ab96e0
+review_id       | 2f00f730-e2fd-4547-8b0e-2522e6f11363
+
+test=# select * from review;
+-[ RECORD 1 ]------------------------------------
+created_at | 2021-08-11 11:24:12.246974
+updated_at | 2021-08-11 11:24:12.246974
+review_id  | 2f00f730-e2fd-4547-8b0e-2522e6f11363
+text       | This phone is great!
+rating     | 4
+image      | 
+
+test=# select i.item_name, i.item_description, r.text, r.rating from item i join item_reviews ir on ir.item_id = i.item_id join review r on r.review_id = ir.review_id;
+-[ RECORD 1 ]----+---------------------
+item_name        | iPad
+item_description | 2022 Model
+text             | This phone is great!
+rating           | 4
+
