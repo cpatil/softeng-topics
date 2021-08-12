@@ -35,6 +35,33 @@ Example: If f(n) = 10 log(n) + 5 (log(n))^3 + 7 n + 3 n^2 + 6 n^3, then f(n) = O
 
 O(g(x)) is a set-valued function, whose value is all functions that do not grow faster then g(x), and use set membership notation to indicate that a specific function is a member of the set thus defined.
 
+Big-O Calculation Examples:
+
+array = [1, 4, 3, 2, ..., 10]
+
+def fun(arr):
+	total = 0 -> O(1)
+	return total -> O(1)
+
+T = O(1) + O(1) = O(1)
+
+def find_sum(arr):
+	total = 0 -> O(1)
+	for each i in arr: -> O(n)
+		total += i -> O(1)
+	return total -> O(1)
+
+T = O(1) + n*O(1) + O(1) = O(n)
+
+def find_sum_2d(array_2d):
+	total = 0 -> O(1)
+	for each row in array_2d:
+		for each i in row:
+			total += i O(1)
+	return total -> O(1)
+
+T = O(1) + n^2*O(1) + O(1)
+
 Little o:
 Informally, f(x) = o(g(x)) means that f grows much slower than g and is insignificant in Comparison
 
