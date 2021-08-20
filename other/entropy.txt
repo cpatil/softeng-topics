@@ -1,0 +1,3 @@
+Entropy:
+
+Is the randomness collected by an operating system or application for use in cryptography or other uses that require random data. This randomness is often collected from hardware sources (variance in fan noise or HDD), either pre-existing ones such as mouse movements or specially provided raandomness generators. A lack of entropy can have a negative impact on performance and security
