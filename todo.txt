@@ -1,9 +1,30 @@
-SQL Language
-    Documentation
+Cloud9 API 
+    Spring Security
+    Frontend
+    Finish Tests
+    Containerize
 
-Rust/C++/Golang Project
+Portfolio
+    About Me
+    Shorts on Projects
 
-Backend Roadmap.sh Notes
+Resume+Coverletter+Indeed
+    Add Jib
+
+Python RPC Database Gen
+
+Resume+Coverletter+Indeed
+    Add Jib
+
+Cracking the Code Interview
+
+Java Notes [notes]
+    Design Patterns
+    Java-Web-Tokens
+    Java Remote Method Invocation
+    Applets
+    Java Beans
+    Finish JVM
 
 Networking: 
     Web Sockets 
@@ -13,14 +34,12 @@ Networking:
     Web Framework Runtimes 
     Web Security
 
-Cloud9 API 
-    dockerfile
-    GraalVM
-    Spring Security
-    New Features
+Backend Roadmap.sh Notes
 
-rename-me
-    dockerfile
+SQL Language
+    Documentation
+
+Rust/C++/Golang Project
 
 Compiler Notes:
     Adaptive Optimization
@@ -42,15 +61,5 @@ General Notes:
     SCRUM
     Apache Kafka
 
-Java Notes [notes]
-    Design Patterns
-    Java-Web-Tokens
-    Java Remote Method Invocation
-    Applets
-    Java Beans
-    Finish JVM
-
 Database Generator 
     Mockaroo
-
-Data and Algos
