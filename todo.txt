@@ -1,8 +1,9 @@
 Cloud9 API 
-    Spring Security
-    Frontend
+    Spring Security (Setup Login or API Access)
+    Frontend (CRUD for all models)
     Finish Tests
     Containerize
+    README
 
 Portfolio
     About Me
