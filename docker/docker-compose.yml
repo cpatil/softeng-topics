@@ -1,0 +1,23 @@
+version: "3"
+services:
+  flyway:
+    image: flyway/flyway
+    command: -url=jdbc:postgresql://192.168.0.158:5434/cloud9 -user=cloud9 -password=cloud9 -connectRetries=6 info migrate info
+    volumes:
+      - .:/flyway/sql
+    depends_on: 
+      - postgres
+  postgres:
+      image: postgres:latest
+      restart: always
+      volumes:
+        - cloud9-data:/var/lib/postgresql/data:rw
+      ports:
+        - "5434:5432"
+      environment:
+        POSTGRES_USER: cloud9
+        POSTGRES_PASSWORD: cloud9
+        POSTGRES_DB: cloud9
+
+volumes:
+  cloud9-data:

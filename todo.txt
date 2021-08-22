@@ -1,21 +1,29 @@
 Cloud9 API 
-    Spring Security (Setup Login or API Access)
     Frontend (CRUD for all models)
     Finish Tests
+    Spring Security (Setup Login or API Access)
+
+rename-Me
+    Update README
     Containerize
-    README
+
+Chrome Extension
+    Update README
+    
+Python RPC Database Gen
+    Update README
+    Implement Code
+    Containerize
 
 Portfolio
-    About Me
-    Shorts on Projects
-
+    Update README
+    Containerize
+    About Me blurb
+    blurbs on Projects
+    
 Resume+Coverletter+Indeed
     Add Jib
-
-Python RPC Database Gen
-
-Resume+Coverletter+Indeed
-    Add Jib
+    write blurbs
 
 Cracking the Code Interview
 
