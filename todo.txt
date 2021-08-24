@@ -5,7 +5,6 @@ Cloud9 API
 
 rename-Me
     Update README
-    Containerize
 
 Chrome Extension
     Update README
@@ -13,7 +12,7 @@ Chrome Extension
 Python RPC Database Gen
     Update README
     Implement Code
-    Containerize
+    Containerize?
 
 Portfolio
     Update README
