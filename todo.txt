@@ -1,11 +1,12 @@
 Cloud9 API 
     Frontend (CRUD for all models)
     Finish Tests
-    Spring Security (Setup Login or API Access)
+    Spring Security (Setup Login and/or API Access)
 
 rename-Me
+    Review
+    Interfaces
     Update README
-    Containerize
 
 Chrome Extension
     Update README
