@@ -12,7 +12,6 @@ Chrome Extension
 Python RPC Database Gen
     Update README
     Implement Code
-    Containerize?
 
 Portfolio
     Update README
