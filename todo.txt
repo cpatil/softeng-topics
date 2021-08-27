@@ -57,6 +57,3 @@ General Notes:
     Apache Kafka
     Async
     UTF
-
-Database Generator 
-    Mockaroo
