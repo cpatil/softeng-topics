@@ -3,30 +3,15 @@ Cloud9 API
     Finish Tests
     Spring Security (Setup Login and/or API Access)
 
-rename-Me
-    Review
-    Interfaces
-    Update README
-
-Chrome Extension
-    Update README
-    
-Python RPC Database Gen
-    Update README
-    Implement Code
-    Containerize?
-
 Portfolio
-    Update README
-    Containerize
     About Me blurb
     blurbs on Projects
     
 Resume+Coverletter+Indeed
-    Add Jib
     write blurbs
 
 Cracking the Code Interview
+    Notes
 
 Java Notes [notes]
     Design Patterns
@@ -70,6 +55,8 @@ General Notes:
     Automated Testing
     SCRUM
     Apache Kafka
+    Async
+    UTF
 
 Database Generator 
     Mockaroo

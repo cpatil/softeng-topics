@@ -1,0 +1,22 @@
+String
+Immutable
+
+Two utility classes for String manipulation are StringBuilder and StringBuffer
+
+JVM String Pool
+	Each time a string literal is created, the JVM checks the string literal pool first. If the string already exists in the string pool, a reference to the pooled instance returns.
+	If the string does not exists in the pool, a new String object initializes and is placed in the pool
+
+String '+' concatenation is an abstraction of StringBuffer
+
+StringBuffer and StringBuilder are mutable objects with the methods: substring(), insert(), append(), delete()
+
+StringBuffer:
+	Thread safe and synchronized
+	Used when multiple threads are working on the same String
+	Slower than StringBuilder
+
+StringBuilder:
+	Not thread safe or synchronized
+	Used in a single-threaded environment
+	Faster than StringBuffer
