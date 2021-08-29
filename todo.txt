@@ -1,7 +1,10 @@
+Cloud9 Frontend (CRUD for all models)
+    Video Tutorial
+
 Cloud9 API 
-    Frontend (CRUD for all models)
-    Finish Tests
-    Spring Security (Setup Login and/or API Access)
+    WebMvcTest
+    DataJpaTest
+    Spring Security API Access
 
 Portfolio
     About Me blurb
