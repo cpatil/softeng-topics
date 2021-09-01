@@ -1,20 +1,36 @@
-Cloud9 Frontend (CRUD for all models)
-    Video Tutorial
+Portfolio
+    About Me Blurb (portfolio examples)
+    Store Management REST API Blurb
+    Database Generator Blurb
+    Rename-Me Blurb
+    1ClickSettings Blurb
+    Onelinerhub Blurb
+    
+Resume+Coverletter+Indeed+LinkedIn
+    Store Management REST API Dot Jot
+    Database Generator Dot Jot
+    Rename-Me Dot Jot
+    1ClickSettings Dot Jot
+    Onelinerhub Dot Jot
 
-Cloud9 API 
+Cracking the Code Interview
+    Data Structures Notes and Examples
+    Algorithm Notes and Examples
+    Coding Questions
+    Interview Prep Notes
+
+Backend Roadmap Notes
+
+Discord Bot
+    Server-wide currency
+    /rollgame like WoW; /roll to participate; /rollgame again to roll
+    /coinflip
+    /daily +100 coin a day
+
+Store Management REST API 
     WebMvcTest
     DataJpaTest
     Spring Security API Access
-
-Portfolio
-    About Me blurb
-    blurbs on Projects
-    
-Resume+Coverletter+Indeed
-    write blurbs
-
-Cracking the Code Interview
-    Notes
 
 Java Notes [notes]
     Design Patterns
@@ -31,8 +47,6 @@ Networking:
     Caching 
     Web Framework Runtimes 
     Web Security
-
-Backend Roadmap.sh Notes
 
 SQL Language
     Documentation
