@@ -15,7 +15,7 @@ In a well-dimensioned hash table, the average cost (number of instructions) for 
 
 In many situations, hash tables turn out to be on average more efficient than search trees or any other table lookup structure. For this reason, they are widely used in many kinds of computer software, particularly for associative arrays, database indexing, caches, and sets
 
-The idea of hashing is to distribute the entries (key/value pairs) acress an array of buckets. Given a key, the algorithm computes an index that suggests where the entry can be found:
+The idea of hashing is to distribute the entries (key/value pairs) across an array of buckets. Given a key, the algorithm computes an index that suggests where the entry can be found:
 
 					index = f(key, array_size)
 								
