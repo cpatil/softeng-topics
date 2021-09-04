@@ -26,6 +26,6 @@ public class DemoStrings {
 		//StringBuffer
 		StringBuffer sbf = new StringBuffer();		
 
-		return new ArrayList<>(Arrays.asList(str, sb.toString()));;
+		return new ArrayList<>(Arrays.asList(str, sb.toString()));
 	}
 }

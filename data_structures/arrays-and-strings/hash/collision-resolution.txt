@@ -27,8 +27,21 @@ Some chaining implementations store the first record of each chain in the slot a
 
 The disadvantage is that an empty bucket takes the same space as a bucket with one entry. To save space, such hash tables often have about as many slots as stored entries, meaning that many slots have two or more entries.
 
+Stack Overflow (Reference to Cracking the Code Interview):
+So they're talking about using a BST (binary search tree) to handle collisions. It wouldn't actually make sense to use a BST as the sole data structure since the whole point of a properly tuned hash is that look-up is on the order of O(1), much better than the O(log n) from a BST. On top of that, using a BST to totally implement a hash table means it's not actually a hash table
+
+However, consider that, when you have collisions in a hash table, a frequent way to handle them is to have each bucket contain a linked list of its items. In the degenerate case (all items hashing to the same bucket), you end up with just a linked list and the O(1) turns into O(n).
+
+So, rather than a linked list at each bucket, you have a BST. Then you no longer have O(n) search complexity in cases where a single bucket has many items (the previously mentioned collisions).
+
+You use the hash function to find the bucket in O(1) then search through the BST in O(log n) if there are collisions. In the best case (one item per bucket), it's still O(1). The worst case then becomes O(log n) rather than O(n).
+
+The only thing that originally concerned me about that theory is that they also discuss the fact that a large allocation is no longer necessary. If it's a shared hash/BST combination, you still need to allocate the entire hash table so that seemed incongruous.
+
+However, from the context ("... since a large array no longer needs to be allocated ..."), it appears that they mean they can make the hash table part of the dual data structure smaller as the collisions are more efficient to process. In other words, rather than a 1000-element hash table with linked lists for collisions, you can get away with a 100-element hash table because the collisions are not so damaging to the search time if you use a BST.
+
 Separate chaining with other structures:
-Instead of a list, one can use any other data structure that supports the required operations. For example, by using a self-balancing binary search tree, the theoretical worst-case time of common hash table operations (insertion, deletion, lookup) can be brought down to O(log n) rather than O(n). However, this introduces extra complexity into the implementation, and may cause even worse performance for smaller hash tables, where the time spent inserting into and balancing the tree is greater than the time needed to perform a linear search on all of the elements of a list.[3][12] A real world example of a hash table that uses a self-balancing binary search tree for buckets is the HashMap class in Java
+Instead of a list, one can use any other data structure that supports the required operations. For example, by using a self-balancing binary search tree, the theoretical worst-case time of common hash table operations (insertion, deletion, lookup) can be brought down to O(log n) rather than O(n). However, this introduces extra complexity into the implementation, and may cause even worse performance for smaller hash tables, where the time spent inserting into and balancing the tree is greater than the time needed to perform a linear search on all of the elements of a list. A real world example of a hash table that uses a self-balancing binary search tree for buckets is the HashMap class in Java
 
 The variant called array hash table uses a dynamic array to store all the entries that hash to the same slot.Each newly inserted entry gets appended to the end of the dynamic array that is assigned to the slot. The dynamic array is resized in an exact-fit manner, meaning it is grown only by as many bytes as needed. Alternative techniques such as growing the array by block sizes or pages were found to improve insertion performance, but at a cost in space. This variation makes more efficient use of CPU caching and the translation lookaside buffer (TLB), because slot entries are stored in sequential memory positions. It also dispenses with the next pointers that are required by linked lists, which saves space. Despite frequent array resizing, space overheads incurred by the operating system such as memory fragmentation were found to be small.
 

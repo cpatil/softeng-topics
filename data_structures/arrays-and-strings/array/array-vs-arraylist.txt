@@ -1,0 +1,69 @@
+Array[] vs ArrayList<T>
+
+Array: Fixed size
+
+ArrayList<T>: Dynamic
+
+
+        /* ........... Normal Array............. */
+        // Need to specify the size for array 
+        int[] arr = new int[3];
+        arr[0] = 1;
+        arr[1] = 2;
+        arr[2] = 3;
+        // We cannot add more elements to array arr[]
+  
+        /*............ArrayList..............*/
+        // Need not to specify size 
+        ArrayList<Integer> arrL = new ArrayList<Integer>();
+        arrL.add(1);
+        arrL.add(2);
+        arrL.add(3);
+        arrL.add(4);
+
+Array can contain both primitive data types and objects
+Array list can only contain objects
+
+import java.util.ArrayList;
+class Test
+{
+    public static void main(String args[])
+    {
+       // allowed
+        int[] array = new int[3];
+  
+        // allowed, however, need to be initialized
+        Test[] array1 = new Test[3];
+  
+        // not allowed (Uncommenting below line causes
+        // compiler error)
+        // ArrayList<char> arrL = new ArrayList<char>();
+  
+        // Allowed
+        ArrayList<Integer> arrL1 = new ArrayList<>();
+        ArrayList<String> arrL2 = new ArrayList<>();
+        ArrayList<Object> arrL3 = new ArrayList<>();
+    }
+}
+
+An ArrayList is an array that resizes itself as needed while still providing O(1) access. A typical implementation is that when the array is full, the array doubles in size. Each doubling takes O(n) time, but happens so rarely that its amortized insertion time is still O(1)
+
+ArrayList<String> merge(String[] words, String[] more) {
+    ArrayList<String> sentence = new ArrayList<String>();
+    for (String w : words) sentence.add(w);
+    for (String w: more) sentence.add(w);
+    return sentence;
+}
+
+Why is the amortized insertion runtime O(1) for ArrayList?
+Suppose you have an array of size N. We can work backwards to compute how many elements we copied at each capacity increase. Observe that when we increase the arary to K elements, the array was previously half that size. Therefore, we needed to copy k/2 elements
+
+final capacity increase: n/2 elements to copy
+previous capacity increase: n/4 elements to copy
+previous capacity increase: n/8 elements to copy
+second capacity increase: 2 elements to copy
+first capacity increase: 1 element to copy
+
+Therefore, the total number of copies to insert N elements is roughly n/2 + n/4 + n/8 + ... + 2 + 1, which is just less than N.
+
+Therefore, inserting N elements takes O(N) work total. Each insertion is O(1) on average, even though some insertions take O(N) time in the worst case

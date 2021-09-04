@@ -1,0 +1,28 @@
+Node - Every unit that makes up the tree is called a node. Each node holds some data and points towards other nodes in the tree. For a binary tree, each node has two children - one left child and one right child. 
+
+Children - The successors to some node in the tree. With the exception of leaves, all nodes in the binary tree generally have at least one or two children. All children are linked to its parent with a one-way pointer.
+
+Parent - The predecessor to some node in the tree. With the exception of the root, all nodes in the binary tree have a parent. 
+
+Root - Like every real-world tree, trees in the digital world take stem from a root. The root is the starting node for a tree from which all of the nodes are added as children. The root does not have a parent since it is the "first node" in the tree.
+
+Leaves - Like a real-world tree, every tree in the digital world has leaves. These leaves are the ultimate nodes in the tree, marking the terminals of the tree. Leaves do not have any children since they technically mark the "borders" for the points where the tree ends.
+
+Intermediate node - All nodes other than the roots and the leaves in a tree are called intermediate nodes. This is so named because these nodes lie in between the root and the leaves of the tree.
+
+Subtree - A subsection of the entire tree. 
+
+The binary tree is a tree where each node (except the leaves) has two children. Each node can have one parent and a maximum of two children.
+
+A binary search tree extends upon the concept of a binary tree. A binary search tree is set such that:-
+
+1) Every left node is always lesser than its parent node
+
+2) Every right node is always greater than its parent node
+
+Tree traversals
+1) Preorder - This traversal involves printing the root, then recursively calling the function for the left subtree and the right subtree. 
+
+2) Postorder - This traversal involves recursively calling the function for the left subtree and the right subtree and then printing the root. 
+
+3) Inorder - This traversal involves recursively calling the function for the left subtree, printing the root, and then recursively calling the function for the right subtree.

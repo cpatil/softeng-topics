@@ -21,6 +21,10 @@ Cracking the Code Interview
 
 Backend Roadmap Notes
 
+Fibonacci sequence
+
+Pigeonhole Theory
+
 Discord Bot
     Server-wide currency
     /rollgame like WoW; /roll to participate; /rollgame again to roll
