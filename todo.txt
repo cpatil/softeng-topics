@@ -1,10 +1,26 @@
+CODE:
+Discord Bot
+    Server-wide currency
+    /rollgame like WoW; /roll to participate; /rollgame again to roll
+    /coinflip
+    /daily +100 coin a day
+
+Store Manager Frontend
+
+Store Manager 
+    WebMvcTest
+    DataJpaTest
+    Spring Security API Access
+
+Portfolio
+    CI/CD on Linode
+
+NOTES:
 Cracking the Code Interview
     Data Structures Notes and Examples
     Algorithm Notes and Examples
     Coding Questions
     Interview Prep Notes
-
-Backend Roadmap Notes
 
 Fibonacci Sequence
 
@@ -12,24 +28,15 @@ Floating Point Numbers
 
 Pigeonhole Theory
 
-Java Notes [notes]
+Backend Roadmap
+
+Java:
     Design Patterns
     Java-Web-Tokens
     Java Remote Method Invocation
     Applets
     Java Beans
     Finish JVM
-
-Discord Bot
-    Server-wide currency
-    /rollgame like WoW; /roll to participate; /rollgame again to roll
-    /coinflip
-    /daily +100 coin a day
-
-Store Management REST API 
-    WebMvcTest
-    DataJpaTest
-    Spring Security API Access
 
 Networking: 
     Web Sockets 
@@ -39,7 +46,7 @@ Networking:
     Web Framework Runtimes 
     Web Security
 
-General Notes:
+General:
     XML-SAX-DOM... 
     SOAP protocol
     JAX-WS
@@ -53,7 +60,7 @@ General Notes:
     Async
     UTF
 
-Compiler Notes:
+Compiler:
     Adaptive Optimization
     Dynamic Recompilation
     Just-in-Time Compilation
