@@ -1,9 +1,11 @@
 CODE:
 Discord Bot
-    Server-wide currency
+    /Server-wide currency TBA
     /rollgame like WoW; /roll to participate; /rollgame again to roll
     /coinflip
     /daily +100 coin a day
+    /ticket system to lock people in channels?
+    /clip system
 
 Store Manager Frontend
 

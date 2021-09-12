@@ -46,7 +46,7 @@ Java is a computer programming language that is concurrent, class-based and obje
 	- Improved reliability and flexibility of code
 	- Increased understanding of code
 
-Conceptps of Object-Oriented Programming
+Concepts of Object-Oriented Programming
 	- Abstraction
 	- Encapsulation
 	- Polymorephosm
