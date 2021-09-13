@@ -1,0 +1,17 @@
+Definition of business agility created by researchers of McKinsey & Company to expand on this idea, who define Agile as “the ability to quickly reconfigure strategy, structure, processes, people, and technology toward value-creating and value-protecting opportunities.” These definitions reflect that Agile itself is a mindset, not a technique. That’s where Agile methodologies come in.
+
+Agile Alliance defines Agile as “the ability to create and respond to change. It is a way of dealing with, and ultimately succeeding in, an uncertain and turbulent environment.”
+
+Manifesto for Agile Software Development
+
+We are uncovering better ways of developing software by doing it and helping others do it. Through this work we have come to value:
+
+	Individuals and interactions over processes and tools
+
+	Working software over comprehensive documentation
+
+	Customer collaboration over contract negotiation
+
+	Responding to change over following a plan
+
+That is, while there is value in the items on the right, we value the items on the left more.
