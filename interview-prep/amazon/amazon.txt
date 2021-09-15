@@ -1,0 +1,126 @@
+## Reply email vvvv
+Dear Joshua,
+
+Thank you for your time and interest in the Software Engineer – Prime Video Encoding opportunity currently available with Prime Video!
+
+You have now advanced forward to the first step of our Application and Interview process – the Online Technical Assessment. You can click on the link to find more information about Amazon's Application and Interview process.
+
+ONLINE ASSESSMENT
+
+As a next step, you will receive an email to complete the “Amazon Career Essentials” online assessment. The questions will cover the following areas: Architecture/Infrastructure/OS, Development/App Dev, Networking, Database, Security and Storage
+
+This assessment combines a simulation experience aligned with the Amazon Leadership Principles. The assessment takes about 65 minutes to complete and will contain strategic thinking, problem solving, data interpretation, planning and prioritization exercises.
+
+If you have not received an email containing your individualized online assessment, kindly check out your SPAM folder as this is an automated email, hence it might land there (email is sent from Recruiting at Amazon <no-reply@panpowered.com>).
+
+In the meantime, familiarize yourself with our Leadership Principles. One of the most important things we look for in future leaders at Amazon is their fit with these principles. Try to think of examples from your past that tie to each. Remember to highlight what YOU did in each example. We are very focused on metrics and data so be sure you can show how you use data to solve problems and make informed decisions. View Amazon’s Leadership Principles. Please also see below the three steps of our recruitment process:
+
+PHONE INTERVIEW(S)
+
+If you complete the assessment successfully, you will receive an email from our system to request your availability for a 45-60 minutes phone interview. Please note, this is an automated system so the more availabilities you submit, the faster your interview will be scheduled. We suggest you share as many days and time ranges as possible within the next 2 weeks (9am-6pm CE(S)T Monday to Friday). After asking competency-based questions on our Amazon Leadership Principles, the interviewer will answer all of your questions. We will update you on the result after two business days of the interview taking place. Excited to know how to prepare for your phone interview? All the tips are here.
+
+VIRTUAL INTERVIEW DAY
+
+When you successfully complete your phone interview(s), our Recruiting Coordinator (RC) will invite you to meet with 4 or 5 Amazonians via video conference. The interview will consist of competency-based interviews and can include an excel test or a business case. Our Recruiting Coordinator will confirm the date and full agenda in detail once scheduled. Your recruiter will update you on the result within five business days of the interview date.
+
+TO PREPARE FOR YOUR INTERVIEWS:
+
+Are you interested to know what it is like to interview at Amazon? All of our interviews consist of competency-based questions focusing on our Amazon Leadership Principles. You can use our website to familiarize yourself with our principles, the STAR communication method, and prepare several examples that relate to your own experience. Curious to discover what is happening now at Amazon? Our Day One blog has all the answers!
+
+I look forward to hearing from you!
+## Reply email ^^^^
+
+Help make history starting with Day 1
+
+When Amazon.com launched in 1995, it was with the mission “to be Earth’s most customer-centric company.” What does this mean? It's simple. We're a company that obsesses over our customers. Our actions, goals, projects, programs and inventions begin and end with the customer top of mind. In other words, we start with the customer and work backwards. When we hit on something that is really working for customers, we double-down on it with hopes to turn it into an even bigger success. However, it’s not always as clean as that. Inventing is messy, and over time, it’s certain that we’ll fail at some big bets too.
+
+You'll also hear us say that at Amazon, it's always "Day 1." What do we mean? Our approach remains the same as it was on Amazon’s very first day — to make smart, fast decisions, stay nimble, innovate and invent, and focus on delighting customers.
+
+“We continue to aspire to be Earth’s most customer-centric company, and we recognize this to be no small or easy challenge. We know there is much we can do better, and we find tremendous energy in the many challenges and opportunities that lie ahead.” – Jeff Bezos
+
+LEADERSHIP PRINCIPLES
+
+Next, dive into our Leadership Principles. We use our Leadership Principles every day, whether we're discussing ideas for new projects or deciding on the best approach to solving a problem. It is just one of the things that makes Amazon peculiar. All candidates are evaluated based on our Leadership Principles. The best way to prepare is to consider how you’ve applied the Leadership Principles in your previous professional experience.
+
+ABOUT ASSESSMENTS
+
+At Amazon, one of our highest priorities is hiring and developing the best, and we work hard to raise the performance bar with every hire. Amazon uses online assessments as one way to help us get to know you better, and we design them to measure key characteristics required for success in a role. Assessments also allow us to assess applicants consistently and equitably, as every individual is provided with the same experience and information needed to complete the assessment. Depending on the position, we may ask you to take an assessment during the application process or send it to you separately after you’ve applied. The type and number of assessments will depend on the role you apply for and in some cases, must be completed within a certain timeframe. The two common types of assessments are work style assessments and work sample simulations.
+
+WORK STYLE ASSESSMENT
+
+These assessments are centered around Amazon’s peculiar culture and Leadership Principles, and typically take 10-20 minutes to complete. In these assessments, we ask you to choose the extent to which a statement represents your work style. For instance, we may ask you which of the two statements "I like for things to be clearly structured,” or “I look forward to the opportunity to learn new things," best describes you.
+ 
+
+WORK SAMPLE SIMULATION
+
+These assessments ask you to complete virtual tasks related to a specific position and typically take 20 minutes - one hour to complete. They may ask you to make decisions based on our Leadership Principles, complete activities critical to success at Amazon, and demonstrate your problem-solving, prioritization, and interpersonal abilities. Depending on the role you are applying for, the assessment may ask you to interpret data from a chart, answer a customer question, choose how to resolve an issue, multitask, or find the right information from multiple sources.
+
+TIPS
+
+For any Software Development Engineer I & II applicants we recommend reviewing our Software Development Topics to help you prepare for technical evaluations and interviews. For all other roles, no advance preparation is required to complete the assessment(s). Just be yourself and do your best.
+
+Some questions may ask about your work style. Try not to overthink them or spend too much time on any one question. We want to get to know the authentic you, as there are many types of successful people at Amazon.
+
+Before starting your assessment, read any information provided carefully since things like timing, deadlines, and assessment types can vary depending on the team.
+
+THE FORMALITIES:
+
+
+    Most assessments are conducted virtually unless administered as part of a hiring event or on-site interview day.
+    
+	During your assessment, be in a quiet and comfortable place with no distractions.
+    
+	Review provided instructions carefully, as some assessments must be completed by a particular date. If an assessment deadline is missed, we’re unable to grant extensions. Many assessments are also timed, so be sure to set aside an appropriate amount of time.
+    
+	All assessments require the internet, have a computer with a reliable connection and access to email. You will be notified of any additional technical requirements in advance.
+    
+	If you have any special requirements, questions or concerns, please reach out to us as we are committed to making reasonable provisions for all individuals.
+    
+	Technical assistance is available for all assessments should you experience a disruption that you cannot resolve (e.g. assessment freezes or crashes). If an issue occurs, use the contact information provided in the assessment.
+    
+	We take your data privacy very seriously. To learn about how we store your results review our privacy policy.
+    
+	All assessments must be completed solely by the applicant.
+
+
+Technical topics:
+
+	Programming language:
+
+		We do not require that you know any specific programming language before interviewing for a tech position. However, familiarity with a prominent language is generally a prerequisite for success. You should be familiar with the syntax of languages such as C, C++, C++14, C#, Go, Java7, Java8, JavaScript, Kotlin, Objective-C, PyPy2, PyPy3, Python2, Python3, Ruby, Scala and Swift. You should also know some of the languages’ nuances, such as how memory management works, or the most commonly used collections, libraries, etc.
+
+	Data structures:
+
+		Most of the work we do involves storing and providing access to data in efficient ways. This requires a strong background in data structures. You’ll need to understand the inner workings of common data structures and be able to compare and contrast their usage in various applications. You will be expected to know the runtimes for common operations as well as how they use memory.
+
+	Algorithms:
+
+		Your interview will not be focused on rote memorization of algorithms. However, having a good understanding of the most common algorithms will likely make solving some of the questions a lot easier. Consider reviewing common algorithms such as traversals, divide and conquer, breadth-first search vs. depth-first search and understand the tradeoffs for each. Knowing the runtimes, theoretical limitations, and basic implementation strategies of different classes of algorithms is more important than memorizing the specific details of any given algorithm.
+
+	Coding:
+
+		Expect to be asked to write syntactically correct code—no pseudo code. If you feel a bit rusty coding without an IDE or coding in a specific language, it’s a good idea to dust off the cobwebs and get comfortable coding with a pen and paper. The most important thing a Software Development Engineer does at Amazon is write scalable, robust, and well-tested code. These are the main evaluation criteria for your code. Make sure that you check for edge cases and validate that no bad input can slip through. This is your chance to show off your coding ability.
+
+	Object-oriented design:
+
+		Good design is paramount to extensible, bug-free, long-lived code. We know it’s possible to solve any given software problem in almost limitless ways, but when software needs to be extensible and maintainable, good software design is critical to success. One way to build lasting software is to use object-oriented design best practices. You should have a working knowledge of a few common and useful design patterns, along with how to write software in an object-oriented way. You likely won’t be asked to describe the details of how specific design patterns work, but expect to have to defend your design choices.
+
+	Database:
+
+		Most of the software that we write is backed by a data store. Many of the challenges tech people face arise when figuring out how to most efficiently retrieve and store data for future use. Amazon has been at the forefront of the non-relational DB movement. We have made Amazon Web Services such as DynamoDB available to the developer community so that they can easily leverage the benefits of non-relational databases. While we don't expect any particular level of expertise with non-relational databases, you should be familiar with broad database concepts and their applications. The more you know about tradeoffs between relational and non-relational databases, the better prepared you will be.
+
+	Distributed computing:
+		
+		Systems at Amazon have to work under very strict tolerances at a high load. While we have some internal tools that help us with scaling, it’s important to have an understanding of a few basic distributed computing concepts. Understanding topics such as service-oriented architectures, map-reduce, distributed caching, load balancing, and others, will help you formulate answers to some of the more complicated distributed architecture questions you might encounter.
+
+	Operating systems:
+
+		You won’t need to know how to build your own operating system from scratch, but you should be familiar with some OS topics that can affect code performance (e.g. memory management, processes, threads, synchronization, paging, and multithreading).
+
+	Internet topics:
+
+		We expect our engineers to be familiar with the fundamentals of how the internet works. Brush up on how browsers function at a high level, from DNS lookups and TCP/IP, to socket connections. Having a solid understanding of the fundamentals of how the worldwide web works is a requirement.
+
+	General machine learning and artificial intelligence:
+
+		Expect to be asked about data-driven modeling, train/test protocols, error analysis, and statistical significance. For example, given a problem definition, you should be able to formulate it as a machine learning problem and propose a solution, including ideas for data sources, annotation, modeling approaches, and potential pitfalls. Understand the basic AI/ML methods and algorithms – revisit your favorite ML and AI textbooks.
