@@ -85,3 +85,5 @@ The disadvantages of the Agile Model are as follows −
     There is a very high individual dependency, since there is minimum documentation generated.
 
     Transfer of technology to new team members may be quite challenging due to lack of documentation.
+
+https://www.planview.com/resources/guide/agile-methodologies-a-beginners-guide/

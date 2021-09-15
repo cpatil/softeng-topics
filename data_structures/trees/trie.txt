@@ -1,0 +1,2 @@
+https://www.baeldung.com/trie-java
+https://github.com/eugenp/tutorials/blob/master/data-structures/src/main/java/com/baeldung/trie/Trie.java
