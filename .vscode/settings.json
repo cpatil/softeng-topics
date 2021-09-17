@@ -1,14 +1,7 @@
 {
-    "sqltools.connections": [
-        {
-            "previewLimit": 50,
-            "server": "192.168.1.61",
-            "port": 5432,
-            "driver": "PostgreSQL",
-            "name": "Citrix Database",
-            "database": "test",
-            "username": "postgres",
-            "password": "brock2021"
-        }
+    "java.project.sourcePaths": [
+        "data_structures/arrays-and-strings/questions",
+        "data_structures/array/stringbuilder",
+        "code-practice/linked-list-palindrome"
     ]
 }
