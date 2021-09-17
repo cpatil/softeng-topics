@@ -1,0 +1,22 @@
+First consider the definitions below:
+
+Auxiliary Space
+
+is the temporary space allocated by your algorithm to solve the problem, with respect to input size.
+
+Space Complexity
+is the total space used by your algorithm to solve the problem, with respect to input size. Note that the Space Complexity includes
+
+input size.
+
+I can see where your confusion comes from; usually, when we say "Space complexity of Mergesort" we mean its Auxiliary Space, because we obviously cannot improve the space we use for the input itself. As such, some of the statements in your question are not correct.
+
+∙
+Mergesort has Auxiliary space of O(n) (in its common use) since you allocate a new array, and Space complexity of O(n)
+
+An example between the two would be:
+
+If we compare Quicksort and Mergesort, they both have a space complexity of O(n)
+and run at O(nlogn) time, but Mergesort requires Auxiliary space of O(n) while Quicksort requires Auxiliary space of O(1)
+
+Finally, to answer your question: usually the intention while asking about "space complexity" is indeed Auxiliary space, although there is some ambiguity here in regard to the formal definitions above. To be pedantic, you can separate the two space complexity types in your answer.
