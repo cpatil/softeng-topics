@@ -6,7 +6,7 @@
 
 		Most of the software that we write is backed by a data store. Many of the challenges tech people face arise when figuring out how to most efficiently retrieve and store data for future use. Amazon has been at the forefront of the non-relational DB movement. We have made Amazon Web Services such as DynamoDB available to the developer community so that they can easily leverage the benefits of non-relational databases. While we don't expect any particular level of expertise with non-relational databases, you should be familiar with broad database concepts and their applications. The more you know about tradeoffs between relational and non-relational databases, the better prepared you will be.
 
-	3 Distributed computing & systems:
+	3 Cloud & Distributed computing & systems:
 		
 		Systems at Amazon have to work under very strict tolerances at a high load. While we have some internal tools that help us with scaling, it’s important to have an understanding of a few basic distributed computing concepts. Understanding topics such as service-oriented architectures, map-reduce, distributed caching, load balancing, and others, will help you formulate answers to some of the more complicated distributed architecture questions you might encounter.
 
