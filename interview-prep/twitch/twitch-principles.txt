@@ -8,7 +8,7 @@ The Values:
 
 	Shared vision over coordination:
 
-		The enemy of speed is coordination. Waiting to coordinate with even one person or group results in a significant slowdown. Waiting to coordinate with multiple others can make even the most productive person or team grind to a halt. Be ruthless in pruning coordination. Every dependency you eliminate will improve your life indefinitely thereafter.
+		The enemy of speed is coordination. Waiting to coordinate with even one person or group results is a significant slowdown. Waiting to coordinate with multiple others can make even the most productive person or team grind to a halt. Be ruthless in pruning coordination. Every dependency you eliminate will improve your life indefinitely thereafter.
 
 		On the flip side, the enemy of good decision making is ignorance. Making a decision in ignorance of the knowledge of others in the company is a good way to make the same mistakes over and over and a good way to miss opportunities.
 

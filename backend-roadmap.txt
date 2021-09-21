@@ -6,27 +6,16 @@ Backend Roadmap.sh [notes]
         What is Domain Name
         What is hosting (web hosting, web servers)
         Browsers and how they work
-    Basic Frontend Knowledge:
-        HTML/CSS
-        JavaScript
     OS and General Knowledge:
-        Terminal Usage
         How OSs work in General
         Process Management
         Threads and Concurrency
-        Basic Terminal Commands:
-            grep, awk, sed, lsof, curl, wget, tail, head, less, find, ssh, kill
         Memory Management
         Interprocess Communication
         I/O Management
         POSIX Basics:
             stdin, stdout, stderr, pipes
         Basic Networking Concepts
-    Learn a Language:
-        Java, C#, PHP, Rust, Go, JavaScript, Python, Ruby
-    Basic Usage of Git
-    Version Control Systems
-        What are they and why you should use open
     Relational Databases:
         PostgreSQL, MySQL, MariaDB, MS SQL, Oracle
     Non-Relational Databases:
@@ -48,35 +37,23 @@ Backend Roadmap.sh [notes]
         REST
         JSON APIs
         SOAP
-    Security:
-        Cookie Based
-        OAuth
-        Basic Authentication
-        Token Authentication
-        JWT
-        OpenID
-        SAML
-        Web Security:
-            MD5 (Don't Use)
-            SHA Family
-            scrypt
-            bcrypt
-            Hasing Algorithms
-            HTTPS
-            Content Security Policy
-            CORS
-            SSL/TLS
-            OWASP Security Risks
+    Web Security:
+        MD5 (Don't Use)
+        SHA Family
+        scrypt
+        bcrypt
+        Hasing Algorithms
+        HTTPS
+        Content Security Policy
+        CORS
+        SSL/TLS
+        OWASP Security Risks
     Caching
         CDN
         Server Side
             Redis
             Memcached
         Client Side
-    Testing
-        Integration Testing
-        Unit Testing
-        Functional Testing
     CI/CD
     Design and Development Principles
         GOF Design Patterns

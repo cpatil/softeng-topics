@@ -1,18 +1,18 @@
 References:
 https://medium.com/twitch-engineering/a-guide-to-interviewing-at-twitch-eb95fd98dbe0
 
-Interview Notes and Scripts
+Interview Notes and Scripts:
 
 What Twitch is looking for:
-Enthusiasm for engineering and craftsmanship - you should enjoy the challenge of solving engineering problems, striving to improve your skills, and care deeply about the quality and polish aof the products you build
+Enthusiasm for engineering and craftsmanship - you should enjoy the challenge of solving engineering problems, striving to improve your skills, and care deeply about the quality and polish of the products you build
 
     Practical coding skills and problem-solving ability - we want you to be able to work quickly and safely, as well as solve difficult problems
 
     Communication skills - yes, you're going to be spending a lot of time writing code, but all of the important decisions that you make will usually require you to communicate clearly and effictively with a variety of people, both technical and non-technical
 
-Overall Interview Tips
+Overall Interview Tips:
 
-    Ask us questions! Interviews are as much about you learning about us as us learning about you. If there are things that you would like to know about Twitch that will help you decide if we're a good fit, ask them. Write down a list ahead of time if you're not good at being spontaneous.
+    **Ask us questions!** Interviews are as much about you learning about us as us learning about you. If there are things that you would like to know about Twitch that will help you decide if we're a good fit, ask them. Write down a list ahead of time if you're not good at being spontaneous.
 
     Don't worry if you don't know everything. We're looking for folks who are able to succeed when given difficult challenges. Part of that is often seeing how you deal with things that may be out of your comfort zone or area of expertise
 
@@ -26,25 +26,25 @@ Phone Interview Tips:
 
     Instead of a cell phone, consider using a landline or VOIP solutions like Skype or Google Hangouts with a headset to get especially good voice quality
 
-    We will usualy provide you with an URL for a shared editor environment like CoderPad. Take a few minutes to familiarize y ourself with the environment, and make sure that you can cannot to the provided URL before the interview starts
+    We will usually provide you with an URL for a shared editor environment like CoderPad. Take a few minutes to familiarize yourself with the environment, and make sure that you can connect to the provided URL before the interview starts
 
-Technical Interview Tips
+Technical Interview Tips:
 
-    As mentioned above, we're looking to challenge you and explore the boundaries of whate you do and don't know. So it's more important that you feel comfortable thinking on your feet and describing your approach than knowing every little detail. If you haven't interview for a while, get someone to throw a practice question at your so you can practice verbalizing your thoughts.
+    As mentioned above, we're looking to challenge you and explore the boundaries of what you do and don't know. So it's more important that you feel comfortable thinking on your feet and describing your approach than knowing every little detail. If you haven't interview for a while, get someone to throw a practice question at you so you can practice verbalizing your thoughts.
 
     Interview questions that we give you may often seem like they're vague or unclear. Hint: This is often by design! Real world engineering is messy - we're looking to find people who are able to bring clarity and order to it. Ask questions to determine the scope of the problem so you can clean and tidy it up.
 
-    Iterate while answering questions! if you find an optimal solution first, that's great! But it's often better to solve the problem quickly first with a suboptimal solution and then follow up with a better solution later.
+    Iterate while answering questions! If you find an optimal solution first, that's great! But it's often better to solve the problem quickly first with a suboptimal solution and then follow up with a better solution later.
 
 Coding:
 
     As an engineering candidate, it is expected that you will be able to demonstrate proficiency in day-to-day coding skills. We expect that you will be able to write correct, clean, and maintainable code on the fly. We suggest that you brush up on a language that lends itself well to rapid prototyping, like Python, Ruby, or JavaScript, so you can spend more time demonstrating your coding skills and less time writing uninteresting boilerplate. You should have an understanding of fundamental algorithms and data structures (Breadth-first search, depth-first search, hash tables, lists, binary trees, etc.), as well as their runtime characteristics and common applications.
 
-Programming Language and Tools Expertise
+Programming Language and Tools Expertise:
 
     As an engineering candidate, it is expected that you will be able to demonstrate proficiency in day-to-day coding skills. We expect that you will be able to write correct, clean, and maintainable code on the fly. We suggest that you brush up on a language that lends itself well to rapid prototyping, like Python, Ruby, or JavaScript, so you can spend more time demonstrating your coding skills and less time writing uninteresting boilerplate. You should have an understanding of fundamental algorithms and data structures (Breadth-first search, depth-first search, hash tables, lists, binary trees, etc.), as well as their runtime characteristics and common applications.
 
-Design and Architecture
+Design and Architecture:
 
     Twitch engineering runs the gamut from crafting delightful user experiences on our platforms (Web, Xbox, PS4, iOS, etc.) to building large-scale distributed systems, so the scope of what you may be asked could be large depending on the position you’re applying for. We may ask you questions outside your past experience or comfort zone to see how you think on your feet and adapt to new problems. When designing solutions, we value simplicity, ease of maintenance, and durability more than algorithmic and design cleverness.
 
