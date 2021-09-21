@@ -63,6 +63,12 @@ class ArrayListImpl<T> {
 		return null;
 	}
 
+	public int search(T data) {
+		for(int i = 0; i < this.size; i++) {
+			if(this.array[i] == data) return i;
+		}
+		return null;
+	}
 
 	public int size() {
 		return this.index;
@@ -95,6 +101,7 @@ class ArrayListImpl<T> {
 		System.out.println(array.toString());
 		System.out.println(array.size());	
 		System.out.println(array.get(45));
+		System.out.println(array.search(45));
 		System.out.println(array.isEmpty());
 	}
 }
