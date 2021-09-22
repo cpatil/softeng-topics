@@ -1,0 +1,21 @@
+Radix: http://www.geekviewpoint.com/java/sorting/radixsort
+
+    Radix sort, like counting sort and bucket sort, is an integer based algorithm (i.e. the values of the input array are assumed to be integers). Hence radix sort is among the fastest sorting algorithms around, in theory. The particular distinction for radix sort is that it creates a bucket for each cipher (i.e. digit); as such, similar to bucket sort, each bucket in radix sort must be a growable list that may admit different keys.
+
+Bucket: http://www.geekviewpoint.com/java/sorting/bucketsort
+
+    Bucket sort is actually very good considering that counting sort is reasonably speaking its upper bound. And counting sort is very fast. The particular distinction for bucket sort is that it uses a hash function to partition the keys of the input array, so that multiple keys may hash to the same bucket. Hence each bucket must effectively be a growable list; similar to radix sort.
+
+Counting: http://www.geekviewpoint.com/java/sorting/countingsort
+
+    The particular distinction for counting sort is that it creates a bucket for each value and keep a counter in each bucket. Then each time a value is encountered in the input collection, the appropriate counter is incremented. Because counting sort creates a bucket for each value, an imposing restriction is that the maximum value in the input array be known beforehand.
+
+They explain it in more details on their site.
+
+Edit:
+
+    If you are using radix sort and your numbers are decimal, then you need 10 buckets, one for each digit from 0 to 9.
+
+    If you are using counting sort, then you need a bucket for each unique value in the input (actually you need a bucket for each value between 0 and max).
+
+    If you are using bucketsort, you don't know how many buckets you will be using. Whatever hash function you are using will determine the number of buckets.
