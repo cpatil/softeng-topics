@@ -14,11 +14,6 @@ public class QueueImpl<T> {
 		public Node(T data) {
 			this.data = data;
 		}
-
-		public Node(T data, Node<T> next) {
-			this.data = data;
-			this.next = next;
-		}
 	}
 
 	private Node<T> first;
@@ -49,7 +44,7 @@ public class QueueImpl<T> {
 	}
 
 	public T poll() {
-		if(this.first == this.last) {
+		if(this.first == this.last && this.first != null) {
 			Node<T> poll = this.first;
 			this.first = null;
 			this.last = null;
@@ -75,6 +70,16 @@ public class QueueImpl<T> {
 		return this.first == null;
 	}
 
+	public int size() {
+		int size = 0;
+		Node<T> curr = this.first;
+		while(curr != null) {
+			size++;	
+			curr = curr.next;
+		}
+		return size;
+	}
+
 	public String toString() {
 		List<T> list = new ArrayList<>();
 		Node<T> curr = this.first;
@@ -88,7 +93,7 @@ public class QueueImpl<T> {
 	public static void main(String[] args) {
 		QueueImpl<Integer> queue = new QueueImpl<>();
 		System.out.println(queue.toString());
-		// System.out.println(queue.poll());
+		System.out.println(queue.poll());
 		queue.offer(4);
 		queue.offer(2);
 		queue.offer(18);
@@ -101,5 +106,6 @@ public class QueueImpl<T> {
 		System.out.println(queue.peek());
 		System.out.println(queue.peekLast());
 		System.out.println(queue.empty());
+		System.out.println(queue.size());
 	}
 }

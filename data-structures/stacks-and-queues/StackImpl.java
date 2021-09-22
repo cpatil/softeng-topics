@@ -14,11 +14,6 @@ public class StackImpl<T> {
 		public Node(T data) {
 			this.data = data;
 		}
-
-		public Node(T data, Node<T> next) {
-			this.data = data;
-			this.next = next;
-		}
 	}
 
 	private Node<T> top;
@@ -32,6 +27,16 @@ public class StackImpl<T> {
 		T pop = this.top.data;
 		this.top = top.next;
 		return pop;
+	}
+
+	public int size() {
+		int size = 0;
+		Node<T> curr = this.top;
+		while(curr != null) {
+			size++;	
+			curr = curr.next;
+		}
+		return size;
 	}
 
 	public boolean empty() {
@@ -87,5 +92,6 @@ public class StackImpl<T> {
 		System.out.println(stack.toString());
 		System.out.println(stack.peek());
 		System.out.println(stack.empty());
+		System.out.println(stack.size());
 	}
 }
