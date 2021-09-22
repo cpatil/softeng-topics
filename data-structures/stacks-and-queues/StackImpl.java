@@ -42,10 +42,11 @@ public class StackImpl<T> {
 		return this.top.data;
 	}
 
-	public void push(T data) {
+	public T push(T data) {
 		Node<T> push = new Node(data);
 		push.next = this.top;
 		this.top = push;
+		return data;
 	}
 
 	public int search(T data) {
