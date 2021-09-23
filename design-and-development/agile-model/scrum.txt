@@ -12,7 +12,7 @@ Scrum roles:
 
 		These are the individuals that actually build the product. The team owns the engineering of the product, and the quality that goes with it
 
-product backlog:
+Product backlog:
 
 	The product backlog is a prioritized list of value the team can deliver. The product owner is responsible for the backlog and adds, changes, and reprioritizes as needed. The items at the top of the backlog should always be ready for the team to execute on.
 

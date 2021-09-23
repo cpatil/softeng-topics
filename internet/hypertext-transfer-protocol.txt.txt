@@ -1,3 +1,0 @@
-SSL TLS HTTP/HTTPS Headers Request/Response
-
-Hypertext Transfer Protocol:
