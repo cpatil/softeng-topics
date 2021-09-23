@@ -1,6 +1,6 @@
-
-.vscode
-
+# interview preperation
 interview/
 
-*.class
+# todo
+.todo.txt
+.backend-roadmap.txt

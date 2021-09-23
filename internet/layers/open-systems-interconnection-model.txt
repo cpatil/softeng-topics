@@ -40,3 +40,37 @@ Example Receiving a Message:
     Network protocol datagrams are extracted from data link protocol frames
     Transport protocol structures are extracted from network protocol datagrams
     Original message is extracted from transport protocol structures
+
+Host
+7 	Application 	Data 	High-level APIs, including resource sharing, remote file access
+
+6 	Presentation 	Data    Translation of data between a networking service and an application; including character encoding, data compression and encryption/decryption
+
+5 	Session 	    Data    Managing communication sessions, i.e., continuous exchange of information in the form of multiple back-and-forth transmissions between two nodes
+
+4 	Transport 	    Data    Segment, Datagram 	Reliable transmission of data segments between points on a network, including segmentation, acknowledgement and multiplexing
+
+Media
+3 	Network 	    Packet 	Structuring and managing a multi-node network, including addressing, routing and traffic control
+
+2 	Data link 	    Frame 	Reliable transmission of data frames between two nodes connected by a physical layer
+
+1 	Physical 	    Bit, Symbol 	Transmission and reception of raw bit streams over a physical medium 
+
+Application layer
+
+    BGP DHCP(v6) DNS FTP HTTP HTTPS IMAP LDAP MGCP MQTT NNTP NTP POP PTP ONC/RPC RTP RTSP RIP SIP SMTP SNMP SSH Telnet TLS/SSL XMPP more...
+
+Transport layer
+
+    TCP UDP DCCP SCTP RSVP more...
+
+Internet layer
+
+    IP (IPv4 IPv6) ICMP(v6) ECN IGMP IPsec more...
+
+Link layer
+
+    ARP NDP OSPF Tunnels
+        L2TP PPP MAC
+        Ethernet Wi-Fi DSL ISDN FDDI

@@ -1,7 +1,0 @@
-{
-    "java.project.sourcePaths": [
-        "data_structures/arrays-and-strings/questions",
-        "data_structures/array/stringbuilder",
-        "code-practice/linked-list-palindrome"
-    ]
-}

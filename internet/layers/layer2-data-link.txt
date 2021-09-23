@@ -12,10 +12,25 @@ Concerned with local delivery of frames between nodes on the same level of the n
 
 Data link protocols focuses on local delivery, addressing, and media arbitration between parties contending for access to a medium, without concern for their ultimate destination
 
-Specify how devices detect and recover form frame collisions, when devices attempt to use a medium simultaneously.
+Specify how devices detect and recover from frame collisions, when devices attempt to use a medium simultaneously.
 
 Example: ethernet, point-to-point protocol, high level data link scontrol (HDLC), and advanced data communication control procedures (ADCCP)
 
 Data Link:
 Defines the means of connecting one location to another for the purpose of transmitting and receiving digital information (data communication). These are governed by a link protocol enabling digital to be transferred from a data source to a data sink
     - A data sink, sink, or event sink is a class or function designed to received incoming events from another object or function. Implemeted as callbacks in C++, other languages have built-in support for sinks by allowing events to be fired to delegate functions
+
+The data link layer provides node-to-node data transfer—a link between two directly connected nodes. It detects and possibly corrects errors that may occur in the physical layer. It defines the protocol to establish and terminate a connection between two physically connected devices. It also defines the protocol for flow control between them.
+
+IEEE 802 divides the data link layer into two sublayers:[21]
+
+    Medium access control (MAC) layer – responsible for controlling how devices in a network gain access to a medium and permission to transmit data.
+    Logical link control (LLC) layer – responsible for identifying and encapsulating network layer protocols, and controls error checking and frame synchronization.
+
+The MAC and LLC layers of IEEE 802 networks such as 802.3 Ethernet, 802.11 Wi-Fi, and 802.15.4 ZigBee operate at the data link layer.
+
+The Point-to-Point Protocol (PPP) is a data link layer protocol that can operate over several different physical layers, such as synchronous and asynchronous serial lines.
+
+The ITU-T G.hn standard, which provides high-speed local area networking over existing wires (power lines, phone lines and coaxial cables), includes a complete data link layer that provides both error correction and flow control by means of a selective-repeat sliding-window protocol.
+
+Security, specifically (authenticated) encryption, at this layer can be applied with MACSec. 
