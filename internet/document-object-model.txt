@@ -3,6 +3,7 @@ The Document Object Model (DOM) is a cross-platform and language-independent int
 Web browsers
 
 To render a document such as a HTML page, most web browsers use an internal model similar to the DOM. The nodes of every document are organized in a tree structure, called the DOM tree, with the topmost node named as "Document object". When an HTML page is rendered in browsers, the browser downloads the HTML into local memory and automatically parses it to display the page on screen. However, the DOM does not necessarily need to be represented as a tree, and some browsers have used other internal models.
+
 JavaScript
 
 When a web page is loaded, the browser creates a Document Object Model of the page, which is an object oriented representation of an HTML document that acts as an interface between JavaScript and the document itself. This allows the creation of dynamic web pages, because within a page JavaScript can:

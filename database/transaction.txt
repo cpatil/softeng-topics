@@ -1,0 +1,16 @@
+A transactional database is a DBMS that provides the ACID properties for a bracketed set of database operations (begin-commit). All the write operations within a transaction have an all-or-nothing effect, that is, either the transaction succeeds and all writes take effect, or otherwise, the database is brought to a state that does not include any of the writes of the transaction. Transactions also ensure that the effect of concurrent transactions satisfies certain guarantees, known as isolation level. The highest isolation level is serializability, which guarantees that the effect of concurrent transactions is equivalent to their serial (i.e. sequential) execution.
+
+Most modern relational database management systems fall into the category of databases that support transactions. NoSQL data stores prioritize scalability along with supporting transactions in order to guarantee data consistency in the event of concurrent updates and accesses.
+
+In a database system, a transaction might consist of one or more data-manipulation statements and queries, each reading and/or writing information in the database. Users of database systems consider consistency and integrity of data as highly important. A simple transaction is usually issued to the database system in a language like SQL wrapped in a transaction, using a pattern similar to the following:
+
+    Begin the transaction.
+    Execute a set of data manipulations and/or queries.
+    If no error occurs, then commit the transaction.
+    If an error occurs, then roll back the transaction.
+
+A transaction commit operation persists all the results of data manipulations within the scope of the transaction to the database. A transaction rollback operation does not persist the partial results of data manipulations within the scope of the transaction to the database. In no case can a partial transaction be committed to the database since that would leave the database in an inconsistent state.
+
+Internally, multi-user databases store and process transactions, often by using a transaction ID or XID.
+
+There are multiple varying ways for transactions to be implemented other than the simple way documented above. Nested transactions, for example, are transactions which contain statements within them that start new transactions (i.e. sub-transactions). Multi-level transactions are a variant of nested transactions where the sub-transactions take place at different levels of a layered system architecture (e.g., with one operation at the database-engine level, one operation at the operating-system level). Another type of transaction is the compensating transaction. 

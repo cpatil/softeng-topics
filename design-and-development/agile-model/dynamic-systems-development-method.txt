@@ -1,0 +1,10 @@
+The Dynamic Systems Development Method (DSDM) rounds out our list of well-known Agile methodologies. DSDM originated in the 1990s as a way to provide a common industry framework for rapid software delivery. Today, it has matured into a comprehensive Agile methodology that revolves around:
+
+    Business needs and value
+    Active user involvement
+    Empowered teams
+    Frequent delivery
+    Integrated testing
+    Stakeholder collaboration
+
+The DSDM framework is particularly useful for prioritizing requirements. It also mandates that rework is to be expected, so any development changes must be reversible. DSDM relies on sprints, similar to other Agile methodologies, and is often used in conjunction with approaches like Scrum and XP.

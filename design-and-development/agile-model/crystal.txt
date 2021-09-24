@@ -1,0 +1,9 @@
+The Crystal Agile methodology focuses more on the interactions of the people involved in a project versus the tools and techniques of development. A lightweight model, Crystal emphasizes interaction, people, community, skills, communications, and talents.
+
+Crystal categorizes projects based on three criteria:
+
+    Team size
+    System criticality
+    Project priorities
+
+The approach is similar to other Agile methodologies in its attention to early and often delivery of software, high involvement of users, and removal of red tape. Crystal’s assertion that every project is unique, however, has led to its reputation as one of the most flexible Agile methodologies.
