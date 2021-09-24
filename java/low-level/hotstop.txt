@@ -1,20 +1,32 @@
-HotSpot
-Java HotSpot Performance Engine, is a Java virtual machine for desktop and ser computers, maintained and distributed by Oracle Corporation.
+HotSpot Java HotSpot Performance Engine, is a Java virtual machine for desktop
+and ser computers, maintained and distributed by Oracle Corporation.
 
-Features improved performance via methods such as just-in-time compilation and adaptive optimization
+Features improved performance via methods such as just-in-time compilation and
+adaptive optimization
 
-Runs Java bytecode, HotSpot contunually analyzes the program's performance for hot spots which are executed often or repeatedly. These are then targeted for optimizing, leading to high-performance execution with a minimum of overhead for less performance-critical code.
+Runs Java bytecode, HotSpot contunually analyzes the program's performance for
+hot spots which are executed often or repeatedly. These are then targeted for
+optimizing, leading to high-performance execution with a minimum of overhead for
+less performance-critical code.
 
-Java Runetime Environment features two virtual machines, one called client and the other server. The client version is tuned for quick loading. It makes use of interpretation. The server version loads more slowly, putting more effort into producing highly optimized JIT compilations to yield higher performance. Both VMs compile only often-run methods, using a configurable invocation-count threshold to decide which methods to compile
+Java Runetime Environment features two virtual machines, one called client and
+the other server. The client version is tuned for quick loading. It makes use of
+interpretation. The server version loads more slowly, putting more effort into
+producing highly optimized JIT compilations to yield higher performance. Both
+VMs compile only often-run methods, using a configurable invocation-count
+threshold to decide which methods to compile
 
-Tiered compiling, an option introduced in Java 7, uses both the client and server compilers in tandem to provide faster startup time than the server compiler, but similar or better peak performance. Starting in Java 8, tiered compilation is the default for the server VMs
+Tiered compiling, an option introduced in Java 7, uses both the client and
+server compilers in tandem to provide faster startup time than the server
+compiler, but similar or better peak performance. Starting in Java 8, tiered
+compilation is the default for the server VMs
 
 Provides:
-	- A Java Classloader
-	- A Java bytecode interpreter
-	- client and server virtual machines, optimized for their respective uses
-	- Several garbage collectors
-	- A set supporting runtime libraries
+	- A Java Classloader - A Java bytecode interpreter - client and server
+	virtual machines, optimized for their respective uses - Several garbage
+	collectors - A set supporting runtime libraries
 
-JVM flags
-HotSpot supports many command-line arguments for options of the virtual machine execution. Some are standard and must be found in any conforming Java virtual machine; others are specific to HotSpot and may not be found in other JVMs (options that begin with -X or -XX are non-standard).
+JVM flags HotSpot supports many command-line arguments for options of the
+virtual machine execution. Some are standard and must be found in any conforming
+Java virtual machine; others are specific to HotSpot and may not be found in
+other JVMs (options that begin with -X or -XX are non-standard).

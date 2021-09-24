@@ -1,15 +1,36 @@
-In computing, a database is an organized collection of data stored and accessed electronically from a computer system. Where databases are more complex they are often developed using formal design and modeling techniques.
+In computing, a database is an organized collection of data stored and accessed
+electronically from a computer system. Where databases are more complex they are
+often developed using formal design and modeling techniques.
 
-The database management system (DBMS) is the software that interacts with end users, applications, and the database itself to capture and analyze the data. The DBMS software additionally encompasses the core facilities provided to administer the database. The sum total of the database, the DBMS and the associated applications can be referred to as a "database system". Often the term "database" is also used loosely to refer to any of the DBMS, the database system or an application associated with the database.
+The database management system (DBMS) is the software that interacts with end
+users, applications, and the database itself to capture and analyze the data.
+The DBMS software additionally encompasses the core facilities provided to
+administer the database. The sum total of the database, the DBMS and the
+associated applications can be referred to as a "database system". Often the
+term "database" is also used loosely to refer to any of the DBMS, the database
+system or an application associated with the database.
 
-Computer scientists may classify database-management systems according to the database models that they support. Relational databases became dominant in the 1980s. These model data as rows and columns in a series of tables, and the vast majority use SQL for writing and querying data. In the 2000s, non-relational databases became popular, referred to as NoSQL because they use different query languages.
+Computer scientists may classify database-management systems according to the
+database models that they support. Relational databases became dominant in the
+1980s. These model data as rows and columns in a series of tables, and the vast
+majority use SQL for writing and querying data. In the 2000s, non-relational
+databases became popular, referred to as NoSQL because they use different query
+languages.
 
-Existing DBMSs provide various functions that allow management of a database and its data which can be classified into four main functional groups:
+Existing DBMSs provide various functions that allow management of a database and
+its data which can be classified into four main functional groups:
 
-    Data definition – Creation, modification and removal of definitions that define the organization of the data.
+    Data definition – Creation, modification and removal of definitions that
+    define the organization of the data.
     
 	Update – Insertion, modification, and deletion of the actual data.
     
-	Retrieval – Providing information in a form directly usable or for further processing by other applications. The retrieved data may be made available in a form basically the same as it is stored in the database or in a new form obtained by altering or combining existing data from the database.
+	Retrieval – Providing information in a form directly usable or for further
+	processing by other applications. The retrieved data may be made available
+	in a form basically the same as it is stored in the database or in a new
+	form obtained by altering or combining existing data from the database.
     
-	Administration – Registering and monitoring users, enforcing data security, monitoring performance, maintaining data integrity, dealing with concurrency control, and recovering information that has been corrupted by some event such as an unexpected system failure.
+	Administration – Registering and monitoring users, enforcing data security,
+	monitoring performance, maintaining data integrity, dealing with concurrency
+	control, and recovering information that has been corrupted by some event
+	such as an unexpected system failure.

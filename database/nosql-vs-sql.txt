@@ -1,97 +1,175 @@
- A look at SQL and NoSQL databases, their key differences and which option is best for your situation.
+ A look at SQL and NoSQL databases, their key differences and which option is
+ best for your situation.
 
-Application developers must consider multiple factors when selecting a database to purchase. There are scores of commercial databases available, and each offers distinct value to the customer. They can be divided into two primary categories: SQL (relational database) and NoSQL (non-relational database). In this article, we’ll explore the makeup of each and identify how they benefit developers.
-What is a SQL database?
+Application developers must consider multiple factors when selecting a database
+to purchase. There are scores of commercial databases available, and each offers
+distinct value to the customer. They can be divided into two primary categories:
+SQL (relational database) and NoSQL (non-relational database). In this article,
+we’ll explore the makeup of each and identify how they benefit developers. What
+is a SQL database?
 
-A SQL database supports structured query language (SQL) — a domain-specific programming language for querying and manipulating data in a relational database. The key to the relational model is abstracting data as a set of tuples organized into “relations,” which allows for abstraction over the physical representation of data and access paths.
+A SQL database supports structured query language (SQL) — a domain-specific
+programming language for querying and manipulating data in a relational
+database. The key to the relational model is abstracting data as a set of tuples
+organized into “relations,” which allows for abstraction over the physical
+representation of data and access paths.
 
-The "relational" in “relational database” refers to the "relational model" of data management devised by IBM researcher E.F. Codd in the early 1970s. Though SQL is not the only language used for implementing query over the relational model, it is the most popular (despite not strictly conforming to Codd's original design). Beginning with “System R,” the relational model was later popularized by subsequent database systems.
+The "relational" in “relational database” refers to the "relational model" of
+data management devised by IBM researcher E.F. Codd in the early 1970s. Though
+SQL is not the only language used for implementing query over the relational
+model, it is the most popular (despite not strictly conforming to Codd's
+original design). Beginning with “System R,” the relational model was later
+popularized by subsequent database systems.
 
-Relational databases have been the industry standard since the late 1970s, though many of their "navigational" predecessors (e.g., Apollo 11-era IMS) are still under active development. In fact, most current enterprise systems architecturally descend from the aforementioned System R.
+Relational databases have been the industry standard since the late 1970s,
+though many of their "navigational" predecessors (e.g., Apollo 11-era IMS) are
+still under active development. In fact, most current enterprise systems
+architecturally descend from the aforementioned System R.
 
 "NewSQL" and "Distributed SQL"
 
-During the early 2010s, several organizations began building SQL-based systems to eliminate NoSQL limitations as well as “NoSQL vs. SQL” tradeoffs causing data inaccuracy and horizontal scalability problems.
+During the early 2010s, several organizations began building SQL-based systems
+to eliminate NoSQL limitations as well as “NoSQL vs. SQL” tradeoffs causing data
+inaccuracy and horizontal scalability problems.
 
 This led to the emergence of two distinct relational database systems:
 
-    NewSQL: Adds distributed logic to existing SQL databases with varying degrees of user transparency. Citus Data (acquired by Microsoft) and Vitess best exemplify "NewSQL"-style distributed engines.*
-    Distributed SQL: Imparts a "ground-up" approach to building horizontally scalable relational databases. CockroachDB and Spanner, both designed to be more advanced than NewSQL, best exemplify “Distributed SQL”-style engines.
+    NewSQL: Adds distributed logic to existing SQL databases with varying
+    degrees of user transparency. Citus Data (acquired by Microsoft) and Vitess
+    best exemplify "NewSQL"-style distributed engines.* Distributed SQL: Imparts
+    a "ground-up" approach to building horizontally scalable relational
+    databases. CockroachDB and Spanner, both designed to be more advanced than
+    NewSQL, best exemplify “Distributed SQL”-style engines.
 
-NOTE: A common motivation for the development of both NoSQL and NewSQL is the high cost required to build a relational database.
+NOTE: A common motivation for the development of both NoSQL and NewSQL is the
+high cost required to build a relational database.
 
 SQL databases: Pros and cons
 
 Pros
 
-    Flexible queries: Enables support for diverse workloads. Abstracts data over underlying implementations and allows engines to optimize queries to fit on-disk representations.
-    Reduced data storage footprint: Due to normalization and other optimization opportunities, a reduced footprint maximizes database performance and resource usage.
-    Strong and well-understood data integrity semantics: Atomicity, consistency, isolation and durability, or ACID, are database properties that guarantee valid transactions.
+    Flexible queries: Enables support for diverse workloads. Abstracts data over
+    underlying implementations and allows engines to optimize queries to fit
+    on-disk representations. Reduced data storage footprint: Due to
+    normalization and other optimization opportunities, a reduced footprint
+    maximizes database performance and resource usage. Strong and
+    well-understood data integrity semantics: Atomicity, consistency, isolation
+    and durability, or ACID, are database properties that guarantee valid
+    transactions.
 
 Cons
 
-    Rigid data models: Requires careful up-front design to ensure adequate performance and resistance to evolution. SQL has a predefined schema, so changing it often includes downtime.
-    Limited horizontal scalability: It is either completely unsupported, supported in an ad-hoc way or only supported on relatively immature technologies.
-    Single point of failure: Non-distributed engines are mitigated by replication and failover techniques.
+    Rigid data models: Requires careful up-front design to ensure adequate
+    performance and resistance to evolution. SQL has a predefined schema, so
+    changing it often includes downtime. Limited horizontal scalability: It is
+    either completely unsupported, supported in an ad-hoc way or only supported
+    on relatively immature technologies. Single point of failure:
+    Non-distributed engines are mitigated by replication and failover
+    techniques.
 
 Examples of SQL databases
 
-    Db2
-    MySQL
-    PostgreSQL
-    YugabyteDB
-    CockroachDB
-    Oracle Database
-    Microsoft SQL Server
+    Db2 MySQL PostgreSQL YugabyteDB CockroachDB Oracle Database Microsoft SQL
+    Server
 
 What is a NoSQL database?
 
-Rooted in graph, document, key-value pairs and wide-column stores developed in the early 1990’s, NoSQL (“Not only SQL”) rose in the mid-2000s due to the emergence of cloud, big data, and web and mobile applications. Today it is the preferred database due to its performance quality, ability to scale and ease of use.
+Rooted in graph, document, key-value pairs and wide-column stores developed in
+the early 1990’s, NoSQL (“Not only SQL”) rose in the mid-2000s due to the
+emergence of cloud, big data, and web and mobile applications. Today it is the
+preferred database due to its performance quality, ability to scale and ease of
+use.
 
-Research on non-relational systems (e.g., BigTable and Dynamo) led to the rise of startups and open source projects dedicated to increasing the relational model’s horizontal scalability and loosening the rigidity of its table design. Their emergence revealed a need for better designs and looser constraints for relational databases.
+Research on non-relational systems (e.g., BigTable and Dynamo) led to the rise
+of startups and open source projects dedicated to increasing the relational
+model’s horizontal scalability and loosening the rigidity of its table design.
+Their emergence revealed a need for better designs and looser constraints for
+relational databases.
 
-Though the relational database community responded to these needs with NewSQL, new databases continued to rapidly appear. As a result, multiple database systems now exist, each addressing the fundamental problem (i.e., storing bits and making them available later) in a slightly different way.
+Though the relational database community responded to these needs with NewSQL,
+new databases continued to rapidly appear. As a result, multiple database
+systems now exist, each addressing the fundamental problem (i.e., storing bits
+and making them available later) in a slightly different way.
 
-In many ways, this boom is a boon for developers. Not all applications have relational database-shaped problems or need to make the tradeoffs that relational databases impose on data and availability models. However, this flexibility does not come without a cost.
+In many ways, this boom is a boon for developers. Not all applications have
+relational database-shaped problems or need to make the tradeoffs that
+relational databases impose on data and availability models. However, this
+flexibility does not come without a cost.
 
-To make a good technical decision between NoSQL databases, a developer must have a thorough understanding of the full design space so the tradeoffs made by a particular system are clear. In other words, you don't want to accidentally sacrifice consistency isolation when your application actually requires it.
+To make a good technical decision between NoSQL databases, a developer must have
+a thorough understanding of the full design space so the tradeoffs made by a
+particular system are clear. In other words, you don't want to accidentally
+sacrifice consistency isolation when your application actually requires it.
 
 NoSQL databases: Pros and cons
 
 Pros
 
-    Scalable and highly available: Many NoSQL databases are designed to support seamless, online horizontal scalability without significant single points of failure.
-    Flexible data models: Most non-relational systems do not require developers to make up-front commitments to data models. Existing schemas are dynamic, so they can often be changed “on the fly.”
-    Dynamic schema for unstructured data: Documents can be created without a defined structure first, which enables each to have its own unique structure.  Syntax varies per database and fields can be added as you build the document.
-    High performance: A limited database functionality range (e.g., by relaxing durability guarantees) enables high performance amongst many NoSQL databases.
-    High-level data abstractions: Beyond the "value in a cell" data model, NoSQL systems provide high-level APIs for powerful data structures. For example, Redis includes a native-sorted set abstraction.
+    Scalable and highly available: Many NoSQL databases are designed to support
+    seamless, online horizontal scalability without significant single points of
+    failure. Flexible data models: Most non-relational systems do not require
+    developers to make up-front commitments to data models. Existing schemas are
+    dynamic, so they can often be changed “on the fly.”Dynamic schema for
+    unstructured data: Documents can be created without a defined structure
+    first, which enables each to have its own unique structure.  Syntax varies
+    per database and fields can be added as you build the document. High
+    performance: A limited database functionality range (e.g., by relaxing
+    durability guarantees) enables high performance amongst many NoSQL
+    databases. High-level data abstractions: Beyond the "value in a cell" data
+    model, NoSQL systems provide high-level APIs for powerful data structures.
+    For example, Redis includes a native-sorted set abstraction.
 
 Cons
 
-    Vague interpretations of ACID constraints: Despite the widespread belief that it supports NoSQL systems, ACID interpretations can be too broad to make clear determinations about database semantics.
-    Distributed systems have distributed systems problems: Though not specific to NoSQL systems, encountering such problems is common amongst NoSQL developers and may require SME troubleshooting.
-    Lack of flexibility in access patterns: Without the abstraction found in relational databases, the on-disk representation of data leaks into the application's queries and leaves no room for NoSQL engines to optimize queries.
+    Vague interpretations of ACID constraints: Despite the widespread belief
+    that it supports NoSQL systems, ACID interpretations can be too broad to
+    make clear determinations about database semantics. Distributed systems have
+    distributed systems problems: Though not specific to NoSQL systems,
+    encountering such problems is common amongst NoSQL developers and may
+    require SME troubleshooting. Lack of flexibility in access patterns: Without
+    the abstraction found in relational databases, the on-disk representation of
+    data leaks into the application's queries and leaves no room for NoSQL
+    engines to optimize queries.
 
 Examples of NoSQL databases
 
-    Redis
-    FaunaDB
-    CouchDB
-    MongoDB
-    Cassandra
-    Elasticsearch
+    Redis FaunaDB CouchDB MongoDB Cassandra Elasticsearch
 
 SQL vs. NoSQL: When to use each
 
 When to use SQL
 
-SQL is the best database to use for relational data, especially when the relationship between data sets is well-defined and highly navigable. It is also best for assessing data integrity. If you need flexible access to data, SQL allows for high-level ad-hoc queries, and, in most cases, SQL databases are vertically scalable (i.e., increase a single server workload by increasing RAM, CPU, SSD, etc.).
+SQL is the best database to use for relational data, especially when the
+relationship between data sets is well-defined and highly navigable. It is also
+best for assessing data integrity. If you need flexible access to data, SQL
+allows for high-level ad-hoc queries, and, in most cases, SQL databases are
+vertically scalable (i.e., increase a single server workload by increasing RAM,
+CPU, SSD, etc.).
 
-Some SQL databases support NoSQL-style workloads via special features (e.g., native JavaScript Object Notation (JSON) data types). If you don’t need the horizontal scalability found in NoSQL data stores, these databases are also good for many non-relational workloads. This makes them useful for working with relational and unstructured data without the complexity of different data stores.
+Some SQL databases support NoSQL-style workloads via special features (e.g.,
+native JavaScript Object Notation (JSON) data types). If you don’t need the
+horizontal scalability found in NoSQL data stores, these databases are also good
+for many non-relational workloads. This makes them useful for working with
+relational and unstructured data without the complexity of different data
+stores.
 
-Though NoSQL is simple, users must consider the implications of the data stores when building applications. They must also consider write consistency, eventual consistency and the impact of sharding on data access and storage. On the other hand, these concerns do not apply to SQL databases, which makes them simpler to build applications on. In addition, their wide usage and versatility simplifies complex queries.
-When to use NoSQL
+Though NoSQL is simple, users must consider the implications of the data stores
+when building applications. They must also consider write consistency, eventual
+consistency and the impact of sharding on data access and storage. On the other
+hand, these concerns do not apply to SQL databases, which makes them simpler to
+build applications on. In addition, their wide usage and versatility simplifies
+complex queries. When to use NoSQL
 
-NoSQL is the best database to use for large amounts of data or ever-changing data sets. It is also best to use when you have flexible data models or needs that don't fit into the relational model. If you are working with large amounts of unstructured data, “document databases” (e.g., CouchDB, MongoDB, Amazon DocumentDB) are a good fit. If you need quick access to a key-value store without strong integrity guarantees, Redis is a great fit. In need of complex or flexible search across a lot of data? Elasticsearch is a perfect fit.
+NoSQL is the best database to use for large amounts of data or ever-changing
+data sets. It is also best to use when you have flexible data models or needs
+that don't fit into the relational model. If you are working with large amounts
+of unstructured data, “document databases” (e.g., CouchDB, MongoDB, Amazon
+DocumentDB) are a good fit. If you need quick access to a key-value store
+without strong integrity guarantees, Redis is a great fit. In need of complex or
+flexible search across a lot of data? Elasticsearch is a perfect fit.
 
-Horizontal scalability is a core tenet of many NoSQL data stores. Unlike in SQL, their built-in sharding and high availability requirements ease horizontal scaling (i.e., “scaling out”). Furthermore, NoSQL databases like Cassandra have no single points of failure, so applications can easily react to underlying failures of individual members.
+Horizontal scalability is a core tenet of many NoSQL data stores. Unlike in SQL,
+their built-in sharding and high availability requirements ease horizontal
+scaling (i.e., “scaling out”). Furthermore, NoSQL databases like Cassandra have
+no single points of failure, so applications can easily react to underlying
+failures of individual members.

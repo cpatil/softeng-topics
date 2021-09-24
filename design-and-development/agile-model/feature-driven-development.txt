@@ -1,3 +1,9 @@
-Feature-Driven Development, or FDD, provides a framework for product development that starts with an overall model and gets progressively more granular. Like other Agile methodologies, FDD aims to deliver working software quickly in a repeatable way. It uses the concept of “just enough design initially” (JEDI) to do so, leveraging two-week increments to run “plan by feature, design by feature, build by feature” iterations.
+Feature-Driven Development, or FDD, provides a framework for product development
+that starts with an overall model and gets progressively more granular. Like
+other Agile methodologies, FDD aims to deliver working software quickly in a
+repeatable way. It uses the concept of “just enough design initially” (JEDI) to
+do so, leveraging two-week increments to run “plan by feature, design by
+feature, build by feature” iterations.
 
-Organizations that practice Agile like Feature-Driven Development for its feature-centric approach and its scalability.
+Organizations that practice Agile like Feature-Driven Development for its
+feature-centric approach and its scalability.

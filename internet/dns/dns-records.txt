@@ -1,48 +1,64 @@
 A Record
 
-	A (address) records are one of the most basic and commonly used DNS record types. They translate domain names and store them as IP addresses. A records can only hold IPv4 addresses.
+	A (address) records are one of the most basic and commonly used DNS record
+	types. They translate domain names and store them as IP addresses. A records
+	can only hold IPv4 addresses.
 
 	Domain name:			Record type:	Value:		TTL
 	example-website.com @	A				192.0.0.1	14400
 
 AAAA Record
 
-	AAAA records work the same as A records in that they store IP addresses connected to domain names. The only difference is that AAAA records hold IPv6 addresses.
+	AAAA records work the same as A records in that they store IP addresses
+	connected to domain names. The only difference is that AAAA records hold
+	IPv6 addresses.
 
 AA Record
 
-	CAA records allow domain owners to determine which certificate authorities can issue certificates to that domain and all its subdomains. If there is no CAA record, anyone can issue certificates to the domain.
+	CAA records allow domain owners to determine which certificate authorities
+	can issue certificates to that domain and all its subdomains. If there is no
+	CAA record, anyone can issue certificates to the domain.
 
 	Domain name:			Record type:	Flag:	Tag:	CA:
 	example-webisite.com	CAA				0		issue	"caa-domain.com"	
 
 CERT Record
 
-	CERT records provide a space for storing certificates and related certificate revocation lists (CRL). The certificates can verify the authenticity of sending and receiving parties, while CRLs identify unauthorized parties.
+	CERT records provide a space for storing certificates and related
+	certificate revocation lists (CRL). The certificates can verify the
+	authenticity of sending and receiving parties, while CRLs identify
+	unauthorized parties.
 
 CNAME Record
 
-	A CNAME (canonical name) record is used instead of an A record if a domain is an alias for another domain. Because of this, all CNAME records point to a domain instead of an IP address.
+	A CNAME (canonical name) record is used instead of an A record if a domain
+	is an alias for another domain. Because of this, all CNAME records point to
+	a domain instead of an IP address.
 
-	For example, in a domain called alias-domain.com which works as an alias for real-domain.com, a CNAME record for would look like this:
+	For example, in a domain called alias-domain.com which works as an alias for
+	real-domain.com, a CNAME record for would look like this:
 
 	Domain name:		Record type:	Value:				TTL
 	alias-domain.com @	CNAME			real-domain.com		14400
 
 DNAME Record
 
-	DNAME records are used to create an alias for every subdomain of a domain. They are similar to CNAME records, with the main difference being that CNAME can only store a single alias domain without any subdomains.
+	DNAME records are used to create an alias for every subdomain of a domain.
+	They are similar to CNAME records, with the main difference being that CNAME
+	can only store a single alias domain without any subdomains.
 
 MX Record
 
-	MX (mail exchange) records store instructions for directing emails to mail servers following the SMTP protocol. An MX record might look like:
+	MX (mail exchange) records store instructions for directing emails to mail
+	servers following the SMTP protocol. An MX record might look like:
 
 	Domain name:			Record type:	Priority:	Value:						TTL:
 	example-website.com @	MX				10			mail.example-website.com	14400
 
 PTR Record
 
-	PTR (pointer) records serve as an inverse of A or AAAA records. They map IP addresses to domain names and help perform reverse DNS lookups.
+	PTR (pointer) records serve as an inverse of A or AAAA records. They map IP
+	addresses to domain names and help perform reverse DNS lookups.
 
 	PTR records store IP addresses in reverse:
 
@@ -51,4 +67,6 @@ PTR Record
 
 TXT Record
 
-	TXT (text) records are used to store descriptive text. They are often used in combination with other record types to provide additional information that doesn't fit the format of other records.
+	TXT (text) records are used to store descriptive text. They are often used
+	in combination with other record types to provide additional information
+	that doesn't fit the format of other records.

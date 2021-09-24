@@ -1,23 +1,55 @@
-The transport layer establishes basic data channels that applications use for task-specific data exchange. The layer establishes host-to-host connectivity in the form of end-to-end message transfer services that are independent of the underlying network and independent of the structure of user data and the logistics of exchanging information. Connectivity at the transport layer can be categorized as either connection-oriented, implemented in TCP, or connectionless, implemented in UDP. The protocols in this layer may provide error control, segmentation, flow control, congestion control, and application addressing (port numbers).
+The transport layer establishes basic data channels that applications use for
+task-specific data exchange. The layer establishes host-to-host connectivity in
+the form of end-to-end message transfer services that are independent of the
+underlying network and independent of the structure of user data and the
+logistics of exchanging information. Connectivity at the transport layer can be
+categorized as either connection-oriented, implemented in TCP, or
+connectionless, implemented in UDP. The protocols in this layer may provide
+error control, segmentation, flow control, congestion control, and application
+addressing (port numbers).
 
-For the purpose of providing process-specific transmission channels for applications, the layer establishes the concept of the network port. This is a numbered logical construct allocated specifically for each of the communication channels an application needs. For many types of services, these port numbers have been standardized so that client computers may address specific services of a server computer without the involvement of service discovery or directory services.
+For the purpose of providing process-specific transmission channels for
+applications, the layer establishes the concept of the network port. This is a
+numbered logical construct allocated specifically for each of the communication
+channels an application needs. For many types of services, these port numbers
+have been standardized so that client computers may address specific services of
+a server computer without the involvement of service discovery or directory
+services.
 
-Because IP provides only a best-effort delivery, some transport-layer protocols offer reliability.
+Because IP provides only a best-effort delivery, some transport-layer protocols
+offer reliability.
 
-TCP is a connection-oriented protocol that addresses numerous reliability issues in providing a reliable byte stream:
+TCP is a connection-oriented protocol that addresses numerous reliability issues
+in providing a reliable byte stream:
 
-    data arrives in-order
-    data has minimal error (i.e., correctness)
-    duplicate data is discarded
-    lost or discarded packets are resent
-    includes traffic congestion control
+    data arrives in-order data has minimal error (i.e., correctness) duplicate
+    data is discarded lost or discarded packets are resent includes traffic
+    congestion control
 
-The newer Stream Control Transmission Protocol (SCTP) is also a reliable, connection-oriented transport mechanism. It is message-stream-oriented, not byte-stream-oriented like TCP, and provides multiple streams multiplexed over a single connection. It also provides multihoming support, in which a connection end can be represented by multiple IP addresses (representing multiple physical interfaces), such that if one fails, the connection is not interrupted. It was developed initially for telephony applications (to transport SS7 over IP).
+The newer Stream Control Transmission Protocol (SCTP) is also a reliable,
+connection-oriented transport mechanism. It is message-stream-oriented, not
+byte-stream-oriented like TCP, and provides multiple streams multiplexed over a
+single connection. It also provides multihoming support, in which a connection
+end can be represented by multiple IP addresses (representing multiple physical
+interfaces), such that if one fails, the connection is not interrupted. It was
+developed initially for telephony applications (to transport SS7 over IP).
 
-Reliability can also be achieved by running IP over a reliable data-link protocol such as the High-Level Data Link Control (HDLC).
+Reliability can also be achieved by running IP over a reliable data-link
+protocol such as the High-Level Data Link Control (HDLC).
 
-The User Datagram Protocol (UDP) is a connectionless datagram protocol. Like IP, it is a best-effort, unreliable protocol. Reliability is addressed through error detection using a checksum algorithm. UDP is typically used for applications such as streaming media (audio, video, Voice over IP etc.) where on-time arrival is more important than reliability, or for simple query/response applications like DNS lookups, where the overhead of setting up a reliable connection is disproportionately large. Real-time Transport Protocol (RTP) is a datagram protocol that is used over UDP and is designed for real-time data such as streaming media.
+The User Datagram Protocol (UDP) is a connectionless datagram protocol. Like IP,
+it is a best-effort, unreliable protocol. Reliability is addressed through error
+detection using a checksum algorithm. UDP is typically used for applications
+such as streaming media (audio, video, Voice over IP etc.) where on-time arrival
+is more important than reliability, or for simple query/response applications
+like DNS lookups, where the overhead of setting up a reliable connection is
+disproportionately large. Real-time Transport Protocol (RTP) is a datagram
+protocol that is used over UDP and is designed for real-time data such as
+streaming media.
 
-The applications at any given network address are distinguished by their TCP or UDP port. By convention, certain well known ports are associated with specific applications.
+The applications at any given network address are distinguished by their TCP or
+UDP port. By convention, certain well known ports are associated with specific
+applications.
 
-The TCP/IP model's transport or host-to-host layer corresponds roughly to the fourth layer in the OSI model, also called the transport layer. 
+The TCP/IP model's transport or host-to-host layer corresponds roughly to the
+fourth layer in the OSI model, also called the transport layer. 

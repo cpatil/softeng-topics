@@ -1,19 +1,34 @@
-Programming Paradigm
-It is a style of programming, a way of thinking about software construction. Refers to a way to program, a methodology.
+Programming Paradigm It is a style of programming, a way of thinking about
+software construction. Refers to a way to program, a methodology.
 
-Functional
-Treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data
+Functional Treats computation as the evaluation of mathematical functions and
+avoids changing-state and mutable data
 
-Is about passing data from function to function to function to get a result. In FP, functions are treated as data, meaning you can use them as parameters, return them, build functions from other functions, and build custom functions.
+Is about passing data from function to function to function to get a result. In
+FP, functions are treated as data, meaning you can use them as parameters,
+return them, build functions from other functions, and build custom functions.
 
-Functions have to be pure, they should avoid shared state, side effects, and data should be immutable. A function is pure when given the same type of input will always return the same output, it is not dependent on a local or global state, this adds more complexity and permits less modularity
+Functions have to be pure, they should avoid shared state, side effects, and
+data should be immutable. A function is pure when given the same type of input
+will always return the same output, it is not dependent on a local or global
+state, this adds more complexity and permits less modularity
 
-Object-Oriented
-Based on the concept of "objects", which may contain data, in the form of fields, often known as attributes; and code, in the form of procedures, often known as methods.
+Object-Oriented Based on the concept of "objects", which may contain data, in
+the form of fields, often known as attributes; and code, in the form of
+procedures, often known as methods.
 
-Is about encapsulating data and behaviour into objects. An OPP application will use a collection of objects which knows how to perform certain actions and how to interact with other elements of the application. For example an object could be a person. That person would have a name (that would be a property of the object), and would know how to walk (that would be a method). A method in OOP can be considered as a procedure in PP, but here it belongs to a specific object. A class can be considered as a blueprint for an object.
+Is about encapsulating data and behaviour into objects. An OPP application will
+use a collection of objects which knows how to perform certain actions and how
+to interact with other elements of the application. For example an object could
+be a person. That person would have a name (that would be a property of the
+object), and would know how to walk (that would be a method). A method in OOP
+can be considered as a procedure in PP, but here it belongs to a specific
+object. A class can be considered as a blueprint for an object.
 
-Procedural
-Derived from structured programming, based upon the concept of the procedure call. Procedures, also known as routines, subroutines, or functions, simply contain a series of computational steps to be carried out.
+Procedural Derived from structured programming, based upon the concept of the
+procedure call. Procedures, also known as routines, subroutines, or functions,
+simply contain a series of computational steps to be carried out.
 
-Also known as inline programming takes a top-down approach. It is about writing a list of instructions to tell the computer what to do step by step. It relies on procedures or routines.
+Also known as inline programming takes a top-down approach. It is about writing
+a list of instructions to tell the computer what to do step by step. It relies
+on procedures or routines.

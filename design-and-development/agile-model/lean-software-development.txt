@@ -1,9 +1,14 @@
-Lean software development is more flexible than Scrum or XP, with fewer strict guidelines, rules, or methods. Lean is based on a set of principles developed to ensure value and efficiency in production in the mid 20th century and has evolved into the software setting. Lean relies on five principles of Lean management:
+Lean software development is more flexible than Scrum or XP, with fewer strict
+guidelines, rules, or methods. Lean is based on a set of principles developed to
+ensure value and efficiency in production in the mid 20th century and has
+evolved into the software setting. Lean relies on five principles of Lean
+management:
 
-    Identify value
-    Value stream mapping
-    Create continuous workflow
-    Create a pull system
-    Continuous improvement
+    Identify value Value stream mapping Create continuous workflow Create a pull
+    system Continuous improvement
 
-Lean particularly emphasizes eliminating waste. In the context of software development, that includes cutting out wasted time and unproductive tasks, efficiently using team resources, giving teams and individuals decision-making authority, and prioritizing only the features of a system that deliver true value.
+Lean particularly emphasizes eliminating waste. In the context of software
+development, that includes cutting out wasted time and unproductive tasks,
+efficiently using team resources, giving teams and individuals decision-making
+authority, and prioritizing only the features of a system that deliver true
+value.

@@ -1,36 +1,73 @@
-This layer is the protocol layer that transfers data between nodes on a network segment across the physical layer
+This layer is the protocol layer that transfers data between nodes on a network
+segment across the physical layer
 
-Provides the functional and procedural means to transfer data between network entities and may also provide the means to detect and possibly correct errors that can occur in the physical layer
+Provides the functional and procedural means to transfer data between network
+entities and may also provide the means to detect and possibly correct errors
+that can occur in the physical layer
 
-Concerned with local delivery of frames between nodes on the same level of the network. Data-link frames, as these protocol data units are called, do not cross the boundaries of a local area network.
-    - A protocol data unit is a single unit of information transmitted among peer entities in a network 
+Concerned with local delivery of frames between nodes on the same level of the
+network. Data-link frames, as these protocol data units are called, do not cross
+the boundaries of a local area network.
+    - A protocol data unit is a single unit of information transmitted among
+    peer entities in a network 
         - Composed of protocol-specific control information and user data 
-    - A frame is a digital data transmission unit, in packet switched systems, a frame is a simple container for a single network packet. 
-        - A frame typically includes frame synchronization features consisting of a sequence of bits or symbols that indicate to the receiver the beginning and end of the payload data within the stream of symbols or bits it receives
-    - A network packet is a formatted unit of data carried by a packet-switched network. A packet consists of control information and user data; the latter is known as the payload
-        - Control information, found in packet headers and trailers (footers), provides data for delivering the payload (e.g., source and destination network addresses, error detection codes, or sequencing information)
+    - A frame is a digital data transmission unit, in packet switched systems, a
+    frame is a simple container for a single network packet. 
+        - A frame typically includes frame synchronization features consisting
+        of a sequence of bits or symbols that indicate to the receiver the
+        beginning and end of the payload data within the stream of symbols or
+        bits it receives
+    - A network packet is a formatted unit of data carried by a packet-switched
+    network. A packet consists of control information and user data; the latter
+    is known as the payload
+        - Control information, found in packet headers and trailers (footers),
+        provides data for delivering the payload (e.g., source and destination
+        network addresses, error detection codes, or sequencing information)
 
-Data link protocols focuses on local delivery, addressing, and media arbitration between parties contending for access to a medium, without concern for their ultimate destination
+Data link protocols focuses on local delivery, addressing, and media arbitration
+between parties contending for access to a medium, without concern for their
+ultimate destination
 
-Specify how devices detect and recover from frame collisions, when devices attempt to use a medium simultaneously.
+Specify how devices detect and recover from frame collisions, when devices
+attempt to use a medium simultaneously.
 
-Example: ethernet, point-to-point protocol, high level data link scontrol (HDLC), and advanced data communication control procedures (ADCCP)
+Example: ethernet, point-to-point protocol, high level data link scontrol
+(HDLC), and advanced data communication control procedures (ADCCP)
 
-Data Link:
-Defines the means of connecting one location to another for the purpose of transmitting and receiving digital information (data communication). These are governed by a link protocol enabling digital to be transferred from a data source to a data sink
-    - A data sink, sink, or event sink is a class or function designed to received incoming events from another object or function. Implemeted as callbacks in C++, other languages have built-in support for sinks by allowing events to be fired to delegate functions
+Data Link: Defines the means of connecting one location to another for the
+purpose of transmitting and receiving digital information (data communication).
+These are governed by a link protocol enabling digital to be transferred from a
+data source to a data sink
+    - A data sink, sink, or event sink is a class or function designed to
+    received incoming events from another object or function. Implemeted as
+    callbacks in C++, other languages have built-in support for sinks by
+    allowing events to be fired to delegate functions
 
-The data link layer provides node-to-node data transfer—a link between two directly connected nodes. It detects and possibly corrects errors that may occur in the physical layer. It defines the protocol to establish and terminate a connection between two physically connected devices. It also defines the protocol for flow control between them.
+The data link layer provides node-to-node data transfer—a link between two
+directly connected nodes. It detects and possibly corrects errors that may occur
+in the physical layer. It defines the protocol to establish and terminate a
+connection between two physically connected devices. It also defines the
+protocol for flow control between them.
 
 IEEE 802 divides the data link layer into two sublayers:[21]
 
-    Medium access control (MAC) layer – responsible for controlling how devices in a network gain access to a medium and permission to transmit data.
-    Logical link control (LLC) layer – responsible for identifying and encapsulating network layer protocols, and controls error checking and frame synchronization.
+    Medium access control (MAC) layer – responsible for controlling how devices
+    in a network gain access to a medium and permission to transmit data.
+    Logical link control (LLC) layer – responsible for identifying and
+    encapsulating network layer protocols, and controls error checking and frame
+    synchronization.
 
-The MAC and LLC layers of IEEE 802 networks such as 802.3 Ethernet, 802.11 Wi-Fi, and 802.15.4 ZigBee operate at the data link layer.
+The MAC and LLC layers of IEEE 802 networks such as 802.3 Ethernet, 802.11
+Wi-Fi, and 802.15.4 ZigBee operate at the data link layer.
 
-The Point-to-Point Protocol (PPP) is a data link layer protocol that can operate over several different physical layers, such as synchronous and asynchronous serial lines.
+The Point-to-Point Protocol (PPP) is a data link layer protocol that can operate
+over several different physical layers, such as synchronous and asynchronous
+serial lines.
 
-The ITU-T G.hn standard, which provides high-speed local area networking over existing wires (power lines, phone lines and coaxial cables), includes a complete data link layer that provides both error correction and flow control by means of a selective-repeat sliding-window protocol.
+The ITU-T G.hn standard, which provides high-speed local area networking over
+existing wires (power lines, phone lines and coaxial cables), includes a
+complete data link layer that provides both error correction and flow control by
+means of a selective-repeat sliding-window protocol.
 
-Security, specifically (authenticated) encryption, at this layer can be applied with MACSec. 
+Security, specifically (authenticated) encryption, at this layer can be applied
+with MACSec. 

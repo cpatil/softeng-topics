@@ -1,25 +1,29 @@
-Network Layers:
-Application (Layer 7) Services that are used with end user applications e.g. smtp, http, dns, cdns
-Presentation (Layer 6) Formats the data so that it can be viewed by the user. Encrypt and decrypt e.g. jpg, gif, https, ssl, tls
-Session (Layer 5) Establishes/ends connections between two hosts. e.g. NetBIOS, pptp
-Transport (Layer 4) Responsible for the transport protocol and error handling e.g. TCP/UDP
-Network (Layer 3) Reads the ip address form the packet. e.g. Routers, layer3 switches
-Data Link (Layer 2) Reads the mac address from the data packet. e.g. Switches
-Physical (Layer 1) Send data on to the physical wire. e.g. Hubs, NICS, cable
+Network Layers: Application (Layer 7) Services that are used with end user
+applications e.g. smtp, http, dns, cdns Presentation (Layer 6) Formats the data
+so that it can be viewed by the user. Encrypt and decrypt e.g. jpg, gif, https,
+ssl, tls Session (Layer 5) Establishes/ends connections between two hosts. e.g.
+NetBIOS, pptp Transport (Layer 4) Responsible for the transport protocol and
+error handling e.g. TCP/UDP Network (Layer 3) Reads the ip address form the
+packet. e.g. Routers, layer3 switches Data Link (Layer 2) Reads the mac address
+from the data packet. e.g. Switches Physical (Layer 1) Send data on to the
+physical wire. e.g. Hubs, NICS, cable
 
 Network Protocol
-    - Set of rules that define how a message is structured for transmission
-    - Receiver can decode the message by following the same rules
+    - Set of rules that define how a message is structured for transmission -
+    Receiver can decode the message by following the same rules
 
 Protocol Design
-    - A network protocol connects one layer on one device to the same layer on another device
+    - A network protocol connects one layer on one device to the same layer on
+    another device
         - Each layer adds control information to the message
     - Physical layer ultimately carries a stream of bits containing the message
-    - Example: Connecting from app layer on one device to another app layer on a different device. Started by descending down the layer through the physical link then back up the layers to the app layer
+    - Example: Connecting from app layer on one device to another app layer on a
+    different device. Started by descending down the layer through the physical
+    link then back up the layers to the app layer
 
 Protocol Stack
-    - Each network device has an implementation of each protocol at each layer
-    - Messages are wrapped in, then extracted from, these protocols
+    - Each network device has an implementation of each protocol at each layer -
+    Messages are wrapped in, then extracted from, these protocols
 
 Example Sending (L5 & L6 aren't used in practice)
 | Application (Layer 7) <------HTTP/HTTPS-------->  ^ Application (Layer 7)
@@ -30,10 +34,10 @@ Example Sending (L5 & L6 aren't used in practice)
 V---------------------------------------------------^
 
 Example Sending a Message
-    A message is sent to the app layer to be packed into transport protocol structures
-    Transport protocol structures are packed into network protocol datagrams
-    Network protocol datagrams are packed into data link protocol frames
-    Data link protocol frames are converted to a bit stream and set
+    A message is sent to the app layer to be packed into transport protocol
+    structures Transport protocol structures are packed into network protocol
+    datagrams Network protocol datagrams are packed into data link protocol
+    frames Data link protocol frames are converted to a bit stream and set
 
 Example Receiving a Message:
     Data link protocol frames are extracted from the physical layer bit stream
@@ -41,25 +45,34 @@ Example Receiving a Message:
     Transport protocol structures are extracted from network protocol datagrams
     Original message is extracted from transport protocol structures
 
-Host
-7 	Application 	Data 	High-level APIs, including resource sharing, remote file access
+Host 7 	Application 	Data 	High-level APIs, including resource sharing, remote
+file access
 
-6 	Presentation 	Data    Translation of data between a networking service and an application; including character encoding, data compression and encryption/decryption
+6 	Presentation 	Data    Translation of data between a networking service and an
+application; including character encoding, data compression and
+encryption/decryption
 
-5 	Session 	    Data    Managing communication sessions, i.e., continuous exchange of information in the form of multiple back-and-forth transmissions between two nodes
+5 	Session 	    Data    Managing communication sessions, i.e., continuous
+exchange of information in the form of multiple back-and-forth transmissions
+between two nodes
 
-4 	Transport 	    Data    Segment, Datagram 	Reliable transmission of data segments between points on a network, including segmentation, acknowledgement and multiplexing
+4 	Transport 	    Data    Segment, Datagram 	Reliable transmission of data
+segments between points on a network, including segmentation, acknowledgement
+and multiplexing
 
-Media
-3 	Network 	    Packet 	Structuring and managing a multi-node network, including addressing, routing and traffic control
+Media 3 	Network 	    Packet 	Structuring and managing a multi-node network,
+including addressing, routing and traffic control
 
-2 	Data link 	    Frame 	Reliable transmission of data frames between two nodes connected by a physical layer
+2 	Data link 	    Frame 	Reliable transmission of data frames between two nodes
+connected by a physical layer
 
-1 	Physical 	    Bit, Symbol 	Transmission and reception of raw bit streams over a physical medium 
+1 	Physical 	    Bit, Symbol 	Transmission and reception of raw bit streams over
+a physical medium 
 
 Application layer
 
-    BGP DHCP(v6) DNS FTP HTTP HTTPS IMAP LDAP MGCP MQTT NNTP NTP POP PTP ONC/RPC RTP RTSP RIP SIP SMTP SNMP SSH Telnet TLS/SSL XMPP more...
+    BGP DHCP(v6) DNS FTP HTTP HTTPS IMAP LDAP MGCP MQTT NNTP NTP POP PTP ONC/RPC
+    RTP RTSP RIP SIP SMTP SNMP SSH Telnet TLS/SSL XMPP more...
 
 Transport layer
 
@@ -72,5 +85,4 @@ Internet layer
 Link layer
 
     ARP NDP OSPF Tunnels
-        L2TP PPP MAC
-        Ethernet Wi-Fi DSL ISDN FDDI
+        L2TP PPP MAC Ethernet Wi-Fi DSL ISDN FDDI

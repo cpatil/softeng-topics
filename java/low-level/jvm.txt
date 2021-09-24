@@ -1,73 +1,108 @@
-Java Bytecode
-The instruction set of the java virtual machine.
+Java Bytecode The instruction set of the java virtual machine.
 
-Each bytecode is composed of one byte that represents the opcode, along with zero or more bytes for operands. Of the 256 possible byte-long opcodes, as of 2015, 202 are in use, 51 are reserved for future use, and 3 instructions are permanently reserved for JVM implementations to use. Two of these (impdep1 and impdep2) are to provide traps for implementation-specific software and hardware, respectively. The third is used for debuggers to implement breakpoints.
+Each bytecode is composed of one byte that represents the opcode, along with
+zero or more bytes for operands. Of the 256 possible byte-long opcodes, as of
+2015, 202 are in use, 51 are reserved for future use, and 3 instructions are
+permanently reserved for JVM implementations to use. Two of these (impdep1 and
+impdep2) are to provide traps for implementation-specific software and hardware,
+respectively. The third is used for debuggers to implement breakpoints.
 
 Instructions fall into a number of broad groups:
-    - Load and store (e.g. aload_0, istore)
-    - Arithmetic and logic (e.g. ladd, fcmpl)
-    - Type conversion (e.g. i2b, d2i)
-    - Object creation and manipulation(new, putfield)
-    - Operand stack management (e.g. swap, dup2)
-    - Control transfer (e.g. ifeq, goto)
-    - Method incovation and return (e.g. invokespecial, areturn)
+    - Load and store (e.g. aload_0, istore) - Arithmetic and logic (e.g. ladd,
+    fcmpl) - Type conversion (e.g. i2b, d2i) - Object creation and
+    manipulation(new, putfield) - Operand stack management (e.g. swap, dup2) -
+    Control transfer (e.g. ifeq, goto) - Method incovation and return (e.g.
+    invokespecial, areturn)
 
-There are also a few instructions for a number of more specialized tasks such as exception throwing, synchronization, etc.
+There are also a few instructions for a number of more specialized tasks such as
+exception throwing, synchronization, etc.
 
-Many instructions have prefixes and/or suffixes referring to the typs of operands they operate on.
+Many instructions have prefixes and/or suffixes referring to the typs of
+operands they operate on.
 
-Prefix/Suffix   Operand Type
-i               integer
-l               long
-s               short
-b               byte
-c               character
-f               float
-d               double
-a               reference
+Prefix/Suffix   Operand Type i               integer l               long s
+short b               byte c               character f               float d
+double a               reference
 
-For example, 'iadd' will add two integers, while 'dadd' will add two doubles. The const, load, and store instructions may also take a suffix of the form _n, where n is a number from 0-3 for load and store. The maximum n for const differes by type.
+For example, 'iadd' will add two integers, while 'dadd' will add two doubles.
+The const, load, and store instructions may also take a suffix of the form _n,
+where n is a number from 0-3 for load and store. The maximum n for const
+differes by type.
 
-The const instructions push a value of the specified type onto the stack. For example, iconst_5 will push an integer (32 bit value) with the value 5 onto the stack, while dconst_1 will push a double (64 bit floating point value) with the value 1 onto the stack. There is also an aconst_null, which pushes a null reference. ###
+The const instructions push a value of the specified type onto the stack. For
+example, iconst_5 will push an integer (32 bit value) with the value 5 onto the
+stack, while dconst_1 will push a double (64 bit floating point value) with the
+value 1 onto the stack. There is also an aconst_null, which pushes a null
+reference. ###
 
 Java Virtual Machine (JVM)
 
-An abstract machine. It is a specification that provides a runtime environment in which java bytecode can be executed. Available for many hardware and software platforms, JVM is platform dependent.
+An abstract machine. It is a specification that provides a runtime environment
+in which java bytecode can be executed. Available for many hardware and software
+platforms, JVM is platform dependent.
 
-Enables a computer to run Java programs as well as programs written in other languages that are also compiled to Java bytecode.
+Enables a computer to run Java programs as well as programs written in other
+languages that are also compiled to Java bytecode.
 
-Detailed by a specification that formally describes what is required in a JVM implementation.
+Detailed by a specification that formally describes what is required in a JVM
+implementation.
 
-A Specification ensures interoperability of Java programs across different implementations so that program authors using the Java Development Kit (JDK) need not worry about idiosyncrasies of the underlying hardware platform
+A Specification ensures interoperability of Java programs across different
+implementations so that program authors using the Java Development Kit (JDK)
+need not worry about idiosyncrasies of the underlying hardware platform
 
-The JVM reference implementation is developed by the OpenJDK project as open source code and includes a JIT compiler called HotSpot. The commercially supported Java releases availabled from Oracle Corporation are based on the OpenJDK runtime. Eclipse OpenJ9 is another open source JVM for OpenJDK
+The JVM reference implementation is developed by the OpenJDK project as open
+source code and includes a JIT compiler called HotSpot. The commercially
+supported Java releases availabled from Oracle Corporation are based on the
+OpenJDK runtime. Eclipse OpenJ9 is another open source JVM for OpenJDK
 
-OpenJDK:
-Produces a number of components: most importantly the virtual machine (HotSpot), the Java Class Library and the Java compiler(javac)
+OpenJDK: Produces a number of components: most importantly the virtual machine
+(HotSpot), the Java Class Library and the Java compiler(javac)
 
-The web-browser plugin and Web Start, which form part of Oracle Java, are not included in OpenJDK
-    Java Web Start was a framework developed by Sun Microsystems that allows users to start application software for the Java Platform directly from the Internet using a browser
+The web-browser plugin and Web Start, which form part of Oracle Java, are not
+included in OpenJDK
+    Java Web Start was a framework developed by Sun Microsystems that allows
+    users to start application software for the Java Platform directly from the
+    Internet using a browser
 
 OpenJDK 9+ support AOT compilation (jaotc) using GraalVM
 
-Java Compiler(javac):
-Primary Java compiler included in the Java Development Kit from Oracle.
+Java Compiler(javac): Primary Java compiler included in the Java Development Kit
+from Oracle.
 
-Martin Odersky implemented the GJ compiler and his implementation became the basis for javac
+Martin Odersky implemented the GJ compiler and his implementation became the
+basis for javac
 
-Accepts source code conforming to the Java language specification and produces Java bytecode conforming to the Java VirtualMachine Specification
+Accepts source code conforming to the Java language specification and produces
+Java bytecode conforming to the Java VirtualMachine Specification
 
 Written in Java, self-hosting compiler
 
-JVM Specification
-An abstract virtual computer defined by a specification. The garbage-collection algorithm used and any internal optimization of the JVM instrutions (their translation into machine code) are not specified. The main reason for this omission is to not unnecessarily constrain implementers. Any Java application can be run only inside some concrete implementation of the abstract specification of the JVM
+JVM Specification An abstract virtual computer defined by a specification. The
+garbage-collection algorithm used and any internal optimization of the JVM
+instrutions (their translation into machine code) are not specified. The main
+reason for this omission is to not unnecessarily constrain implementers. Any
+Java application can be run only inside some concrete implementation of the
+abstract specification of the JVM
 
-"We intend that this specification should sufficiently document the JVM to make possible compatible clean-room implementations. Oracle provides tests the verify the proper operation implementions of the JVM"
+"We intend that this specification should sufficiently document the JVM to make
+possible compatible clean-room implementations. Oracle provides tests the verify
+the proper operation implementions of the JVM"
 
-Clean-room design (also known as the Chinese wall technique) is the method of copying a design by reverse engineering and then recreating it without infringing any of the copyrights associated with the original design
-    Useful as a defense against copyright infringement because it relies on independent creation. However, because independent invention is not a defense against patents, clean-room designs typically cannot be used to circumvent patent restrictions
-    The term implies that the design team works in an environment that is "clean" or demonstrably uncontaminated by any knowledge of the propreitary techniques used by the competitor
-    Typically, a clean-room design is done by having someone examine the system to be reimplemented and having this person write a specification. This specification is then reviewed by a lawyer to ensure that no copyrighted material is included. The specification is then implemented by a team with no connection to the original examiners.
+Clean-room design (also known as the Chinese wall technique) is the method of
+copying a design by reverse engineering and then recreating it without
+infringing any of the copyrights associated with the original design
+    Useful as a defense against copyright infringement because it relies on
+    independent creation. However, because independent invention is not a
+    defense against patents, clean-room designs typically cannot be used to
+    circumvent patent restrictions The term implies that the design team works
+    in an environment that is "clean" or demonstrably uncontaminated by any
+    knowledge of the propreitary techniques used by the competitor Typically, a
+    clean-room design is done by having someone examine the system to be
+    reimplemented and having this person write a specification. This
+    specification is then reviewed by a lawyer to ensure that no copyrighted
+    material is included. The specification is then implemented by a team with
+    no connection to the original examiners.
 
 *Class Loader Specification Separate Note
 

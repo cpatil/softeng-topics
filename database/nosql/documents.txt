@@ -1,72 +1,131 @@
-A document-oriented database, or document store, is a computer program and data storage system designed for storing, retrieving and managing document-oriented information, also known as semi-structured data.
+A document-oriented database, or document store, is a computer program and data
+storage system designed for storing, retrieving and managing document-oriented
+information, also known as semi-structured data.
 
-Document-oriented databases are one of the main categories of NoSQL databases, and the popularity of the term "document-oriented database" has grown with the use of the term NoSQL itself. XML databases are a subclass of document-oriented databases that are optimized to work with XML documents. Graph databases are similar, but add another layer, the relationship, which allows them to link documents for rapid traversal.
+Document-oriented databases are one of the main categories of NoSQL databases,
+and the popularity of the term "document-oriented database" has grown with the
+use of the term NoSQL itself. XML databases are a subclass of document-oriented
+databases that are optimized to work with XML documents. Graph databases are
+similar, but add another layer, the relationship, which allows them to link
+documents for rapid traversal.
 
-Document-oriented databases are inherently a subclass of the key-value store, another NoSQL database concept. The difference lies in the way the data is processed; in a key-value store, the data is considered to be inherently opaque to the database, whereas a document-oriented system relies on internal structure in the document in order to extract metadata that the database engine uses for further optimization. Although the difference is often negligible due to tools in the systems, conceptually the document-store is designed to offer a richer experience with modern programming techniques.
+Document-oriented databases are inherently a subclass of the key-value store,
+another NoSQL database concept. The difference lies in the way the data is
+processed; in a key-value store, the data is considered to be inherently opaque
+to the database, whereas a document-oriented system relies on internal structure
+in the document in order to extract metadata that the database engine uses for
+further optimization. Although the difference is often negligible due to tools
+in the systems, conceptually the document-store is designed to offer a richer
+experience with modern programming techniques.
 
-Document databases contrast strongly with the traditional relational database (RDB). Relational databases generally store data in separate tables that are defined by the programmer, and a single object may be spread across several tables. Document databases store all information for a given object in a single instance in the database, and every stored object can be different from every other. This eliminates the need for object-relational mapping while loading data into the database. 
+Document databases contrast strongly with the traditional relational database
+(RDB). Relational databases generally store data in separate tables that are
+defined by the programmer, and a single object may be spread across several
+tables. Document databases store all information for a given object in a single
+instance in the database, and every stored object can be different from every
+other. This eliminates the need for object-relational mapping while loading data
+into the database. 
 
-The central concept of a document-oriented database is the notion of a document. While each document-oriented database implementation differs on the details of this definition, in general, they all assume documents encapsulate and encode data (or information) in some standard format or encoding. Encodings in use include XML, YAML, JSON, as well as binary forms like BSON.
+The central concept of a document-oriented database is the notion of a document.
+While each document-oriented database implementation differs on the details of
+this definition, in general, they all assume documents encapsulate and encode
+data (or information) in some standard format or encoding. Encodings in use
+include XML, YAML, JSON, as well as binary forms like BSON.
 
-Documents in a document store are roughly equivalent to the programming concept of an object. They are not required to adhere to a standard schema, nor will they have all the same sections, slots, parts or keys. Generally, programs using objects have many different types of objects, and those objects often have many optional fields. Every object, even those of the same class, can look very different. Document stores are similar in that they allow different types of documents in a single store, allow the fields within them to be optional, and often allow them to be encoded using different encoding systems. For example, the following is a document, encoded in JSON:
+Documents in a document store are roughly equivalent to the programming concept
+of an object. They are not required to adhere to a standard schema, nor will
+they have all the same sections, slots, parts or keys. Generally, programs using
+objects have many different types of objects, and those objects often have many
+optional fields. Every object, even those of the same class, can look very
+different. Document stores are similar in that they allow different types of
+documents in a single store, allow the fields within them to be optional, and
+often allow them to be encoded using different encoding systems. For example,
+the following is a document, encoded in JSON:
 
 {
-    "FirstName": "Bob", 
-    "Address": "5 Oak St.", 
-    "Hobby": "sailing"
+    "FirstName": "Bob", "Address": "5 Oak St.", "Hobby": "sailing"
 }
 
 A second document might be encoded in XML as:
 
   <contact>
-    <firstname>Bob</firstname>
-    <lastname>Smith</lastname>
-    <phone type="Cell">(123) 555-0178</phone>
-    <phone type="Work">(890) 555-0133</phone>
+    <firstname>Bob</firstname> <lastname>Smith</lastname> <phone
+    type="Cell">(123) 555-0178</phone> <phone type="Work">(890) 555-0133</phone>
     <address>
-      <type>Home</type>
-      <street1>123 Back St.</street1>
-      <city>Boys</city>
-      <state>AR</state>
-      <zip>32225</zip>
-      <country>US</country>
+      <type>Home</type> <street1>123 Back St.</street1> <city>Boys</city>
+      <state>AR</state> <zip>32225</zip> <country>US</country>
     </address>
   </contact>
 
-These two documents share some structural elements with one another, but each also has unique elements. The structure and text and other data inside the document are usually referred to as the document's content and may be referenced via retrieval or editing methods, (see below). Unlike a relational database where every record contains the same fields, leaving unused fields empty; there are no empty 'fields' in either document (record) in the above example. This approach allows new information to be added to some records without requiring that every other record in the database share the same structure.
+These two documents share some structural elements with one another, but each
+also has unique elements. The structure and text and other data inside the
+document are usually referred to as the document's content and may be referenced
+via retrieval or editing methods, (see below). Unlike a relational database
+where every record contains the same fields, leaving unused fields empty; there
+are no empty 'fields' in either document (record) in the above example. This
+approach allows new information to be added to some records without requiring
+that every other record in the database share the same structure.
 
-Document databases typically provide for additional metadata to be associated with and stored along with the document content. That metadata may be related to facilities the datastore provides for organizing documents, providing security, or other implementation specific features.
-CRUD operations
+Document databases typically provide for additional metadata to be associated
+with and stored along with the document content. That metadata may be related to
+facilities the datastore provides for organizing documents, providing security,
+or other implementation specific features. CRUD operations
 
-The core operations that a document-oriented database supports for documents are similar to other databases, and while the terminology is not perfectly standardized, most practitioners will recognize them as 
+The core operations that a document-oriented database supports for documents are
+similar to other databases, and while the terminology is not perfectly
+standardized, most practitioners will recognize them as 
 
 CRUD:
 
-    Creation (or insertion)
-    Retrieval (or query, search, read or find)
-    Update (or edit)
-    Deletion (or removal)
+    Creation (or insertion) Retrieval (or query, search, read or find) Update
+    (or edit) Deletion (or removal)
 
 Keys
 
-Documents are addressed in the database via a unique key that represents that document. This key is a simple identifier (or ID), typically a string, a URI, or a path. The key can be used to retrieve the document from the database. Typically the database retains an index on the key to speed up document retrieval, and in some cases the key is required to create or insert the document into the database.
+Documents are addressed in the database via a unique key that represents that
+document. This key is a simple identifier (or ID), typically a string, a URI, or
+a path. The key can be used to retrieve the document from the database.
+Typically the database retains an index on the key to speed up document
+retrieval, and in some cases the key is required to create or insert the
+document into the database.
 
 Retrieval
 
-Another defining characteristic of a document-oriented database is that, beyond the simple key-to-document lookup that can be used to retrieve a document, the database offers an API or query language that allows the user to retrieve documents based on content (or metadata). For example, you may want a query that retrieves all the documents with a certain field set to a certain value. The set of query APIs or query language features available, as well as the expected performance of the queries, varies significantly from one implementation to another. Likewise, the specific set of indexing options and configuration that are available vary greatly by implementation.
+Another defining characteristic of a document-oriented database is that, beyond
+the simple key-to-document lookup that can be used to retrieve a document, the
+database offers an API or query language that allows the user to retrieve
+documents based on content (or metadata). For example, you may want a query that
+retrieves all the documents with a certain field set to a certain value. The set
+of query APIs or query language features available, as well as the expected
+performance of the queries, varies significantly from one implementation to
+another. Likewise, the specific set of indexing options and configuration that
+are available vary greatly by implementation.
 
-It is here that the document store varies most from the key-value store. In theory, the values in a key-value store are opaque to the store, they are essentially black boxes. They may offer search systems similar to those of a document store, but may have less understanding about the organization of the content. Document stores use the metadata in the document to classify the content, allowing them, for instance, to understand that one series of digits is a phone number, and another is a postal code. This allows them to search on those types of data, for instance, all phone numbers containing 555, which would ignore the zip code 55555.
-Editing
+It is here that the document store varies most from the key-value store. In
+theory, the values in a key-value store are opaque to the store, they are
+essentially black boxes. They may offer search systems similar to those of a
+document store, but may have less understanding about the organization of the
+content. Document stores use the metadata in the document to classify the
+content, allowing them, for instance, to understand that one series of digits is
+a phone number, and another is a postal code. This allows them to search on
+those types of data, for instance, all phone numbers containing 555, which would
+ignore the zip code 55555. Editing
 
-Document databases typically provide some mechanism for updating or editing the content (or metadata) of a document, either by allowing for replacement of the entire document, or individual structural pieces of the document.
-Organization
+Document databases typically provide some mechanism for updating or editing the
+content (or metadata) of a document, either by allowing for replacement of the
+entire document, or individual structural pieces of the document. Organization
 
-Document database implementations offer a variety of ways of organizing documents, including notions of
+Document database implementations offer a variety of ways of organizing
+documents, including notions of
 
-    Collections: groups of documents, where depending on implementation, a document may be enforced to live inside one collection, or may be allowed to live in multiple collections
+    Collections: groups of documents, where depending on implementation, a
+    document may be enforced to live inside one collection, or may be allowed to
+    live in multiple collections
     
 	Tags and non-visible metadata: additional data outside the document content
     
-	Directory hierarchies: groups of documents organized in a tree-like structure, typically based on path or URI
+	Directory hierarchies: groups of documents organized in a tree-like structure,
+	typically based on path or URI
 
-Sometimes these organizational notions vary in how much they are logical vs physical, (e.g. on disk or in memory), representations. 
+Sometimes these organizational notions vary in how much they are logical vs
+physical, (e.g. on disk or in memory), representations. 

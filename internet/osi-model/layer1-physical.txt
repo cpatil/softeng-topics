@@ -1,25 +1,49 @@
-Physical Layer:
-Defines the means of transmitting a stream of raw bits over a physical data link connecting network nodes
-    - A node is either a redistribution point or a communication endpoint. A physical network node is an electronic device that is attached to a network, and is capable of creating, receiving, or transmitting information over a communication channel
+Physical Layer: Defines the means of transmitting a stream of raw bits over a
+physical data link connecting network nodes
+    - A node is either a redistribution point or a communication endpoint. A
+    physical network node is an electronic device that is attached to a network,
+    and is capable of creating, receiving, or transmitting information over a
+    communication channel
 
-The bitstream may be grouped into code words or symbols and converted to a physical signal that is transmitted over a transmission medium.
+The bitstream may be grouped into code words or symbols and converted to a
+physical signal that is transmitted over a transmission medium.
     - A bitstream/bytestream is a sequence of bits/bytes.
 
-Provides an electrical, mechanical, and procedural interface to the transmission medium.
+Provides an electrical, mechanical, and procedural interface to the transmission
+medium.
 
-There are two main types of transmission media:
-Guided media: waves are guided along a solid medium such as a transmission line (twisted pair, coaxial cable, optical fiber)
+There are two main types of transmission media: Guided media: waves are guided
+along a solid medium such as a transmission line (twisted pair, coaxial cable,
+optical fiber)
 
-Unguided media: transmission and reception are achieved by means of an antenna (radio)
+Unguided media: transmission and reception are achieved by means of an antenna
+(radio)
 
-The shapes and properties of the electrical connectors, the frequencies to broadcast on, the line code to use and similar low-level parameters, are specified by the physical layer
-    - A line code is a pattern of voltage, current, or photons used to represent digital data transmitted down a transmission line
+The shapes and properties of the electrical connectors, the frequencies to
+broadcast on, the line code to use and similar low-level parameters, are
+specified by the physical layer
+    - A line code is a pattern of voltage, current, or photons used to represent
+    digital data transmitted down a transmission line
 
 
 
-There are at least three types of basic data-link configurations that can be conceived of and used:
-    - Simplex communications, most commonly meaning all communications in one direction only
-    - Half-duplex communications, meaning communications in both directions, but not both ways simultaneously
-    - Duplex communications, communications in both directions simultaneously
+There are at least three types of basic data-link configurations that can be
+conceived of and used:
+    - Simplex communications, most commonly meaning all communications in one
+    direction only - Half-duplex communications, meaning communications in both
+    directions, but not both ways simultaneously - Duplex communications,
+    communications in both directions simultaneously
 
-The physical layer is responsible for the transmission and reception of unstructured raw data between a device and a physical transmission medium. It converts the digital bits into electrical, radio, or optical signals. Layer specifications define characteristics such as voltage levels, the timing of voltage changes, physical data rates, maximum transmission distances, modulation scheme, channel access method and physical connectors. This includes the layout of pins, voltages, line impedance, cable specifications, signal timing and frequency for wireless devices. Bit rate control is done at the physical layer and may define transmission mode as simplex, half duplex, and full duplex. The components of a physical layer can be described in terms of a network topology. Physical layer specifications are included in the specifications for the ubiquitous Bluetooth, Ethernet, and USB standards. An example of a less well-known physical layer specification would be for the CAN standard. 
+The physical layer is responsible for the transmission and reception of
+unstructured raw data between a device and a physical transmission medium. It
+converts the digital bits into electrical, radio, or optical signals. Layer
+specifications define characteristics such as voltage levels, the timing of
+voltage changes, physical data rates, maximum transmission distances, modulation
+scheme, channel access method and physical connectors. This includes the layout
+of pins, voltages, line impedance, cable specifications, signal timing and
+frequency for wireless devices. Bit rate control is done at the physical layer
+and may define transmission mode as simplex, half duplex, and full duplex. The
+components of a physical layer can be described in terms of a network topology.
+Physical layer specifications are included in the specifications for the
+ubiquitous Bluetooth, Ethernet, and USB standards. An example of a less
+well-known physical layer specification would be for the CAN standard. 

@@ -1,30 +1,64 @@
- Service-oriented architecture (SOA) is an architectural style that supports service orientation. By consequence, it is as well applied in the field of software design where services are provided to the other components by application components, through a communication protocol over a network. A service is a discrete unit of functionality that can be accessed remotely and acted upon and updated independently, such as retrieving a credit card statement online. SOA is also intended to be independent of vendors, products and technologies.
+ Service-oriented architecture (SOA) is an architectural style that supports
+ service orientation. By consequence, it is as well applied in the field of
+ software design where services are provided to the other components by
+ application components, through a communication protocol over a network. A
+ service is a discrete unit of functionality that can be accessed remotely and
+ acted upon and updated independently, such as retrieving a credit card
+ statement online. SOA is also intended to be independent of vendors, products
+ and technologies.
 
-Service orientation is a way of thinking in terms of services and service-based development and the outcomes of services.
+Service orientation is a way of thinking in terms of services and service-based
+development and the outcomes of services.
 
 A service has four properties according to one of many definitions of SOA:
 
-    It logically represents a repeatable business activity with a specified outcome.
-    It is self-contained.
-    It is a black box for its consumers, meaning the consumer does not have to be aware of the service's inner workings.
-    It may be composed of other services.
+    It logically represents a repeatable business activity with a specified
+    outcome. It is self-contained. It is a black box for its consumers, meaning
+    the consumer does not have to be aware of the service's inner workings. It
+    may be composed of other services.
 
-Different services can be used in conjunction as a service mesh to provide the functionality of a large software application, a principle SOA shares with modular programming. Service-oriented architecture integrates distributed, separately maintained and deployed software components. It is enabled by technologies and standards that facilitate components' communication and cooperation over a network, especially over an IP network.
+Different services can be used in conjunction as a service mesh to provide the
+functionality of a large software application, a principle SOA shares with
+modular programming. Service-oriented architecture integrates distributed,
+separately maintained and deployed software components. It is enabled by
+technologies and standards that facilitate components' communication and
+cooperation over a network, especially over an IP network.
 
-SOA is related to the idea of an application programming interface (API), an interface or communication protocol between different parts of a computer program intended to simplify the implementation and maintenance of software. An API can be thought of as the service, and the SOA the architecture that allows the service to operate. 
+SOA is related to the idea of an application programming interface (API), an
+interface or communication protocol between different parts of a computer
+program intended to simplify the implementation and maintenance of software. An
+API can be thought of as the service, and the SOA the architecture that allows
+the service to operate. 
 
-SOA can be seen as part of the continuum which ranges from the older concept of distributed computing and modular programming, through SOA, and on to practices of mashups, SaaS, and cloud computing (which some see as the offspring of SOA).
+SOA can be seen as part of the continuum which ranges from the older concept of
+distributed computing and modular programming, through SOA, and on to practices
+of mashups, SaaS, and cloud computing (which some see as the offspring of SOA).
 
 Each SOA building block can play any of the three roles:
 
 Service provider
 
-    It creates a web service and provides its information to the service registry. Each provider debates upon a lot of hows and whys like which service to expose, which to give more importance: security or easy availability, what price to offer the service for and many more. The provider also has to decide what category the service should be listed in for a given broker service[18] and what sort of trading partner agreements are required to use the service.
+    It creates a web service and provides its information to the service
+    registry. Each provider debates upon a lot of hows and whys like which
+    service to expose, which to give more importance: security or easy
+    availability, what price to offer the service for and many more. The
+    provider also has to decide what category the service should be listed in
+    for a given broker service[18] and what sort of trading partner agreements
+    are required to use the service.
 
 Service broker, service registry or service repository
 
-    Its main functionality is to make the information regarding the web service available to any potential requester. Whoever implements the broker decides the scope of the broker. Public brokers are available anywhere and everywhere but private brokers are only available to a limited amount of public. UDDI was an early, no longer actively supported attempt to provide Web services discovery.
+    Its main functionality is to make the information regarding the web service
+    available to any potential requester. Whoever implements the broker decides
+    the scope of the broker. Public brokers are available anywhere and
+    everywhere but private brokers are only available to a limited amount of
+    public. UDDI was an early, no longer actively supported attempt to provide
+    Web services discovery.
 
 Service requester/consumer
 
-    It locates entries in the broker registry using various find operations and then binds to the service provider in order to invoke one of its web services. Whichever service the service-consumers need, they have to take it into the brokers, bind it with respective service and then use it. They can access multiple services if the service provides multiple services.
+    It locates entries in the broker registry using various find operations and
+    then binds to the service provider in order to invoke one of its web
+    services. Whichever service the service-consumers need, they have to take it
+    into the brokers, bind it with respective service and then use it. They can
+    access multiple services if the service provides multiple services.

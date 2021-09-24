@@ -1,94 +1,288 @@
-Collision resolution:
-Hash collisions are practically unavoidable when hashing a random subset of a large set of possible keys. For example, if 2,450 keys are hashed into a million buckets, even with a perfectly uniform random distribution, according to the birthday problem there is approximately a 95% chance of at least two of the keys being hashed to the same slot. Collisions resolution methods require that the keys (or pointers to them) be stored in the table, together with the associated values
-	- In a group of 23 people, the probability of a shared birthday exceeds 50%, while a group of 70 has a 99.9% chance of a shared birthday. (By the pigeonhole principle, the probability reaches 100% when the number of people reaches 367, since there are only 366 possible birthdays, including February 29.) 
+Collision resolution: Hash collisions are practically unavoidable when hashing a
+random subset of a large set of possible keys. For example, if 2,450 keys are
+hashed into a million buckets, even with a perfectly uniform random
+distribution, according to the birthday problem there is approximately a 95%
+chance of at least two of the keys being hashed to the same slot. Collisions
+resolution methods require that the keys (or pointers to them) be stored in the
+table, together with the associated values
+	- In a group of 23 people, the probability of a shared birthday exceeds 50%,
+	while a group of 70 has a 99.9% chance of a shared birthday. (By the
+	pigeonhole principle, the probability reaches 100% when the number of people
+	reaches 367, since there are only 366 possible birthdays, including February
+	29.) 
 
-Separate chaining:
-Each bucket is independent, and has some sort of list of entries with the same index. The time for hash table operations is the time to find the bucket (which is constant) plus the time for the list operation
+Separate chaining: Each bucket is independent, and has some sort of list of
+entries with the same index. The time for hash table operations is the time to
+find the bucket (which is constant) plus the time for the list operation
 
-In most implementations buckets will have few entries, if the hash function is working properly. Therefore, structures that are efficient in time and space for these cases are preferred. Structures that are efficient for a fairly large number of entries per bucket are not needed or desirable. If these cases happen often, the hashing function needs to be fixed
+In most implementations buckets will have few entries, if the hash function is
+working properly. Therefore, structures that are efficient in time and space for
+these cases are preferred. Structures that are efficient for a fairly large
+number of entries per bucket are not needed or desirable. If these cases happen
+often, the hashing function needs to be fixed
 
-Separate chaining with linked lists:
-Chained hash tables with linked lists are popular because they require only basic data structures with simple algorithms, and can use simple hash functions that are unsuitable for other methods
+Separate chaining with linked lists: Chained hash tables with linked lists are
+popular because they require only basic data structures with simple algorithms,
+and can use simple hash functions that are unsuitable for other methods
 
-The cost of a table operation is that of scanning the entries of the selected bucket for the desired key. If the distribution of keys is sufficiently uniform, the average cost of a lookup depends only on the average number of keys per bucket - that is, it is roughly proportional to the load factor
+The cost of a table operation is that of scanning the entries of the selected
+bucket for the desired key. If the distribution of keys is sufficiently uniform,
+the average cost of a lookup depends only on the average number of keys per
+bucket - that is, it is roughly proportional to the load factor
 
-For this reason, chained hash tables remain effective even when the number of the of table entries n is much higher than the number of slots. For example, a chained hash table with 1000 slots and 10,000 stored keys (load factor 10) is five to ten times slower than a 10,000-slot table (load factor 1); but still 1000 times faster than a plain sequential list
+For this reason, chained hash tables remain effective even when the number of
+the of table entries n is much higher than the number of slots. For example, a
+chained hash table with 1000 slots and 10,000 stored keys (load factor 10) is
+five to ten times slower than a 10,000-slot table (load factor 1); but still
+1000 times faster than a plain sequential list
 
-The worst-case scenario is when all entries are inserted into the same bucket, in which case the hash table is ineffective and the cost is that of searching the bucket data structure. If the latter is a linear list, the lookup procedure may have to scan all its entries, so the worst-case cost is proportional to the number n of entries in the table
+The worst-case scenario is when all entries are inserted into the same bucket,
+in which case the hash table is ineffective and the cost is that of searching
+the bucket data structure. If the latter is a linear list, the lookup procedure
+may have to scan all its entries, so the worst-case cost is proportional to the
+number n of entries in the table
 
-The bucket chains are often searched sequentially using the order the entries were added to the bucket. If the load factor is large and some keys are more likely to come up than others, then rearranging the chain with a move-to-front heuristic may be effective. Move-to-front heuristic involves a self-organizing list that reorders its elements based on some self-organizing heauristic to improve average access time. The aimt of a self-organizing list is to improve efficiency of linear search by moving more frequently accessed items towards the head of the list.
+The bucket chains are often searched sequentially using the order the entries
+were added to the bucket. If the load factor is large and some keys are more
+likely to come up than others, then rearranging the chain with a move-to-front
+heuristic may be effective. Move-to-front heuristic involves a self-organizing
+list that reorders its elements based on some self-organizing heauristic to
+improve average access time. The aimt of a self-organizing list is to improve
+efficiency of linear search by moving more frequently accessed items towards the
+head of the list.
 
-More sophisticated data structures, such as balanced search trees, are worth considering only if the load factor is large (about 10 or more), or if the hash distribution is likely to be very non-uniform, or if one must guarantee good performance even in a worst-case scenario. However, using a larger table and/or a better hash function may be even more effective in those cases.
+More sophisticated data structures, such as balanced search trees, are worth
+considering only if the load factor is large (about 10 or more), or if the hash
+distribution is likely to be very non-uniform, or if one must guarantee good
+performance even in a worst-case scenario. However, using a larger table and/or
+a better hash function may be even more effective in those cases.
 
-Chained hash tables also inherit the disadvantages of linked lists. When storing small keys and values, the space overhead of the next pointer in each entry record can be significant. An additional disadvantage is that traversing a linked list has poor cache performance, making the processor cache ineffective. 
+Chained hash tables also inherit the disadvantages of linked lists. When storing
+small keys and values, the space overhead of the next pointer in each entry
+record can be significant. An additional disadvantage is that traversing a
+linked list has poor cache performance, making the processor cache ineffective. 
 
-Separate chaining with list head cells:
-Some chaining implementations store the first record of each chain in the slot array itself. The number of pointer traversals is decreased by one for most cases. The purpose is to increase cache efficiency of hash table access.
+Separate chaining with list head cells: Some chaining implementations store the
+first record of each chain in the slot array itself. The number of pointer
+traversals is decreased by one for most cases. The purpose is to increase cache
+efficiency of hash table access.
 
-The disadvantage is that an empty bucket takes the same space as a bucket with one entry. To save space, such hash tables often have about as many slots as stored entries, meaning that many slots have two or more entries.
+The disadvantage is that an empty bucket takes the same space as a bucket with
+one entry. To save space, such hash tables often have about as many slots as
+stored entries, meaning that many slots have two or more entries.
 
-Stack Overflow (Reference to Cracking the Code Interview):
-So they're talking about using a BST (binary search tree) to handle collisions. It wouldn't actually make sense to use a BST as the sole data structure since the whole point of a properly tuned hash is that look-up is on the order of O(1), much better than the O(log n) from a BST. On top of that, using a BST to totally implement a hash table means it's not actually a hash table
+Stack Overflow (Reference to Cracking the Code Interview): So they're talking
+about using a BST (binary search tree) to handle collisions. It wouldn't
+actually make sense to use a BST as the sole data structure since the whole
+point of a properly tuned hash is that look-up is on the order of O(1), much
+better than the O(log n) from a BST. On top of that, using a BST to totally
+implement a hash table means it's not actually a hash table
 
-However, consider that, when you have collisions in a hash table, a frequent way to handle them is to have each bucket contain a linked list of its items. In the degenerate case (all items hashing to the same bucket), you end up with just a linked list and the O(1) turns into O(n).
+However, consider that, when you have collisions in a hash table, a frequent way
+to handle them is to have each bucket contain a linked list of its items. In the
+degenerate case (all items hashing to the same bucket), you end up with just a
+linked list and the O(1) turns into O(n).
 
-So, rather than a linked list at each bucket, you have a BST. Then you no longer have O(n) search complexity in cases where a single bucket has many items (the previously mentioned collisions).
+So, rather than a linked list at each bucket, you have a BST. Then you no longer
+have O(n) search complexity in cases where a single bucket has many items (the
+previously mentioned collisions).
 
-You use the hash function to find the bucket in O(1) then search through the BST in O(log n) if there are collisions. In the best case (one item per bucket), it's still O(1). The worst case then becomes O(log n) rather than O(n).
+You use the hash function to find the bucket in O(1) then search through the BST
+in O(log n) if there are collisions. In the best case (one item per bucket),
+it's still O(1). The worst case then becomes O(log n) rather than O(n).
 
-The only thing that originally concerned me about that theory is that they also discuss the fact that a large allocation is no longer necessary. If it's a shared hash/BST combination, you still need to allocate the entire hash table so that seemed incongruous.
+The only thing that originally concerned me about that theory is that they also
+discuss the fact that a large allocation is no longer necessary. If it's a
+shared hash/BST combination, you still need to allocate the entire hash table so
+that seemed incongruous.
 
-However, from the context ("... since a large array no longer needs to be allocated ..."), it appears that they mean they can make the hash table part of the dual data structure smaller as the collisions are more efficient to process. In other words, rather than a 1000-element hash table with linked lists for collisions, you can get away with a 100-element hash table because the collisions are not so damaging to the search time if you use a BST.
+However, from the context ("... since a large array no longer needs to be
+allocated ..."), it appears that they mean they can make the hash table part of
+the dual data structure smaller as the collisions are more efficient to process.
+In other words, rather than a 1000-element hash table with linked lists for
+collisions, you can get away with a 100-element hash table because the
+collisions are not so damaging to the search time if you use a BST.
 
-Separate chaining with other structures:
-Instead of a list, one can use any other data structure that supports the required operations. For example, by using a self-balancing binary search tree, the theoretical worst-case time of common hash table operations (insertion, deletion, lookup) can be brought down to O(log n) rather than O(n). However, this introduces extra complexity into the implementation, and may cause even worse performance for smaller hash tables, where the time spent inserting into and balancing the tree is greater than the time needed to perform a linear search on all of the elements of a list. A real world example of a hash table that uses a self-balancing binary search tree for buckets is the HashMap class in Java
+Separate chaining with other structures: Instead of a list, one can use any
+other data structure that supports the required operations. For example, by
+using a self-balancing binary search tree, the theoretical worst-case time of
+common hash table operations (insertion, deletion, lookup) can be brought down
+to O(log n) rather than O(n). However, this introduces extra complexity into the
+implementation, and may cause even worse performance for smaller hash tables,
+where the time spent inserting into and balancing the tree is greater than the
+time needed to perform a linear search on all of the elements of a list. A real
+world example of a hash table that uses a self-balancing binary search tree for
+buckets is the HashMap class in Java
 
-The variant called array hash table uses a dynamic array to store all the entries that hash to the same slot.Each newly inserted entry gets appended to the end of the dynamic array that is assigned to the slot. The dynamic array is resized in an exact-fit manner, meaning it is grown only by as many bytes as needed. Alternative techniques such as growing the array by block sizes or pages were found to improve insertion performance, but at a cost in space. This variation makes more efficient use of CPU caching and the translation lookaside buffer (TLB), because slot entries are stored in sequential memory positions. It also dispenses with the next pointers that are required by linked lists, which saves space. Despite frequent array resizing, space overheads incurred by the operating system such as memory fragmentation were found to be small.
+The variant called array hash table uses a dynamic array to store all the
+entries that hash to the same slot.Each newly inserted entry gets appended to
+the end of the dynamic array that is assigned to the slot. The dynamic array is
+resized in an exact-fit manner, meaning it is grown only by as many bytes as
+needed. Alternative techniques such as growing the array by block sizes or pages
+were found to improve insertion performance, but at a cost in space. This
+variation makes more efficient use of CPU caching and the translation lookaside
+buffer (TLB), because slot entries are stored in sequential memory positions. It
+also dispenses with the next pointers that are required by linked lists, which
+saves space. Despite frequent array resizing, space overheads incurred by the
+operating system such as memory fragmentation were found to be small.
 
-*Translation lookaside buffer: Is a memory cache that is used to reduce the time taken to access a user memory location. It is a part of the chips' memory-management-unit (MMU). Stores the recent translations of virtual memory to physical memory and can be called an address-translation cache.
+*Translation lookaside buffer: Is a memory cache that is used to reduce the time
+taken to access a user memory location. It is a part of the chips'
+memory-management-unit (MMU). Stores the recent translations of virtual memory
+to physical memory and can be called an address-translation cache.
 
-Closed addressing: Store all elements with hash collisions 
-in a secondary data structure (linked list, BST, etc.)
+Closed addressing: Store all elements with hash collisions in a secondary data
+structure (linked list, BST, etc.)
 
-Open addressing:
-With this method a hash collision is resolved by probing, or searching through alternative locations in the array (the probe sequence) until either the target record is found, or an unused array slot is found, which indicates that there is no such key in the table. 
+Open addressing: With this method a hash collision is resolved by probing, or
+searching through alternative locations in the array (the probe sequence) until
+either the target record is found, or an unused array slot is found, which
+indicates that there is no such key in the table. 
 
-An elaboration on this approach is the so-called dynamic perfect hashing, where a bucket that contains k entries is organized as a perfect hash table with k2 slots. While it uses more memory (n2 slots for n entries, in the worst case and n × k slots in the average case), this variant has guaranteed constant worst-case lookup time, and low amortized time for insertion. It is also possible to use a fusion tree for each bucket, achieving constant time for all operations with high probability.
+An elaboration on this approach is the so-called dynamic perfect hashing, where
+a bucket that contains k entries is organized as a perfect hash table with k2
+slots. While it uses more memory (n2 slots for n entries, in the worst case and
+n × k slots in the average case), this variant has guaranteed constant
+worst-case lookup time, and low amortized time for insertion. It is also
+possible to use a fusion tree for each bucket, achieving constant time for all
+operations with high probability.
 
 Probe sequences:
-	- Linear probing, in which the interval between probes is fixed, often set to 1.  Because of good CPU cache utilization and high performance this algorithm is most widely used on modern computer architectures in hash table implementations.
-	- Quadratic probing, in which the interval between probes increases quadratically (hence, the indices are described by a quadratice function)
-	- Double hashing, in which the interval between probes is fixed for each record but is computed by another hash function
+	- Linear probing, in which the interval between probes is fixed, often set
+	to 1.  Because of good CPU cache utilization and high performance this
+	algorithm is most widely used on modern computer architectures in hash table
+	implementations. - Quadratic probing, in which the interval between probes
+	increases quadratically (hence, the indices are described by a quadratice
+	function) - Double hashing, in which the interval between probes is fixed
+	for each record but is computed by another hash function
 
-The main trade offs between these methods are that linear probing has the best cache performance but is most sensitive to clustering, while double hashing has poor cache performance but exhibits virtually no clustering; quadratice probing falls in-between in both areas
+The main trade offs between these methods are that linear probing has the best
+cache performance but is most sensitive to clustering, while double hashing has
+poor cache performance but exhibits virtually no clustering; quadratice probing
+falls in-between in both areas
 
-Some open addressing methods, such as Hopscotch hashing, Robin Hood hashing, last-come-first-served hashing and cuckoo hashing move existing keys around in the array to make room for the new key. This gives better maximum search times than the methods based on probing
+Some open addressing methods, such as Hopscotch hashing, Robin Hood hashing,
+last-come-first-served hashing and cuckoo hashing move existing keys around in
+the array to make room for the new key. This gives better maximum search times
+than the methods based on probing
 
-A critical influence of performance of an open addressing hash table is the load factor; that is, the proportion of the slots in the array that are used. As the load factor increases towards 100%, the number of probes that may be required to find or insert a given key rises dramatically. Once the table becomes full, probing algorithms may even fail to terminate. Even with good hash functions, load factors are normally limited to 80%. A poor hash function can exhibit poor performance even at very low load factors by generating significant clustering, especially with the simplest linear addressing method. Generally typical load factors with most open addressing methods are 50%, whilst separate chaining typically can use up to 100%
+A critical influence of performance of an open addressing hash table is the load
+factor; that is, the proportion of the slots in the array that are used. As the
+load factor increases towards 100%, the number of probes that may be required to
+find or insert a given key rises dramatically. Once the table becomes full,
+probing algorithms may even fail to terminate. Even with good hash functions,
+load factors are normally limited to 80%. A poor hash function can exhibit poor
+performance even at very low load factors by generating significant clustering,
+especially with the simplest linear addressing method. Generally typical load
+factors with most open addressing methods are 50%, whilst separate chaining
+typically can use up to 100%
 
-Open addressing avoids the time overhead of allocating each new entry record, and can be implemented even in the absence of a memory allocator. It also avoids the extra indirection required to access the first entry of each bucket (that is, usually the only one). It also has better locality of reference, particularly with linear probing. With small record sizes, these factors can yield better performance than chaining, particularly for lookups. Hash tables with open addressing are also easier to serialize, because they do not use pointers.
+Open addressing avoids the time overhead of allocating each new entry record,
+and can be implemented even in the absence of a memory allocator. It also avoids
+the extra indirection required to access the first entry of each bucket (that
+is, usually the only one). It also has better locality of reference,
+particularly with linear probing. With small record sizes, these factors can
+yield better performance than chaining, particularly for lookups. Hash tables
+with open addressing are also easier to serialize, because they do not use
+pointers.
 
-On the other hand, normal open addressing is a poor choice for large elements, because these elements fill entire CPU cache lines (negating the cache advantage), and a large amount of space is wasted on large empty table slots. If the open addressing table only stores references to elements (external storage), it uses space comparable to chaining even for large records but loses its speed advantage.[citation needed]
+On the other hand, normal open addressing is a poor choice for large elements,
+because these elements fill entire CPU cache lines (negating the cache
+advantage), and a large amount of space is wasted on large empty table slots. If
+the open addressing table only stores references to elements (external storage),
+it uses space comparable to chaining even for large records but loses its speed
+advantage.[citation needed]
 
-Generally speaking, open addressing is better used for hash tables with small records that can be stored within the table (internal storage) and fit in a cache line. They are particularly suitable for elements of one word or less. If the table is expected to have a high load factor, the records are large, or the data is variable-sized, chained hash tables often perform as well or better.
+Generally speaking, open addressing is better used for hash tables with small
+records that can be stored within the table (internal storage) and fit in a
+cache line. They are particularly suitable for elements of one word or less. If
+the table is expected to have a high load factor, the records are large, or the
+data is variable-sized, chained hash tables often perform as well or better.
 
-Coalesced hashing
-A hybrid of chaining and open addressing, coalesced hashing links together chains of nodes within the table itself.[19] Like open addressing, it achieves space usage and (somewhat diminished) cache advantages over chaining. Like chaining, it does not exhibit clustering effects; in fact, the table can be efficiently filled to a high density. Unlike chaining, it cannot have more elements than table slots.
+Coalesced hashing A hybrid of chaining and open addressing, coalesced hashing
+links together chains of nodes within the table itself.[19] Like open
+addressing, it achieves space usage and (somewhat diminished) cache advantages
+over chaining. Like chaining, it does not exhibit clustering effects; in fact,
+the table can be efficiently filled to a high density. Unlike chaining, it
+cannot have more elements than table slots.
 
-This strategy is effective, efficient, and very easy to implement. However, sometimes the extra memory use might be prohibitive, and the most common alternative, open addressing, has uncomfortable disadvantages that decrease performance. The primary disadvantage of open addressing is primary and secondary clustering, in which searches may access long sequences of used buckets that contain items with different hash addresses; items with one hash address can thus lengthen searches for items with other hash addresses.
+This strategy is effective, efficient, and very easy to implement. However,
+sometimes the extra memory use might be prohibitive, and the most common
+alternative, open addressing, has uncomfortable disadvantages that decrease
+performance. The primary disadvantage of open addressing is primary and
+secondary clustering, in which searches may access long sequences of used
+buckets that contain items with different hash addresses; items with one hash
+address can thus lengthen searches for items with other hash addresses.
 
-One solution to these issues is coalesced hashing. Coalesced hashing uses a similar technique as separate chaining, but instead of allocating new nodes for the linked list, buckets in the actual table are used. The first empty bucket in the table at the time of a collision is considered the collision bucket. When a collision occurs anywhere in the table, the item is placed in the collision bucket and a link is made between the chain and the collision bucket. It is possible for a newly inserted item to collide with items with a different hash address, such as the case in the example in the image when item "clq" is inserted. The chain for "clq" is said to "coalesce" with the chain of "qrj," hence the name of the algorithm. However, the extent of coalescing is minor compared with the clustering exhibited by open addressing. For example, when coalescing occurs, the length of the chain grows by only 1, whereas in open addressing, search sequences of arbitrary length may combine. 
+One solution to these issues is coalesced hashing. Coalesced hashing uses a
+similar technique as separate chaining, but instead of allocating new nodes for
+the linked list, buckets in the actual table are used. The first empty bucket in
+the table at the time of a collision is considered the collision bucket. When a
+collision occurs anywhere in the table, the item is placed in the collision
+bucket and a link is made between the chain and the collision bucket. It is
+possible for a newly inserted item to collide with items with a different hash
+address, such as the case in the example in the image when item "clq" is
+inserted. The chain for "clq" is said to "coalesce" with the chain of "qrj,"
+hence the name of the algorithm. However, the extent of coalescing is minor
+compared with the clustering exhibited by open addressing. For example, when
+coalescing occurs, the length of the chain grows by only 1, whereas in open
+addressing, search sequences of arbitrary length may combine. 
 
-Cuckoo hashing:
-Another alternative open-addressing solution is cuckoo hashing, which ensures constant lookup and deletion time in the worst case, and constant amortized time for insertions (with low probability that the worst-case will be encountered). It uses two or more hash functions, which means any key/value pair could be in two or more locations. For lookup, the first hash function is used; if the key/value is not found, then the second hash function is used, and so on. If a collision happens during insertion, then the key is re-hashed with the second hash function to map it to another bucket. If all hash functions are used and there is still a collision, then the key it collided with is removed to make space for the new key, and the old key is re-hashed with one of the other hash functions, which maps it to another bucket. If that location also results in a collision, then the process repeats until there is no collision or the process traverses all the buckets, at which point the table is resized. By combining multiple hash functions with multiple cells per bucket, very high space utilization can be achieved.
+Cuckoo hashing: Another alternative open-addressing solution is cuckoo hashing,
+which ensures constant lookup and deletion time in the worst case, and constant
+amortized time for insertions (with low probability that the worst-case will be
+encountered). It uses two or more hash functions, which means any key/value pair
+could be in two or more locations. For lookup, the first hash function is used;
+if the key/value is not found, then the second hash function is used, and so on.
+If a collision happens during insertion, then the key is re-hashed with the
+second hash function to map it to another bucket. If all hash functions are used
+and there is still a collision, then the key it collided with is removed to make
+space for the new key, and the old key is re-hashed with one of the other hash
+functions, which maps it to another bucket. If that location also results in a
+collision, then the process repeats until there is no collision or the process
+traverses all the buckets, at which point the table is resized. By combining
+multiple hash functions with multiple cells per bucket, very high space
+utilization can be achieved.
 
-Another alternative open-addressing solution is hopscotch hashing,[21] which combines the approaches of cuckoo hashing and linear probing, yet seems in general to avoid their limitations. In particular it works well even when the load factor grows beyond 0.9. The algorithm is well suited for implementing a resizable concurrent hash table.
+Another alternative open-addressing solution is hopscotch hashing,[21] which
+combines the approaches of cuckoo hashing and linear probing, yet seems in
+general to avoid their limitations. In particular it works well even when the
+load factor grows beyond 0.9. The algorithm is well suited for implementing a
+resizable concurrent hash table.
 
-Hopscotch hashing algorithm: 
-Works by defining a neighborhood of buckets near the original hashed bucket, where a given entry is always found. Thus, search is limited to the number of entries in this neighborhood, which is logarithmic in the worst case, constant on average, and with proper alignment of the neighborhood typically requires one cache miss. When inserting an entry, one first attempts to add it to a bucket in the neighborhood. However, if all buckets in this neighborhood are occupied, the algorithm traverses buckets in sequence until an open slot (an unoccupied bucket) is found (as in linear probing). At that point, since the empty bucket is outside the neighborhood, items are repeatedly displaced in a sequence of hops. (This is similar to cuckoo hashing, but with the difference that in this case the empty slot is being moved into the neighborhood, instead of items being moved out with the hope of eventually finding an empty slot.) Each hop brings the open slot closer to the original neighborhood, without invalidating the neighborhood property of any of the buckets along the way. In the end, the open slot has been moved into the neighborhood, and the entry being inserted can be added to it.
+Hopscotch hashing algorithm: Works by defining a neighborhood of buckets near
+the original hashed bucket, where a given entry is always found. Thus, search is
+limited to the number of entries in this neighborhood, which is logarithmic in
+the worst case, constant on average, and with proper alignment of the
+neighborhood typically requires one cache miss. When inserting an entry, one
+first attempts to add it to a bucket in the neighborhood. However, if all
+buckets in this neighborhood are occupied, the algorithm traverses buckets in
+sequence until an open slot (an unoccupied bucket) is found (as in linear
+probing). At that point, since the empty bucket is outside the neighborhood,
+items are repeatedly displaced in a sequence of hops. (This is similar to cuckoo
+hashing, but with the difference that in this case the empty slot is being moved
+into the neighborhood, instead of items being moved out with the hope of
+eventually finding an empty slot.) Each hop brings the open slot closer to the
+original neighborhood, without invalidating the neighborhood property of any of
+the buckets along the way. In the end, the open slot has been moved into the
+neighborhood, and the entry being inserted can be added to it.
 
-Robin Hood Hashing:
-A variation on double-hashing collision resolution is Robin Hood hashing.[22][23] The idea is that a new key may displace a key already inserted, if its probe count is larger than that of the key at the current position. The net effect of this is that it reduces worst case search times in the table. This is similar to ordered hash tables[24] except that the criterion for bumping a key does not depend on a direct relationship between the keys. Since both the worst case and the variation in the number of probes is reduced dramatically, an interesting variation is to probe the table starting at the expected successful probe value and then expand from that position in both directions.[25] External Robin Hood hashing is an extension of this algorithm where the table is stored in an external file and each table position corresponds to a fixed-sized page or bucket with B records.
+Robin Hood Hashing: A variation on double-hashing collision resolution is Robin
+Hood hashing.[22][23] The idea is that a new key may displace a key already
+inserted, if its probe count is larger than that of the key at the current
+position. The net effect of this is that it reduces worst case search times in
+the table. This is similar to ordered hash tables[24] except that the criterion
+for bumping a key does not depend on a direct relationship between the keys.
+Since both the worst case and the variation in the number of probes is reduced
+dramatically, an interesting variation is to probe the table starting at the
+expected successful probe value and then expand from that position in both
+directions.[25] External Robin Hood hashing is an extension of this algorithm
+where the table is stored in an external file and each table position
+corresponds to a fixed-sized page or bucket with B records.
 
-2-choice hashing
-2-choice hashing employs two different hash functions, h1(x) and h2(x), for the hash table. Both hash functions are used to compute two table locations. When an object is inserted in the table, it is placed in the table location that contains fewer objects (with the default being the h1(x) table location if there is equality in bucket size). 2-choice hashing employs the principle of the power of two choices.
+2-choice hashing 2-choice hashing employs two different hash functions, h1(x)
+and h2(x), for the hash table. Both hash functions are used to compute two table
+locations. When an object is inserted in the table, it is placed in the table
+location that contains fewer objects (with the default being the h1(x) table
+location if there is equality in bucket size). 2-choice hashing employs the
+principle of the power of two choices.

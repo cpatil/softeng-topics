@@ -1,15 +1,57 @@
 SOAP:
 
-	SOAP (formerly an acronym for Simple Object Access Protocol) is a messaging protocol specification for exchanging structured information in the implementation of web services in computer networks. It uses XML Information Set for its message format, and relies on application layer protocols, most often Hypertext Transfer Protocol (HTTP), although some legacy systems communicate over Simple Mail Transfer Protocol (SMTP), for message negotiation and transmission.
+	SOAP (formerly an acronym for Simple Object Access Protocol) is a messaging
+	protocol specification for exchanging structured information in the
+	implementation of web services in computer networks. It uses XML Information
+	Set for its message format, and relies on application layer protocols, most
+	often Hypertext Transfer Protocol (HTTP), although some legacy systems
+	communicate over Simple Mail Transfer Protocol (SMTP), for message
+	negotiation and transmission.
 
-	SOAP allows developers to invoke processes running on disparate operating systems (such as Windows, macOS, and Linux) to authenticate, authorize, and communicate using Extensible Markup Language (XML). Since Web protocols like HTTP are installed and running on all operating systems, SOAP allows clients to invoke web services and receive responses independent of language and platforms.
+	SOAP allows developers to invoke processes running on disparate operating
+	systems (such as Windows, macOS, and Linux) to authenticate, authorize, and
+	communicate using Extensible Markup Language (XML). Since Web protocols like
+	HTTP are installed and running on all operating systems, SOAP allows clients
+	to invoke web services and receive responses independent of language and
+	platforms.
 
 REST:
 
-	Representational state transfer (REST) is a software architectural style that was created to guide the design and development of the architecture for the World Wide Web. REST defines a set of constraints for how the architecture of an Internet-scale distributed hypermedia system, such as the Web, should behave. The REST architectural style emphasises the scalability of interactions between components, uniform interfaces, independent deployment of components, and the creation of a layered architecture to facilitate caching components to reduce user-perceived latency, enforce security, and encapsulate legacy systems.
+	Representational state transfer (REST) is a software architectural style
+	that was created to guide the design and development of the architecture for
+	the World Wide Web. REST defines a set of constraints for how the
+	architecture of an Internet-scale distributed hypermedia system, such as the
+	Web, should behave. The REST architectural style emphasises the scalability
+	of interactions between components, uniform interfaces, independent
+	deployment of components, and the creation of a layered architecture to
+	facilitate caching components to reduce user-perceived latency, enforce
+	security, and encapsulate legacy systems.
 
-	REST has been employed throughout the software industry and is a widely accepted set of guidelines for creating stateless, reliable web APIs. A web API that obeys the REST constraints is informally described as RESTful. RESTful web APIs are typically loosely based on HTTP methods to access resources via URL-encoded parameters and the use of JSON or XML to transmit data.
+	REST has been employed throughout the software industry and is a widely
+	accepted set of guidelines for creating stateless, reliable web APIs. A web
+	API that obeys the REST constraints is informally described as RESTful.
+	RESTful web APIs are typically loosely based on HTTP methods to access
+	resources via URL-encoded parameters and the use of JSON or XML to transmit
+	data.
 
-	"Web resources" were first defined on the World Wide Web as documents or files identified by their URLs. Today, the definition is much more generic and abstract, and includes every thing, entity, or action that can be identified, named, addressed, handled, or performed in any way on the Web. In a RESTful Web service, requests made to a resource's URI elicit a response with a payload formatted in HTML, XML, JSON, or some other format. For example, the response can confirm that the resource state has been changed. The response can also include hypertext links to related resources. The most common protocol for these requests and responses is HTTP. It provides operations (HTTP methods) such as GET, POST, PUT, and DELETE. By using a stateless protocol and standard operations, RESTful systems aim for fast performance, reliability, and the ability to grow by reusing components that can be managed and updated without affecting the system as a whole, even while it is running.
+	"Web resources" were first defined on the World Wide Web as documents or
+	files identified by their URLs. Today, the definition is much more generic
+	and abstract, and includes every thing, entity, or action that can be
+	identified, named, addressed, handled, or performed in any way on the Web.
+	In a RESTful Web service, requests made to a resource's URI elicit a
+	response with a payload formatted in HTML, XML, JSON, or some other format.
+	For example, the response can confirm that the resource state has been
+	changed. The response can also include hypertext links to related resources.
+	The most common protocol for these requests and responses is HTTP. It
+	provides operations (HTTP methods) such as GET, POST, PUT, and DELETE. By
+	using a stateless protocol and standard operations, RESTful systems aim for
+	fast performance, reliability, and the ability to grow by reusing components
+	that can be managed and updated without affecting the system as a whole,
+	even while it is running.
 
-	The goal of REST is to increase performance, scalability, simplicity, modifiability, visibility, portability, and reliability. This is achieved through following REST principles such as a client–server architecture, statelessness, cacheability, use of a layered system, support for code on demand, and using a uniform interface. These principles must be followed for the system to be classified. 
+	The goal of REST is to increase performance, scalability, simplicity,
+	modifiability, visibility, portability, and reliability. This is achieved
+	through following REST principles such as a client–server architecture,
+	statelessness, cacheability, use of a layered system, support for code on
+	demand, and using a uniform interface. These principles must be followed for
+	the system to be classified. 

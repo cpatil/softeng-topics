@@ -1,23 +1,66 @@
 Continuous delivery (CD):
 	
-	Is a software engineering approach in which teams produce software in short cycles, ensuring that the software can be reliably released at any time and, when releasing the software, without doing so manually. It aims at building, testing, and releasing software with greater speed and frequency. The approach helps reduce the cost, time, and risk of delivering changes by allowing for more incremental updates to applications in production. A straightforward and repeatable deployment process is important for continuous delivery.
+	Is a software engineering approach in which teams produce software in short
+	cycles, ensuring that the software can be reliably released at any time and,
+	when releasing the software, without doing so manually. It aims at building,
+	testing, and releasing software with greater speed and frequency. The
+	approach helps reduce the cost, time, and risk of delivering changes by
+	allowing for more incremental updates to applications in production. A
+	straightforward and repeatable deployment process is important for
+	continuous delivery.
 
-	CD contrasts with continuous deployment, a similar approach in which software is also produced in short cycles but through automated deployments rather than manual ones. 
+	CD contrasts with continuous deployment, a similar approach in which
+	software is also produced in short cycles but through automated deployments
+	rather than manual ones. 
 
-	Continuous delivery and DevOps are similar in their meanings and are often conflated, but they are two different concepts. DevOps has a broader scope, and centers around the cultural change, specifically the collaboration of the various teams involved in software delivery (developers, operations, quality assurance, management, etc.), as well as automating the processes in software delivery. Continuous delivery, on the other hand, is an approach to automate the delivery aspect, and focuses on bringing together different processes and executing them more quickly and more frequently. Thus, DevOps can be a product of continuous delivery, and CD flows directly into DevOps. 
+	Continuous delivery and DevOps are similar in their meanings and are often
+	conflated, but they are two different concepts. DevOps has a broader scope,
+	and centers around the cultural change, specifically the collaboration of
+	the various teams involved in software delivery (developers, operations,
+	quality assurance, management, etc.), as well as automating the processes in
+	software delivery. Continuous delivery, on the other hand, is an approach to
+	automate the delivery aspect, and focuses on bringing together different
+	processes and executing them more quickly and more frequently. Thus, DevOps
+	can be a product of continuous delivery, and CD flows directly into DevOps. 
 
 Continuous integration (CI):
 
-	Is the practice of merging all developers' working copies to a shared mainline several times a day. Grady Booch first proposed the term CI in his 1991 method, although he did not advocate integrating several times a day. Extreme programming (XP) adopted the concept of CI and did advocate integrating more than once per day – perhaps as many as tens of times per day.
+	Is the practice of merging all developers' working copies to a shared
+	mainline several times a day. Grady Booch first proposed the term CI in his
+	1991 method, although he did not advocate integrating several times a day.
+	Extreme programming (XP) adopted the concept of CI and did advocate
+	integrating more than once per day – perhaps as many as tens of times per
+	day.
 
-	When embarking on a change, a developer takes a copy of the current code base on which to work. As other developers submit changed code to the source code repository, this copy gradually ceases to reflect the repository code. Not only can the existing code base change, but new code can be added as well as new libraries, and other resources that create dependencies, and potential conflicts.
+	When embarking on a change, a developer takes a copy of the current code
+	base on which to work. As other developers submit changed code to the source
+	code repository, this copy gradually ceases to reflect the repository code.
+	Not only can the existing code base change, but new code can be added as
+	well as new libraries, and other resources that create dependencies, and
+	potential conflicts.
 
-	The longer development continues on a branch without merging back to the mainline, the greater the risk of multiple integration conflicts and failures when the developer branch is eventually merged back. When developers submit code to the repository they must first update their code to reflect the changes in the repository since they took their copy. The more changes the repository contains, the more work developers must do before submitting their own changes.
+	The longer development continues on a branch without merging back to the
+	mainline, the greater the risk of multiple integration conflicts and
+	failures when the developer branch is eventually merged back. When
+	developers submit code to the repository they must first update their code
+	to reflect the changes in the repository since they took their copy. The
+	more changes the repository contains, the more work developers must do
+	before submitting their own changes.
 
-	Eventually, the repository may become so different from the developers' baselines that they enter what is sometimes referred to as "merge hell", or "integration hell", where the time it takes to integrate exceeds the time it took to make their original changes.
+	Eventually, the repository may become so different from the developers'
+	baselines that they enter what is sometimes referred to as "merge hell", or
+	"integration hell", where the time it takes to integrate exceeds the time it
+	took to make their original changes.
 
 Continuous deployment (CD): 
 
-	Is a software engineering approach in which software functionalities are delivered frequently through automated deployments. CD contrasts with continuous delivery, a similar approach in which software functionalities are also frequently delivered and deemed to be potentially capable of being deployed but are actually not deployed.
+	Is a software engineering approach in which software functionalities are
+	delivered frequently through automated deployments. CD contrasts with
+	continuous delivery, a similar approach in which software functionalities
+	are also frequently delivered and deemed to be potentially capable of being
+	deployed but are actually not deployed.
 
-	In an environment in which data-centric microservices provide the functionality, and where the microservices can have multiple instances, CD consists of instantiating the new version of a microservice and retiring the old version as it has drained all the requests in flight.
+	In an environment in which data-centric microservices provide the
+	functionality, and where the microservices can have multiple instances, CD
+	consists of instantiating the new version of a microservice and retiring the
+	old version as it has drained all the requests in flight.

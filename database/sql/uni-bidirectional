@@ -1,18 +1,33 @@
 
 
-This has to do with whether common usage (within the application domain) would attempt to access both sides of the relationship from the other side... Invoices to products would probably be unidirectional, as athough we often want to know what products are on an invoice, it is unlikely that you would want to know all the invoices that contain a given product.
+This has to do with whether common usage (within the application domain) would
+attempt to access both sides of the relationship from the other side... Invoices
+to products would probably be unidirectional, as athough we often want to know
+what products are on an invoice, it is unlikely that you would want to know all
+the invoices that contain a given product.
 
-Stores to products on the other hand is bi-directional, as we could easily want to access both all the products at a specific store, or find all the stores that sell a specific product.
+Stores to products on the other hand is bi-directional, as we could easily want
+to access both all the products at a specific store, or find all the stores that
+sell a specific product.
 
-Bi-Directional is not limited to where the relationship is a many-to-many relationship. An employee to supervisor relationship could easily be bi-directional, if, in our domain model, an employee object will need to be able to access the employee's supervisor object, and of course, the supervisors object contains a property that lists all his assigned employees.
+Bi-Directional is not limited to where the relationship is a many-to-many
+relationship. An employee to supervisor relationship could easily be
+bi-directional, if, in our domain model, an employee object will need to be able
+to access the employee's supervisor object, and of course, the supervisors
+object contains a property that lists all his assigned employees.
 
-One to Many Bidirectional: State and City, where State has collection property of Cities, and City has a State property
+One to Many Bidirectional: State and City, where State has collection property
+of Cities, and City has a State property
 
-Many to Many Unidirectional: Bus and Rider, where Bus has collection property of Riders, but Rider does not have collection property listing all Buses Rider has ridden in (application does not care).
+Many to Many Unidirectional: Bus and Rider, where Bus has collection property of
+Riders, but Rider does not have collection property listing all Buses Rider has
+ridden in (application does not care).
 
-Many to Many Bidirectional: Person class, where each person has Friends Property, as Collection of other person objects this person is friends with;
-or...
-Artist and Album classes, where Artist has Albums collection, and Album has Artists Collection (where album is compilation of tracks from multiple artists)
+Many to Many Bidirectional: Person class, where each person has Friends
+Property, as Collection of other person objects this person is friends with;
+or... Artist and Album classes, where Artist has Albums collection, and Album
+has Artists Collection (where album is compilation of tracks from multiple
+artists)
 
 
 Example:
@@ -39,7 +54,10 @@ A student can enroll for many subjects in the semester.
 
 
 
-This is not the proper way to proceed. You need to think in terms of database normalization : you have a relationship between person and event where each person may have many events, and each event can have many persons. To model that relationship, you need a bridge table, like :
+This is not the proper way to proceed. You need to think in terms of database
+normalization : you have a relationship between person and event where each
+person may have many events, and each event can have many persons. To model that
+relationship, you need a bridge table, like :
 
 CREATE TABLE attendance (
     id INT AUTO_INCREMENT,
@@ -53,9 +71,11 @@ CREATE TABLE attendance (
 ALTER TABLE attendance
 ADD CONSTRAINT attendance_pk UNIQUE (person_id, event_id);
 
-The bridge table contains an autoincremented id, foreign keys that reference the 2 other tables, and a unique constraint to prevent duplicates.
+The bridge table contains an autoincremented id, foreign keys that reference the
+2 other tables, and a unique constraint to prevent duplicates.
 
-Now, say that you want to list the names of all persons that participated a given event :
+Now, say that you want to list the names of all persons that participated a
+given event :
 
 SELECT p.name
 FROM 

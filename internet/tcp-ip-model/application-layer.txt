@@ -1,0 +1,43 @@
+The application layer includes the protocols used by most applications for
+providing user services or exchanging application data over the network
+connections established by the lower level protocols. This may include some
+basic network support services such as routing protocols and host configuration.
+Examples of application layer protocols include the Hypertext Transfer Protocol
+(HTTP), the File Transfer Protocol (FTP), the Simple Mail Transfer Protocol
+(SMTP), and the Dynamic Host Configuration Protocol (DHCP).[34] Data coded
+according to application layer protocols are encapsulated into transport layer
+protocol units (such as TCP streams or UDP datagrams), which in turn use lower
+layer protocols to effect actual data transfer.
+
+The TCP/IP model does not consider the specifics of formatting and presenting
+data and does not define additional layers between the application and transport
+layers as in the OSI model (presentation and session layers). According to the
+TCP/IP model, such functions are the realm of libraries and application
+programming interfaces. The application layer in the TCP/IP model is often
+compared to a combination of the fifth (session), sixth (presentation), and
+seventh (application) layers of the OSI model.
+
+Application layer protocols are often associated with particular client–server
+applications, and common services have well-known port numbers reserved by the
+Internet Assigned Numbers Authority (IANA). For example, the HyperText Transfer
+Protocol uses server port 80 and Telnet uses server port 23. Clients connecting
+to a service usually use ephemeral ports, i.e., port numbers assigned only for
+the duration of the transaction at random or from a specific range configured in
+the application.
+
+At the application layer, the TCP/IP model distinguishes between user protocols
+and support protocols.[35] Support protocols provide services to a system of
+network infrastructure. User protocols are used for actual user applications.
+For example, FTP is a user protocol and DNS is a support protocol.
+
+Although the applications are usually aware of key qualities of the transport
+layer connection such as the endpoint IP addresses and port numbers, application
+layer protocols generally treat the transport layer (and lower) protocols as
+black boxes which provide a stable network connection across which to
+communicate. The transport layer and lower-level layers are unconcerned with the
+specifics of application layer protocols. Routers and switches do not typically
+examine the encapsulated traffic, rather they just provide a conduit for it.
+However, some firewall and bandwidth throttling applications use deep packet
+inspection to interpret application data. An example is the Resource Reservation
+Protocol (RSVP).[citation needed] It is also sometimes necessary for
+Applications affected by NAT to consider the application payload. 

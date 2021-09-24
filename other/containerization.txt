@@ -1,26 +1,28 @@
-Container Builders - Turn source code into a container image
-Container Images - Archive files containing a "runnable" application
-Containers - Run container Images
+Container Builders - Turn source code into a container image Container Images -
+Archive files containing a "runnable" application Containers - Run container
+Images
 
-Java EE:
-Contianer Builders == Gradle or Maven
-Container Images == .jar, .war, or .ear
-Containers == JBoss, WebSphere, WebLogic
+Java EE: Contianer Builders == Gradle or Maven Container Images == .jar, .war,
+or .ear Containers == JBoss, WebSphere, WebLogic
 
-Docker/OCI:
-Container Builders == Dockerfile, Buildpacks, or Jib
-Container Images == .tar files usually not dealt with directly but through a "contianer registry"
-Containers == Docker, Kubernetes, Cloud Run
+Docker/OCI: Container Builders == Dockerfile, Buildpacks, or Jib Container
+Images == .tar files usually not dealt with directly but through a "contianer
+registry" Containers == Docker, Kubernetes, Cloud Run
 
-Container Image:
-A container is a way of executing processes with isolation provided by 3 Linux technologies - chroot, namespaces, and cgroups
+Container Image: A container is a way of executing processes with isolation
+provided by 3 Linux technologies - chroot, namespaces, and cgroups
 
-chroot changes the file system root (/) that a process can see. This allows a process to use any directory as if it were a file system root instead of the actual file system root
+chroot changes the file system root (/) that a process can see. This allows a
+process to use any directory as if it were a file system root instead of the
+actual file system root
 
-namespaces group resources together (like network and process IDs) so that only processes within a namespace can see the resources of that namespace
+namespaces group resources together (like network and process IDs) so that only
+processes within a namespace can see the resources of that namespace
 
 cgroups set CPU and memory limits for processes
 
-The combination of these allows processes to run in isolation from other processes both on the file system level and on the resource utilization level.
+The combination of these allows processes to run in isolation from other
+processes both on the file system level and on the resource utilization level.
 
-A container image includes the application and any run-time dependencies and is simply a directory of files along with metadata about how to run the container
+A container image includes the application and any run-time dependencies and is
+simply a directory of files along with metadata about how to run the container

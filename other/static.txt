@@ -1,2 +1,5 @@
-Static Variable:
-Is a variable that has been allocated "statically", meaning that its lifetime is the entire run of the program. this is in contrast to shorter-lived automatic variables, whose storage is stack allocated and deallocated on the call stack; and in contrast to objects, whose storage is dynamically allocated and deallocated in heap memory;
+Static Variable: Is a variable that has been allocated "statically", meaning
+that its lifetime is the entire run of the program. this is in contrast to
+shorter-lived automatic variables, whose storage is stack allocated and
+deallocated on the call stack; and in contrast to objects, whose storage is
+dynamically allocated and deallocated in heap memory;

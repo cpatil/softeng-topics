@@ -1,14 +1,34 @@
 
 
-One-to-one isn't well represented as a first-class relationship type in standard SQL. Much like many-to-many, which is achieved using a connector table and two one-to-many relationships, there's no true "one to one" in SQL.
+One-to-one isn't well represented as a first-class relationship type in standard
+SQL. Much like many-to-many, which is achieved using a connector table and two
+one-to-many relationships, there's no true "one to one" in SQL.
 
 There are a couple of options:
 
-    Create an ordinary foreign key constraint ("one to many" style) and then add a UNIQUE constraint on the referring FK column. This means that no more than one of the referred-to values may appear in the referring column, making it one-to-one optional. This is a fairly simple and quite forgiving approach that works well.
+    Create an ordinary foreign key constraint ("one to many" style) and then add
+    a UNIQUE constraint on the referring FK column. This means that no more than
+    one of the referred-to values may appear in the referring column, making it
+    one-to-one optional. This is a fairly simple and quite forgiving approach
+    that works well.
 
-    Use a normal FK relationship that could model 1:m, and let your app ensure it's only ever 1:1 in practice. I do not recommend this, there's only a small write performance downside to adding the FK unique index and it helps ensure data validity, find app bugs, and avoid confusing someone else who needs to modify the schema later.
+    Use a normal FK relationship that could model 1:m, and let your app ensure
+    it's only ever 1:1 in practice. I do not recommend this, there's only a
+    small write performance downside to adding the FK unique index and it helps
+    ensure data validity, find app bugs, and avoid confusing someone else who
+    needs to modify the schema later.
 
-    Create reciprocal foreign keys - possible only if your database supports deferrable foreign key constraints. This is a bit more complex to code, but allows you to implement one-to-one mandatory relationships. Each entity has a foreign key reference to the others' PK in a unique column. One or both of the constraints must be DEFERRABLE and either INITIALLY DEFERRED or used with a SET CONSTRAINTS call, since you must defer one of the constraint checks to set up the circular dependency. This is a fairly advanced technique that is not necessary for the vast majority of applications.
+    Create reciprocal foreign keys - possible only if your database supports
+    deferrable foreign key constraints. This is a bit more complex to code, but
+    allows you to implement one-to-one mandatory relationships. Each entity has
+    a foreign key reference to the others' PK in a unique column. One or both of
+    the constraints must be DEFERRABLE and either INITIALLY DEFERRED or used
+    with a SET CONSTRAINTS call, since you must defer one of the constraint
+    checks to set up the circular dependency. This is a fairly advanced
+    technique that is not necessary for the vast majority of applications.
 
-    Use pre-commit triggers if your database supports them, so you can verify that when entity A is inserted exactly one entity B is also inserted and vice versa, with corresponding checks for updates and deletes. This can be slow and is usually unnecessary, plus many database systems don't support pre-commit triggers.
-
+    Use pre-commit triggers if your database supports them, so you can verify
+    that when entity A is inserted exactly one entity B is also inserted and
+    vice versa, with corresponding checks for updates and deletes. This can be
+    slow and is usually unnecessary, plus many database systems don't support
+    pre-commit triggers.

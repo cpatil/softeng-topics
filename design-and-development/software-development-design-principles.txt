@@ -3,125 +3,184 @@ Software Development Design Principles:
 Keep It Simple, Stupid (KISS):
 
 	Alternate acronyms:
-		Keep it simply Stupid
-		Keep it short and Simple
-		Keep it simple and straightforward
-		Keep it simple and smart
+		Keep it simply Stupid Keep it short and Simple Keep it simple and
+		straightforward Keep it simple and smart
 
-	"If you can't explain it, you don't understand it well enough" - Albert Einstein
+	"If you can't explain it, you don't understand it well enough" - Albert
+	Einstein
 
-	"The task of software development team is to engineer illusion of simplicity." – Grady Booch
+	"The task of software development team is to engineer illusion of
+	simplicity." – Grady Booch
 
-	Software systems work best when they are kept simple. Avoiding unnecessary complexity will make your system more robust, easier to understand, easier to reason about, and easier to extend.
+	Software systems work best when they are kept simple. Avoiding unnecessary
+	complexity will make your system more robust, easier to understand, easier
+	to reason about, and easier to extend.
 
-	It’s so obvious. But we, engineers, often tend to complicate things. We use those fancy language features that no one knows about and feel proud. We introduce countless dependencies in our project for every simple thing and end up in a dependency hell. We create endless micro-services for every simple thing.
+	It’s so obvious. But we, engineers, often tend to complicate things. We use
+	those fancy language features that no one knows about and feel proud. We
+	introduce countless dependencies in our project for every simple thing and
+	end up in a dependency hell. We create endless micro-services for every
+	simple thing.
 
-	Remember that whenever you add a new dependency to your project, or start using that fancy new framework, or create a new micro-service, you’re introducing additional complexity to your system. You need to think whether that complexity is worth it or not.
+	Remember that whenever you add a new dependency to your project, or start
+	using that fancy new framework, or create a new micro-service, you’re
+	introducing additional complexity to your system. You need to think whether
+	that complexity is worth it or not.
 
 	https://www.youtube.com/watch?v=nZcLHkORdHE
 
 You Ain't Gonna Need It (YAGNI):
 
-	Like KISS principle, YAGNI also aims at avoiding complexity, especially the kind of complexity that arises from adding functionality that you think you may need in the future.
+	Like KISS principle, YAGNI also aims at avoiding complexity, especially the
+	kind of complexity that arises from adding functionality that you think you
+	may need in the future.
 
-	It states that you should not introduce things in order to solve a future problem that you don’t have right now. Always implement things when you actually need them. It will help you keep your software lean and simple. It will also save you extra money and effort.
+	It states that you should not introduce things in order to solve a future
+	problem that you don’t have right now. Always implement things when you
+	actually need them. It will help you keep your software lean and simple. It
+	will also save you extra money and effort.
 
-	Moreover, you may think that you need that functionality in the future. But a lot of times, you may not even need it due to the ever-changing requirements of our software world.
+	Moreover, you may think that you need that functionality in the future. But
+	a lot of times, you may not even need it due to the ever-changing
+	requirements of our software world.
 
 	“Premature optimization is the root of all evil” - Donald knuth
 
 Don't Repeat Yourself (DRY):
 
-	The DRY principle aims at reducing the repetition of code and effort in software systems.
+	The DRY principle aims at reducing the repetition of code and effort in
+	software systems.
 
-	It basically means that you should not write the same code/configuration in multiple places. If you do that, then you’ll have to keep them in sync; and any changes to the code at one place will require changes at other places as well.
+	It basically means that you should not write the same code/configuration in
+	multiple places. If you do that, then you’ll have to keep them in sync; and
+	any changes to the code at one place will require changes at other places as
+	well.
 
-	Every piece of knowledge must have a single, unambiguous, authoritative representation within a system
+	Every piece of knowledge must have a single, unambiguous, authoritative
+	representation within a system
 
-	The DRY principle promotes reusability. It makes the code more maintainable, more extensible, and less buggy.
+	The DRY principle promotes reusability. It makes the code more maintainable,
+	more extensible, and less buggy.
 
-	Following are some concepts in software engineering that are based on the DRY principle
+	Following are some concepts in software engineering that are based on the
+	DRY principle
 
     	Inheritance and Composition
 
-    		Both inheritance and composition allow you to write code in one place and then reuse it at other places.
+    		Both inheritance and composition allow you to write code in one
+    		place and then reuse it at other places.
 
     	Database Normalization
 
-    		Database normalization is a design technique used in databases to eliminate redundancy (repetition) of data.
+    		Database normalization is a design technique used in databases to
+    		eliminate redundancy (repetition) of data.
 
 SOLID:
-	S Single Responsibility Principle
-	O Open/Closed Principle
-	L Liskov Subsititution Principle
-	I Interface Segregation Principle
-	D Dependency Inversion/Injection
+	S Single Responsibility Principle O Open/Closed Principle L Liskov
+	Subsititution Principle I Interface Segregation Principle D Dependency
+	Inversion/Injection
 
 Single Responsibility (SRP):
 
-	The Single Responsibility Principle states that every function, class, module, or service should have a single clearly defined responsibility. In other words, A class/function/module should have one and only one reason to change.
+	The Single Responsibility Principle states that every function, class,
+	module, or service should have a single clearly defined responsibility. In
+	other words, A class/function/module should have one and only one reason to
+	change.
 
-	But why is this important? Well, when you define your functions or classes in such a way that they’re focused and responsible for a single functionality, your code becomes a lot easier to understand, maintain, and modify. Whenever you want to make any changes to a functionality, you would exactly know that single DRY place where you have to change the code that is responsible for that functionality.
+	But why is this important? Well, when you define your functions or classes
+	in such a way that they’re focused and responsible for a single
+	functionality, your code becomes a lot easier to understand, maintain, and
+	modify. Whenever you want to make any changes to a functionality, you would
+	exactly know that single DRY place where you have to change the code that is
+	responsible for that functionality.
 
-	Let’s understand the Single Responsibility Principle with some real-world analogies:
+	Let’s understand the Single Responsibility Principle with some real-world
+	analogies:
 
-    	In a house, the kitchen is for cooking and bedroom is for sleeping. Both have a single clearly defined responsibility. You don’t cook in the bedroom or sleep in the kitchen. When you want to eat, you go to the kitchen; and when you’re feeling sleepy, you go to the bedroom. It makes things so convenient.
+    	In a house, the kitchen is for cooking and bedroom is for sleeping. Both
+    	have a single clearly defined responsibility. You don’t cook in the
+    	bedroom or sleep in the kitchen. When you want to eat, you go to the
+    	kitchen; and when you’re feeling sleepy, you go to the bedroom. It makes
+    	things so convenient.
 
-    	In a company, the Project managers, Engineers, HRs, Sales people, and everyone else has a clearly defined responsibility. The PMs collect requirements and track the progress of the project. The engineers write code. The Sales people are responsible for marketing and selling the product.
+    	In a company, the Project managers, Engineers, HRs, Sales people, and
+    	everyone else has a clearly defined responsibility. The PMs collect
+    	requirements and track the progress of the project. The engineers write
+    	code. The Sales people are responsible for marketing and selling the
+    	product.
 
-	The SRP principle makes the code more organized. It improves the readability of the code. It also contributes a lot to reusability. If you have short and focused functions/classes, you’ll be able to reuse them easily. But if you have a single function that does too many things then you wouldn’t be able to use it if you only need a fraction of the functionality implemented by the function.
+	The SRP principle makes the code more organized. It improves the readability
+	of the code. It also contributes a lot to reusability. If you have short and
+	focused functions/classes, you’ll be able to reuse them easily. But if you
+	have a single function that does too many things then you wouldn’t be able
+	to use it if you only need a fraction of the functionality implemented by
+	the function.
 
 Open/Closed (OCP):
 
-	When we develop software, we do it in phases. We implement a bunch of functionalities, test it, and then release it to the users. Then we start implementing the next set of functionalities.
+	When we develop software, we do it in phases. We implement a bunch of
+	functionalities, test it, and then release it to the users. Then we start
+	implementing the next set of functionalities.
 
-	When we develop new functionalities, the last thing we want is to make changes to the existing functionality that works and is tested. We instead try to build the new functionality on top of the existing functionality.
+	When we develop new functionalities, the last thing we want is to make
+	changes to the existing functionality that works and is tested. We instead
+	try to build the new functionality on top of the existing functionality.
 
-	The Open/Closed principle is a facilitator of the above idea. It advises that we should build our functions/classes/modules in such a way that they are open for extension, but closed for modification.
+	The Open/Closed principle is a facilitator of the above idea. It advises
+	that we should build our functions/classes/modules in such a way that they
+	are open for extension, but closed for modification.
 
     	Open for Extension
 
-    		We should be able to add new features to the classes/modules without breaking existing code. This can be achieved using inheritance and composition.
+    		We should be able to add new features to the classes/modules without
+    		breaking existing code. This can be achieved using inheritance and
+    		composition.
 
     	Closed for Modification
 
-    		We should strive not to introduce breaking changes to the existing functionality, because that would force us to refactor a lot of existing code and write a whole bunch of tests to make sure that the changes work.
+    		We should strive not to introduce breaking changes to the existing
+    		functionality, because that would force us to refactor a lot of
+    		existing code and write a whole bunch of tests to make sure that the
+    		changes work.
 
 Liskov Subsititution (LSP):
 
-	The Liskov Substitution Principle simply means that every child/derived class should be substitutable for their parent/base class without altering the correctness of the program. In other words, the objects of your subclass should behave in the same way as the objects of your superclass.
+	The Liskov Substitution Principle simply means that every child/derived
+	class should be substitutable for their parent/base class without altering
+	the correctness of the program. In other words, the objects of your subclass
+	should behave in the same way as the objects of your superclass.
 
-	Example:
-	class Bird {
+	Example: class Bird {
 		public void fly() {
 			System.out.println("Bird flying...");
-		}
-		public void eat() {
+		} public void eat() {
 			System.out.println("Bird eating...");
 		}
 	}
 
 	class Penguin extends Bird {
-		public void fly() {
-		throw new UnsupportedOperationException("Can't fly.");
-		}
+		public void fly() {throw new UnsupportedOperationException("Can't
+		fly.");}
 	}
 
 	class LSPTest {
 		public static void main(String[] args) {
-			Bird bird = new Bird();
-			bird.fly();
+			Bird bird = new Bird(); bird.fly();
 		}
 	}
 
-	According to Liskov Substitution Principle, if you have a piece of code that uses a Bird object, then you should be able to replace it with a Penguin object and the code will still behave the same.
+	According to Liskov Substitution Principle, if you have a piece of code that
+	uses a Bird object, then you should be able to replace it with a Penguin
+	object and the code will still behave the same.
 
-	But, the above example violates the Liskov Substitution Principle. You can’t replace an object of the Bird class with an object of the Penguin class. If you do that, the program will throw an exception.
+	But, the above example violates the Liskov Substitution Principle. You can’t
+	replace an object of the Bird class with an object of the Penguin class. If
+	you do that, the program will throw an exception.
 
-	To fix this, you could create another abstraction which captures the flying capability of a Bird
+	To fix this, you could create another abstraction which captures the flying
+	capability of a Bird
 
-	Example:
-	class Bird {
+	Example: class Bird {
 		public void eat() {
 			System.out.println("Bird eating...");
 		}
@@ -139,52 +198,70 @@ Liskov Subsititution (LSP):
 
 Interface Segregation (ISP):
 
-	The Interface Segregation Principle states that a client should never be forced to depend on methods it does not use.
+	The Interface Segregation Principle states that a client should never be
+	forced to depend on methods it does not use.
 
-	And how do you achieve this? Well, By making your interfaces small and focused.
+	And how do you achieve this? Well, By making your interfaces small and
+	focused.
 
-	You should split large interfaces into more specific ones that are focused on a specific set of functionalities so that the clients can choose to depend only on the functionalities they need.
+	You should split large interfaces into more specific ones that are focused
+	on a specific set of functionalities so that the clients can choose to
+	depend only on the functionalities they need.
 
 Dependency Inversion/Injection (DI):
 
-	The Dependency Inversion Principle tries to avoid tight coupling between software modules. It states that High-level modules should not depend on low-level modules, but only on their abstractions. In simple words, It suggests that you should use interfaces instead of concrete implementations wherever possible.
+	The Dependency Inversion Principle tries to avoid tight coupling between
+	software modules. It states that High-level modules should not depend on
+	low-level modules, but only on their abstractions. In simple words, It
+	suggests that you should use interfaces instead of concrete implementations
+	wherever possible.
 
-	This decouples a module from the implementation details of its dependencies. The module only knows about the behavior on which it depends, not how that behavior is implemented. This allows you to change the implementation whenever you want without affecting the module itself.
+	This decouples a module from the implementation details of its dependencies.
+	The module only knows about the behavior on which it depends, not how that
+	behavior is implemented. This allows you to change the implementation
+	whenever you want without affecting the module itself.
 
 
 From other notes:
 
-The SOLID principles were introduced by Robert C. Martin in his 2000 paper "Design Principles and Design Patterns." These concepts were later built upon by Michael Feathers, who introduced us to the SOLID acronym. 
+The SOLID principles were introduced by Robert C. Martin in his 2000 paper
+"Design Principles and Design Patterns." These concepts were later built upon by
+Michael Feathers, who introduced us to the SOLID acronym. 
 	Revolutionized the world of object-oriented programming
 
-Design principles encourage us to create more maintainable, understandable, and flexible software. Consequently, as our applications grow in size, we can reduce their compolexity
+Design principles encourage us to create more maintainable, understandable, and
+flexible software. Consequently, as our applications grow in size, we can reduce
+their compolexity
 
-Single Responsibilty: "There should never be more than one reason for a class to change."
-Open/Closed: "Software entities should be open for extension, but closed for modification."
-Liskov Substitution: "Functions that use pointers or references to base classes must be able to use objects of derived classes without knowint it."
-Interface Segregation: "Many client-specific interfaces are better than one general-purpose interface"
-Dependency Inversion: "Depend upon abstractions, [not] concretions"
+Single Responsibilty: "There should never be more than one reason for a class to
+change." Open/Closed: "Software entities should be open for extension, but
+closed for modification." Liskov Substitution: "Functions that use pointers or
+references to base classes must be able to use objects of derived classes
+without knowint it." Interface Segregation: "Many client-specific interfaces are
+better than one general-purpose interface" Dependency Inversion: "Depend upon
+abstractions, [not] concretions"
 
-Single Responsibility:
-A class should only have one responsibility, it should only have one reason to change
+Single Responsibility: A class should only have one responsibility, it should
+only have one reason to change
 
 Benefits:
-	- Testing: A clsas with one responsibility will have far few test cases
-	- Lower coupling: Less functionality in a single class will have fewer dependencies
-	- Organization: Smaller, well-organized classes are easier to search than monolithic ones
+	- Testing: A clsas with one responsibility will have far few test cases -
+	Lower coupling: Less functionality in a single class will have fewer
+	dependencies - Organization: Smaller, well-organized classes are easier to
+	search than monolithic ones
 
-Open for Extension, Closed for Modification:
-Classes should be open for extension but closed for modification. In doing so, we stop ourselves from modifying existing code and causing potential new bugs
+Open for Extension, Closed for Modification: Classes should be open for
+extension but closed for modification. In doing so, we stop ourselves from
+modifying existing code and causing potential new bugs
 
-Liskov Substitution:
-If class A is a subtype of class B, we should be able to replace B with A without disrupting the behaviour of our program
+Liskov Substitution: If class A is a subtype of class B, we should be able to
+replace B with A without disrupting the behaviour of our program
 
 Example:
 
 public interface Car {
 
-	void turnOnEngine();
-	void accelerate();
+	void turnOnEngine(); void accelerate();
 }
 
 public class MoterCar implements Car {
@@ -214,21 +291,27 @@ public class ElectricCar implements Car {
 	}
 }
 
-By creating a car without an engine, we are inherently changing the behaviour, which is a violation of Liskov subsititution. Possible solution would be to rework the model into interfaces that take into account the engine-less state of Car
+By creating a car without an engine, we are inherently changing the behaviour,
+which is a violation of Liskov subsititution. Possible solution would be to
+rework the model into interfaces that take into account the engine-less state of
+Car
 
-Interface Segregation Principle:
-Clients should not be forced to depend upon interfaces that they do not use
+Interface Segregation Principle: Clients should not be forced to depend upon
+interfaces that they do not use
 
-The goal of this principle is to reduce the side effects of using larger interfaces by breaking application interfaces into smaller. By doing so, we can ensure that implementing classes only need to be concerned about the methods that are of interest to them
+The goal of this principle is to reduce the side effects of using larger
+interfaces by breaking application interfaces into smaller. By doing so, we can
+ensure that implementing classes only need to be concerned about the methods
+that are of interest to them
 
-Precise application design and correct abstraction is the key behind tis principle. Though it'll take more time and effort in the design phase of an application and might increase the code complexity, in the end, we get a flexible code
+Precise application design and correct abstraction is the key behind tis
+principle. Though it'll take more time and effort in the design phase of an
+application and might increase the code complexity, in the end, we get a
+flexible code
 
-Example:
-public interface BearKeeper {
+Example: public interface BearKeeper {
 	
-	void washTheBear();
-	void feedTheBear();
-	void petTheBear();
+	void washTheBear(); void feedTheBear(); void petTheBear();
 }
 
 Split to three interfaces:
@@ -256,24 +339,24 @@ public class BearCarer implements BearCleaner, BearFeeder {
     }
 }
 
-Dependency Inversion:
-Refers to the decoupling of software modules. This way, instead of high-level modules depending on low-level modules, both will depend on abstractions
+Dependency Inversion: Refers to the decoupling of software modules. This way,
+instead of high-level modules depending on low-level modules, both will depend
+on abstractions
 
 Example:
 
 public class Windows98Machine {
 
-	private final StandardKeyboard keyboard;
-	private final Monitor monitor;
+	private final StandardKeyboard keyboard; private final Monitor monitor;
 
 	public Windows98Machine() {
 
-		monitor = new Monitor();
-		keyboard = new StandardKeyboard();
+		monitor = new Monitor(); keyboard = new StandardKeyboard();
 	}
 }
 
-By declaring the StandardKeyboard and Monitor with the new keyword, we've tightly coupled these three classes together.
+By declaring the StandardKeyboard and Monitor with the new keyword, we've
+tightly coupled these three classes together.
 
 Decoupled Example:
 
@@ -287,13 +370,12 @@ public interface Monitor {
 
 public class Windows98Machine{
 
-    private final Keyboard keyboard;
-    private final Monitor monitor;
+    private final Keyboard keyboard; private final Monitor monitor;
 
     public Windows98Machine(Keyboard keyboard, Monitor monitor) {
-        this.keyboard = keyboard;
-        this.monitor = monitor;
+        this.keyboard = keyboard; this.monitor = monitor;
     }
 }
 
-Dependency injection pattern is used to facilitate adding the Keyboard dependency into the Windows98Machine class
+Dependency injection pattern is used to facilitate adding the Keyboard
+dependency into the Windows98Machine class

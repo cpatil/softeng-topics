@@ -1,14 +1,41 @@
-Authentication Filter:
-This is the filter that intercepts requests and attempts to authenticate it. It converts the request to an Authentication object and delegates the authentication to the AuthenticationManager
+Authentication Filter: This is the filter that intercepts requests and attempts
+to authenticate it. It converts the request to an Authentication object and
+delegates the authentication to the AuthenticationManager
 
-Authentication Manger:
-It is the main strategy interface for authentication. It uses the lone method authenticate() to authenticate the request. The authenticate() methid performs the authentication and returns an Authentication object on seccessful authentication or throw an AuthenticationException in case of authentication failure. If the method can't decide, it will return null. The process of authentication in this process is delegated to the AuthenticationProvider 
+Authentication Manger: It is the main strategy interface for authentication. It
+uses the lone method authenticate() to authenticate the request. The
+authenticate() methid performs the authentication and returns an Authentication
+object on seccessful authentication or throw an AuthenticationException in case
+of authentication failure. If the method can't decide, it will return null. The
+process of authentication in this process is delegated to the
+AuthenticationProvider 
 
-AuthenticationProvider:
-Is implemented by the ProviderManager which delegates the process to one or more AuthenticationProvider instances. Any class implementing the AuthenticationProvider interface must implement the two methods - authenticate() and supports(). supports() is used to check if the particular authentication type is supported by our AuthenticationProvider implmentation class by return true or false. Next, the authenticate() method can use the loadUserByUsername() method of the UserDetailsService implementation. If found, then the authentication details of the user are used to authenticate the user. For exmample, in the basic authentication scenario, the password provided by the user may be checked with the password in the database. If they are found to match with each other, it is a success scenario. Then we can return an Authentication object from this method which will be stored in the Security Context
+AuthenticationProvider: Is implemented by the ProviderManager which delegates
+the process to one or more AuthenticationProvider instances. Any class
+implementing the AuthenticationProvider interface must implement the two methods
+- authenticate() and supports(). supports() is used to check if the particular
+authentication type is supported by our AuthenticationProvider implmentation
+class by return true or false. Next, the authenticate() method can use the
+loadUserByUsername() method of the UserDetailsService implementation. If found,
+then the authentication details of the user are used to authenticate the user.
+For exmample, in the basic authentication scenario, the password provided by the
+user may be checked with the password in the database. If they are found to
+match with each other, it is a success scenario. Then we can return an
+Authentication object from this method which will be stored in the Security
+Context
 
-UserDetailsService:
-It is one of the core interfaces of Spring Security. The authentication of any request mostly depends on the implementation of the UserDetailsService interface. it is most commonly used in database backed authentication to retrieve user data. The data is retrieved with the implementation of the lone loadUserByUsername() method where we can provide our logic to fetch the user details for a user.
+UserDetailsService: It is one of the core interfaces of Spring Security. The
+authentication of any request mostly depends on the implementation of the
+UserDetailsService interface. it is most commonly used in database backed
+authentication to retrieve user data. The data is retrieved with the
+implementation of the lone loadUserByUsername() method where we can provide our
+logic to fetch the user details for a user.
 
-Spring Security Context:
-This is where the details of the currently authenticated user are stored on successful authentication. The authentication object is then available throughout the application for the session. So, if we need the username or any other user details, we need to get the SecurityContext first. This is done with the SecurityCOntextHOlder, a helper class, which provides access to the security context. We can use the setAuthentication() and getAuthentication() methods for storing and retrieving the user details respectively 
+Spring Security Context: This is where the details of the currently
+authenticated user are stored on successful authentication. The authentication
+object is then available throughout the application for the session. So, if we
+need the username or any other user details, we need to get the SecurityContext
+first. This is done with the SecurityCOntextHOlder, a helper class, which
+provides access to the security context. We can use the setAuthentication() and
+getAuthentication() methods for storing and retrieving the user details
+respectively 

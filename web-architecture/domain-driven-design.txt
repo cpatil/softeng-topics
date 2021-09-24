@@ -1,28 +1,64 @@
 Domain:
 
-	A domain is the targeted subject area of a computer program. It is a term used in software engineering. Formally it represents the target subject of a specific programming project, whether narrowly or broadly defined.For example, a particular programming project might have had as a goal, the creation of a program for a particular hospital, and that hospital would be the domain. Or the project could be expanded in scope to include all hospitals as their domain.In a computer programming design, you define a domain by delineating a set of common requirements, terminology, and functionality for any software program constructed to solve a problem in the area of computer programming, known as domain engineering. The word domain is also taken as a synonym of application domain.
+	A domain is the targeted subject area of a computer program. It is a term
+	used in software engineering. Formally it represents the target subject of a
+	specific programming project, whether narrowly or broadly defined.For
+	example, a particular programming project might have had as a goal, the
+	creation of a program for a particular hospital, and that hospital would be
+	the domain. Or the project could be expanded in scope to include all
+	hospitals as their domain.In a computer programming design, you define a
+	domain by delineating a set of common requirements, terminology, and
+	functionality for any software program constructed to solve a problem in the
+	area of computer programming, known as domain engineering. The word domain
+	is also taken as a synonym of application domain.
 
-    Domain in the realm of software engineering commonly refers to the subject area on which the application is intended to apply. In other words, during application development, the domain is the "sphere of knowledge and activity around which the application logic revolves." —Andrew Powell-Morse
+    Domain in the realm of software engineering commonly refers to the subject
+    area on which the application is intended to apply. In other words, during
+    application development, the domain is the "sphere of knowledge and activity
+    around which the application logic revolves." —Andrew Powell-Morse
 
-    Domain: A sphere of knowledge, influence, or activity. The subject area to which the user applies a program is the domain of the software. —Eric Evans
+    Domain: A sphere of knowledge, influence, or activity. The subject area to
+    which the user applies a program is the domain of the software. —Eric Evans
 
 Domain model:
 
-	In software engineering, a domain model is a conceptual model of the domain[definition needed] that incorporates both behavior and data. In ontology engineering, a domain model is a formal representation of a knowledge domain with concepts, roles, datatypes, individuals, and rules, typically grounded in a description logic. 
+	In software engineering, a domain model is a conceptual model of the
+	domain[definition needed] that incorporates both behavior and data. In
+	ontology engineering, a domain model is a formal representation of a
+	knowledge domain with concepts, roles, datatypes, individuals, and rules,
+	typically grounded in a description logic. 
 
-	A domain model is a system of abstractions that describes selected aspects of a sphere of knowledge, influence or activity (a domain[3]). The model can then be used to solve problems related to that domain. The domain model is a representation of meaningful real-world concepts pertinent to the domain that need to be modeled in software. The concepts include the data involved in the business and rules the business uses in relation to that data. A domain model leverages natural language of the domain.
+	A domain model is a system of abstractions that describes selected aspects
+	of a sphere of knowledge, influence or activity (a domain[3]). The model can
+	then be used to solve problems related to that domain. The domain model is a
+	representation of meaningful real-world concepts pertinent to the domain
+	that need to be modeled in software. The concepts include the data involved
+	in the business and rules the business uses in relation to that data. A
+	domain model leverages natural language of the domain.
 
-	A domain model generally uses the vocabulary of the domain, thus allowing a representation of the model to be communicated to non-technical stakeholders. It should not refer to any technical implementations such as databases or software components that are being designed. 
+	A domain model generally uses the vocabulary of the domain, thus allowing a
+	representation of the model to be communicated to non-technical
+	stakeholders. It should not refer to any technical implementations such as
+	databases or software components that are being designed. 
 
-	A domain model is generally implemented as an object model within a layer that uses a lower-level layer for persistence and "publishes" an API to a higher-level layer to gain access to the data and behavior of the model.
+	A domain model is generally implemented as an object model within a layer
+	that uses a lower-level layer for persistence and "publishes" an API to a
+	higher-level layer to gain access to the data and behavior of the model.
 
-	In the Unified Modeling Language (UML), a class diagram is used to represent the domain model. 
+	In the Unified Modeling Language (UML), a class diagram is used to represent
+	the domain model. 
 
-Anemic domain model is the use of a software domain model where the domain objects contain little or no business logic (validations, calculations, business rules etc.). 
+Anemic domain model is the use of a software domain model where the domain
+objects contain little or no business logic (validations, calculations, business
+rules etc.). 
 
 Domain-driven design (DDD):
 
-	Domain-driven design (DDD) is the concept that the structure and language of software code (class names, class methods, class variables) should match the business domain. For example, if a software processes loan applications, it might have classes such as LoanApplication and Customer, and methods such as AcceptOffer and Withdraw.
+	Domain-driven design (DDD) is the concept that the structure and language of
+	software code (class names, class methods, class variables) should match the
+	business domain. For example, if a software processes loan applications, it
+	might have classes such as LoanApplication and Customer, and methods such as
+	AcceptOffer and Withdraw.
 
 	DDD connects the implementation to an evolving model.
 
@@ -32,38 +68,71 @@ Domain-driven design (DDD):
 
     	basing complex designs on a model of the domain;
 
-    	initiating a creative collaboration between technical and domain experts to iteratively refine a conceptual model that addresses particular domain problems.
+    	initiating a creative collaboration between technical and domain experts
+    	to iteratively refine a conceptual model that addresses particular
+    	domain problems.
 
-	Criticisms of domain-driven design argue that developers must typically implement a great deal of isolation and encapsulation to maintain the model as a pure and helpful construct. While domain-driven design provides benefits such as maintainability, Microsoft recommends it only for complex domains where the model provides clear benefits in formulating a common understanding of the domain.
+	Criticisms of domain-driven design argue that developers must typically
+	implement a great deal of isolation and encapsulation to maintain the model
+	as a pure and helpful construct. While domain-driven design provides
+	benefits such as maintainability, Microsoft recommends it only for complex
+	domains where the model provides clear benefits in formulating a common
+	understanding of the domain.
 
 	The term was coined by Eric Evans in his book of the same title. 
 
 Overview:
 
-	Domain-Driven Design articulates a number of high-level concepts and practices.
+	Domain-Driven Design articulates a number of high-level concepts and
+	practices.
 
-	Of primary importance is domain, the subject area to which the user applies a program is the domain of the software. A software's domain governs its context, the setting in which a word or statement appears that determines its meaning. From this, developers build a domain model: a system of abstractions that describes selected aspects of a domain and can be used to solve problems related to that domain.
+	Of primary importance is domain, the subject area to which the user applies
+	a program is the domain of the software. A software's domain governs its
+	context, the setting in which a word or statement appears that determines
+	its meaning. From this, developers build a domain model: a system of
+	abstractions that describes selected aspects of a domain and can be used to
+	solve problems related to that domain.
 
-	These aspects of domain-driven design aim to foster ubiquitous language, meaning that the domain model should form a common language shared by domain experts for describing system requirements, business users, sponsors and developers.
+	These aspects of domain-driven design aim to foster ubiquitous language,
+	meaning that the domain model should form a common language shared by domain
+	experts for describing system requirements, business users, sponsors and
+	developers.
 
-	In domain-driven design, the domain layer is one of the common layers in an object-oriented multilayered architecture. 
+	In domain-driven design, the domain layer is one of the common layers in an
+	object-oriented multilayered architecture. 
 
 Kinds of models:
 
 	Domain-driven design recognizes multiple kinds of models.
 
-	For example, an entity is an object defined not by its attributes, but its identity. As an example, most airlines assign a unique number to seats on every flight: this is the seat's identity.
+	For example, an entity is an object defined not by its attributes, but its
+	identity. As an example, most airlines assign a unique number to seats on
+	every flight: this is the seat's identity.
 
-	In contrast, a value object is an immutable object that contains attributes but has no conceptual identity. When people exchange business cards, for instance, they only care about the information on the card (its attributes) rather than trying to distinguish between each unique card.
+	In contrast, a value object is an immutable object that contains attributes
+	but has no conceptual identity. When people exchange business cards, for
+	instance, they only care about the information on the card (its attributes)
+	rather than trying to distinguish between each unique card.
 
-	Models can also define events (something that happens). A domain event is an event that domain experts care about.
+	Models can also define events (something that happens). A domain event is an
+	event that domain experts care about.
 
-	Models can be bound together by a root entity to become an aggregate. Objects outside the aggregate are allowed to hold references to the root but not to any other object of the aggregate. The aggregate root checks the consistency of changes in the aggregate. Drivers do not have to individually control each wheel of a car, for instance: they simply drive the car. In this context, a car is an aggregate of several other objects (the engine, the brakes, the headlights, etc.) 
+	Models can be bound together by a root entity to become an aggregate.
+	Objects outside the aggregate are allowed to hold references to the root but
+	not to any other object of the aggregate. The aggregate root checks the
+	consistency of changes in the aggregate. Drivers do not have to individually
+	control each wheel of a car, for instance: they simply drive the car. In
+	this context, a car is an aggregate of several other objects (the engine,
+	the brakes, the headlights, etc.) 
 
 Working with models:
 
-	In domain-driven design, an object's creation is often separated from the object itself.
+	In domain-driven design, an object's creation is often separated from the
+	object itself.
 
-	A repository, for instance, is an object with methods for retrieving domain objects from a data store (e.g. a database). Similarly, a factory is an object with methods for directly creating domain objects.
+	A repository, for instance, is an object with methods for retrieving domain
+	objects from a data store (e.g. a database). Similarly, a factory is an
+	object with methods for directly creating domain objects.
 
-	When part of a program's functionality does not conceptually belong to any object, it is typically expressed as a service. 
+	When part of a program's functionality does not conceptually belong to any
+	object, it is typically expressed as a service. 

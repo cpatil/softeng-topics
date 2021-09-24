@@ -1,27 +1,45 @@
 Database Schema
 
-In a relational database, the schema defines the tables, fields, relationships, views, indexes, packages, procedures, functions, queues, triggers, types, sequences, materialiezed views, synonyms, database links, directories, XML schemas, and other elements
+In a relational database, the schema defines the tables, fields, relationships,
+views, indexes, packages, procedures, functions, queues, triggers, types,
+sequences, materialiezed views, synonyms, database links, directories, XML
+schemas, and other elements
 
-Is its structure described in a formal language supported by the database management system. 
+Is its structure described in a formal language supported by the database
+management system. 
 
-The term "schema" refers to the organization of data as a blueprint of how the database is constructed (divided into database tables in the case of relational databases)
+The term "schema" refers to the organization of data as a blueprint of how the
+database is constructed (divided into database tables in the case of relational
+databases)
 
-The formal definition of a database schema is a set of formulas (sentences) called integrity constraints imposed on a database. These integrity constraints ensure compatibility between parts of the schema
+The formal definition of a database schema is a set of formulas (sentences)
+called integrity constraints imposed on a database. These integrity constraints
+ensure compatibility between parts of the schema
 
-The states of a created conceptual schema are transformed into an explicit mapping, this describes how real-world entities are modeled in the database
+The states of a created conceptual schema are transformed into an explicit
+mapping, this describes how real-world entities are modeled in the database
 
-Based on the database administrator's knowledge of possible applications, the facts that can enter the database, or those of interest to the possible end-users
+Based on the database administrator's knowledge of possible applications, the
+facts that can enter the database, or those of interest to the possible
+end-users
 
 Ideal requirements for schema integration
 
 Overlap preservation
-    Each of the overlapping elements specified in the input mapping is also in a database schema relation
+    Each of the overlapping elements specified in the input mapping is also in a
+    database schema relation
 
 Extended overlap preservation
-    Source-specific elements that are associated with a source's overlapping elements are passed through to the database schema
+    Source-specific elements that are associated with a source's overlapping
+    elements are passed through to the database schema
 
 Normalization
-    Indepenedent entities and relationships in the source data should not be grouped together in the same relation in the database schema. In particular, source specific schema elements should not be grouped with overlapping schema elements, if the grouping co-locates independent entities or relationships
+    Indepenedent entities and relationships in the source data should not be
+    grouped together in the same relation in the database schema. In particular,
+    source specific schema elements should not be grouped with overlapping
+    schema elements, if the grouping co-locates independent entities or
+    relationships
 
 Minimality
-    If any elements of the database schema are dropped then the database schema is not ideal
+    If any elements of the database schema are dropped then the database schema
+    is not ideal

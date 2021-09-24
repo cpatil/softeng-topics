@@ -1,19 +1,33 @@
-Java Native Interface (JNI)
-Is a foreign function interface programming framework that enables Java code running in a JVM to call and be called by native applications (programs specific to a hardware and operating system) and libraries written in other languages such as C, C++ and assembly
+Java Native Interface (JNI) Is a foreign function interface programming
+framework that enables Java code running in a JVM to call and be called by
+native applications (programs specific to a hardware and operating system) and
+libraries written in other languages such as C, C++ and assembly
 
-Enables programmers to write native methods to handle situations when an application cannot be written entirely in Java, e.g. when the standard Java class library does not support the platform-specific features or program library.
+Enables programmers to write native methods to handle situations when an
+application cannot be written entirely in Java, e.g. when the standard Java
+class library does not support the platform-specific features or program
+library.
 
-Also used to modify an existing application (written in another langugage) to be accessible to Java applications
+Also used to modify an existing application (written in another langugage) to be
+accessible to Java applications
 
-Many of the standard library classes depend on JNI to provide functionality to the developer and the user, e.g. file I/O and sound capabilities. Including performance and platform-sensitive API implementations in the statndard library allows all Java applications to access this functionality in a safe and platform-independent manner
+Many of the standard library classes depend on JNI to provide functionality to
+the developer and the user, e.g. file I/O and sound capabilities. Including
+performance and platform-sensitive API implementations in the statndard library
+allows all Java applications to access this functionality in a safe and
+platform-independent manner
 
-Allows a native method:
-	- Can use Java objects in the same way that Java code uses these objects
-	- Can create Java objects and the inspect and use these objects to perform its tasks
-	- Can inspect and use objects created by Java application code
+Allows a native method: - Can use Java objects in the same way that Java code
+    uses these objects - Can create Java objects and the inspect and use these
+    objects to perform its tasks - Can inspect and use objects created by Java
+    application code
 
 Only applications and signed applets can invoke JNI
 
-An application that relies on JNI loses the platform portability Java offers but a partial workaround is to write a separate implementation of JNI ocde for each platform and have Java detect the operating system and load the correct one at runtime
+An application that relies on JNI loses the platform portability Java offers but
+a partial workaround is to write a separate implementation of JNI ocde for each
+platform and have Java detect the operating system and load the correct one at
+runtime
 
-JNI allows direct access to assembly code, without even going through a C bridge, accessing Java applications from assembly is possible in the same way
+JNI allows direct access to assembly code, without even going through a C
+bridge, accessing Java applications from assembly is possible in the same way

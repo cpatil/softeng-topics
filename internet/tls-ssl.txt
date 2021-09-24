@@ -1,3 +1,10 @@
-Transport Layer Security (TLS), the successor of the now-deprecated Secure Sockets Layer (SSL), is a cryptographic protocol designed to provide communications security over a computer network. The protocol is widely used in applications such as email, instant messaging, and voice over IP, but its use as the Security layer in HTTPS remains the most publicly visible.
+Transport Layer Security (TLS), the successor of the now-deprecated Secure
+Sockets Layer (SSL), is a cryptographic protocol designed to provide
+communications security over a computer network. The protocol is widely used in
+applications such as email, instant messaging, and voice over IP, but its use as
+the Security layer in HTTPS remains the most publicly visible.
 
-The TLS protocol aims primarily to provide privacy and data integrity between two or more communicating computer applications. It runs in the application layer of the Internet and is itself composed of two layers: the TLS record and the TLS handshake protocols. 
+The TLS protocol aims primarily to provide privacy and data integrity between
+two or more communicating computer applications. It runs in the application
+layer of the Internet and is itself composed of two layers: the TLS record and
+the TLS handshake protocols. 

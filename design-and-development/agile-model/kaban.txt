@@ -1,12 +1,14 @@
-Like other Agile methodologies, Kanban focuses on helping teams work together more effectively to enable continuous delivery of quality products. Kanban is unique, however, for offering a highly visual method for actively managing the creation of products.
+Like other Agile methodologies, Kanban focuses on helping teams work together
+more effectively to enable continuous delivery of quality products. Kanban is
+unique, however, for offering a highly visual method for actively managing the
+creation of products.
 
 The Kanban Agile methodology relies on six fundamental practices:
 
-    Visualize the workflow
-    Limit work in progress
-    Manage flow
-    Make process policies explicit
-    Implement feedback loops
-    Improve collaboratively
+    Visualize the workflow Limit work in progress Manage flow Make process
+    policies explicit Implement feedback loops Improve collaboratively
 
-Kanban achieves these practices through the use of a Kanban board. The Kanban board facilitates the visual approach to Agile using columns to represent work that is To Do, Doing, and Done. This Agile methodology improves collaboration and efficiency and helps define the best possible team workflow.
+Kanban achieves these practices through the use of a Kanban board. The Kanban
+board facilitates the visual approach to Agile using columns to represent work
+that is To Do, Doing, and Done. This Agile methodology improves collaboration
+and efficiency and helps define the best possible team workflow.

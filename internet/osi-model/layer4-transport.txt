@@ -10,15 +10,19 @@ TCP (Transmission Control Protocol)	UDP (User Datagram Protocol)
 
 1	Definition	
 
-	It is a communications protocol, using which the data is transmitted between systems over the network.
+	It is a communications protocol, using which the data is transmitted between
+	systems over the network.
 
 	In this, the data is transmitted into the form of packets.
 
-	It includes error-checking, guarantees the delivery and preserves the order of the data packets.
+	It includes error-checking, guarantees the delivery and preserves the order
+	of the data packets.
 
-		It is same as the TCP protocol except this doesn’t guarantee the error-checking and data recovery.
+		It is same as the TCP protocol except this doesn’t guarantee the
+		error-checking and data recovery.
 
-	If you use this protocol, the data will be sent continuously, irrespective of the issues in the receiving end.
+	If you use this protocol, the data will be sent continuously, irrespective
+	of the issues in the receiving end.
 
 2	Design	
 	
@@ -26,44 +30,64 @@ TCP (Transmission Control Protocol)	UDP (User Datagram Protocol)
 
 3	Reliable	
 
-	As TCP provides error checking support and also guarantees delivery of data to the destination router this make it more reliable as compared to UDP.	While on other hand UDP does provide only basic error checking support using checksum so the delivery of data to the destination cannot be guaranteed in UDP as compared to that in case of TCP.
+	As TCP provides error checking support and also guarantees delivery of data
+	to the destination router this make it more reliable as compared to UDP.
+	While on other hand UDP does provide only basic error checking support using
+	checksum so the delivery of data to the destination cannot be guaranteed in
+	UDP as compared to that in case of TCP.
 
 4	Data transmission	
 
-	In TCP the data is transmitted in a particular sequence which means that packets arrive in-order at the receiver.	On other hand there is no sequencing of data in UDP in order to implement ordering it has to be managed by the application layer.
+	In TCP the data is transmitted in a particular sequence which means that
+	packets arrive in-order at the receiver.	On other hand there is no
+	sequencing of data in UDP in order to implement ordering it has to be
+	managed by the application layer.
 
 5	Performance	
 	
-	TCP is slower and less efficient in performance as compared to UDP. Also TCP is heavy-weight as compared to UDP.	On other hand UDP is faster and more efficient than TCP.
+	TCP is slower and less efficient in performance as compared to UDP. Also TCP
+	is heavy-weight as compared to UDP.	On other hand UDP is faster and more
+	efficient than TCP.
 
 6	Retransmission	
 	
-	Retransmission of data packets is possible in TCP in case packet get lost or need to resend.	On other hand retransmission of packets is not possible in UDP.
+	Retransmission of data packets is possible in TCP in case packet get lost or
+	need to resend.	On other hand retransmission of packets is not possible in
+	UDP.
 
-Difference between UDP and TCP
-TCP 	UDP
-It is a connection-oriented protocol. 	It is a connectionless protocol.
+Difference between UDP and TCP TCP 	UDP It is a connection-oriented protocol.
+It is a connectionless protocol.
 
-TCP reads data as streams of bytes, and the message is transmitted to segment boundaries. 	UDP messages contain packets that were sent one by one. It also checks for integrity at the arrival time.
+TCP reads data as streams of bytes, and the message is transmitted to segment
+boundaries. 	UDP messages contain packets that were sent one by one. It also
+checks for integrity at the arrival time.
 
-TCP messages make their way across the internet from one computer to another. 	It is not connection-based, so one program can send lots of packets to another.
+TCP messages make their way across the internet from one computer to another.
+It is not connection-based, so one program can send lots of packets to another.
 
-TCP rearranges data packets in the specific order. 	UDP protocol has no fixed order because all packets are independent of each other.
+TCP rearranges data packets in the specific order. 	UDP protocol has no fixed
+order because all packets are independent of each other.
 
 The speed for TCP is slower. 	UDP is faster as error recovery is not attempted.
 
 Header size is 20 bytes 	Header size is 8 bytes.
 
-TCP is heavy-weight. TCP needs three packets to set up a socket connection before any user data can be sent. 	UDP is lightweight. There are no tracking connections, ordering of messages, etc.
+TCP is heavy-weight. TCP needs three packets to set up a socket connection
+before any user data can be sent. 	UDP is lightweight. There are no tracking
+connections, ordering of messages, etc.
 
-TCP does error checking and also makes error recovery. 	UDP performs error checking, but it discards erroneous packets.
+TCP does error checking and also makes error recovery. 	UDP performs error
+checking, but it discards erroneous packets.
 
 Acknowledgment segments 	No Acknowledgment segments
 
-Using handshake protocol like SYN, SYN-ACK, ACK 	No handshake (so connectionless protocol)
+Using handshake protocol like SYN, SYN-ACK, ACK 	No handshake (so connectionless
+protocol)
 
 TCP is reliable as it guarantees delivery of data to the destination router. 	
 
 The delivery of data to the destination can't be guaranteed in UDP.
 
-TCP offers extensive error checking mechanisms because it provides flow control and acknowledgment of data. 	UDP has just a single error checking mechanism which is used for checksums. 
+TCP offers extensive error checking mechanisms because it provides flow control
+and acknowledgment of data. 	UDP has just a single error checking mechanism
+which is used for checksums. 

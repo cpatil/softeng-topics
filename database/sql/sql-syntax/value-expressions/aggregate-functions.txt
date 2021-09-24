@@ -41,11 +41,12 @@ sum(expression) 						smallint, int, bigint,
 																			the argument data type 				sum of expression across all non-null input values
 xmlagg(expression) 						xml 								xml 								concatenation of non-null XML values (see also Section 9.14.1.7)
 
-Aggregate Expressions
-An aggregate function reduces multiple inputs to a single output value, such as the sum or average of the inputs.
+Aggregate Expressions An aggregate function reduces multiple inputs to a single
+output value, such as the sum or average of the inputs.
 
-Example:
-*Where aggregate_name is a previously defined aggregate and expression is any value expression that does not itself contain an aggregate expression or a window function call.
+Example: *Where aggregate_name is a previously defined aggregate and expression
+is any value expression that does not itself contain an aggregate expression or
+a window function call.
 
 aggregate_name (expression [ , ... ] [ order_by_clause ] ) [ FILTER ( WHERE filter_clause ) ]
     Invokes the aggregate once for each input row

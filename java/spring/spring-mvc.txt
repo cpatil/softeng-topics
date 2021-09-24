@@ -4,32 +4,41 @@ Front Controller Design Pattern
     - Enforces a single point of entry for all the incoming requests
 
 MVC Desgin Pattern
-    - Develops loosely coupled applications by segregating various concerns into different layers
-    - Enforces the application to be divided into three layers, Model, View, and Controller
+    - Develops loosely coupled applications by segregating various concerns into
+    different layers - Enforces the application to be divided into three layers,
+    Model, View, and Controller
 
 REST endpoints are Spring MVC controllers
 
-Model: Data
-View: User interface with model as the input and renders it
-Controller: Handling the request and generating the model and selecting the appropriate view for the request
+Model: Data View: User interface with model as the input and renders it
+Controller: Handling the request and generating the model and selecting the
+appropriate view for the request
 
 Spring's MVC Module
-    - Based on front controller design pattern followed by MVC design pattern.
-    - All incoming requests are handled by the single servlet named DispatchServlet (front controller)
-    - DispatchServlet refers to HandlerMapping to find a controller object which can handle the request
-        - Then dispatches the request to the controller object to perform the business logic
-            - Controller may delegate the responsibility to further applicatino objects known as service objects
-        - Controller returns an encapsulated object containing the model obect and the view object (OR A LOGICAL NAME OF THE VIEW)
-        - If ModelAndView contains the logical name of the view, the DispatcherServlet refers to the ViewResolver to find the actual View object
-        - DispatcherServlet then passes the model object to the view object which is then rendered to the end user
+    - Based on front controller design pattern followed by MVC design pattern. -
+    All incoming requests are handled by the single servlet named
+    DispatchServlet (front controller) - DispatchServlet refers to
+    HandlerMapping to find a controller object which can handle the request
+        - Then dispatches the request to the controller object to perform the
+        business logic
+            - Controller may delegate the responsibility to further applicatino
+            objects known as service objects
+        - Controller returns an encapsulated object containing the model obect
+        and the view object (OR A LOGICAL NAME OF THE VIEW) - If ModelAndView
+        contains the logical name of the view, the DispatcherServlet refers to
+        the ViewResolver to find the actual View object - DispatcherServlet then
+        passes the model object to the view object which is then rendered to the
+        end user
 
 Spring Handler Mappings
-    - Inspects the request and identifies the appropriate handler execution chain and delivers it to the dispatcher servlet
-    - The handler execution chain contains the list of interceptors that are applied for the request
-    - The dispatcher servlet then executes the handlers and any associated handler interceptor
-    - BeanNameUrlHandlerMapping
-        - Matches the URL of the incoming request with the name of the controller beans
-        - If there isn't any handler mapping beans defined then Spring's application context then BeanNameUrlHandlerMapping
+    - Inspects the request and identifies the appropriate handler execution
+    chain and delivers it to the dispatcher servlet - The handler execution
+    chain contains the list of interceptors that are applied for the request -
+    The dispatcher servlet then executes the handlers and any associated handler
+    interceptor - BeanNameUrlHandlerMapping
+        - Matches the URL of the incoming request with the name of the
+        controller beans - If there isn't any handler mapping beans defined then
+        Spring's application context then BeanNameUrlHandlerMapping
 
 Example
     http://servername:portnumber/ApplicationContext/welcome.htm
@@ -40,8 +49,7 @@ Example
     net.codejava.frameorks.spring.mvc.controller.ListBooksController
     net.codejava.frameorks.spring.mvc.controller.DisplayBookTOCController
 
-    <bean
-    name="/welcome.htm"
+    <bean name="/welcome.htm"
     class="net.codejava.frameorks.spring.mvc.controller.WelcomeController" />
 <bean
     name="/listBooks.htm"
@@ -51,16 +59,17 @@ Example
     class="net.codejava.frameorks.spring.mvc.controller.DisplayBookTOCController"/>
 
 Spring Controllers
-    - Performs the business logic to fulfil the incoming request
-    - May delegate this responsibility to service objects
-    - User defined controllers must either implement the interface Controller or extend the abstract class AbstractController
-    - User defined controllers need to override the method handleRequestInterval
-        - handleRequestInternal takes HttpServletRequest and HttpServletResponse as the input and returns ModelAndView
+    - Performs the business logic to fulfil the incoming request - May delegate
+    this responsibility to service objects - User defined controllers must
+    either implement the interface Controller or extend the abstract class
+    AbstractController - User defined controllers need to override the method
+    handleRequestInterval
+        - handleRequestInternal takes HttpServletRequest and HttpServletResponse
+        as the input and returns ModelAndView
 
-Example:
-public class WelcomeController extends AbstractController {
-    @Override
-    protected ModelAndView handleRequestInternal(HttpServletRequest arg0,
+Example: public class WelcomeController extends AbstractController {
+    @Override protected ModelAndView handleRequestInternal(HttpServletRequest
+    arg0,
             HttpServletResponse arg1) throws Exception {
          
         return new ModelAndView("welcome");
@@ -68,42 +77,38 @@ public class WelcomeController extends AbstractController {
 }
 
 MultiActionController
-    - Used in medium to large size enterprise web application
-    - Fulfills multiple web page requests
-    - User defined MultiActionController should extend the class org.springframework.web.servlet.mvc.multiaction.MultiActionController
-    - Methods contain the business logic for the request for a particular web page
+    - Used in medium to large size enterprise web application - Fulfills
+    multiple web page requests - User defined MultiActionController should
+    extend the class
+    org.springframework.web.servlet.mvc.multiaction.MultiActionController -
+    Methods contain the business logic for the request for a particular web page
 
-Example:
-public class MyMultiActionController extends MultiActionController {
+Example: public class MyMultiActionController extends MultiActionController {
     // This method will server all the request matching URL pattern /welcome.htm
     public ModelAndView welcome(HttpServletRequest request,
             HttpServletResponse response) {
-        // Business logic goes here
-        // Return an object of ModelAndView to DispatcherServlet
-        return new ModelAndView("Welcome");
-    }
-    // This method will server all the request matching URL pattern
-    // /listBooks.htm
-    public ModelAndView listBooks(HttpServletRequest request,
+        // Business logic goes here // Return an object of ModelAndView to
+        DispatcherServlet return new ModelAndView("Welcome");
+    } // This method will server all the request matching URL pattern //
+    /listBooks.htm public ModelAndView listBooks(HttpServletRequest request,
             HttpServletResponse response) {
-        // Business logic goes here
-        // Return an object of ModelAndView to DispatcherServlet
-        return new ModelAndView("listBooks");
-    }
-    // This method will server all the request matching URL pattern
-    // /displayBookTOC.htm
-    public ModelAndView displayBookTOC(HttpServletRequest request,
+        // Business logic goes here // Return an object of ModelAndView to
+        DispatcherServlet return new ModelAndView("listBooks");
+    } // This method will server all the request matching URL pattern //
+    /displayBookTOC.htm public ModelAndView displayBookTOC(HttpServletRequest
+    request,
             HttpServletResponse response) {
-        // Business logic goes here
-        // Return an object of ModelAndView to DispatcherServlet
-        return new ModelAndView("displayBookTOC");
+        // Business logic goes here // Return an object of ModelAndView to
+        DispatcherServlet return new ModelAndView("displayBookTOC");
     }
 }
 
 ModelAndView
-    - Spring's MVC module encapsulates the model object and the view object in ModelAndView
+    - Spring's MVC module encapsulates the model object and the view object in
+    ModelAndView
 
 ViewResolver
-    - If ModelAndView contains the logical name of the view then the DispatcherServlet uses a ViewResolver to fetch it
+    - If ModelAndView contains the logical name of the view then the
+    DispatcherServlet uses a ViewResolver to fetch it
     
 

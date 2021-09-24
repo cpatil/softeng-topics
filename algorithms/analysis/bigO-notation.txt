@@ -1,13 +1,22 @@
 Big O notation
-Is a mathematical notation that describes the limiting behaviour of a function when the argument tends towards a particular value or infinity Big O is a member of a family of notations invented by Paul Bachmann, Edmund Landau, callectively called Bachmann-Landau notation or asymptotic notation
+Is a mathematical notation that describes the limiting behaviour of a function
+when the argument tends towards a particular value or infinity Big O is a member
+of a family of notations invented by Paul Bachmann, Edmund Landau, callectively
+called Bachmann-Landau notation or asymptotic notation
 
-The letter O is used because the growth rate of a function is also referred to as the order of the function
+The letter O is used because the growth rate of a function is also referred to
+as the order of the function
 
 Reference(https://web.mit.edu/16.070/www/lecture/big_o.pdf)
 
-For example, when analyzing some algorithm, one might find that the time (or the number of steps) it takes to complete a problem of size n is given by T(n) = 4n^2 - 2n + 2. If we ignore constants (which makes sense because those depend on the particular hardware the program is run on) and slower growing terms, we could say "T(n) grows at the order of n^2" and write: T(n) = O(n^2)
+For example, when analyzing some algorithm, one might find that the time (or the
+number of steps) it takes to complete a problem of size n is given by T(n) =
+4n^2 - 2n + 2. If we ignore constants (which makes sense because those depend on
+the particular hardware the program is run on) and slower growing terms, we
+could say "T(n) grows at the order of n^2" and write: T(n) = O(n^2)
 
-For the formal definition, suppose f(x) and g(x) are two functions defined on some subset of the real numbers. We write
+For the formal definition, suppose f(x) and g(x) are two functions defined on
+some subset of the real numbers. We write
 
 		f(x) = O(g(x)) for x -> infinity
 
@@ -25,15 +34,27 @@ O(n^2)   		quadratic
 O(n^c)   		polynomial 
 O(c^n)   		exponential
 
-Note that O(n^c) and O(C^n) are very different. The latter grows much, much faster, no matter how big the constant c is. A function that grows faster than any power of n is called superpolynomial. One that grows slower than an exponential function of the form c^n is called subexponential. An algorithm can require time that is both superpolynomial and subexponential; examples of this unclude the fastest algorithms known for integer factorization.
+Note that O(n^c) and O(C^n) are very different. The latter grows much, much
+faster, no matter how big the constant c is. A function that grows faster than
+any power of n is called superpolynomial. One that grows slower than an
+exponential function of the form c^n is called subexponential. An algorithm can
+require time that is both superpolynomial and subexponential; examples of this
+unclude the fastest algorithms known for integer factorization.
 
-Note, too, that O(log n) is exactly the same as O(log(n^c)). The logarithms differ only by a constant factor, and the big O notation ignores that. Similarly, logs with different constant bases are Equivalent
+Note, too, that O(log n) is exactly the same as O(log(n^c)). The logarithms
+differ only by a constant factor, and the big O notation ignores that.
+Similarly, logs with different constant bases are Equivalent
 
-The above list is useful because of the following fact: if a function f(n) is a sum of functions, one of which grows faster than the others, then the faster growing one determines the order of f(n)
+The above list is useful because of the following fact: if a function f(n) is a
+sum of functions, one of which grows faster than the others, then the faster
+growing one determines the order of f(n)
 
-Example: If f(n) = 10 log(n) + 5 (log(n))^3 + 7 n + 3 n^2 + 6 n^3, then f(n) = O(n^3). 
+Example: If f(n) = 10 log(n) + 5 (log(n))^3 + 7 n + 3 n^2 + 6 n^3, then f(n) =
+O(n^3). 
 
-O(g(x)) is a set-valued function, whose value is all functions that do not grow faster then g(x), and use set membership notation to indicate that a specific function is a member of the set thus defined.
+O(g(x)) is a set-valued function, whose value is all functions that do not grow
+faster then g(x), and use set membership notation to indicate that a specific
+function is a member of the set thus defined.
 
 Big-O Calculation Examples:
 
@@ -63,5 +84,6 @@ def find_sum_2d(array_2d):
 T = O(1) + n^2*O(1) + O(1)
 
 Little o:
-Informally, f(x) = o(g(x)) means that f grows much slower than g and is insignificant in Comparison
+Informally, f(x) = o(g(x)) means that f grows much slower than g and is
+insignificant in Comparison
 

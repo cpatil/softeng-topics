@@ -1,6 +1,8 @@
 Associative Array
 
-An associative array, map, symbol table, or dictionary is an abstract data type composed of a collection of (key, value) pairs, such that each possible key appears at most once in the colelction.
+An associative array, map, symbol table, or dictionary is an abstract data type
+composed of a collection of (key, value) pairs, such that each possible key
+appears at most once in the colelction.
 
 Operations associated with this data type allow to:
 	- Add a pair to the collection
@@ -8,5 +10,10 @@ Operations associated with this data type allow to:
 	- Modify an existing pair
 	- Lookup a value associated with a particular key
 
-Implementing associative arrays poses the dictionary problem, a classic computer science problem: the task of designing a data structure that maintains a set of data during 'search', 'delete', and 'insert' operations. The two major solutions to the dictionary problem are a hash table and a search tree. In some cases it is also possible to solve the problem using directly addressed arrays, binary search trees, or other more specialized structures
+Implementing associative arrays poses the dictionary problem, a classic computer
+science problem: the task of designing a data structure that maintains a set of
+data during 'search', 'delete', and 'insert' operations. The two major solutions
+to the dictionary problem are a hash table and a search tree. In some cases it
+is also possible to solve the problem using directly addressed arrays, binary
+search trees, or other more specialized structures
 

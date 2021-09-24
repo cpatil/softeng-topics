@@ -1,11 +1,15 @@
 -------------------------------------
 Value Expressions/Scalar Expressions
 -------------------------------------
-Used in a variety of contexts, such as in the target list of the SELECT command, as new column values in INSERT or UPDATE, or in search conditions in a number of commands
+Used in a variety of contexts, such as in the target list of the SELECT command,
+as new column values in INSERT or UPDATE, or in search conditions in a number of
+commands
 
-The result of an expression is sometimes called a scalar, to distringuish it from the result of a table expression (which is a table)
+The result of an expression is sometimes called a scalar, to distringuish it
+from the result of a table expression (which is a table)
 
-The expression syntax allowd the calculation of values from primitive parts using arithmetic, logical, set, and other operations
+The expression syntax allowd the calculation of values from primitive parts
+using arithmetic, logical, set, and other operations
 
 A value expression is one of the following:
     - A constant or literal value
@@ -42,9 +46,13 @@ Multiple adjacent elements (an "array slice"):
 
 expression[lower_subcript:upper_subscript]
 
-Each subscript is itself an expression, which will be rounded to the nearest integer value
+Each subscript is itself an expression, which will be rounded to the nearest
+integer value
 
-in general the array expression must be parenthesized, but the parentheses can be omitted when the expression to be subscripted is just a column reference or positional parameter. Also, multiple subscripts can be concatenated when the original array is multidimensional. 
+in general the array expression must be parenthesized, but the parentheses can
+be omitted when the expression to be subscripted is just a column reference or
+positional parameter. Also, multiple subscripts can be concatenated when the
+original array is multidimensional. 
 
 Example:
 mytable.arraycolumn[4]
@@ -56,19 +64,24 @@ Field Selection:
 If an expression yields a value of composite type (row type)
 expression.fieldname
 
-In general the row expression much be parenthesized, but ommitted when the expression to be selected from is just a table reference or positional parameter
+In general the row expression much be parenthesized, but ommitted when the
+expression to be selected from is just a table reference or positional parameter
 
 Example:
 mytable.mycolumn
 $1.somecolumn
 (rowfunction(a,b)).col3
 
-(Thus, a qualified column reference is actually just a special case of the field selection syntax.) An important special case is extracting a field from a table column that is of a composite type:
+(Thus, a qualified column reference is actually just a special case of the field
+selection syntax.) An important special case is extracting a field from a table
+column that is of a composite type:
 
 (compositecol).somefield
 (mytable.compositecol).somefield
 
-The parentheses are required here to show that compositecol is a column name not a table name, or that mytable is a table name not a schema name in the second case.
+The parentheses are required here to show that compositecol is a column name not
+a table name, or that mytable is a table name not a schema name in the second
+case.
 
 You can ask for all fields of a composite value by writing .*:
 

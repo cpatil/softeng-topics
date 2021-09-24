@@ -1,1 +1,9 @@
-Typically in an enterprise you would write two types of test cases. One Unit Test cases where you will use Mockito to stub out object like repository objects etc. The idea is the your functionality is testable even if a db is not available. Another set is integration test cases. This will in fact connect to all the resources etc in the backed to do an end-to-end testing. You can use Maven's surefire plugin to run the test case during run time. A class with name ending in "Test" is considered a Unit Test case and ending in "IT" is an integration test case. Example ("SomeTest", SomeIT). To answer your question you need both Mockito and H2 where H2 being the resource/backend of ur application
+Typically in an enterprise you would write two types of test cases. One Unit
+Test cases where you will use Mockito to stub out object like repository objects
+etc. The idea is the your functionality is testable even if a db is not
+available. Another set is integration test cases. This will in fact connect to
+all the resources etc in the backed to do an end-to-end testing. You can use
+Maven's surefire plugin to run the test case during run time. A class with name
+ending in "Test" is considered a Unit Test case and ending in "IT" is an
+integration test case. Example ("SomeTest", SomeIT). To answer your question you
+need both Mockito and H2 where H2 being the resource/backend of ur application

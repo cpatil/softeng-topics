@@ -1,10 +1,14 @@
  Mockito vs. BDDMockito
 
-The traditional mocking in Mockito is performed using when(obj).then*() in the Arrange step.
+The traditional mocking in Mockito is performed using when(obj).then*() in the
+Arrange step.
 
-Later, interaction with our mock can be validated using verify() in the Assert step.
+Later, interaction with our mock can be validated using verify() in the Assert
+step.
 
-BDDMockito provides BDD aliases for various Mockito methods, so we can write our Arrange step using given (instead of when), likewise, we could write our Assert step using then (instead of verify).
+BDDMockito provides BDD aliases for various Mockito methods, so we can write our
+Arrange step using given (instead of when), likewise, we could write our Assert
+step using then (instead of verify).
 
 Let's look at an example of a test body using traditional Mockito:
 
@@ -24,5 +28,4 @@ given(phoneBookRepository.contains(momContactName))
 phoneBookService.register(momContactName, momPhoneNumber);
 
 then(phoneBookRepository)
-  .should()
-  .insert(momContactName, momPhoneNumber);
+  .should() .insert(momContactName, momPhoneNumber);

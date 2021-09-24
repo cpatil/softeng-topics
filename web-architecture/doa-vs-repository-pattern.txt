@@ -1,24 +1,41 @@
 DAO Pattern:
 
-	The Data Access Object Pattern, aka DAO Pattern, is an abstraction of data persistence and is considered closer to the underlying storage, which is often table-centric.
+	The Data Access Object Pattern, aka DAO Pattern, is an abstraction of data
+	persistence and is considered closer to the underlying storage, which is
+	often table-centric.
 
-	Therefore, in many cases, our DAOs match database tables, allowing a more straightforward way to send/retrieve data from storage, hiding the ugly queries.
+	Therefore, in many cases, our DAOs match database tables, allowing a more
+	straightforward way to send/retrieve data from storage, hiding the ugly
+	queries.
 
 Repository Pattern:
 
-	As per Eric Evans' book Domain-Driven Design, the “repository is a mechanism for encapsulating storage, retrieval, and search behavior, which emulates a collection of objects.”
+	As per Eric Evans' book Domain-Driven Design, the “repository is a mechanism
+	for encapsulating storage, retrieval, and search behavior, which emulates a
+	collection of objects.”
 
-	Likewise, according to Patterns of Enterprise Application Architecture, it “mediates between the domain and data mapping layers using a collection-like interface for accessing domain objects.”
+	Likewise, according to Patterns of Enterprise Application Architecture, it
+	“mediates between the domain and data mapping layers using a collection-like
+	interface for accessing domain objects.”
 
-	In other words, a repository also deals with data and hides queries similar to DAO. However, it sits at a higher level, closer to the business logic of an app.
+	In other words, a repository also deals with data and hides queries similar
+	to DAO. However, it sits at a higher level, closer to the business logic of
+	an app.
 
-	Consequently, a repository can use a DAO to fetch data from the database and populate a domain object. Or, it can prepare the data from a domain object and send it to a storage system using a DAO for persistence.
+	Consequently, a repository can use a DAO to fetch data from the database and
+	populate a domain object. Or, it can prepare the data from a domain object
+	and send it to a storage system using a DAO for persistence.
 
-	So far, we can say that the implementations of DAO and repository look very similar because the User class is an anemic domain. And, a repository is just another layer over the data-access layer (DAO).
+	So far, we can say that the implementations of DAO and repository look very
+	similar because the User class is an anemic domain. And, a repository is
+	just another layer over the data-access layer (DAO).
 
-	However, DAO seems a perfect candidate to access the data, and a repository is an ideal way to implement a business use-case.
+	However, DAO seems a perfect candidate to access the data, and a repository
+	is an ideal way to implement a business use-case.
 
 	A repository relies on DAOs for accessing data from various sources.
 
-	Additionally, the repository pattern encourages a domain-driven design, providing an easy understanding of the data structure for non-technical team members, too.
+	Additionally, the repository pattern encourages a domain-driven design,
+	providing an easy understanding of the data structure for non-technical team
+	members, too.
 

@@ -1,1 +1,3 @@
-Pigeons in holes. Here there are n = 10 pigeons in m = 9 holes. Since 10 is greater than 9, the pigeonhole principle says that at least one hole has more than one pigeon. (The top left hole has 2 pigeons.)
+Pigeons in holes. Here there are n = 10 pigeons in m = 9 holes. Since 10 is
+greater than 9, the pigeonhole principle says that at least one hole has more
+than one pigeon. (The top left hole has 2 pigeons.)
