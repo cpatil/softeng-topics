@@ -1,0 +1,13 @@
+The semi-structured model is a database model where there is no separation between the data and the schema, and the amount of structure used depends on the purpose.
+
+The advantages of this model are the following:
+
+    It can represent the information of some data sources that cannot be constrained by schema.
+    
+	It provides a flexible format for data exchange between different types of databases.
+    
+	It can be helpful to view structured data as semi-structured (for browsing purposes).
+    The schema can easily be changed.
+    The data transfer format may be portable.
+
+The primary trade-off being made in using a semi-structured database model is that queries cannot be made as efficiently as in a more constrained structure, such as in the relational model. Typically the records in a semi-structured database are stored with unique IDs that are referenced with pointers to their location on disk. This makes navigational or path-based queries quite efficient, but for doing searches over many records (as is typical in SQL), it is not as efficient because it has to seek around the disk following pointers. 
