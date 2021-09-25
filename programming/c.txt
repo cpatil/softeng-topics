@@ -1,0 +1,114 @@
+C is a general-purpose, systems-based, imperative procedural computer
+programming language supporting structured programming, lexical variable
+scope, and recursion, with a static type system. By design, C provides
+constructs that map efficiently to typical machine instructions. It has
+found lasting use in applications previously coded in assembly language.
+Such applications include operating systems and various application software
+for computer architectures that range from supercomputers to PLCs and
+embedded systems. 
+
+Pros:
+
+Building block for many other programming languages
+
+	C is considered to be the most fundamental language that needs to be studied
+	if you are beginning with any programming language. Many programming
+	languages such as Python, C++, Java, etc are built with the base of the C
+	language.
+
+Powerful and efficient language
+
+	C is a robust language as it contains many data types and operators to give
+	you a vast platform to perform all kinds of operations.
+
+Portable language
+
+	C is very flexible, or we can say machine independent that helps you to run
+	your code on any machine without making any change or just a few changes in
+	the code.
+
+Built-in functions
+
+	There are only 32 keywords in ANSI C, having many built-in functions. These
+	functions are helpful when building a program in C.
+
+Quality to extend itself
+
+	Another crucial ability of C is to extend itself. We have already studied
+	that the C language has its own set of functions in the C library. So, it
+	becomes easy to use these functions. We can add our own functions to the C
+	Standard Library and make code simpler.
+
+Structured programming language
+
+	C is structure-based. It means that the issues or complex problems are
+	divided into smaller blocks or functions. This modular structure helps in
+	easier and simpler testing and maintenance.
+
+Middle-level language
+
+	C is a middle-level programming language that means it supports high-level
+	programming as well as low-level programming. It supports the use of kernels
+	and drivers in low-level programming and also supports system software
+	applications in the high-level programming language.
+
+Implementation of algorithms and data structures
+
+	The use of algorithms and data structures in C has made program computations
+	very fast and smooth. Thus, the C language can be used in complex
+	calculations and operations such as MATLAB.
+
+Procedural programming language
+
+	C follows a proper procedure for its functions and subroutines. As it uses
+	procedural programming, it becomes easier for C to identify code structure
+	and to solve any problem in a specific series of code. In procedural
+	programming C variables and functions are declared before use.
+
+Dynamic memory allocation
+
+	C provides dynamic memory allocation that means you are free to allocate
+	memory at run time. For example, if you don’t know how much memory is
+	required by objects in your program, you can still run a program in C and
+	assign the memory at the same time.
+
+Cons:
+
+1. Data security: There is a lot of buffer overflow in C language and this can
+lead to overwriting information in the memory. When pointers are updated with
+the incorrect data, it will result in memory corruption.
+
+Lack of Exception Handling
+
+Exception Handling is one of the most important features of programming
+languages. While compiling the code, various anomalies and bugs can occur.
+Exception Handling allows you to catch the error and take appropriate responses.
+However, C does not exhibit this important feature.
+
+3. No strict type checking: When passing data to the parameters, there is no
+strict data type checking since we can pass an integer value to the parameter.
+No confirmation of the right data type is used.
+
+4. No code-reuse: C language doesn’t have OOP features which support source code
+reusability. It doesn’t support constructors and destructors.
+
+5. Namespace concept: C language doesn’t support program namespace thus, it is
+impossible to declare two variables at the same time like in the C++ program.
+
+6. No OOP concepts: Object-oriented programming concepts like data abstraction,
+polymorphism, inheritance, and other C++ programming concepts are not supported
+in the C language. Every algorithm in C is a set of function calls.
+
+7. Effects on Today’s programming: C program does not support enough library
+functions which can be used to handle today’s complex programming environment.
+
+8. Real-world problems: It cannot be used to solve the real-world programming
+challenges.
+
+9. Extending the program issues: When you extend the program, it will be very
+difficult for you to fix any errors and bugs. The C language is effective when
+dealing with simple projects.
+
+10. High-level constructs: You need to manually create the high-level constructs
+in C programming language. Third party libraries and other solutions need to be
+configured before use.

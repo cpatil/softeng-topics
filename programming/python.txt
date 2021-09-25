@@ -1,0 +1,177 @@
+Python is an interpreted high-level general-purpose programming language. Its
+design philosophy emphasizes code readability with its use of significant
+indentation. Its language constructs as well as its object-oriented approach aim
+to help programmers write clear, logical code for small and large-scale projects
+
+Python is dynamically-typed and garbage-collected. It supports multiple
+programming paradigms, including structured (particularly, procedural),
+object-oriented and functional programming. It is often described as a
+"batteries included" language due to its comprehensive standard library.
+
+Python is a multi-paradigm programming language. Object-oriented programming and
+structured programming are fully supported, and many of its features support
+functional programming and aspect-oriented programming (including by
+metaprogramming and metaobjects (magic methods)). Many other paradigms are
+supported via extensions, including design by contract and logic programming.
+
+Python uses dynamic typing and a combination of reference counting and a
+cycle-detecting garbage collector for memory management. It also features
+dynamic name resolution (late binding), which binds method and variable names
+during program execution.
+
+Python's design offers some support for functional programming in the Lisp
+tradition. It has filter,mapandreduce functions; list comprehensions,
+dictionaries, sets, and generator expressions. The standard library has two
+modules (itertools and functools) that implement functional tools borrowed from
+Haskell and Standard ML.
+
+The language's core philosophy is summarized in the document The Zen of Python
+(PEP 20), which includes aphorisms such as:
+
+    Beautiful is better than ugly. Explicit is better than implicit. Simple is
+    better than complex. Complex is better than complicated. Readability counts.
+
+Rather than having all of its functionality built into its core, Python was
+designed to be highly extensible (with modules). This compact modularity has
+made it particularly popular as a means of adding programmable interfaces to
+existing applications. Van Rossum's vision of a small core language with a large
+standard library and easily extensible interpreter stemmed from his frustrations
+with ABC, which espoused the opposite approach.
+
+Python strives for a simpler, less-cluttered syntax and grammar while giving
+developers a choice in their coding methodology. In contrast to Perl's "there is
+more than one way to do it" motto, Python embraces a "there should be one— and
+preferably only one —obvious way to do it" design philosophy. Alex Martelli, a
+Fellow at the Python Software Foundation and Python book author, writes that "To
+describe something as 'clever' is not considered a compliment in the Python
+culture."
+
+Python's developers strive to avoid premature optimization, and reject patches
+to non-critical parts of the CPython reference implementation that would offer
+marginal increases in speed at the cost of clarity. When speed is important, a
+Python programmer can move time-critical functions to extension modules written
+in languages such as C, or use PyPy, a just-in-time compiler. Cython is also
+available, which translates a Python script into C and makes direct C-level API
+calls into the Python interpreter.
+
+Python's developers aim to keep the language fun to use. This is reflected in
+its name—a tribute to the British comedy group Monty Python—and in occasionally
+playful approaches to tutorials and reference materials, such as examples that
+refer to spam and eggs (a reference to a Monty Python sketch) instead of the
+standard foo and bar.
+
+A common neologism in the Python community is pythonic, which can have a wide
+range of meanings related to program style. To say that code is pythonic is to
+say that it uses Python idioms well, that it is natural or shows fluency in the
+language, that it conforms with Python's minimalist philosophy and emphasis on
+readability. In contrast, code that is difficult to understand or reads like a
+rough transcription from another programming language is called unpythonic.
+
+Users and admirers of Python, especially those considered knowledgeable or
+experienced, are often referred to as Pythonistas.
+
+Pros:
+
+Extensive libraries Possibly one of the most significant benefits of
+	Python web programming is the extensive libraries offered for development.
+	It has libraries for everything, including string operations, web service
+	tools, operating system interfaces, scientific programming, statistics, and
+	computation. From game development to web development – Python software
+	development provides a host of libraries that enable scaling of
+	applications. It reduces the time to code and provides re-usability to
+	Python programmers for future applications.
+
+Versatile programming
+	Python doesn’t follow a standard configuration and focuses on versatility in
+	development. The learning curve is steep. It is a neat programming language
+	with a clean code that allows utmost flexibility to Python programmers.
+	Being dynamically typed, Python software development provides a simple text
+	like a development environment, becoming the preferred choice for data
+	scientists. It makes data analysis easier through its adaptive functionality
+	and rich-features.
+
+Easy to utilize
+	Python is exceptionally readable and similar to the English language. It
+	reduces the complexity in coding by providing clear and easily readable
+	syntax to Python programmers. It helps in understanding the relationship
+	between different objects and simplifies the entire Python web development
+	life cycle. Web development with Python also enables the easy visual
+	representation of data through charts and graphs. Developers can easily plot
+	data on graphs and derive better insights from it. It allows companies to
+	generate clear reports and get a proper understanding of mistakes from those
+	reports.
+
+Asynchronous coding
+	Python for web development makes use of asynchronous coding which uses a
+	single event loop to do work in small units. It is highly popular among
+	Python programmers as it simplifies code writing and reduces confusion in
+	deadlocks. It allows interleaving many processing loops through this. The
+	Python web programming approach is much better than Java. It follows a
+	multi-paradigm approach and supports OO, procedural, and functional
+	programming methodology. Python makes programming easier through its
+	flexible and multi-dimensional working style.
+
+Open-source and wide community
+	One of the most significant advantages of Python software development is
+	that Python is an open-source language. It is available for free and
+	provides quick updates and releases from the community. Python’s code is
+	updated frequently, which allows adding functionality to the Python
+	applications. Python web programming has a wide community of more than 10k
+	developers. The community is multiplying every day as developers understand
+	its applicability in other development areas. The Python community is always
+	ready to support developers and provides quick responses to issues along
+	with giving assistance on different projects.
+
+Cons:
+
+    Weak native environment
+        Python doesn’t interact well with naive components of the mobile
+        operating system. This is why it is considered as a weak programming
+        language for mobile applications. Android and iOS do not support Python
+        for web development in their official programming language database.
+        (Ruby on Rails is a good alternative – click here to learn more)But
+        Python web development doesn’t limit mobile development. It has
+        libraries that enable application building without writing much code.
+        Kivy is a popular framework that helps in building highly-functional
+        apps but with much effort as compared to other mobile-based programming
+        languages.
+
+    Low speed development
+        Python is not popular for its speed of development. It faces speed
+        limitations because it is an interpreted scripting language. The
+        compiled languages like C, C++ are much faster than Python web
+        programming. Therefore, it takes more time to develop an application.
+        The issues are being resolved every day by the community. However, since
+        it is an interpreted language, speed limitations will always persist.
+        Python programmers have found ways around the speed issue and are
+        regularly optimizing Python for web development.
+
+    Lack of experts
+        One of the most significant disadvantages Python software development
+        faces is a lack of expert developers. Python is an easy programming
+        language, but it requires innovation and effort. Compared to Java, only
+        a handful of Python programmers are there in the industry with
+        specialized skills & knowledge of the language. There is a high-demand
+        for Python developers but a low supply. Companies often fail to find
+        skilled developers and turn to staff augmentation for Python
+        programmers. You can start learning Python today and get good returns on
+        your investment of efforts and time.
+
+    Run-time errors
+        Since Python is a dynamically typed programming language, it has the
+        risk of run-time errors. Because Python programmers don’t need to
+        declare the type of variable, the design complications are much harder
+        than you can think. It means that what Python code says is what the
+        designs should be. Text coding looks easier, but it raises run-time
+        errors. The utmost simplicity of web development with Python is also a
+        drawback for developers. But if you are efficient and smart, you can
+        easily turn this into your advantage.
+
+    No web browser integration
+        Python web development has high memory consumption, and since it is
+        slow, it is not integrated with web browsers. Instead, there is Brython
+        which is not suitable for real-world applications. Python doesn’t
+        support running on a web browser and can hinder the speed of code
+        execution if you try it. Python’s database layers are also
+        underdeveloped. Therefore, it is not massively applied in huge
+        enterprises with huge database needs.

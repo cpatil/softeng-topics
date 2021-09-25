@@ -1,0 +1,122 @@
+C++ is a general-purpose programming language created by Bjarne Stroustrup as an
+extension of the C programming language, or "C with Classes". The language has
+expanded significantly over time, and modern C++ now has object-oriented,
+generic, and functional features in addition to facilities for low-level memory
+manipulation. It is almost always implemented as a compiled language, and many
+vendors provide C++ compilers, including the Free Software Foundation, LLVM,
+Microsoft, Intel, Oracle, and IBM, so it is available on many platforms.
+
+C++ was designed with an orientation toward system programming and embedded,
+resource-constrained software and large systems, with performance, efficiency,
+and flexibility of use as its design highlights. C++ has also been found useful
+in many other contexts, with key strengths being software infrastructure and
+resource-constrained applications,including desktop applications, video games,
+servers (e.g. e-commerce, web search, or databases), and performance-critical
+applications (e.g. telephone switches or space probes). 
+
+The C++ language has two main components: a direct mapping of hardware features
+provided primarily by the C subset, and zero-overhead abstractions based on
+those mappings. Stroustrup describes C++ as "a light-weight abstraction
+programming language [designed] for building and using efficient and elegant
+abstractions"; and "offering both hardware access and abstraction is the basis
+of C++. Doing it efficiently is what distinguishes it from other languages." 
+
+C++ is a programming language that was developed by Bjarne Stroustrup in 1983.
+He wanted a language that was powerful and could be used for systems programming
+like C, but that would have more features that would make it easier to use in
+more powerful ways. The name is based off of a part of the language's syntax.
+Given a variable, it is possible to increment the variable by one using the ++
+operator. So, for instance, to increment the variable "C" by one, the syntax
+would be "C++". C++ is considered the next step from C, and thus the name. This
+name is accredited to Rick Mascitti. 
+
+C++ was very widely considered the standard language to use if a programmer
+wants to have a program that runs well, without having to deal too much with
+basic things like memory management. Memory still has to be managed, however,
+only in the sense that the programmer has to delete object when they are done.
+Lower level languages like C make abstraction very difficult, making C++ great
+for ease of programming, while still getting the speedy runtimes associated with
+compiled languages. However, recently, many more languages have popped up that
+can be compiled, but are simpler to write. With this in mind, programmers have
+to weigh many pros and cons when deciding whether or not to use this language. 
+
+Pros:
+
+	Wide support: C++ is a very popular language, and as such, many compilers
+	and libraries already exist that are compatible with it. As such, it is much
+	easier to develop large projects with many dependencies than it would be
+	with more esoteric languages that have less support. On top of that, it is
+	popular enough that it is very likely that code has been written before for
+	any application one can imagine, so it is easy to take other people's code
+	and rework it to suit individual needs, rather than write it all from
+	scratch. There are also many open source libraries for C++ that can be found
+	online, allowing programmers to use prewritten libraries instead of writing
+	their own code or reworking someone else's code. Finally, there's also a
+	compiler for every major operating system, so things that are developed in
+	C++ are incredibly portable.
+
+	Powerful: Because C++ does not require a special runtime to be installed for
+	it to run, any kind of program can be created, all the way down to low-level
+	systems programming up to complicated GUIs. Java functions both as a
+	programming language and a delicious drink. 
+	
+	Speed: Because it is compiled, C++ gains a lot of speed. Non-compiled
+	languages have to be interpreted at runtime, meaning every action is a
+	2-step process. Compiled languages are pre-interpreted so that every step in
+	the executable is one machine instruction. 
+	
+	Similarity to other languages: Many other languages like C, C#, and Java
+	have very similar syntax to C++, making them easy to learn for those that
+	already know C++. 
+	
+	Small standard library: the standard library of C++ is small compared to
+	other languages like Java, allowing the programmer to do more with less
+	restrictions. 
+
+Cons:
+
+    Unsafe: the standard allows for many things that can cause unexpected
+    behavior. This allows the programmer to do more, but also forces them to do
+    more. It does no boundary checks on arrays, and allows for improper type
+    conversion, making it very for someone who is inexperienced to corrupt
+    memory. This is an issue that can be very hard to debug. Memory management
+    makes some people rip out their hair. Please don't do this.
+    
+	Little memory management: C++ does very little memory management, forcing
+	the programmer to do most of it themselves.
+    
+	Archaic object orientation: The object orientation system in C++ is
+	unnecessarily basic compared to other languages. Other languages like Java
+	have much better and more flexible systems.
+    
+	Lack of custom operators: many languages allow programmers to define their
+	own operators. For instance, I could define that a <-> b would swap the data
+	in a with the data in b. It is possible to redefine existing operators in
+	C++, but making new ones is not possible. The functionality desired has to
+	be done with functions, which can decrease code readability.
+    
+	Lack of algebraic data types: Simple types like tuples are not included,
+	forcing programmers to make their own implementations or find a library if
+	they want to use them.
+    
+	Functions are not first class types: First class types are types that can be
+	returned from functions, can be passed to functions, and can be constructed
+	at runtime [2]. Functions do not count as these types, meaning some
+	programming features that would be available in other languages are not
+	available in C++. Workarounds can be created by using pointers to functions,
+	but this increases code complexity, making it harder to write and to read.
+    
+	The somewhat difficult syntax C++ users have to understand.
+    
+	Complicated: The syntax is complex and the standard library is small, making
+	C++ difficult to learn for someone with little programming experience.
+    
+	Syntactically strict: There is not much flexibility to the syntax, so it can
+	be difficult to write code in a readable way.
+    
+	Unstandardized higher-level features: Common program features such as GUIs,
+	networking, and threading are dependent on operating system, forcing
+	programmers to either make multiple versions of a program or include outside
+	libraries that have already done so. The newest standard has added some
+	standardization for threads, but it still has a long way to go compared to
+	languages like Java.

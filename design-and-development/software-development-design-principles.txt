@@ -75,7 +75,7 @@ Don't Repeat Yourself (DRY):
     		Database normalization is a design technique used in databases to
     		eliminate redundancy (repetition) of data.
 
-SOLID:
+SOLID (OOP best practice):
 	S Single Responsibility Principle O Open/Closed Principle L Liskov
 	Subsititution Principle I Interface Segregation Principle D Dependency
 	Inversion/Injection
