@@ -1,0 +1,22 @@
+Kafka vs. RabbitMQ
+
+RabbitMQ is a very popular open source message broker, a type of middleware that
+enables applications, systems, and services to communicate with each other by
+translating messaging protocols between them.
+
+Because Kafka began as a kind of message broker (and can, in theory, still be
+used as one) and because RabbitMQ supports a publish/subscribe messaging model
+(among others), Kafka and RabbitMQ are often compared as alternatives. But, the
+comparisons aren’t really practical, and they often dive into technical details
+that are beside the point when choosing between the two. For example, that Kafka
+topics can have multiple subscribers, whereas each RabbitMQ message can have
+only one; or that Kafka topics are durable, whereas RabbitMQ messages are
+deleted once consumed.
+
+The bottom line is:
+
+    Kafka is a stream processing platform that enables applications to publish,
+    consume, and process high volumes of record streams in a fast and durable
+    way; and RabbitMQ is a message broker that enables applications that use
+    different messaging protocols to send messages to, and receive messages
+    from, one another.

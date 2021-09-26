@@ -1,0 +1,19 @@
+ The most popular form of interprocess communication involves message passing.
+ Processes communicate with each other by exchanging messages. A process may
+ send information to a port, from which another process may receive information.
+ The sending and receiving processes can be on the same or different computers
+ connected via a communication medium.
+
+One reason for the popularity of message passing is its ability to support
+client-server interaction. A server is a process that offers a set of services
+to client processes. These services are invoked in response to messages from the
+clients and results are returned in messages to the client. Thus a process may
+act as a web search server by accepting messages that ask it to search the web
+for a string.
+
+In this course we shall be particularly interested in servers that offer
+operating system services. With such servers, part of the operating system
+functionality can be transferred from the kernel to utility processes. For
+instance file management can be handled by a file server, which offers services
+such as open, read, write, and seek. Similarly, terminal management can also be
+handled by a server that offers services such as getchar and putchar. 

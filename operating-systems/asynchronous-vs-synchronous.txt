@@ -1,0 +1,38 @@
+The send, receive, and reply operations may be synchronous or asynchronous. A
+synchronous operation blocks a process till the operation completes. An
+asynchronous operation is non-blocking and only initiates the operation. The
+caller could discover completion by some other mechanism
+
+The notion of synchronous operations requires an understanding of what it means
+for an operation to complete. In the case of remote assignment, both the send
+and receive complete when the message has been delivered to the receiver. In the
+case of remote procedure call, the send, receive, and reply complete when the
+result has been delivered to the sender, assuming there is a return value.
+Otherwise, the send and receive complete when the procedure finishes execution.
+During the time the procedure is executing, the sender and receiver are in a
+rendezvous, as mentioned before. 
+
+Synchronous and Asynchronous transmission are two methods (protocols) of keeping
+data synchronised when transmitted.
+
+Nevertheless, a vague general statement is that in "synchronous" systems, things
+"wait" for other things, while in "asynchronous" systems, things don't "wait".
+
+That said, it's probably better to split this into two broad interpretations of
+this. There's "synchronous" in the sense of everything moving in lock-step (i.e.
+everyone "waits" for the next "round" or everyone "waits" on a "clock"). This
+interpretation is probably the closer of the two to the colloquial notion. This
+applies to synchronous circuits, Bulk Synchronous Processing, and synchronous
+data flow. A synchronous circuit has a clock signal and it executes in time with
+the clock. An asynchronous circuit allows each subcomponent to execute whenever
+it's ready. It requires careful timing to make sure all the inputs to each
+subcomponent are ready when that subcomponent is ready.
+
+The other interpretation is blocking where one thing makes a request to another
+thing and then sits there waiting for the response. The "waiting for the
+response" aspect is what is called "blocking". Synchronous calls/messages would
+fall under this. The alternative is to send a message and then continue on
+without waiting for a response. Any response is either ignored or collected in a
+"mailbox" to be read at some later time. This is often handled by the framework
+you're using which will then dispatch events to which you register.
+

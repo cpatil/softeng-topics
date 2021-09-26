@@ -1,0 +1,103 @@
+Remote Procedure Call (RPC) –
+
+RPC (Remote Procedure Call) is a programming language feature devised for
+distributed computing and based on the semantics of local procedure calls. It is
+the most common forms of remote service and was designed as a way to abstract
+the procedure call mechanism to use between systems connected through a network.
+It is similar to the IPC mechanism where the operating system allows the
+processes to manage shared data and deal with an environment where different
+processes are executing on separate systems and necessarily require
+message-based communication.
+
+Remote Method Invocation (RMI) –
+
+RMI (Remote Method Invocation) is similar to RPC but is language-specific and a
+feature of java. A thread is permitted to call the method on a remote object. To
+maintain the transparency on the client and server-side, it implements remote
+objects using stubs and skeletons. The stub resides with the client and for the
+remote object, it behaves as a proxy.
+
+Remote Assignment:
+
+	 Some systems such as CSP regard the information in a message to be data
+	 subject to interpretation by the recipient. In these systems, the send
+	 operation is of the form:
+
+	send (<port name>, <outdata>)
+
+	while the receive is of the form:
+
+	receive (<port name>, <var>)
+
+	The completion of the receive causes the outdata to be assigned to var (if the
+	ports named are the same). Thus, a matching send and receive essentially perform
+	a remote assignment:
+
+	<var> := <outdata>
+
+REST vs RPC - What is RESTful?
+
+In all software engineering, there are few terms as buzzwordized or overdefined
+as REST.  One of the most common misconceptions is that anything that uses HTTP
+verbs such as GET, PUT, POST rather than using SOAP bindings to expose a
+service endpoint is called "RESTful".  This blurring of the line between REST
+and XML-RPC (or JSON-RPC, etc) has some pretty significant consequences in
+practice.
+
+Mistaking POX web services for "REST", many web API implementations never fully
+explore RESTful architecture, thereby missing out on capitalizing on the
+simplicity and zen of truly RESTful APIs.
+
+REST vs RPC REST is not a framework like WCF, a protocol like HTTP, a framework
+like JAX-RS, or a communication format like SOAP.  REST is an architecture, a
+structured way of representing a software solution - specifically, exposing
+aspects of a solution to a set of remote client-consumers.  The central tenet of
+REST is that these aspects of a solution can be modeled as resources which the
+client can consume or act upon.  
+
+This resource-oriented thinking, and not the implementation details of how one
+communicates between client and server, is what REST is actually all about.
+This is the key difference that separates actual RESTful APIs from RPC based on
+HTTP verbs.
+
+Why is this important? The RESTful approach enables us to model our domain
+objects as consistent, hierarchical URLs with predictable semantics mapping
+(loosely) to CRUD.  As well, HTTP comes with standard error codes, MIME types
+and generally does most of the heavy lifting, so we benefit from not needing to
+maintain a thick user-developed protocol stack that is subject to frequent
+modification.
+
+Consider the following example of HTTP APIs that model orders being placed in a
+restaurant.  
+
+    The RPC API thinks in terms of "verbs", exposing the restaurant
+    functionality as function calls that accept parameters, and invokes these
+    functions via the HTTP verb that seems most appropriate - a 'get' for a
+    query, and so on, but the name of the verb is purely incidental and has no
+    real bearing on the actual functionality, since you're calling a different
+    URL each time.  Return codes are hand-coded, and part of the service
+    contract. The REST API, in contrast, models the various entities within the
+    problem domain as resources, and uses HTTP verbs to represent transactions
+    against these resources - POST to create, PUT to update, and GET to read.
+    All of these verbs, invoked on the same URL, provide different
+    functionality.  Common HTTP return codes are used to convey status of the
+    requests.
+
+
+Placing an Order:
+
+    RPC:  http://MyRestaurant:8080/Orders/PlaceOrder (POST: <Order OrderNumber="asdf"><Appetizer><Appetizer><Entree>Tacos</Entree><! --Rest of the order--></Order>)
+    REST: http://MyRestaurant:8080/Orders/Order?OrderNumber=asdf (POST: <Order><Appetizer><Appetizer><Entree>Tacos</Entree><! --Rest of the order--></Order>)
+
+
+Retrieving an Order:
+
+    RPC:  http://MyRestaurant:8080/Orders/GetOrder?OrderNumber=asdf (GET)
+    REST: http://MyRestaurant:8080/Orders/Order?OrderNumber=asdf (GET)
+
+
+Updating an Order:
+
+    RPC:  http://MyRestaurant:8080/Orders/UpdateOrder (PUT: <Order OrderNumber="asdf"><Appetizer><Appetizer><Entree>Pineapple Tacos</Entree><! --Rest of the order--></Order>)
+    REST: http://MyRestaurant:8080/Orders/Order?OrderNumber=asdf (PUT: <Order><Appetizer><Appetizer><Entree>Pineapple Tacos</Entree><! --Rest of the order--></Order>)
+
