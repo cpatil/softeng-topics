@@ -1,0 +1,66 @@
+What is event-driven architecture?
+
+Event-driven architecture is an integration model built around the publication,
+capture, processing, and storage (or persistence) of events. Specifically, when
+an application or service performs an action or undergoes a change that another
+application or service might want to know about, it publishes an event—a record
+of that action or change—that another application or service can consume and
+process to perform one or more actions in turn.
+
+Event-driven architecture enables a loose coupling between connected
+applications and services—they can communicate with each other by publishing and
+consuming events without knowing anything about each other except the event
+format. This model offers significant advantages over a request/response
+architecture (or integration model), in which one application or service must
+request specific information from another specific application or service that
+is expecting the specific request.
+
+Event-driven architecture maximizes the potential of cloud native applications
+and enables powerful applications technologies, such as real-time analytics and
+decision support.
+
+How does event-driven architecture work?
+
+In an event-driven architecture, applications act as event producers or event
+consumers (and often as both).
+
+An event producer transmits an event—in the form of a message—to a broker or
+some other form of event router, where the event’s chronological order is
+maintained relative to other events. An event consumer ingests the message—in
+real-time (as it occurs) or at any other time it wants—and processes the message
+to trigger another action, workflow, or event of its own.
+
+In a simple example, a banking service might transmit a ‘deposit’ event, which
+another service at the bank would consume and respond to by writing a deposit to
+the customer’s statement. But event-driven integrations can also trigger
+real-time responses based on complex analysis of huge volumes of data, such as
+when the ‘event’ of a customer clicking a product on an e-commerce site
+generates instant product recommendations based on other customers’ purchases.
+
+Benefits of event-driven architecture
+
+Compared to the request/response application architecture, event-driven
+architecture offers several advantages and opportunities for developers and
+organizations:
+
+	Powerful real-time response and analytics
+
+	Fault tolerance, scalability, simplified maintenance, versatility, and other
+	benegits of loose coupling
+
+	asynchronous messaging
+
+Event-driven architecture and microservices
+
+In microservices—a foundational cloud native application
+architecture—applications are assembled from loosely coupled, independently
+deployable services. The main benefits of microservices are essentially the
+benefits of loose coupling—ease of maintenance, flexibility of deployment,
+independent scalability, and fault tolerance.
+
+Not surprisingly, event-driven architecture is widely considered best practice
+for microservices implementations. Microservices can communicate with each other
+using REST APIs. But REST, a request/response integration model, undermines many
+of the benefits of the loosely coupled microservices architecture by forcing a
+synchronous, tightly coupled integration between the microservices.
+

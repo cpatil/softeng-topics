@@ -29,12 +29,37 @@ globally routable address, by relaying messages with external servers.
 
 HTTP is an application layer protocol designed within the framework of the
 Internet protocol suite. Its definition presumes an underlying and reliable
-transport layer protocol,[12] and Transmission Control Protocol (TCP) is
-commonly used. However, HTTP can be adapted to use unreliable protocols such as
-the User Datagram Protocol (UDP), for example in HTTPU and Simple Service
-Discovery Protocol (SSDP).
+transport layer protocol, and Transmission Control Protocol (TCP) is commonly
+used. However, HTTP can be adapted to use unreliable protocols such as the User
+Datagram Protocol (UDP), for example in HTTPU and Simple Service Discovery
+Protocol (SSDP).
 
 HTTP resources are identified and located on the network by Uniform Resource
 Locators (URLs), using the Uniform Resource Identifiers (URI's) schemes http and
 https. As defined in RFC 3986, URIs are encoded as hyperlinks in HTML documents,
 so as to form interlinked hypertext documents. 
+
+HTTP Request Structure from Client
+
+A simple request message from a client computer consists of the following
+components:
+
+    A request line to get a required resource, for example a request GET
+    /content/page1.html is requesting a resource called /content/page1.html from
+    the server. Headers (Example – Accept-Language: EN). An empty line. A
+    message body which is optional.
+
+	All the lines should end with a carriage return and line feed. The empty line
+	should only contains carriage return and line feed without any spaces. 3. HTTP
+	Response Structure from Web Server
+
+A simple response from the server contains the following components:
+
+    HTTP Status Code (For example HTTP/1.1 301 Moved Permanently, means the
+    requested resource was permanently moved and redirecting to some other
+    resource). Headers (Example – Content-Type: html) An empty line. A message
+    body which is optional.
+
+All the lines in the server response should end with a carriage return and line
+feed. Similar to request, the empty line in a response also should only have
+carriage return and line feed without any spaces.

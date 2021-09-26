@@ -1,0 +1,27 @@
+CAP Theorem
+
+Gossip Protocol
+
+Failure Detection and Recovery
+
+Database Sharding
+
+Consistent Hashing
+
+Caching
+
+Time and ordering in Distributed Systems
+
+Consensus Problem
+
+MySQL
+
+Cassandra
+
+Google - Big Table Database
+
+Amazon - Dynamo Database
+
+Google FIle Systems
+
+Reading Elective - Conclusion
