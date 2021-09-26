@@ -51,23 +51,117 @@ Examples of scripted behavior
 
 Libraries and frameworks
 
-	Over 80% of websites use a third-party JavaScript library or web framework for
-	their client-side scripting.
+	Over 80% of websites use a third-party JavaScript library or web framework
+	for their client-side scripting.
 
 	jQuery is by far the most popular library, used by over 75% of websites.
-	Facebook created the React library for its website and later released it as open
-	source; other sites, including Twitter, now use it. Likewise, the Angular
-	framework created by Google for its websites, including YouTube and Gmail, is
-	now an open source project used by others.
+	Facebook created the React library for its website and later released it as
+	open source; other sites, including Twitter, now use it. Likewise, the
+	Angular framework created by Google for its websites, including YouTube and
+	Gmail, is now an open source project used by others.
 
-	In contrast, the term "Vanilla JS" has been coined for websites not using any
-	libraries or frameworks, instead relying entirely on standard JavaScript
+	In contrast, the term "Vanilla JS" has been coined for websites not using
+	any libraries or frameworks, instead relying entirely on standard JavaScript
 	functionality.
 
 Pros:
 
+	1. Speed
 
+		Since JavaScript is an ‘interpreted’ language, it reduces the time required by
+		other programming languages like Java for compilation. JavaScript is also a
+		client-side script, speeding up the execution of the program as it saves the
+		time required to connect to the server. 
+
+	2. Simplicity
+
+		JavaScript is easy to understand and learn. The structure is simple for the
+		users as well as the developers. It is also very feasible to implement, saving
+		developers a lot of money for developing dynamic content for the web. 
+
+	3. Popularity
+
+		Since all modern browsers support JavaScript, it is seen almost everywhere. All
+		the famous companies use JavaScript as a tool including Google, Amazon, PayPal,
+		etc. 
+
+	4. Interoperability
+
+		JavaScript works perfect with other programming languages and therefore numerous
+		developers prefer it in developing many applications. We can embed it into any
+		webpage or inside the script of another programming language. 
+
+	5. Server Load
+
+		As JavaScript operates on the client-side, data validation is possible on the
+		browser itself rather than sending it off to the server. In case of any
+		discrepancy, the whole website needs not to be reloaded. The browser updates
+		only the selected segment of the page. 
+
+	6. Rich Interfaces
+
+		JavaScript provides various interfaces to developers for creating catchy
+		webpages. Drag and drop components or sliders may give a rich interface to the
+		webpages. This leads to improved user-interactivity on the webpage. 
+
+	7. Extended	Functionality
+
+		Third-party add-ons like Greasemonkey (a Mozilla Firefox extension) allow the
+		developers to add snippets of predefined code in their code to save time and
+		money. These add-ons help the developers build JavaScript applications a lot
+		faster and with much more ease than other programming languages. 
+
+	8. Versatility
+
+		JavaScript is now capable of front-end as well as back-end development. Back-end
+		development uses NodeJS while many libraries help in front-end development like
+		AngularJS, ReactJS, etc. 
+
+	9. Less Overhead
+
+		JavaScript improves the performance of websites and web applications by reducing
+		the code length. The codes contain less overhead with the use of various
+		built-in functions for loops, DOM access, etc.
 
 Cons:
 
-	
+	1. Client-side Security
+
+		Since the JavaScript code is viewable to the user, others may use it for
+		malicious purposes. These practices may include using the source code without
+		authentication. Also, it is very easy to place some code into the site that
+		compromises the security of data over the website. 
+
+	2. Browser Support
+
+		The browser interprets JavaScript differently in different browsers. Thus, the
+		code must be run on various platforms before publishing. The older browsers
+		don’t support some new functions and we need to check them as well. 
+
+	3. Lack of Debugging Facility
+
+		Though some HTML editors support debugging, it is not as efficient as other
+		editors like C/C++ editors. Also, as the browser doesn’t show any error, it is
+		difficult for the developer to detect the problem. 
+
+	4. Single Inheritance
+
+		JavaScript only supports single inheritance and not multiple inheritance. Some
+		programs may require this object-oriented language characteristic.
+
+		Wait! Did you check our most leading blog on JavaScript Architecture? 
+
+	5. Sluggish Bitwise Function
+
+		JavaScript stores a number as a 64-bit floating-point number and operators
+		operate on 32-bit bitwise operands. Thus, JavaScript converts the number to
+		32-bits signed integers, operates on them and converts them back to 64-bits
+		JavaScript numbers. This continuous conversion takes more time in conversion of
+		number to an integer. This increases the time needed to run the script and
+		reduces its speed. 
+
+	6. Rendering Stopped
+
+		A single code error can stop the rendering of the entire JavaScript code on the
+		website. To the user, it looks as if JavaScript was not present. However, the
+		browsers are extremely tolerant of these errors.

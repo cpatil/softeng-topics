@@ -1,0 +1,116 @@
+Caching is mainly used to store data that is used frequently or is some form of
+complex computation. Caching is also used to improve the application performance
+and reduce the API's latency. Cache memory is made of high-speed static RAM so
+it will be faster than the normal main memory. Cache memory will be expansive
+because of its speed. There is N number of in-memory cache available. Redis is
+one of the open-source in-memory data stores to store the data in key-value
+format with optional durability. So while designing the distributed caching we
+need to take the following things into consideration in order to meet the low
+latency with low cost.
+
+Is Caching Required?
+
+Based on the below points we can identity if caching will be required for the
+application or not.
+
+    Number of read and write operations. Number of reading operations at the
+    individual data or user level. Data can be converted into different formats
+    for a particular period of time. It will reduce the heavy computation time.
+    Abstract data or very high level that will be used by the application
+    frequently. Frequency of data update on a period of time.
+
+Is Distributed Caching Required?
+
+Multiple applications can use the same Redis for their caching purpose or
+Individual application can have their own Redis also. 
+
+Based on the below points we can check whether the system will require
+distributed caching.
+
+    Data stored in Redis will be common for multiple applications. In this case,
+    duplicate data will be avoided for individual applications. While doing
+    updates on cached data we can do a single update on a common Redis instance
+    so no need to update on individual applications. Redis will be deployed in a
+    separate machine so it will be loosely coupled with the app server. So if
+    the app server will be down, Redis will be available to the rest of the
+    applications. But it will be applicable for on-prem cloud alone.
+
+Data format
+
+	When we start using the data we need to store it in key-value format. The
+	Key will be a string or hash key. Redis provides different kinds of data
+	structures to decide the key based on our needs. The key format should be
+	aligned with our business schema. While reading the data from the cache we
+	can use that key as input and we can get the corresponding cached data as a
+	response.
+
+Data Store
+
+	We can store the data in Redis in different ways based on the needs.
+
+Write through
+
+	We can update the data first in Redis and then update the data in the main
+	memory. So insert operation will be more costly because of two insert
+	operations while creating new data.
+
+Write back
+
+	We can update the data first in Redis. Then, using some kinds of background
+	jobs, data will be updated in the main memory.
+
+Write asides
+
+	We can update the data in the main memory and return the response to the
+	API. Using some background jobs data, data will be updated in Redis. Here
+	Insert operation will be fast. But, there will be a delay on Redis to update
+	the new data in terms of high volume update requests. The delay will be
+	measured based on the data size and throughput.
+
+Write on Cache miss
+
+	API will fetch data from the cache first. if cache hits it will return the
+	response. if cache misses service will read the data from main memory and
+	update in the cache.
+
+Data Eviction
+
+	While saving the data we need to ensure the data size and how much data we
+	are going to store. Because it will increase memory. Memory will have a
+	direct relationship with cost. In order to meet the low cost, we need to
+	remove the unwanted data frequently from the cache. we can use the following
+	policies as part of data removable.
+
+FIFO
+
+	Once the cache will be full or reached the threshold, the first one will be
+	stored will be removed from the cache. We can implement it as a default
+	policy.
+
+LRU
+
+	We need to maintain the counter along with data. So data with the lowest
+	count value will get removed. Data that will be used more frequently will be
+	available in the cache.
+
+Sliding Window
+
+	Each data will be available in the cache for a particular period of time. In
+	case we try to access the data in the middle of the time the timing count
+	will be reset. So data will be available until it's never used for a period
+	of time.
+
+Data Sharding
+
+	While application grows the Redis size also will be grown based on our
+	needs. So we can scale the Redis vertically for the particular size. Once
+	it's reached the size we need to scale it horizontally. So the data will be
+	stored in multiple Redis instances. In order to get better results while
+	fetching the data on multiple instances, we need to store the data on
+	multiple Redis using the shard key. We need to decide the key based on our
+	data format.
+
+These are guidelines we need to follow as part of designing a distributed cache.
+As part of failover, we need to check the data persistence and data replicas. I
+will publish separate articles for distributed caching failover fallback
+mechanism.

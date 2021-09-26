@@ -1,0 +1,23 @@
+A connection between two computers uses a socket.
+
+    A socket is the combination of IP address plus port
+
+Each end of the connection will have a socket.
+
+Imagine sitting on your PC at home, and you have two browser windows open.
+
+One looking at the Google website, and the other at the Yahoo website.
+
+The connection to Google would be:
+
+Your PC – IP1+port 60200 ——– Google IP2 +port 80 (standard port)
+
+The combination IP1+60200 = the socket on the client computer and IP2 + port 80
+= destination socket on the Google server.
+
+The connection to Yahoo would be:
+
+your PC – IP1+port 60401 ——–Yahoo IP3 +port 80 (standard port)
+
+The combination IP1+60401 = the socket on the client computer and IP3 + port 80
+= destination socket on the Yahoo server.
