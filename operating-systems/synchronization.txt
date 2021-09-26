@@ -1,0 +1,40 @@
+Thread synchronization is defined as a mechanism which ensures that two or more
+concurrent processes or threads do not simultaneously execute some particular
+program segment known as critical section. Processes' access to critical section
+is controlled by using synchronization techniques. When one thread starts
+executing the critical section (serialized segment of the program) the other
+thread should wait until the first thread finishes. If proper synchronization
+techniques are not applied, it may cause a race condition where the values of
+variables may be unpredictable and vary depending on the timings of context
+switches of the processes or threads.
+
+For example, suppose that there are three processes, namely 1, 2, and 3. All
+three of them are concurrently executing, and they need to share a common
+resource (critical section) as shown in Figure 1. Synchronization should be used
+here to avoid any conflicts for accessing this shared resource. Hence, when
+Process 1 and 2 both try to access that resource, it should be assigned to only
+one process at a time. If it is assigned to Process 1, the other process
+(Process 2) needs to wait until Process 1 frees that resource (as shown in
+Figure 2). 
+
+Another synchronization requirement which needs to be considered is the order in
+which particular processes or threads should be executed. For example, one
+cannot board a plane before buying a ticket. Similarly, one cannot check e-mails
+before validating the appropriate credentials (for example, user name and
+password). In the same way, an ATM will not provide any service until it
+receives a correct PIN.
+
+Other than mutual exclusion, synchronization also deals with the following:
+
+    deadlock, which occurs when many processes are waiting for a shared resource
+    (critical section) which is being held by some other process. In this case,
+    the processes just keep waiting and execute no further; starvation, which
+    occurs when a process is waiting to enter the critical section, but other
+    processes monopolize the critical section, and the first process is forced
+    to wait indefinitely; priority inversion, which occurs when a high-priority
+    process is in the critical section, and it is interrupted by a
+    medium-priority process. This violation of priority rules can happen under
+    certain circumstances and may lead to serious consequences in real-time
+    systems; busy waiting, which occurs when a process frequently polls to
+    determine if it has access to a critical section. This frequent polling robs
+    processing time from other processes.
