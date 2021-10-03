@@ -38,4 +38,3 @@ Repository Pattern:
 	Additionally, the repository pattern encourages a domain-driven design,
 	providing an easy understanding of the data structure for non-technical team
 	members, too.
-

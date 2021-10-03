@@ -23,7 +23,7 @@ Domain:
 Domain model:
 
 	In software engineering, a domain model is a conceptual model of the
-	domain[definition needed] that incorporates both behavior and data. In
+	domain that incorporates both behavior and data. In
 	ontology engineering, a domain model is a formal representation of a
 	knowledge domain with concepts, roles, datatypes, individuals, and rules,
 	typically grounded in a description logic. 

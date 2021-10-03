@@ -1,0 +1,8 @@
+So binary search reduces the search space to half at each step. By search space,
+we mean a subarray of the given array where the target value is located (if
+present in the array). Initially, the search space is the entire array, and
+binary search redefines the search space at every step of the algorithm by using
+the property of the array that it is sorted. It does so by comparing the
+mid-value in the search space to the target value. If the target value matches
+the middle element, its position in the array is returned; otherwise, it
+discards half of the search space based on the comparison result. 

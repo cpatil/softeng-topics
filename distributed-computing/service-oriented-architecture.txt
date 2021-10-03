@@ -13,9 +13,10 @@ development and the outcomes of services.
 A service has four properties according to one of many definitions of SOA:
 
     It logically represents a repeatable business activity with a specified
-    outcome. It is self-contained. It is a black box for its consumers, meaning
-    the consumer does not have to be aware of the service's inner workings. It
-    may be composed of other services.
+    outcome. 
+    It is self-contained. 
+    It is a black box for its consumers, meaning the consumer does not have to be aware of the service's inner workings. 
+    It may be composed of other services.
 
 Different services can be used in conjunction as a service mesh to provide the
 functionality of a large software application, a principle SOA shares with

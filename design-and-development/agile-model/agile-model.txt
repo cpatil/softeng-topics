@@ -31,23 +31,6 @@ Development, Feature Driven Development, and Dynamic Systems Development Method
 (DSDM) (1995). These are now collectively referred to as Agile Methodologies,
 after the Agile Manifesto was published in 2001.
 
-Following are the Agile Manifesto principles −
-
-    Individuals and interactions − In Agile development, self-organization and
-    motivation are important, as are interactions like co-location and pair
-    programming.
-
-    Working software − Demo working software is considered the best means of
-    communication with the customers to understand their requirements, instead
-    of just depending on documentation.
-
-    Customer collaboration − As the requirements cannot be gathered completely
-    in the beginning of the project due to various factors, continuous customer
-    interaction is very important to get proper product requirements.
-
-    Responding to change − Agile Development is focused on quick responses to
-    change and continuous development.
-
 Agile Vs Traditional SDLC Models
 
 Agile is based on the adaptive software development methods, whereas the

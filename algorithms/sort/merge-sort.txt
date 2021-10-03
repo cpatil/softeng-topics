@@ -1,0 +1,14 @@
+Merge sort is an efficient sorting algorithm that produces a stable sort, which
+means that if two elements have the same value, they hold the same relative
+position in the sorted sequence as they did in the input. In other words, the
+relative order of elements with equal values is preserved in the sorted
+sequence. Merge sort is a comparison sort, which means that it can sort any
+input for which a less-than relation is defined
+
+Merge sort is a Divid and Conquer
+
+	1. Divide the unsorted array into n subarrays, each of size 1 (an array of
+	size 1 is considered sorted)
+
+	2. Repeatedly merge subarrays to produce new sorted subarrays until only 1
+	subarray is left, which would be our sorted array

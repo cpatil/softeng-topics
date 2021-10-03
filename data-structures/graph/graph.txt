@@ -1,0 +1,86 @@
+4529 A graph G consists of two types of elements: vertices and edges. Each edge
+has two endpoints, which belong to the vertex set. We say that the edge connects
+(or joins) these two vertices.
+
+The vertex set of G is denoted V(G), or just V if there is no ambiguity.
+
+An edge between vertices u and v is written as {u, v}. The edge set of G is
+denoted E(G), or just E if there is no ambiguity.
+
+The graph in this picture has the vertex set V = {1, 2, 3, 4, 5, 6}. The edge
+set E = {{1, 2}, {1, 5}, {2, 3}, {2, 5}, {3, 4}, {4, 5}, {4, 6}}.
+
+6n-graf
+
+A self-loop is an edge whose endpoints is a single vertex. Multiple edges are
+two or more edges that join the same two vertices.
+
+A graph is called simple if it has no self-loops and no multiple edges, and a
+multigraph if it does have multiple edges.
+
+The degree of a vertex v is the number of edges that connect to v.
+
+A path in a graph G = (V, E) is a sequence of vertices v1, v2, …, vk, with the
+property that there are edges between vi and vi+1. We say that the path goes
+from v1 to vk. The sequence 6, 4, 5, 1, 2 is a path from 6 to 2 in the graph
+above. A path is simple if its vertices are all different.
+
+A cycle is a path v1, v2, …, vk for which k > 2, the first k - 1 vertices are
+all different, and v1 = vk. The sequence 4, 5, 2, 3, 4 is a cycle in the graph
+above.
+
+A graph is connected if for every pair of vertices u and v, there is a path from
+u to v.
+
+If there is a path connecting u and v, the distance between these vertices is
+defined as the minimal number of edges on a path from u to v.
+
+A connected component is a subgraph of maximum size, in which every pair of
+vertices are connected by a path. Here is a graph with three connected
+components.
+
+Trees
+
+A tree is a connected simple acyclic graph. A vertex with degree 1 in a tree is
+called a leaf. Directed graphs
+
+A directed graph or digraph G = (V, E) consists of a vertex set V and an edge
+set of ordered pairs E of elements in the vertex set.
+
+Here is a simple acyclic digraph (often called a DAG, “directed acyclic graph”)
+with seven vertices and eight edges.
+
+Data structures Adjacency matrix
+
+An adjacency matrix is a |V|x|V|-matrix of integers, representing a graph G =
+(V, E).
+
+    The vertices are number from 1 to |V|. The number at position (i, j)
+    indicates the number of edges from i to j.
+
+Here is an undirected graph and its symmetric adjacency matrix. it means that we
+can traverse from any node to any of its corresponding connected nodes.
+
+graph2-matrix
+
+The adjacency matrix representation is best suited for dense graphs, graphs in
+which the number of edges is close to the maximal.
+
+In a sparse graph, an adjacency matrix will have a large memory overhead, and
+finding all neighbors of a vertex will be costly. Adjacency list
+
+The adjacency list graph data structure is well suited for sparse graphs. It
+consists of an array of size |V|, where position k in the array contains a list
+of all neighbors to k.
+
+Note that the “neighbor list” doesn’t have to be an actual list. It could be any
+data structure representing a set of vertices. Hash tables, arrays or linked
+lists are common choices.
+
+Search algorithms
+
+Depth-first search
+
+Breadth-first search
+
+Dijkstra's algorithm

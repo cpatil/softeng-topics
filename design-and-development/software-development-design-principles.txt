@@ -74,4 +74,3 @@ Don't Repeat Yourself (DRY):
 
     		Database normalization is a design technique used in databases to
     		eliminate redundancy (repetition) of data.
-
