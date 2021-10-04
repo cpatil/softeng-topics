@@ -18,6 +18,9 @@ a time (incremental).
 The following illustration is a representation of the Iterative and Incremental
 model − SDLC Iterative Model
 
+Requirments -> Build 1 (Design & Development -> Testing -> Implementation)
+            -> Build 2 (Design & Development -> Testing -> Implementation)
+
 Iterative and Incremental development is a combination of both iterative design
 or iterative method and incremental build model for development. "During
 software development, more than one iteration of the software development cycle

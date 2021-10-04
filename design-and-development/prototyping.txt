@@ -1,0 +1,26 @@
+The most significant disadvantage of previous models (waterfall and spiral) is
+that there were lots of customer rejection that happens after the application
+was developed, and there was no involvement of the customers in between the
+project.
+
+Hence, they started the new approach, which is known as the prototype model. In
+this, we will collect the requirements from the customer and prepare a prototype
+(sample), and get it reviewed and approved by the customer. And only when they
+satisfied, we will start working on the original projects so that there won't be
+any customer rejection.
+
+The prototype is just the sample or a dummy of the required software product. If
+all the mentioned modules are present, then only the developer and tester will
+perform prototype testing.
+
+Prototyping Model has different phases, which are as follows:
+
+    Requirement analysis
+    Feasibility study
+    Create a prototype
+    Prototype testing
+    Customer review and approval
+    Design
+    Coding
+    Testing
+    Installation and maintenance
