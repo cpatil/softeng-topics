@@ -6,3 +6,6 @@ the property of the array that it is sorted. It does so by comparing the
 mid-value in the search space to the target value. If the target value matches
 the middle element, its position in the array is returned; otherwise, it
 discards half of the search space based on the comparison result. 
+
+Time complexity = O(logn)
+Auxiliary space = O(1) for iterative & O(logn) for recursive

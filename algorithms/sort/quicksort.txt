@@ -1,0 +1,53 @@
+Quicksort is an efficient in-place sorting algorithm, which usually performs
+about two to three times faster than merge sort and heapsort when implemented
+well. Quicksort is a comparison sort, meaning that it can sort items of any type
+for which a less-than relation is defined. In efficient implementations, it is
+uaully not a stable sort. In the worst-case, it makes O(n^2) comparisons, though
+this behaviour is very rare
+
+Quicksort is a Divide and Conquer algorithm. Like all divide-and-conquer
+algorithms, it first divides a large array into two smaller subarrays and then
+recursively sort the subarrays. Basically, three steps are involved in the whole
+process:
+
+	Pivot selection: Pick an element, called a pivot, from the array (usually
+	the leftmost or the rightmost element of the partition)
+
+	Partitioning: Reorder the array such that all elements with values less than
+	the pivot come before the pivot. In contrast, all elements with values
+	greater than the pivot come after it. The equal values can go either way.
+	After this partitioning, the pivot is in its final position
+
+	Recur: Recursively apply the above steps to the subarray of elements with
+	smaller values than the pivot and separetely to the subarray of elements
+	with greater values than the pivot
+
+The worst-case time complexity of Quicksort is O(n^2), where n is the size of
+the input. The worst case happens when the pivot happens to be the smallest or
+largest element in the list or when all the array elements are equal.
+
+Quicksort Partition Algorithms:
+
+	Hoare partition algorithm:
+
+		Generally, the first item or the element is assumed to be the initial
+		pivot element. Some choose the middle element and even the last element
+
+		It is a linear algorithm
+
+		It is relatively faster
+
+		It is slightly difficult to understand and to implement
+
+	Lumuto partition algorithm:
+
+		Generally, a random element of the array is located and picked and then
+		exchangted with the first or the last element to give initial pivot
+		values. In the aforementioned algorithm, the last element
+		of the list is considered as the initial pivot element. 
+
+		It is a linear algorithm
+
+		It is slower
+
+		It is easy to understand and easy to implement.
