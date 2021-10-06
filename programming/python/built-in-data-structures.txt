@@ -1,11 +1,8 @@
 Build-in Data Structures
 
 List 
-
 Set 
-
 Tuple 
-
 Dictionary
 
 List Methods
