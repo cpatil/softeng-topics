@@ -1,0 +1,23 @@
+The AVL Tree, named after its inventors Adelson-Velsky and Landis, is a
+self-balancing binary search tree (BST).
+
+A self-balancing tree is a binary search tree that balances the height after
+insertion and deletion according to some balancing rules.
+
+The worst-case time complexity of a BST is a function of the height of the tree.
+Specifically, the longest path from the root of the tree to a node. For a BST
+with N nodes, let's say that that every node has only zero or one child.
+Therefore its height equals N, and the search time in the worst case is O(N). So
+our main goal in a BST is to keep the maximum height close to log(N).
+
+The balance factor of node N is height(right(N)) – height(left(N)). In an AVL
+Tree, the balance factor of a node could be only one of 1, 0, or -1 values.
+
+The AVL Tree checks the balance factor of its nodes after the insertion or
+deletion of a node. If the balance factor of a node is greater than one or less
+than -1, the tree rebalances itself.
+
+There are two operations to rebalance a tree:
+
+    right rotation and
+    left rotation.
