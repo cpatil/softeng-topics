@@ -5,7 +5,7 @@ Set
 Tuple 
 Dictionary
 
-List Methods
+List [] Methods
 
 append()	Adds an element at the end of the list
 
@@ -31,7 +31,7 @@ reverse()	Reverses the order of the list
 sort()		Sorts the list
 
 
-Dictionary Methods
+Dictionary {} Methods
 
 clear()			Removes all the elements from the dictionary
 
@@ -57,14 +57,14 @@ update()		Updates the dictionary with the specified key-value pairs
 values()		Returns a list of all the values in the dictionary
 
 
-Tuple Methods
+Tuple () Methods
 
 count()		Returns the number of times a specified value occurs in a tuple
 
 index()		Searches the tuple for a specified value and returns the position of
 			where it was found
 
-Set Methods
+Set {} Methods
 
 add()				Adds an element to the set
 

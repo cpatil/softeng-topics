@@ -1,5 +1,7 @@
 First consider the definitions below:
 
+Space Complexity = Auxiliary Space + Input space
+
 Auxiliary Space
 
 is the temporary space allocated by your algorithm to solve the problem, with
