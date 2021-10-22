@@ -35,7 +35,8 @@ tree is set such that:-
 
 2) Every right node is always greater than its parent node
 
-Tree traversals 1) Preorder - This traversal involves printing the root, then
+Tree traversals 
+1) Preorder - This traversal involves printing the root, then
 recursively calling the function for the left subtree and the right subtree. 
 
 2) Postorder - This traversal involves recursively calling the function for the
