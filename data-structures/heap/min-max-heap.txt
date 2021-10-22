@@ -1,2 +1,71 @@
 Heap:
 
+	A heap is a specialized tree-based data structure which is essentially an almost
+	complete tree that satisfies the heap property: in a max heap, for any given
+	node C, if P is a parent node of C, then the key (the value) of P is greater
+	than or equal to the key of C. In a min heap, the key of P is less than or equal
+	to the key of C. The node at the "top" of the heap (with no parents) is
+	called the root node.
+
+	The heap is one maximally efficient implementation of an abstract data type
+	called a priority queue, and in fact, priority queues are often referred to as
+	"heaps", regardless of how they may be implemented. In a heap, the highest (or
+	lowest) priority element is always stored at the root. However, a heap is not a
+	sorted structure; it can be regarded as being partially ordered. A heap is a
+	useful data structure when it is necessary to repeatedly remove the object with
+	the highest (or lowest) priority. 
+
+Min-Max-Heap:
+
+	a min-max heap is a complete binary tree data structure which combines the
+	usefulness of both a min-heap and a max-heap, that is, it provides constant
+	time retrieval and logarithmic time removal of both the minimum and maximum
+	elements in it. This makes the min-max heap a very useful data structure
+	to implement a double-ended priority queue. Like binary min-heaps and
+	max-heaps, min-max heaps support logarithmic insertion and deletion and can
+	be built in linear time. Min-max heaps are often represented implicitly
+	in an array; hence it's referred to as an implicit data structure.
+
+	The min-max heap property is: each node at an even level in the tree is less
+	than all of its descendants, while each node at an odd level in the tree is
+	greater than all of its descendants.
+
+	Description:
+
+		A min-max heap is a complete binary tree containing alternating min (or
+		even) and max (or odd) levels. Even levels are for example 0, 2, 4, etc,
+		and odd levels are respectively 1, 3, 5, etc. We assume in the next
+		points that the root element is at the first level, i.e., 0.
+
+		Each node in a min-max heap has a data member (usually called key) whose
+		value is used to determine the order of the node in the min-max heap.
+		
+		The root element is the smallest element in the min-max heap.
+		
+		One of the two elements in the second level, which is a max (or odd)
+		level, is the greatest element in the min-max heap
+		
+		Let x be any node in a min-max heap.
+			
+			If x is on a min (or even) level, then x . k e y is the minimum key
+			among all keys in the subtree with root x.
+			
+			If x is on a max (or odd) level, then x . k e y is the maximum key
+			among all keys in the subtree with root x.
+	
+		A node on a min (max) level is called a min (max) node.
+
+		A max-min heap is defined analogously; in such a heap, the maximum value is
+		stored at the root, and the smallest value is stored at one of the root's
+		children.
+
+A Binary Heap is a Binary Tree with following properties.
+	
+	It’s a complete tree (All levels are completely filled except possibly the
+	last level and the last level has all keys as left as possible). This
+	property of Binary Heap makes them suitable to be stored in an array.
+
+	A Binary Heap is either Min Heap or Max Heap. In a Min Binary Heap, the key
+	at root must be minimum among all keys present in Binary Heap. The same
+	property must be recursively true for all nodes in Binary Tree. Max Binary
+	Heap is similar to MinHeap.
