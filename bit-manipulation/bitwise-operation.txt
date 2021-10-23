@@ -1,0 +1,143 @@
+A bitwise operation operates on a bit string, a bit array or a binary numeral
+(considered as a bit string) at the level of its individual bits. It is a fast
+and simple action, basic to the higher level arithmetic operations and directly
+supported by the processor. Most bitwise operations are presented as two-operand
+instructions where the result replaces one of the input operands.
+
+On simple low-cost processors, typically, bitwise operations are substantially
+faster than division, several times faster than multiplication, and sometimes
+significantly faster than addition. While modern processors usually perform
+addition and multiplication just as fast as bitwise operations due to their
+longer instruction pipelines and other architectural design choices, bitwise
+operations do commonly use less power because of the reduced use of resources.
+
+In the explanations below, any indication of a bit's position is counted from
+the right (least significant) side, advancing left. For example, the binary
+value 0001 (decimal 1) has zeroes at every position but the first (i.e., the
+rightmost) one.
+
+NOT
+See also: One's complement
+
+The bitwise NOT, or complement, is a unary operation that performs logical
+negation on each bit, forming the ones' complement of the given binary value.
+Bits that are 0 become 1, and those that are 1 become 0. For example:
+
+NOT 0111  (decimal 7)
+  = 1000  (decimal 8)
+
+NOT 10101011  (decimal 171)
+  = 01010100  (decimal 84)
+
+The bitwise complement is equal to the two's complement of the value minus one.
+If two's complement arithmetic is used, then NOT x = -x − 1.
+
+For unsigned integers, the bitwise complement of a number is the "mirror
+reflection" of the number across the half-way point of the unsigned integer's
+range. For example, for 8-bit unsigned integers, NOT x = 255 - x, which can be
+visualized on a graph as a downward line that effectively "flips" an increasing
+range from 0 to 255, to a decreasing range from 255 to 0. A simple but
+illustrative example use is to invert a grayscale image where each pixel is
+stored as an unsigned integer.
+
+AND
+Bitwise AND of 4-bit integers
+
+A bitwise AND is a binary operation that takes two equal-length binary
+representations and performs the logical AND operation on each pair of the
+corresponding bits, which is equivalent to multiplying them. Thus, if both bits
+in the compared position are 1, the bit in the resulting binary representation
+is 1 (1 × 1 = 1); otherwise, the result is 0 (1 × 0 = 0 and 0 × 0 = 0). For
+example:
+
+    0101 (decimal 5)
+AND 0011 (decimal 3)
+  = 0001 (decimal 1)
+
+The operation may be used to determine whether a particular bit is set (1) or
+clear (0). For example, given a bit pattern 0011 (decimal 3), to determine
+whether the second bit is set we use a bitwise AND with a bit pattern containing
+1 only in the second bit:
+
+    0011 (decimal 3)
+AND 0010 (decimal 2)
+  = 0010 (decimal 2)
+
+Because the result 0010 is non-zero, we know the second bit in the original
+pattern was set. This is often called bit masking. (By analogy, the use of
+masking tape covers, or masks, portions that should not be altered or portions
+that are not of interest. In this case, the 0 values mask the bits that are not
+of interest.)
+
+The bitwise AND may be used to clear selected bits (or flags) of a register in
+which each bit represents an individual Boolean state. This technique is an
+efficient way to store a number of Boolean values using as little memory as
+possible.
+
+For example, 0110 (decimal 6) can be considered a set of four flags, where the
+first and fourth flags are clear (0), and the second and third flags are set
+(1). The third flag may be cleared by using a bitwise AND with the pattern that
+has a zero only in the third bit:
+
+    0110 (decimal 6)
+AND 1011 (decimal 11)
+  = 0010 (decimal 2)
+
+Because of this property, it becomes easy to check the parity of a binary number
+by checking the value of the lowest valued bit. Using the example above:
+
+    0110 (decimal 6)
+AND 0001 (decimal 1)
+  = 0000 (decimal 0)
+
+Because 6 AND 1 is zero, 6 is divisible by two and therefore even.
+OR
+Bitwise OR of 4-bit integers
+
+A bitwise OR is a binary operation that takes two bit patterns of equal length
+and performs the logical inclusive OR operation on each pair of corresponding
+bits. The result in each position is 0 if both bits are 0, while otherwise the
+result is 1. For example:
+
+   0101 (decimal 5)
+OR 0011 (decimal 3)
+ = 0111 (decimal 7)
+
+The bitwise OR may be used to set to 1 the selected bits of the register
+described above. For example, the fourth bit of 0010 (decimal 2) may be set by
+performing a bitwise OR with the pattern with only the fourth bit set:
+
+   0010 (decimal 2)
+OR 1000 (decimal 8)
+ = 1010 (decimal 10)
+
+XOR
+Bitwise XOR of 4-bit integers
+
+A bitwise XOR is a binary operation that takes two bit patterns of equal length
+and performs the logical exclusive OR operation on each pair of corresponding
+bits. The result in each position is 1 if only one of the bits is 1, but will be
+0 if both are 0 or both are 1. In this we perform the comparison of two bits,
+being 1 if the two bits are different, and 0 if they are the same. For example:
+
+    0101 (decimal 5)
+XOR 0011 (decimal 3)
+  = 0110 (decimal 6)
+
+The bitwise XOR may be used to invert selected bits in a register (also called
+toggle or flip). Any bit may be toggled by XORing it with 1. For example, given
+the bit pattern 0010 (decimal 2) the second and fourth bits may be toggled by a
+bitwise XOR with a bit pattern containing 1 in the second and fourth positions:
+
+    0010 (decimal 2)
+XOR 1010 (decimal 10)
+  = 1000 (decimal 8)
+
+This technique may be used to manipulate bit patterns representing sets of
+Boolean states.
+
+Assembly language programmers and optimizing compilers sometimes use XOR as a
+short-cut to setting the value of a register to zero. Performing XOR on a value
+against itself always yields zero, and on many architectures this operation
+requires fewer clock cycles and memory than loading a zero value and saving it
+to the register. 
