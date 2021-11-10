@@ -83,4 +83,6 @@ Depth-first search
 
 Breadth-first search
 
+Shortest path algorithms
+
 Dijkstra's algorithm

@@ -37,7 +37,7 @@ column
 	SELECT AVG(column_name)
 	FROM table_name;
 
-BETWEEN: Is used to filter the result set within a certain rage. The values can
+BETWEEN: Is used to filter the result set within a certain range. The values can
 be numbers, text or dates
 	SELECT column_name(s)
 	FROM table_name
@@ -191,3 +191,64 @@ WITH: Lets you store the result of a query in a temporary table using an alias.
 You can also define multiple temporary tables using a comma and with one
 instance of the WITH keyword. The WITH clause is also known as common table
 expression (CTE) and subquery factoring.
+
+Difference between JOIN and UNION:
+
+JOIN: A join is used for displaying columns with the same or different names
+from different tables. The output displayed will have all the columns shown
+individually. That is, the columns will be aligned next to each other.
+
+UNION: The UNION set operator is used for combining data from two tables which
+have columns with the same datatype. When a UNION is performed the data from
+both tables will be collected in a single column having the same datatype.
+
+For example:
+
+See the two tables shown below:
+
+Table t1
+Articleno article price manufacturer_id
+1 hammer 3 $ 1
+2 screwdriver 5 $ 2
+
+Table t2
+manufacturer_id manufacturer
+1 ABC Gmbh
+2 DEF Co KG
+
+Now for performing a JOIN type the query is shown below.
+
+SELECT articleno, article, manufacturer
+FROM t1 JOIN t2 ON (t1.manufacturer_id =
+t2.manufacturer_id);
+
+articelno article manufacturer
+1 hammer ABC GmbH
+2 screwdriver DEF Co KG
+
+That is a join.
+
+UNION means that you have to tables or resultset with the same amount and type of columns and you add this to tables/resultsets together. Look at this example:
+
+Table year2006
+Articleno article price manufacturer_id
+1 hammer 3 $ 1
+2 screwdriver 5 $ 2
+
+Table year2007
+Articleno article price manufacturer_id
+1 hammer 6 $ 3
+2 screwdriver 7 $ 4
+
+SELECT articleno, article, price, manufactruer_id
+FROM year2006
+UNION
+SELECT articleno, article, price, manufacturer_id
+FROM year2007
+
+articleno article price manufacturer_id
+1 hammer 3 $ 1
+2 screwdriver 5 $ 2
+1 hammer 6 $ 3
+2 screwdriver 7 $ 4
+
