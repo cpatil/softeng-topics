@@ -20,8 +20,6 @@ Iterative approach is taken and working software build is delivered after each
 iteration. Each build is incremental in terms of features; the final build holds
 all the features required by the customer.
 
-Here is a graphical illustration of the Agile Model − SDLC Agile Model
-
 The Agile thought process had started early in the software development and
 started becoming popular with time due to its flexibility and adaptability.
 
