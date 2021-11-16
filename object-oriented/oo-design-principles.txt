@@ -1,4 +1,8 @@
-Software design principles represent a set of guidelines that helps us to avoid having a bad design. The design principles are associated to Robert Martin who gathered them in "Agile Software Development: Principles, Patterns, and Practices". According to Robert Martin there are 3 important characteristics of a bad design that should be avoided:
+Software design/OO design principles represent a set of guidelines that helps us to avoid 
+having a bad design. The design principles are associated to Robert Martin who 
+gathered them in "Agile Software Development: Principles, Patterns, and
+Practices". According to Robert Martin there are 3 important characteristics 
+of a bad design that should be avoided:
 
     Rigidity - It is hard to change because every change affects too many other
     parts of the system.
@@ -14,7 +18,7 @@ SOLID:
 	O Open/Closed Principle 
 	L Liskov Subsititution Principle 
 	I Interface Segregation Principle 
-	D Dependency Inversion/Injection
+	D Dependency Injection/Inversion of Control
 
 Single Responsibility (SRP):
 
@@ -45,7 +49,7 @@ Single Responsibility (SRP):
     	code. The Sales people are responsible for marketing and selling the
     	product.
 
-	The SRP principle makes the code more organized. It improves the readability
+	The SRP makes the code more organized. It improves the readability
 	of the code. It also contributes a lot to reusability. If you have short and
 	focused functions/classes, you’ll be able to reuse them easily. But if you
 	have a single function that does too many things then you wouldn’t be able

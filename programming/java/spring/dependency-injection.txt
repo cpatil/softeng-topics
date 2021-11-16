@@ -4,6 +4,40 @@ EJB = Enterprise Java Beans
 	high scalability, and high performance - Can be deployed on any of the
 	application server compliant with the J2EE standard specification
 
+Dependency Injection (or sometime called wiring) helps in gluing these classes
+together and at the same time keeping them independent.
+
+Example:
+There is a dependency between the TextEditor and the Spellchecker
+
+public class TextEditor {
+   private SpellChecker spellChecker;
+   
+   public TextEditor() {
+      spellChecker = new SpellChecker();
+   }
+}
+
+TextEditor should not worry about SpellChecker's implementation. The
+SpellChecker will be implemented independently and will be provided to the
+TextEditor at the time of TextEditor instantiation. This entire procedure is
+controlled by the Spring Framework. 
+Inversion of Control scenario:
+
+public class TextEditor {
+   private SpellChecker spellChecker;
+   
+   public TextEditor(SpellChecker spellChecker) {
+      this.spellChecker = spellChecker;
+   }
+}
+
+We have removed total control from the TextEditor and kept it somewhere else
+(i.e. XML configuration file) and the dependency (i.e. class SpellChecker) is
+being injected into the class TextEditor through a Class Constructor. Thus the
+flow of control has been "inverted" by Dependency Injection (DI) because you
+have effectively delegated dependances to some external system. 
+
 Inversion of Control (IoC)
 	- Programming principle which inverts the flow of control as compared to
 	traditional control flow - Hollywood principle: "don't call us, we'll call
@@ -37,7 +71,8 @@ A general guideline, which is recommended by Spring (see the sections on
 Constructor-based DI or Setter-based DI) is the following:
 
     For mandatory dependencies or when aiming for immutability, use constructor
-    injection For optional or changeable dependencies, use setter injection
+    injection 
+    For optional or changeable dependencies, use setter injection
     Avoid field injection in most cases
 
 Field injection drawbacks
@@ -66,5 +101,3 @@ convenient to write, which does not outweigh all the cons.
 
 *** Don't use @Autowired (field injections)
     - hides dependencies instead of making them explicit
-
-

@@ -197,7 +197,7 @@ Cons:
 
 3. Java provides no backup facility
 
-	Java mainly works on storage and doesn't focuse on the backup of data. This is a
+	Java mainly works on storage and doesn't focus on the backup of data. This is a
 	major drawback that makes it lose the interest and ratings among users. 
 
 4. Java requires significant memory space

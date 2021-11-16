@@ -8,7 +8,7 @@ In common parlance, the terms "nested" and "inner" are used interchangeably by
 most programmers, but I'll use the correct term "nested class" which covers both
 inner and static.
 
-Classes can be nested ad infinitum, e.g. class A can contain class B which
+Classes can be nested and infinitum, e.g. class A can contain class B which
 contains class C which contains class D, etc. However, more than one level of
 class nesting is rare, as it is generally bad design.
 
@@ -16,19 +16,24 @@ There are three reasons you might create a nested class:
 
     organization: sometimes it seems most sensible to sort a class into the
     namespace of another class, especially when it won't be used in any other
+
     context access: nested classes have special access to the variables/fields
     of their containing classes (precisely which variables/fields depends on the
-    kind of nested class, whether inner or static). convenience: having to
-    create a new file for every new type is bothersome, again, especially when
-    the type will only be used in one context
+    kind of nested class, whether inner or static). 
+    
+    convenience: having to create a new file for every new type is bothersome, 
+    again, especially when the type will only be used in one context
 
 There are four kinds of nested class in Java. In brief, they are:
 
-    static class: declared as a static member of another class inner class:
-    declared as an instance member of another class local inner class: declared
-    inside an instance method of another class anonymous inner class: like a
-    local inner class, but written as an expression which returns a one-off
-    object
+    static class: declared as a static member of another class 
+
+    inner class: declared as an instance member of another class 
+
+    local inner class: declared inside an instance method of another class 
+    
+    anonymous inner class: like a local inner class, but written as an 
+    expression which returns a one-off object
 
 Let me elaborate in more details.
 

@@ -8,11 +8,13 @@ impdep2) are to provide traps for implementation-specific software and hardware,
 respectively. The third is used for debuggers to implement breakpoints.
 
 Instructions fall into a number of broad groups:
-    - Load and store (e.g. aload_0, istore) - Arithmetic and logic (e.g. ladd,
-    fcmpl) - Type conversion (e.g. i2b, d2i) - Object creation and
-    manipulation(new, putfield) - Operand stack management (e.g. swap, dup2) -
-    Control transfer (e.g. ifeq, goto) - Method incovation and return (e.g.
-    invokespecial, areturn)
+    - Load and store (e.g. aload_0, istore) 
+    - Arithmetic and logic (e.g. ladd, fcmpl) 
+    - Type conversion (e.g. i2b, d2i) 
+    - Object creation and manipulation(new, putfield) 
+    - Operand stack management (e.g. swap, dup2) 
+    - Control transfer (e.g. ifeq, goto) 
+    - Method incovation and return (e.g. invokespecial, areturn)
 
 There are also a few instructions for a number of more specialized tasks such as
 exception throwing, synchronization, etc.
