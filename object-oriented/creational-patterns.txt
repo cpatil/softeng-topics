@@ -1,117 +1,17 @@
 Object Pool Pattern:
 
-	Motivation
-
-		Performance can be sometimes the key issue during the software
-		development and the object creation(class instantiation) is a costly
-		step. While the Prototype pattern helps in improving the performance by
-		cloning the objects, the Object Pool pattern offer a mechanism to reuse
-		objects that are expensive to create.
-
-		Clients of an object pull "feel" like they are owners of a service
-		although the service is shared among many other clients.
-
-	Intent
-
-		Reuse and share objects that are expensive to create.
-
-	Implementation
-
-		Reusable - Wraps the limited resource, will be shared by several clients
-		for a limited amount of time.
-		
-		Client - uses an instance of type Reusable.
-		
-		ReusablePool - manage the reusable objects for use by Clients, creating
-		and managing a pool of objects.
-
-		When a client asks for a Reusable object, the pool performs the
-		following actions:
-		
-			Search for an available Reusable object and if it was found it will
-			be returned to the client.
-		
-			If no Reusable object was found then it tries to create a new one.
-			If this actions succeds the new Reusable object will be returned to
-			the client.
-		
-			If the pool was unable to create a new Reusable, the pool will wait
-			until a reusable object will be released.
+	Reuses and shares objects that are expensive to create	
 
 Prototype Pattern:
 
-	Today’s programming is all about costs. Saving is a big issue when it comes
-	to using computer resources, so programmers are doing their best to find
-	ways of improving the performance When we talk about object creation we can
-	find a better way to have new objects: cloning. To this idea one particular
-	design pattern is related: rather than creation it uses cloning. If the cost
-	of creating a new object is large and creation is resource intensive, we
-	clone the object.
-
-	The Prototype design pattern is the one in question. It allows an object to
-	create customized objects without knowing their class or any details of how to
-	create them. Up to this point it sounds a lot like the Factory Method pattern,
-	the difference being the fact that for the Factory the palette of prototypical
-	objects never contains more than one object.
-
-	Intent
-
-		Specifying the kind of objects to create using a prototypical instance
-		
-		Creating new objects by copying this prototype
-
-	Implementation
-
-		Client - creates a new object by asking a prototype to clone itself.
-		
-		Prototype - declares an interface for cloning itself.
-		
-		ConcretePrototype - implements the operation for cloning itself.
-
-		The process of cloning starts with an initialized and instantiated
-		class. The Client asks for a new object of that type and sends the
-		request to the Prototype class. A ConcretePrototype, depending of the
-		type of object is needed, will handle the cloning through the Clone()
-		method, making a new instance of itself.
+	Specify the kinds of objects to create using a prototypical instance, and
+	create new objects by copying this prototype
 
 Factory Method Pattern:
 
-	Motivation
-
-		Also known as Virtual Constructor, the Factory Method is related to the idea on
-		which libraries work: a library uses abstract classes for defining and
-		maintaining relations between objects. One type of responsibility is creating
-		such objects. The library knows when an object needs to be created, but not what
-		kind of object it should create, this being specific to the application using
-		the library.
-
-		The Factory method works just the same way: it defines an interface for creating
-		an object, but leaves the choice of its type to the subclasses, creation being
-		deferred at run-time. A simple real life example of the Factory Method is the
-		hotel. When staying in a hotel you first have to check in. The person working at
-		the front desk will give you a key to your room after you've paid for the room
-		you want and this way he can be looked at as a �room� factory. While staying at
-		the hotel, you might need to make a phone call, so you call the front desk and
-		the person there will connect you with the number you need, becoming a
-		�phone-call� factory, because he controls the access to calls, too.	
-
-	Intent
-
-		Defines an interface for creating objects, but let subclasses to decide which class to instantiate
-		
-		Refers to the newly created object through a common interface
-
-	Implementation
-
-		The need for implementing the Factory Method is very frequent. The
-		cases are the ones below:
-
-			When a class can't anticipate the type of the objects it is
-			supposed to create
-			
-			When a class wants its subclasses to be the ones to specific the
-			type of a newly created object
-
+	Defines an interface for creating objects, but let subclasses to decide
+	which class to instantiate and refers to the newly created object through a
+	common interface
 
 Builder Pattern:
 
