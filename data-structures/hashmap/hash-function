@@ -1,0 +1,29 @@
+A hash function maps a big number or string to a small integer that can be
+used as the index in the hash table
+
+A good hash function is efficiently computable and should uniformly distribute
+the keys, each table position are equally likely for each keys
+
+Should depend on every single bit of the key, so that two keys that differ in
+only one bit or one group of bits (regardless of whether the group is at the
+beginning, end, or middle of the key or present throughout the key) hash into
+different values. Thus, a hash function that simply extracts a portion of a key
+is not suitable. Similarly, if two keys are simply digited or character
+permutations of each other (such as 139 and 319), they should also hash into
+different values. 
+
+The two heuristic techniques are hashing by division and hashing by
+multiplication
+
+	Division (mod):
+		Map a key into one of the slots of the table by taking the remainder of
+		the key divided by table_size
+
+			h(key) = key mod table_size  ->  key % table_size
+
+	Multiplication:
+		Multiply the key by a constant real number in the range 0 < c < 1 and
+		extract the fractional part of k * c, then multipoly this value by
+		table_size and take the floor of the result
+
+			h(key) = floor (table_size * (key * constant mod 1))
