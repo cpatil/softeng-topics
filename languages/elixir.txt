@@ -1,0 +1,16 @@
+Elixir is a dynamic, functional language for building scalable and maintainable
+applications. 
+
+Elixir leverages the Erlang VM, known for running low-latency, distributed, and
+fault-tolerant systems. Elixir is successfully used in web development, embedded
+software, data ingestion, and multimedia processing, across a wide range of
+industries. 
+
+Functional programming (also called FP) is a way of thinking about software
+construction by creating pure functions. It avoid concepts of shared state,
+mutable data observed in Object Oriented Programming. 
+
+Functional langauges empazies on expressions and declarations rather than
+execution of statements. Therefore, unlike other procedures which depend on a
+local or global state, value output in FP depends only on the arguments passed
+to the function. 

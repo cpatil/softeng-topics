@@ -1,0 +1,64 @@
+A multi-threaded program contains two or more parts that can run concurrently
+and each part can handle a different task at the same time making optimal use of
+the available resources specially when your computer has multiple CPUs. 
+
+By definition, multitasking is when multiple processes share common processing
+resources such as a CPU. Multi-threading extends the idea of multitasking into
+applications where you can subdivide specific operations within a single
+application into individual threads. Each of the threads can run in parallel.
+The OS divides processing time not only among different applications, but also
+among each thread within an application. 
+
+Multi-threading enables you to write in a way where multiple activities can
+proceed concurrently in the same program. 
+
+Thread
+
+	Thread is a class. It is used to create a thread
+
+	It has multiple methods including start() and run()
+
+	Each thread creates a unique object and gets associated with it
+
+	More memory required
+
+	Multiple inheritance is not allowed in java hence after a class extends
+	Thread class, it can not extend any other class
+
+Runnable
+
+	Runnable is a functional interface which is used to create a thread
+
+	It has only abstract method run()
+
+	Multiple threads share the same objects
+
+	Less memory required
+
+	If a class is implementing the runnable interface then your class can extend
+	another class or implement another interface
+
+Example of Runnable
+
+class RunnableExample implements Runnable{
+   public void run(){
+      System.out.println("Thread is running for Runnable Implementation");
+   }
+   public static void main(String args[]){
+      RunnableExample runnable=new RunnableExample();
+      Thread t1 =new Thread(runnable);
+      t1.start();
+   }
+}
+
+Example of Thread
+
+class ThreadExample extends Thread{
+   public void run(){
+      System.out.println("Thread is running");
+   }
+   public static void main(String args[]){
+      ThreadExample t1=new ThreadExample ();
+      t1.start();
+   }
+}

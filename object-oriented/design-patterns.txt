@@ -6,4 +6,3 @@ formalized form, in the Gang Of Four book in 1994. Originally published with c++
 and smaltalk code samples, design patterns are very popular in Java and C# can
 be applied in all object oriented languanges. In functional languages like
 Scala, certain patterns are not necesary anymore. 
-
